@@ -1,2 +1,354 @@
-(()=>{"use strict";var e,t={85370(e,t,i){var A=i(36210);i(50082),function(e){const t=function(e){const t=this;A.A.each(e,function(e,i){A.A.isFunction(e)||(t[i]=e)}),A.A.isUndefined(this.id)||(this.id=parseInt(e.id,10)),this.path=e.path||"","dir"===this.type?this.mimetype="httpd/unix-directory":this.mimetype=this.mimetype||"application/octet-stream",this.type||("httpd/unix-directory"===this.mimetype?this.type="dir":this.type="file")};t.prototype={id:null,name:null,path:null,mimetype:null,icon:null,type:null,permissions:null,mtime:null,etag:null,mountType:null,hasPreview:!0,sharePermissions:null,shareAttributes:[],quotaAvailableBytes:-1,canDownload:function(){for(const e in this.shareAttributes){const t=this.shareAttributes[e];if("permissions"===t.scope&&"download"===t.key)return!0===t.value}return!0}},e.Files||(e.Files={}),e.Files.FileInfo=t}(OC)},50082(e,t,i){i.r(t),i.d(t,{VERSION:()=>A.xv,after:()=>xe.A,all:()=>Re.A,allKeys:()=>F.A,any:()=>Ce.A,assign:()=>R.A,before:()=>Oe.A,bind:()=>ue.A,bindAll:()=>ce.A,chain:()=>ae.A,chunk:()=>vt.A,clone:()=>U.A,collect:()=>Me.A,compact:()=>ot.A,compose:()=>ge.A,constant:()=>H.A,contains:()=>De.A,countBy:()=>Ye.A,create:()=>D.A,debounce:()=>ye.A,default:()=>gt.A,defaults:()=>C.A,defer:()=>he.A,delay:()=>fe.A,detect:()=>_e.A,difference:()=>pt.A,drop:()=>st.A,each:()=>Fe.A,escape:()=>ie.A,every:()=>Re.A,extend:()=>z.A,extendOwn:()=>R.A,filter:()=>Ne.A,find:()=>_e.A,findIndex:()=>we.A,findKey:()=>je.A,findLastIndex:()=>Se.A,findWhere:()=>Be.A,first:()=>At.A,flatten:()=>at.A,foldl:()=>Te.A,foldr:()=>qe.A,forEach:()=>Fe.A,functions:()=>N.A,get:()=>K.A,groupBy:()=>Qe.A,has:()=>V.A,head:()=>At.A,identity:()=>G.A,include:()=>De.A,includes:()=>De.A,indexBy:()=>Xe.A,indexOf:()=>Ee.A,initial:()=>nt.A,inject:()=>Te.A,intersection:()=>ct.A,invert:()=>q.A,invoke:()=>Ue.A,isArguments:()=>g.A,isArray:()=>v.A,isArrayBuffer:()=>m.A,isBoolean:()=>a.A,isDataView:()=>y.A,isDate:()=>c.A,isElement:()=>l.A,isEmpty:()=>j.A,isEqual:()=>S.A,isError:()=>f.A,isFinite:()=>x.A,isFunction:()=>b.A,isMap:()=>I.A,isMatch:()=>w.A,isNaN:()=>O.A,isNull:()=>s.A,isNumber:()=>u.A,isObject:()=>r.A,isRegExp:()=>p.A,isSet:()=>P.A,isString:()=>d.A,isSymbol:()=>h.A,isTypedArray:()=>k.A,isUndefined:()=>o.A,isWeakMap:()=>E.A,isWeakSet:()=>_.A,iteratee:()=>le.A,keys:()=>B.A,last:()=>rt.A,lastIndexOf:()=>Pe.A,map:()=>Me.A,mapObject:()=>L.A,matcher:()=>Z.A,matches:()=>Z.A,max:()=>Ve.A,memoize:()=>pe.A,methods:()=>N.A,min:()=>Le.A,mixin:()=>bt.A,negate:()=>be.A,noop:()=>J.A,now:()=>te.A,object:()=>mt.A,omit:()=>it.A,once:()=>ke.A,pairs:()=>T.A,partial:()=>de.A,partition:()=>Ze.A,pick:()=>tt.A,pluck:()=>We.A,property:()=>X.A,propertyOf:()=>Y.A,random:()=>ee.A,range:()=>yt.A,reduce:()=>Te.A,reduceRight:()=>qe.A,reject:()=>ze.A,rest:()=>st.A,restArguments:()=>n.A,result:()=>se.A,sample:()=>He.A,select:()=>Ne.A,shuffle:()=>Ge.A,size:()=>et.A,some:()=>Ce.A,sortBy:()=>Je.A,sortedIndex:()=>Ie.A,tail:()=>st.A,take:()=>At.A,tap:()=>W.A,template:()=>re.A,templateSettings:()=>ne.A,throttle:()=>me.A,times:()=>$.A,toArray:()=>$e.A,toPath:()=>Q.A,transpose:()=>ft.A,unescape:()=>Ae.A,union:()=>ut.A,uniq:()=>dt.A,unique:()=>dt.A,uniqueId:()=>oe.A,unzip:()=>ft.A,values:()=>M.A,where:()=>Ke.A,without:()=>lt.A,wrap:()=>ve.A,zip:()=>ht.A});var A=i(28794),n=i(11508),r=i(44099),s=i(21949),o=i(96734),a=i(85142),l=i(1138),d=i(90573),u=i(72897),c=i(88848),p=i(50093),f=i(82940),h=i(18628),m=i(38993),y=i(84933),v=i(15811),b=i(11380),g=i(66494),x=i(48215),O=i(58855),k=i(32271),j=i(31611),w=i(29143),S=i(71435),I=i(71940),E=i(30296),P=i(95094),_=i(9634),B=i(75144),F=i(88445),M=i(78850),T=i(55895),q=i(38024),N=i(66343),z=i(3080),R=i(19478),C=i(19318),D=i(50656),U=i(46463),W=i(73323),K=i(63854),V=i(7930),L=i(42687),G=i(69702),H=i(86524),J=i(964),Q=i(18398),X=i(35957),Y=i(95048),Z=i(70104),$=i(12672),ee=i(19291),te=i(52414),ie=i(20235),Ae=i(47868),ne=i(2155),re=i(74394),se=i(60301),oe=i(64230),ae=i(36503),le=i(48557),de=i(63015),ue=i(95619),ce=i(93964),pe=i(630),fe=i(52933),he=i(26622),me=i(58448),ye=i(99527),ve=i(62112),be=i(66058),ge=i(81734),xe=i(86800),Oe=i(73939),ke=i(55481),je=i(72532),we=i(80843),Se=i(58699),Ie=i(43481),Ee=i(30899),Pe=i(95379),_e=i(9671),Be=i(22888),Fe=i(79901),Me=i(15928),Te=i(68518),qe=i(8606),Ne=i(62478),ze=i(37183),Re=i(47601),Ce=i(54580),De=i(38973),Ue=i(75112),We=i(44339),Ke=i(17453),Ve=i(96624),Le=i(3374),Ge=i(14875),He=i(86666),Je=i(74849),Qe=i(30824),Xe=i(43639),Ye=i(72232),Ze=i(90268),$e=i(65228),et=i(39005),tt=i(88571),it=i(54585),At=i(42892),nt=i(72826),rt=i(10328),st=i(59750),ot=i(78707),at=i(72704),lt=i(63182),dt=i(8037),ut=i(25981),ct=i(65665),pt=i(14299),ft=i(9176),ht=i(58877),mt=i(85919),yt=i(29271),vt=i(84327),bt=i(23991),gt=i(37643)}},i={};function A(e){var n=i[e];if(void 0!==n)return n.exports;var r=i[e]={id:e,loaded:!1,exports:{}};return t[e].call(r.exports,r,r.exports,A),r.loaded=!0,r.exports}A.m=t,e=[],A.O=(t,i,n,r)=>{if(!i){var s=1/0;for(d=0;d<e.length;d++){for(var[i,n,r]=e[d],o=!0,a=0;a<i.length;a++)(!1&r||s>=r)&&Object.keys(A.O).every(e=>A.O[e](i[a]))?i.splice(a--,1):(o=!1,r<s&&(s=r));if(o){e.splice(d--,1);var l=n();void 0!==l&&(t=l)}}return t}r=r||0;for(var d=e.length;d>0&&e[d-1][2]>r;d--)e[d]=e[d-1];e[d]=[i,n,r]},A.n=e=>{var t=e&&e.__esModule?()=>e.default:()=>e;return A.d(t,{a:t}),t},A.d=(e,t)=>{for(var i in t)A.o(t,i)&&!A.o(e,i)&&Object.defineProperty(e,i,{enumerable:!0,get:t[i]})},A.e=()=>Promise.resolve(),A.o=(e,t)=>Object.prototype.hasOwnProperty.call(e,t),A.r=e=>{"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},A.nmd=e=>(e.paths=[],e.children||(e.children=[]),e),A.j=4313,(()=>{A.b="undefined"!=typeof document&&document.baseURI||self.location.href;var e={4313:0};A.O.j=t=>0===e[t];var t=(t,i)=>{var n,r,[s,o,a]=i,l=0;if(s.some(t=>0!==e[t])){for(n in o)A.o(o,n)&&(A.m[n]=o[n]);if(a)var d=a(A)}for(t&&t(i);l<s.length;l++)r=s[l],A.o(e,r)&&e[r]&&e[r][0](),e[r]=0;return A.O(d)},i=globalThis.webpackChunknextcloud_ui_legacy=globalThis.webpackChunknextcloud_ui_legacy||[];i.forEach(t.bind(null,0)),i.push=t.bind(null,i.push.bind(i))})(),A.nc=void 0;var n=A.O(void 0,[4208],()=>A(85370));n=A.O(n)})();
-//# sourceMappingURL=core-files_fileinfo.js.map?v=a89e7e68e0617190a22d
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+/******/ 	var __webpack_modules__ = ({
+
+/***/ "./core/src/files/fileinfo.js"
+/*!************************************!*\
+  !*** ./core/src/files/fileinfo.js ***!
+  \************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var underscore__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! underscore */ "./node_modules/underscore/modules/index-all.js");
+/**
+ * SPDX-FileCopyrightText: 2016-2024 Nextcloud GmbH and Nextcloud contributors
+ * SPDX-FileCopyrightText: 2016 ownCloud, Inc.
+ * SPDX-License-Identifier: AGPL-3.0-or-later
+ */
+
+
+(function (OC) {
+  /**
+   * @class OC.Files.FileInfo
+   * @classdesc File information
+   *
+   * @param {object} data file data, see attributes for details
+   *
+   * @since 8.2
+   */
+  const FileInfo = function (data) {
+    const self = this;
+    underscore__WEBPACK_IMPORTED_MODULE_0__["default"].each(data, function (value, key) {
+      if (!underscore__WEBPACK_IMPORTED_MODULE_0__["default"].isFunction(value)) {
+        self[key] = value;
+      }
+    });
+    if (!underscore__WEBPACK_IMPORTED_MODULE_0__["default"].isUndefined(this.id)) {
+      this.id = parseInt(data.id, 10);
+    }
+
+    // TODO: normalize path
+    this.path = data.path || '';
+    if (this.type === 'dir') {
+      this.mimetype = 'httpd/unix-directory';
+    } else {
+      this.mimetype = this.mimetype || 'application/octet-stream';
+    }
+    if (!this.type) {
+      if (this.mimetype === 'httpd/unix-directory') {
+        this.type = 'dir';
+      } else {
+        this.type = 'file';
+      }
+    }
+  };
+
+  /**
+   * @memberof OC.Files
+   */
+  FileInfo.prototype = {
+    /**
+     * File id
+     *
+     * @type int
+     */
+    id: null,
+    /**
+     * File name
+     *
+     * @type String
+     */
+    name: null,
+    /**
+     * Path leading to the file, without the file name,
+     * and with a leading slash.
+     *
+     * @type String
+     */
+    path: null,
+    /**
+     * Mime type
+     *
+     * @type String
+     */
+    mimetype: null,
+    /**
+     * Icon URL.
+     *
+     * Can be used to override the mime type icon.
+     *
+     * @type String
+     */
+    icon: null,
+    /**
+     * File type. 'file'  for files, 'dir' for directories.
+     *
+     * @type String
+     * @deprecated rely on mimetype instead
+     */
+    type: null,
+    /**
+     * Permissions.
+     *
+     * @see OC#PERMISSION_ALL for permissions
+     * @type int
+     */
+    permissions: null,
+    /**
+     * Modification time
+     *
+     * @type int
+     */
+    mtime: null,
+    /**
+     * Etag
+     *
+     * @type String
+     */
+    etag: null,
+    /**
+     * Mount type.
+     *
+     * One of null, "external-root", "shared" or "shared-root"
+     *
+     * @type string
+     */
+    mountType: null,
+    /**
+     * @type boolean
+     */
+    hasPreview: true,
+    /**
+     * @type int
+     */
+    sharePermissions: null,
+    /**
+     * @type Array
+     */
+    shareAttributes: [],
+    quotaAvailableBytes: -1,
+    canDownload: function () {
+      for (const i in this.shareAttributes) {
+        const attr = this.shareAttributes[i];
+        if (attr.scope === 'permissions' && attr.key === 'download') {
+          return attr.value === true;
+        }
+      }
+      return true;
+    }
+  };
+  if (!OC.Files) {
+    OC.Files = {};
+  }
+  OC.Files.FileInfo = FileInfo;
+})(OC);
+
+/***/ }
+
+/******/ 	});
+/************************************************************************/
+/******/ 	// The module cache
+/******/ 	var __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Check if module exists (development only)
+/******/ 		if (__webpack_modules__[moduleId] === undefined) {
+/******/ 			var e = new Error("Cannot find module '" + moduleId + "'");
+/******/ 			e.code = 'MODULE_NOT_FOUND';
+/******/ 			throw e;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 			id: moduleId,
+/******/ 			loaded: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		__webpack_modules__[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Flag the module as loaded
+/******/ 		module.loaded = true;
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = __webpack_modules__;
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/chunk loaded */
+/******/ 	(() => {
+/******/ 		var deferred = [];
+/******/ 		__webpack_require__.O = (result, chunkIds, fn, priority) => {
+/******/ 			if(chunkIds) {
+/******/ 				priority = priority || 0;
+/******/ 				for(var i = deferred.length; i > 0 && deferred[i - 1][2] > priority; i--) deferred[i] = deferred[i - 1];
+/******/ 				deferred[i] = [chunkIds, fn, priority];
+/******/ 				return;
+/******/ 			}
+/******/ 			var notFulfilled = Infinity;
+/******/ 			for (var i = 0; i < deferred.length; i++) {
+/******/ 				var [chunkIds, fn, priority] = deferred[i];
+/******/ 				var fulfilled = true;
+/******/ 				for (var j = 0; j < chunkIds.length; j++) {
+/******/ 					if ((priority & 1 === 0 || notFulfilled >= priority) && Object.keys(__webpack_require__.O).every((key) => (__webpack_require__.O[key](chunkIds[j])))) {
+/******/ 						chunkIds.splice(j--, 1);
+/******/ 					} else {
+/******/ 						fulfilled = false;
+/******/ 						if(priority < notFulfilled) notFulfilled = priority;
+/******/ 					}
+/******/ 				}
+/******/ 				if(fulfilled) {
+/******/ 					deferred.splice(i--, 1)
+/******/ 					var r = fn();
+/******/ 					if (r !== undefined) result = r;
+/******/ 				}
+/******/ 			}
+/******/ 			return result;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	(() => {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__webpack_require__.n = (module) => {
+/******/ 			var getter = module && module.__esModule ?
+/******/ 				() => (module['default']) :
+/******/ 				() => (module);
+/******/ 			__webpack_require__.d(getter, { a: getter });
+/******/ 			return getter;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/ensure chunk */
+/******/ 	(() => {
+/******/ 		// The chunk loading function for additional chunks
+/******/ 		// Since all referenced chunks are already included
+/******/ 		// in this file, this function is empty here.
+/******/ 		__webpack_require__.e = () => (Promise.resolve());
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	(() => {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = (exports) => {
+/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/node module decorator */
+/******/ 	(() => {
+/******/ 		__webpack_require__.nmd = (module) => {
+/******/ 			module.paths = [];
+/******/ 			if (!module.children) module.children = [];
+/******/ 			return module;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/jsonp chunk loading */
+/******/ 	(() => {
+/******/ 		__webpack_require__.b = (typeof document !== 'undefined' && document.baseURI) || self.location.href;
+/******/ 		
+/******/ 		// object to store loaded and loading chunks
+/******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
+/******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
+/******/ 		var installedChunks = {
+/******/ 			"core-files_fileinfo": 0
+/******/ 		};
+/******/ 		
+/******/ 		// no chunk on demand loading
+/******/ 		
+/******/ 		// no prefetching
+/******/ 		
+/******/ 		// no preloaded
+/******/ 		
+/******/ 		// no HMR
+/******/ 		
+/******/ 		// no HMR manifest
+/******/ 		
+/******/ 		__webpack_require__.O.j = (chunkId) => (installedChunks[chunkId] === 0);
+/******/ 		
+/******/ 		// install a JSONP callback for chunk loading
+/******/ 		var webpackJsonpCallback = (parentChunkLoadingFunction, data) => {
+/******/ 			var [chunkIds, moreModules, runtime] = data;
+/******/ 			// add "moreModules" to the modules object,
+/******/ 			// then flag all "chunkIds" as loaded and fire callback
+/******/ 			var moduleId, chunkId, i = 0;
+/******/ 			if(chunkIds.some((id) => (installedChunks[id] !== 0))) {
+/******/ 				for(moduleId in moreModules) {
+/******/ 					if(__webpack_require__.o(moreModules, moduleId)) {
+/******/ 						__webpack_require__.m[moduleId] = moreModules[moduleId];
+/******/ 					}
+/******/ 				}
+/******/ 				if(runtime) var result = runtime(__webpack_require__);
+/******/ 			}
+/******/ 			if(parentChunkLoadingFunction) parentChunkLoadingFunction(data);
+/******/ 			for(;i < chunkIds.length; i++) {
+/******/ 				chunkId = chunkIds[i];
+/******/ 				if(__webpack_require__.o(installedChunks, chunkId) && installedChunks[chunkId]) {
+/******/ 					installedChunks[chunkId][0]();
+/******/ 				}
+/******/ 				installedChunks[chunkId] = 0;
+/******/ 			}
+/******/ 			return __webpack_require__.O(result);
+/******/ 		}
+/******/ 		
+/******/ 		var chunkLoadingGlobal = globalThis["webpackChunknextcloud_ui_legacy"] = globalThis["webpackChunknextcloud_ui_legacy"] || [];
+/******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
+/******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/nonce */
+/******/ 	(() => {
+/******/ 		__webpack_require__.nc = undefined;
+/******/ 	})();
+/******/ 	
+/************************************************************************/
+/******/ 	
+/******/ 	// startup
+/******/ 	// Load entry module and return exports
+/******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["core-common"], () => (__webpack_require__("./core/src/files/fileinfo.js")))
+/******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
+/******/ 	
+/******/ })()
+;
+//# sourceMappingURL=core-files_fileinfo.js.map?v=4e2ccf744ac901592a2c

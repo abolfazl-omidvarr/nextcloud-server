@@ -1,2 +1,1114 @@
-(()=>{"use strict";var e,t={95780(e,t,s){var i=s(21777),n=s(70580),r=s.n(n),o=s(74692),a=s.n(o),c=s(36210),l=(s(50082),s(35947));const u=null===(A=(0,i.HW)())?(0,l.YK)().setApp("core").build():(0,l.YK)().setApp("core").setUid(A.uid).build();var A;(0,l.YK)().setApp("unified-search").detectUser().build(),function(e,t){const s=function(t){this._root=t.root,"/"===this._root.charAt(this._root.length-1)&&(this._root=this._root.substr(0,this._root.length-1));let i=s.PROTOCOL_HTTP+"://";t.useHTTPS&&(i=s.PROTOCOL_HTTPS+"://"),i+=t.host+this._root,this._host=t.host,this._defaultHeaders=t.defaultHeaders||{"X-Requested-With":"XMLHttpRequest",requesttoken:e.requestToken},this._baseUrl=i;const n={baseUrl:this._baseUrl,xmlNamespaces:{"DAV:":"d","http://owncloud.org/ns":"oc","http://nextcloud.org/ns":"nc","http://open-collaboration-services.org/ns":"ocs"}};t.userName&&(n.userName=t.userName),t.password&&(n.password=t.password),this._client=new dav.Client(n),this._client.xhrProvider=c.A.bind(this._xhrProvider,this),this._fileInfoParsers=[]};s.NS_OWNCLOUD="http://owncloud.org/ns",s.NS_NEXTCLOUD="http://nextcloud.org/ns",s.NS_DAV="DAV:",s.NS_OCS="http://open-collaboration-services.org/ns",s.PROPERTY_GETLASTMODIFIED="{"+s.NS_DAV+"}getlastmodified",s.PROPERTY_GETETAG="{"+s.NS_DAV+"}getetag",s.PROPERTY_GETCONTENTTYPE="{"+s.NS_DAV+"}getcontenttype",s.PROPERTY_RESOURCETYPE="{"+s.NS_DAV+"}resourcetype",s.PROPERTY_INTERNAL_FILEID="{"+s.NS_OWNCLOUD+"}fileid",s.PROPERTY_PERMISSIONS="{"+s.NS_OWNCLOUD+"}permissions",s.PROPERTY_SIZE="{"+s.NS_OWNCLOUD+"}size",s.PROPERTY_GETCONTENTLENGTH="{"+s.NS_DAV+"}getcontentlength",s.PROPERTY_ISENCRYPTED="{"+s.NS_DAV+"}is-encrypted",s.PROPERTY_SHARE_PERMISSIONS="{"+s.NS_OCS+"}share-permissions",s.PROPERTY_SHARE_ATTRIBUTES="{"+s.NS_NEXTCLOUD+"}share-attributes",s.PROPERTY_QUOTA_AVAILABLE_BYTES="{"+s.NS_DAV+"}quota-available-bytes",s.PROTOCOL_HTTP="http",s.PROTOCOL_HTTPS="https",s._PROPFIND_PROPERTIES=[[s.NS_DAV,"getlastmodified"],[s.NS_DAV,"getetag"],[s.NS_DAV,"getcontenttype"],[s.NS_DAV,"resourcetype"],[s.NS_OWNCLOUD,"fileid"],[s.NS_OWNCLOUD,"permissions"],[s.NS_OWNCLOUD,"size"],[s.NS_DAV,"getcontentlength"],[s.NS_DAV,"quota-available-bytes"],[s.NS_NEXTCLOUD,"has-preview"],[s.NS_NEXTCLOUD,"mount-type"],[s.NS_NEXTCLOUD,"is-encrypted"],[s.NS_OCS,"share-permissions"],[s.NS_NEXTCLOUD,"share-attributes"]],s.prototype={_root:null,_client:null,_fileInfoParsers:[],_xhrProvider:function(){const t=this._defaultHeaders,s=new XMLHttpRequest,i=s.open;return s.open=function(){const e=i.apply(this,arguments);return c.A.each(t,function(e,t){s.setRequestHeader(t,e)}),e},e.registerXHRForErrorProcessing(s),s},_buildUrl:function(){let e=this._buildPath.apply(this,arguments);return"/"===e.charAt([e.length-1])&&(e=e.substr(0,e.length-1)),"/"===e.charAt(0)&&(e=e.substr(1)),this._baseUrl+"/"+e},_buildPath:function(){let t=e.joinPaths.apply(this,arguments);const s=t.split("/");let i;for(i=0;i<s.length;i++)s[i]=encodeURIComponent(s[i]);return t=s.join("/"),t},_parseHeaders:function(e){const t=e.split("\n"),s={};for(let e=0;e<t.length;e++){const i=t[e].indexOf(":");if(i<0)continue;const n=t[e].substr(0,i),r=t[e].substr(i+2);s[n]||(s[n]=[]),s[n].push(r)}return s},_parseEtag:function(e){return'"'===e.charAt(0)?e.split('"')[1]:e},_parseFileInfo:function(i){let n=decodeURIComponent(i.href);if(n.substr(0,this._root.length)===this._root&&(n=n.substr(this._root.length)),"/"===n.charAt(n.length-1)&&(n=n.substr(0,n.length-1)),0===i.propStat.length||"HTTP/1.1 200 OK"!==i.propStat[0].status)return null;const r=i.propStat[0].properties,o={id:r[s.PROPERTY_INTERNAL_FILEID],path:e.dirname(n)||"/",name:e.basename(n),mtime:new Date(r[s.PROPERTY_GETLASTMODIFIED]).getTime()},a=r[s.PROPERTY_GETETAG];c.A.isUndefined(a)||(o.etag=this._parseEtag(a));let l=r[s.PROPERTY_GETCONTENTLENGTH];c.A.isUndefined(l)||(o.size=parseInt(l,10)),l=r[s.PROPERTY_SIZE],c.A.isUndefined(l)||(o.size=parseInt(l,10));const A=r["{"+s.NS_NEXTCLOUD+"}has-preview"];c.A.isUndefined(A)?o.hasPreview=!0:o.hasPreview="true"===A;const p=r["{"+s.NS_NEXTCLOUD+"}is-encrypted"];c.A.isUndefined(p)?o.isEncrypted=!1:o.isEncrypted="1"===p;const d=r["{"+s.NS_OWNCLOUD+"}favorite"];c.A.isUndefined(d)?o.isFavourited=!1:o.isFavourited="1"===d;const h=r[s.PROPERTY_GETCONTENTTYPE];c.A.isUndefined(h)||(o.mimetype=h);const f=r[s.PROPERTY_RESOURCETYPE];if(!o.mimetype&&f){const e=f[0];e.namespaceURI===s.NS_DAV&&"collection"===e.nodeName.split(":")[1]&&(o.mimetype="httpd/unix-directory")}o.permissions=e.PERMISSION_NONE;const _=r[s.PROPERTY_PERMISSIONS];if(!c.A.isUndefined(_)){const t=_||"";o.mountType=null;for(let s=0;s<t.length;s++)switch(t.charAt(s)){case"C":case"K":o.permissions|=e.PERMISSION_CREATE;break;case"G":o.permissions|=e.PERMISSION_READ;break;case"W":case"N":case"V":o.permissions|=e.PERMISSION_UPDATE;break;case"D":o.permissions|=e.PERMISSION_DELETE;break;case"R":o.permissions|=e.PERMISSION_SHARE;break;case"M":o.mountType||(o.mountType="external");break;case"S":o.mountType="shared"}}const S=r[s.PROPERTY_SHARE_PERMISSIONS];c.A.isUndefined(S)||(o.sharePermissions=parseInt(S));const m=r[s.PROPERTY_SHARE_ATTRIBUTES];if(c.A.isUndefined(m))o.shareAttributes=[];else try{o.shareAttributes=JSON.parse(m)}catch{u.warn('Could not parse share attributes returned by server: "'+m+'"'),o.shareAttributes=[]}const E=r["{"+s.NS_NEXTCLOUD+"}mount-type"];c.A.isUndefined(E)||(o.mountType=E);const P=r["{"+s.NS_DAV+"}quota-available-bytes"];return c.A.isUndefined(P)||(o.quotaAvailableBytes=P),c.A.each(this._fileInfoParsers,function(e){c.A.extend(o,e(i,o)||{})}),new t(o)},_parseResult:function(e){const t=this;return c.A.map(e,function(e){return t._parseFileInfo(e)})},_isSuccessStatus:function(e){return e>=200&&e<=299},_getSabreException:function(e){const t={},s=e.xhr.responseXML;if(null===s)return t;const i=s.getElementsByTagNameNS("http://sabredav.org/ns","message"),n=s.getElementsByTagNameNS("http://sabredav.org/ns","exception");return i.length&&(t.message=i[0].textContent),n.length&&(t.exception=n[0].textContent),t},getPropfindProperties:function(){return this._propfindProperties||(this._propfindProperties=c.A.map(s._PROPFIND_PROPERTIES,function(e){return"{"+e[0]+"}"+e[1]})),this._propfindProperties},getFolderContents:function(e,t){e||(e=""),t=t||{};const s=this,i=a().Deferred(),n=i.promise();let r;return r=c.A.isUndefined(t.properties)?this.getPropfindProperties():t.properties,this._client.propFind(this._buildUrl(e),r,1).then(function(e){if(s._isSuccessStatus(e.status)){const n=s._parseResult(e.body);t&&t.includeParent||n.shift(),i.resolve(e.status,n)}else e=c.A.extend(e,s._getSabreException(e)),i.reject(e.status,e)}),n},getFilteredFiles:function(e,t){t=t||{};const s=this,i=a().Deferred(),n=i.promise();let o;if(o=c.A.isUndefined(t.properties)?this.getPropfindProperties():t.properties,!e||!e.systemTagIds&&c.A.isUndefined(e.favorite)&&!e.circlesIds)throw"Missing filter argument";let l,u="<oc:filter-files ";for(l in this._client.xmlNamespaces)u+=" xmlns:"+this._client.xmlNamespaces[l]+'="'+l+'"';return u+=">\n",u+="    <"+this._client.xmlNamespaces["DAV:"]+":prop>\n",c.A.each(o,function(e){const t=s._client.parseClarkNotation(e);u+="        <"+s._client.xmlNamespaces[t.namespace]+":"+t.name+" />\n"}),u+="    </"+this._client.xmlNamespaces["DAV:"]+":prop>\n",u+="    <oc:filter-rules>\n",c.A.each(e.systemTagIds,function(e){u+="        <oc:systemtag>"+r()(e)+"</oc:systemtag>\n"}),c.A.each(e.circlesIds,function(e){u+="        <oc:circle>"+r()(e)+"</oc:circle>\n"}),e.favorite&&(u+="        <oc:favorite>"+(e.favorite?"1":"0")+"</oc:favorite>\n"),u+="    </oc:filter-rules>\n",u+="</oc:filter-files>\n",this._client.request("REPORT",this._buildUrl(),{},u).then(function(e){if(s._isSuccessStatus(e.status)){const t=s._parseResult(e.body);i.resolve(e.status,t)}else e=c.A.extend(e,s._getSabreException(e)),i.reject(e.status,e)}),n},getFileInfo:function(e,t){e||(e=""),t=t||{};const s=this,i=a().Deferred(),n=i.promise();let r;return r=c.A.isUndefined(t.properties)?this.getPropfindProperties():t.properties,this._client.propFind(this._buildUrl(e),r,0).then(function(e){s._isSuccessStatus(e.status)?i.resolve(e.status,s._parseResult([e.body])[0]):(e=c.A.extend(e,s._getSabreException(e)),i.reject(e.status,e))}),n},getFileContents:function(e){if(!e)throw'Missing argument "path"';const t=this,s=a().Deferred(),i=s.promise();return this._client.request("GET",this._buildUrl(e)).then(function(e){t._isSuccessStatus(e.status)?s.resolve(e.status,e.body):(e=c.A.extend(e,t._getSabreException(e)),s.reject(e.status,e))}),i},putFileContents:function(e,t,s){if(!e)throw'Missing argument "path"';const i=this,n=a().Deferred(),r=n.promise(),o={};let l="text/plain;charset=utf-8";return(s=s||{}).contentType&&(l=s.contentType),o["Content-Type"]=l,(c.A.isUndefined(s.overwrite)||s.overwrite)&&(o["If-None-Match"]="*"),this._client.request("PUT",this._buildUrl(e),o,t||"").then(function(e){i._isSuccessStatus(e.status)?n.resolve(e.status):(e=c.A.extend(e,i._getSabreException(e)),n.reject(e.status,e))}),r},_simpleCall:function(e,t,s){if(!t)throw'Missing argument "path"';const i=this,n=a().Deferred(),r=n.promise();return this._client.request(e,this._buildUrl(t),s||{}).then(function(e){i._isSuccessStatus(e.status)?n.resolve(e.status):(e=c.A.extend(e,i._getSabreException(e)),n.reject(e.status,e))}),r},createDirectory:function(e,t){return this._simpleCall("MKCOL",e,t)},remove:function(e){return this._simpleCall("DELETE",e)},move:function(e,t,s,i){if(!e)throw'Missing argument "path"';if(!t)throw'Missing argument "destinationPath"';const n=this,r=a().Deferred(),o=r.promise();return i=c.A.extend({},i,{Destination:this._buildUrl(t)}),s||(i.Overwrite="F"),this._client.request("MOVE",this._buildUrl(e),i).then(function(e){n._isSuccessStatus(e.status)?r.resolve(e.status):(e=c.A.extend(e,n._getSabreException(e)),r.reject(e.status,e))}),o},copy:function(e,t,s){if(!e)throw'Missing argument "path"';if(!t)throw'Missing argument "destinationPath"';const i=this,n=a().Deferred(),r=n.promise(),o={Destination:this._buildUrl(t)};return s||(o.Overwrite="F"),this._client.request("COPY",this._buildUrl(e),o).then(function(e){i._isSuccessStatus(e.status)?n.resolve(e.status):n.reject(e.status)}),r},addFileInfoParser:function(e){this._fileInfoParsers.push(e)},getClient:function(){return this._client},getUserName:function(){return this._client.userName},getPassword:function(){return this._client.password},getBaseUrl:function(){return this._client.baseUrl},getHost:function(){return this._host}},e.Files||(e.Files={}),e.Files.getClient=function(){if(e.Files._defaultClient)return e.Files._defaultClient;const t=new e.Files.Client({host:window.location.host,port:window.location.port,root:e.linkToRemoteBase("dav")+"/files/"+(0,i.HW)().uid,useHTTPS:window.location.protocol.startsWith("https")});return e.Files._defaultClient=t,t},e.Files.Client=s}(OC,OC.Files.FileInfo)},50082(e,t,s){s.r(t),s.d(t,{VERSION:()=>i.xv,after:()=>Oe.A,all:()=>Ye.A,allKeys:()=>C.A,any:()=>He.A,assign:()=>Y.A,before:()=>Te.A,bind:()=>Ae.A,bindAll:()=>pe.A,chain:()=>ce.A,chunk:()=>mt.A,clone:()=>k.A,collect:()=>xe.A,compact:()=>at.A,compose:()=>Pe.A,constant:()=>X.A,contains:()=>Ve.A,countBy:()=>Je.A,create:()=>V.A,debounce:()=>Se.A,default:()=>Pt.A,defaults:()=>H.A,defer:()=>fe.A,delay:()=>he.A,detect:()=>Ue.A,difference:()=>dt.A,drop:()=>ot.A,each:()=>Ce.A,escape:()=>se.A,every:()=>Ye.A,extend:()=>M.A,extendOwn:()=>Y.A,filter:()=>Fe.A,find:()=>Ue.A,findIndex:()=>Re.A,findKey:()=>Ne.A,findLastIndex:()=>be.A,findWhere:()=>De.A,first:()=>it.A,flatten:()=>ct.A,foldl:()=>we.A,foldr:()=>Le.A,forEach:()=>Ce.A,functions:()=>F.A,get:()=>q.A,groupBy:()=>Ke.A,has:()=>W.A,head:()=>it.A,identity:()=>G.A,include:()=>Ve.A,includes:()=>Ve.A,indexBy:()=>Ze.A,indexOf:()=>ve.A,initial:()=>nt.A,inject:()=>we.A,intersection:()=>pt.A,invert:()=>L.A,invoke:()=>ke.A,isArguments:()=>P.A,isArray:()=>m.A,isArrayBuffer:()=>_.A,isBoolean:()=>c.A,isDataView:()=>S.A,isDate:()=>p.A,isElement:()=>l.A,isEmpty:()=>N.A,isEqual:()=>b.A,isError:()=>h.A,isFinite:()=>O.A,isFunction:()=>E.A,isMap:()=>y.A,isMatch:()=>R.A,isNaN:()=>T.A,isNull:()=>o.A,isNumber:()=>A.A,isObject:()=>r.A,isRegExp:()=>d.A,isSet:()=>I.A,isString:()=>u.A,isSymbol:()=>f.A,isTypedArray:()=>g.A,isUndefined:()=>a.A,isWeakMap:()=>v.A,isWeakSet:()=>U.A,iteratee:()=>le.A,keys:()=>D.A,last:()=>rt.A,lastIndexOf:()=>Ie.A,map:()=>xe.A,mapObject:()=>B.A,matcher:()=>Q.A,matches:()=>Q.A,max:()=>We.A,memoize:()=>de.A,methods:()=>F.A,min:()=>Be.A,mixin:()=>Et.A,negate:()=>Ee.A,noop:()=>z.A,now:()=>te.A,object:()=>_t.A,omit:()=>st.A,once:()=>ge.A,pairs:()=>w.A,partial:()=>ue.A,partition:()=>Qe.A,pick:()=>tt.A,pluck:()=>je.A,property:()=>Z.A,propertyOf:()=>J.A,random:()=>ee.A,range:()=>St.A,reduce:()=>we.A,reduceRight:()=>Le.A,reject:()=>Me.A,rest:()=>ot.A,restArguments:()=>n.A,result:()=>oe.A,sample:()=>Xe.A,select:()=>Fe.A,shuffle:()=>Ge.A,size:()=>et.A,some:()=>He.A,sortBy:()=>ze.A,sortedIndex:()=>ye.A,tail:()=>ot.A,take:()=>it.A,tap:()=>j.A,template:()=>re.A,templateSettings:()=>ne.A,throttle:()=>_e.A,times:()=>$.A,toArray:()=>$e.A,toPath:()=>K.A,transpose:()=>ht.A,unescape:()=>ie.A,union:()=>At.A,uniq:()=>ut.A,unique:()=>ut.A,uniqueId:()=>ae.A,unzip:()=>ht.A,values:()=>x.A,where:()=>qe.A,without:()=>lt.A,wrap:()=>me.A,zip:()=>ft.A});var i=s(28794),n=s(11508),r=s(44099),o=s(21949),a=s(96734),c=s(85142),l=s(1138),u=s(90573),A=s(72897),p=s(88848),d=s(50093),h=s(82940),f=s(18628),_=s(38993),S=s(84933),m=s(15811),E=s(11380),P=s(66494),O=s(48215),T=s(58855),g=s(32271),N=s(31611),R=s(29143),b=s(71435),y=s(71940),v=s(30296),I=s(95094),U=s(9634),D=s(75144),C=s(88445),x=s(78850),w=s(55895),L=s(38024),F=s(66343),M=s(3080),Y=s(19478),H=s(19318),V=s(50656),k=s(46463),j=s(73323),q=s(63854),W=s(7930),B=s(42687),G=s(69702),X=s(86524),z=s(964),K=s(18398),Z=s(35957),J=s(95048),Q=s(70104),$=s(12672),ee=s(19291),te=s(52414),se=s(20235),ie=s(47868),ne=s(2155),re=s(74394),oe=s(60301),ae=s(64230),ce=s(36503),le=s(48557),ue=s(63015),Ae=s(95619),pe=s(93964),de=s(630),he=s(52933),fe=s(26622),_e=s(58448),Se=s(99527),me=s(62112),Ee=s(66058),Pe=s(81734),Oe=s(86800),Te=s(73939),ge=s(55481),Ne=s(72532),Re=s(80843),be=s(58699),ye=s(43481),ve=s(30899),Ie=s(95379),Ue=s(9671),De=s(22888),Ce=s(79901),xe=s(15928),we=s(68518),Le=s(8606),Fe=s(62478),Me=s(37183),Ye=s(47601),He=s(54580),Ve=s(38973),ke=s(75112),je=s(44339),qe=s(17453),We=s(96624),Be=s(3374),Ge=s(14875),Xe=s(86666),ze=s(74849),Ke=s(30824),Ze=s(43639),Je=s(72232),Qe=s(90268),$e=s(65228),et=s(39005),tt=s(88571),st=s(54585),it=s(42892),nt=s(72826),rt=s(10328),ot=s(59750),at=s(78707),ct=s(72704),lt=s(63182),ut=s(8037),At=s(25981),pt=s(65665),dt=s(14299),ht=s(9176),ft=s(58877),_t=s(85919),St=s(29271),mt=s(84327),Et=s(23991),Pt=s(37643)}},s={};function i(e){var n=s[e];if(void 0!==n)return n.exports;var r=s[e]={id:e,loaded:!1,exports:{}};return t[e].call(r.exports,r,r.exports,i),r.loaded=!0,r.exports}i.m=t,e=[],i.O=(t,s,n,r)=>{if(!s){var o=1/0;for(u=0;u<e.length;u++){for(var[s,n,r]=e[u],a=!0,c=0;c<s.length;c++)(!1&r||o>=r)&&Object.keys(i.O).every(e=>i.O[e](s[c]))?s.splice(c--,1):(a=!1,r<o&&(o=r));if(a){e.splice(u--,1);var l=n();void 0!==l&&(t=l)}}return t}r=r||0;for(var u=e.length;u>0&&e[u-1][2]>r;u--)e[u]=e[u-1];e[u]=[s,n,r]},i.n=e=>{var t=e&&e.__esModule?()=>e.default:()=>e;return i.d(t,{a:t}),t},i.d=(e,t)=>{for(var s in t)i.o(t,s)&&!i.o(e,s)&&Object.defineProperty(e,s,{enumerable:!0,get:t[s]})},i.e=()=>Promise.resolve(),i.o=(e,t)=>Object.prototype.hasOwnProperty.call(e,t),i.r=e=>{"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},i.nmd=e=>(e.paths=[],e.children||(e.children=[]),e),i.j=590,(()=>{i.b="undefined"!=typeof document&&document.baseURI||self.location.href;var e={590:0};i.O.j=t=>0===e[t];var t=(t,s)=>{var n,r,[o,a,c]=s,l=0;if(o.some(t=>0!==e[t])){for(n in a)i.o(a,n)&&(i.m[n]=a[n]);if(c)var u=c(i)}for(t&&t(s);l<o.length;l++)r=o[l],i.o(e,r)&&e[r]&&e[r][0](),e[r]=0;return i.O(u)},s=globalThis.webpackChunknextcloud_ui_legacy=globalThis.webpackChunknextcloud_ui_legacy||[];s.forEach(t.bind(null,0)),s.push=t.bind(null,s.push.bind(s))})(),i.nc=void 0;var n=i.O(void 0,[4208],()=>i(95780));n=i.O(n)})();
-//# sourceMappingURL=core-files_client.js.map?v=d9bcb2b981bd636a5e18
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+/******/ 	var __webpack_modules__ = ({
+
+/***/ "./core/src/files/client.js"
+/*!**********************************!*\
+  !*** ./core/src/files/client.js ***!
+  \**********************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _nextcloud_auth__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @nextcloud/auth */ "./node_modules/@nextcloud/auth/dist/index.mjs");
+/* harmony import */ var escape_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! escape-html */ "./node_modules/escape-html/index.js");
+/* harmony import */ var escape_html__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(escape_html__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var underscore__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! underscore */ "./node_modules/underscore/modules/index-all.js");
+/* harmony import */ var _logger_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../logger.js */ "./core/src/logger.js");
+/**
+ * SPDX-FileCopyrightText: 2016-2024 Nextcloud GmbH and Nextcloud contributors
+ * SPDX-FileCopyrightText: 2016 ownCloud, Inc.
+ * SPDX-License-Identifier: AGPL-3.0-or-later
+ */
+
+
+
+
+
+
+
+/* global dav */
+
+(function (OC, FileInfo) {
+  /**
+   * @class OC.Files.Client
+   * @classdesc Client to access files on the server
+   *
+   * @param {object} options
+   * @param {string} options.host host name
+   * @param {number} [options.port] port
+   * @param {boolean} [options.useHTTPS] whether to use https
+   * @param {string} [options.root] root path
+   * @param {string} [options.userName] user name
+   * @param {string} [options.password] password
+   *
+   * @since 8.2
+   */
+  const Client = function (options) {
+    this._root = options.root;
+    if (this._root.charAt(this._root.length - 1) === '/') {
+      this._root = this._root.substr(0, this._root.length - 1);
+    }
+    let url = Client.PROTOCOL_HTTP + '://';
+    if (options.useHTTPS) {
+      url = Client.PROTOCOL_HTTPS + '://';
+    }
+    url += options.host + this._root;
+    this._host = options.host;
+    this._defaultHeaders = options.defaultHeaders || {
+      'X-Requested-With': 'XMLHttpRequest',
+      requesttoken: OC.requestToken
+    };
+    this._baseUrl = url;
+    const clientOptions = {
+      baseUrl: this._baseUrl,
+      xmlNamespaces: {
+        'DAV:': 'd',
+        'http://owncloud.org/ns': 'oc',
+        'http://nextcloud.org/ns': 'nc',
+        'http://open-collaboration-services.org/ns': 'ocs'
+      }
+    };
+    if (options.userName) {
+      clientOptions.userName = options.userName;
+    }
+    if (options.password) {
+      clientOptions.password = options.password;
+    }
+    this._client = new dav.Client(clientOptions);
+    this._client.xhrProvider = underscore__WEBPACK_IMPORTED_MODULE_3__["default"].bind(this._xhrProvider, this);
+    this._fileInfoParsers = [];
+  };
+  Client.NS_OWNCLOUD = 'http://owncloud.org/ns';
+  Client.NS_NEXTCLOUD = 'http://nextcloud.org/ns';
+  Client.NS_DAV = 'DAV:';
+  Client.NS_OCS = 'http://open-collaboration-services.org/ns';
+  Client.PROPERTY_GETLASTMODIFIED = '{' + Client.NS_DAV + '}getlastmodified';
+  Client.PROPERTY_GETETAG = '{' + Client.NS_DAV + '}getetag';
+  Client.PROPERTY_GETCONTENTTYPE = '{' + Client.NS_DAV + '}getcontenttype';
+  Client.PROPERTY_RESOURCETYPE = '{' + Client.NS_DAV + '}resourcetype';
+  Client.PROPERTY_INTERNAL_FILEID = '{' + Client.NS_OWNCLOUD + '}fileid';
+  Client.PROPERTY_PERMISSIONS = '{' + Client.NS_OWNCLOUD + '}permissions';
+  Client.PROPERTY_SIZE = '{' + Client.NS_OWNCLOUD + '}size';
+  Client.PROPERTY_GETCONTENTLENGTH = '{' + Client.NS_DAV + '}getcontentlength';
+  Client.PROPERTY_ISENCRYPTED = '{' + Client.NS_DAV + '}is-encrypted';
+  Client.PROPERTY_SHARE_PERMISSIONS = '{' + Client.NS_OCS + '}share-permissions';
+  Client.PROPERTY_SHARE_ATTRIBUTES = '{' + Client.NS_NEXTCLOUD + '}share-attributes';
+  Client.PROPERTY_QUOTA_AVAILABLE_BYTES = '{' + Client.NS_DAV + '}quota-available-bytes';
+  Client.PROTOCOL_HTTP = 'http';
+  Client.PROTOCOL_HTTPS = 'https';
+  Client._PROPFIND_PROPERTIES = [
+  /**
+   * Modified time
+   */
+  [Client.NS_DAV, 'getlastmodified'],
+  /**
+   * Etag
+   */
+  [Client.NS_DAV, 'getetag'],
+  /**
+   * Mime type
+   */
+  [Client.NS_DAV, 'getcontenttype'],
+  /**
+   * Resource type "collection" for folders, empty otherwise
+   */
+  [Client.NS_DAV, 'resourcetype'],
+  /**
+   * File id
+   */
+  [Client.NS_OWNCLOUD, 'fileid'],
+  /**
+   * Letter-coded permissions
+   */
+  [Client.NS_OWNCLOUD, 'permissions'],
+  // [Client.NS_OWNCLOUD, 'downloadURL'],
+  /**
+   * Folder sizes
+   */
+  [Client.NS_OWNCLOUD, 'size'],
+  /**
+   * File sizes
+   */
+  [Client.NS_DAV, 'getcontentlength'], [Client.NS_DAV, 'quota-available-bytes'],
+  /**
+   * Preview availability
+   */
+  [Client.NS_NEXTCLOUD, 'has-preview'],
+  /**
+   * Mount type
+   */
+  [Client.NS_NEXTCLOUD, 'mount-type'],
+  /**
+   * Encryption state
+   */
+  [Client.NS_NEXTCLOUD, 'is-encrypted'],
+  /**
+   * Share permissions
+   */
+  [Client.NS_OCS, 'share-permissions'],
+  /**
+   * Share attributes
+   */
+  [Client.NS_NEXTCLOUD, 'share-attributes']];
+
+  /**
+   * @memberof OC.Files
+   */
+  Client.prototype = {
+    /**
+     * Root path of the Webdav endpoint
+     *
+     * @type string
+     */
+    _root: null,
+    /**
+     * Client from the library
+     *
+     * @type dav.Client
+     */
+    _client: null,
+    /**
+     * Array of file info parsing functions.
+     *
+     * @type Array<OC.Files.Client~parseFileInfo>
+     */
+    _fileInfoParsers: [],
+    /**
+     * Returns the configured XHR provider for davclient
+     *
+     * @return {XMLHttpRequest}
+     */
+    _xhrProvider: function () {
+      const headers = this._defaultHeaders;
+      const xhr = new XMLHttpRequest();
+      const oldOpen = xhr.open;
+      // override open() method to add headers
+      xhr.open = function () {
+        const result = oldOpen.apply(this, arguments);
+        underscore__WEBPACK_IMPORTED_MODULE_3__["default"].each(headers, function (value, key) {
+          xhr.setRequestHeader(key, value);
+        });
+        return result;
+      };
+      OC.registerXHRForErrorProcessing(xhr);
+      return xhr;
+    },
+    /**
+     * Prepends the base url to the given path sections
+     *
+     * @param {...string} path sections
+     *
+     * @return {string} base url + joined path, any leading or trailing slash
+     * will be kept
+     */
+    _buildUrl: function () {
+      let path = this._buildPath.apply(this, arguments);
+      if (path.charAt([path.length - 1]) === '/') {
+        path = path.substr(0, path.length - 1);
+      }
+      if (path.charAt(0) === '/') {
+        path = path.substr(1);
+      }
+      return this._baseUrl + '/' + path;
+    },
+    /**
+     * Append the path to the root and also encode path
+     * sections
+     *
+     * @param {...string} path sections
+     *
+     * @return {string} joined path, any leading or trailing slash
+     * will be kept
+     */
+    _buildPath: function () {
+      let path = OC.joinPaths.apply(this, arguments);
+      const sections = path.split('/');
+      let i;
+      for (i = 0; i < sections.length; i++) {
+        sections[i] = encodeURIComponent(sections[i]);
+      }
+      path = sections.join('/');
+      return path;
+    },
+    /**
+     * Parse headers string into a map
+     *
+     * @param {string} headersString headers list as string
+     *
+     * @return {Object<string, Array>} map of header name to header contents
+     */
+    _parseHeaders: function (headersString) {
+      const headerRows = headersString.split('\n');
+      const headers = {};
+      for (let i = 0; i < headerRows.length; i++) {
+        const sepPos = headerRows[i].indexOf(':');
+        if (sepPos < 0) {
+          continue;
+        }
+        const headerName = headerRows[i].substr(0, sepPos);
+        const headerValue = headerRows[i].substr(sepPos + 2);
+        if (!headers[headerName]) {
+          // make it an array
+          headers[headerName] = [];
+        }
+        headers[headerName].push(headerValue);
+      }
+      return headers;
+    },
+    /**
+     * Parses the etag response which is in double quotes.
+     *
+     * @param {string} etag etag value in double quotes
+     *
+     * @return {string} etag without double quotes
+     */
+    _parseEtag: function (etag) {
+      if (etag.charAt(0) === '"') {
+        return etag.split('"')[1];
+      }
+      return etag;
+    },
+    /**
+     * Parse Webdav result
+     *
+     * @param {object} response XML object
+     *
+     * @return {Array.<FileInfo>} array of file info
+     */
+    _parseFileInfo: function (response) {
+      let path = decodeURIComponent(response.href);
+      if (path.substr(0, this._root.length) === this._root) {
+        path = path.substr(this._root.length);
+      }
+      if (path.charAt(path.length - 1) === '/') {
+        path = path.substr(0, path.length - 1);
+      }
+      if (response.propStat.length === 0 || response.propStat[0].status !== 'HTTP/1.1 200 OK') {
+        return null;
+      }
+      const props = response.propStat[0].properties;
+      const data = {
+        id: props[Client.PROPERTY_INTERNAL_FILEID],
+        path: OC.dirname(path) || '/',
+        name: OC.basename(path),
+        mtime: new Date(props[Client.PROPERTY_GETLASTMODIFIED]).getTime()
+      };
+      const etagProp = props[Client.PROPERTY_GETETAG];
+      if (!underscore__WEBPACK_IMPORTED_MODULE_3__["default"].isUndefined(etagProp)) {
+        data.etag = this._parseEtag(etagProp);
+      }
+      let sizeProp = props[Client.PROPERTY_GETCONTENTLENGTH];
+      if (!underscore__WEBPACK_IMPORTED_MODULE_3__["default"].isUndefined(sizeProp)) {
+        data.size = parseInt(sizeProp, 10);
+      }
+      sizeProp = props[Client.PROPERTY_SIZE];
+      if (!underscore__WEBPACK_IMPORTED_MODULE_3__["default"].isUndefined(sizeProp)) {
+        data.size = parseInt(sizeProp, 10);
+      }
+      const hasPreviewProp = props['{' + Client.NS_NEXTCLOUD + '}has-preview'];
+      if (!underscore__WEBPACK_IMPORTED_MODULE_3__["default"].isUndefined(hasPreviewProp)) {
+        data.hasPreview = hasPreviewProp === 'true';
+      } else {
+        data.hasPreview = true;
+      }
+      const isEncryptedProp = props['{' + Client.NS_NEXTCLOUD + '}is-encrypted'];
+      if (!underscore__WEBPACK_IMPORTED_MODULE_3__["default"].isUndefined(isEncryptedProp)) {
+        data.isEncrypted = isEncryptedProp === '1';
+      } else {
+        data.isEncrypted = false;
+      }
+      const isFavouritedProp = props['{' + Client.NS_OWNCLOUD + '}favorite'];
+      if (!underscore__WEBPACK_IMPORTED_MODULE_3__["default"].isUndefined(isFavouritedProp)) {
+        data.isFavourited = isFavouritedProp === '1';
+      } else {
+        data.isFavourited = false;
+      }
+      const contentType = props[Client.PROPERTY_GETCONTENTTYPE];
+      if (!underscore__WEBPACK_IMPORTED_MODULE_3__["default"].isUndefined(contentType)) {
+        data.mimetype = contentType;
+      }
+      const resType = props[Client.PROPERTY_RESOURCETYPE];
+      if (!data.mimetype && resType) {
+        const xmlvalue = resType[0];
+        if (xmlvalue.namespaceURI === Client.NS_DAV && xmlvalue.nodeName.split(':')[1] === 'collection') {
+          data.mimetype = 'httpd/unix-directory';
+        }
+      }
+      data.permissions = OC.PERMISSION_NONE;
+      const permissionProp = props[Client.PROPERTY_PERMISSIONS];
+      if (!underscore__WEBPACK_IMPORTED_MODULE_3__["default"].isUndefined(permissionProp)) {
+        const permString = permissionProp || '';
+        data.mountType = null;
+        for (let i = 0; i < permString.length; i++) {
+          const c = permString.charAt(i);
+          switch (c) {
+            // FIXME: twisted permissions
+            case 'C':
+            case 'K':
+              data.permissions |= OC.PERMISSION_CREATE;
+              break;
+            case 'G':
+              data.permissions |= OC.PERMISSION_READ;
+              break;
+            case 'W':
+            case 'N':
+            case 'V':
+              data.permissions |= OC.PERMISSION_UPDATE;
+              break;
+            case 'D':
+              data.permissions |= OC.PERMISSION_DELETE;
+              break;
+            case 'R':
+              data.permissions |= OC.PERMISSION_SHARE;
+              break;
+            case 'M':
+              if (!data.mountType) {
+                // TODO: how to identify external-root ?
+                data.mountType = 'external';
+              }
+              break;
+            case 'S':
+              // TODO: how to identify shared-root ?
+              data.mountType = 'shared';
+              break;
+          }
+        }
+      }
+      const sharePermissionsProp = props[Client.PROPERTY_SHARE_PERMISSIONS];
+      if (!underscore__WEBPACK_IMPORTED_MODULE_3__["default"].isUndefined(sharePermissionsProp)) {
+        data.sharePermissions = parseInt(sharePermissionsProp);
+      }
+      const shareAttributesProp = props[Client.PROPERTY_SHARE_ATTRIBUTES];
+      if (!underscore__WEBPACK_IMPORTED_MODULE_3__["default"].isUndefined(shareAttributesProp)) {
+        try {
+          data.shareAttributes = JSON.parse(shareAttributesProp);
+        } catch {
+          _logger_js__WEBPACK_IMPORTED_MODULE_4__["default"].warn('Could not parse share attributes returned by server: "' + shareAttributesProp + '"');
+          data.shareAttributes = [];
+        }
+      } else {
+        data.shareAttributes = [];
+      }
+      const mounTypeProp = props['{' + Client.NS_NEXTCLOUD + '}mount-type'];
+      if (!underscore__WEBPACK_IMPORTED_MODULE_3__["default"].isUndefined(mounTypeProp)) {
+        data.mountType = mounTypeProp;
+      }
+      const quotaAvailableBytes = props['{' + Client.NS_DAV + '}quota-available-bytes'];
+      if (!underscore__WEBPACK_IMPORTED_MODULE_3__["default"].isUndefined(quotaAvailableBytes)) {
+        data.quotaAvailableBytes = quotaAvailableBytes;
+      }
+
+      // extend the parsed data using the custom parsers
+      underscore__WEBPACK_IMPORTED_MODULE_3__["default"].each(this._fileInfoParsers, function (parserFunction) {
+        underscore__WEBPACK_IMPORTED_MODULE_3__["default"].extend(data, parserFunction(response, data) || {});
+      });
+      return new FileInfo(data);
+    },
+    /**
+     * Parse Webdav multistatus
+     *
+     * @param {Array} responses
+     */
+    _parseResult: function (responses) {
+      const self = this;
+      return underscore__WEBPACK_IMPORTED_MODULE_3__["default"].map(responses, function (response) {
+        return self._parseFileInfo(response);
+      });
+    },
+    /**
+     * Returns whether the given status code means success
+     *
+     * @param {number} status status code
+     *
+     * @return true if status code is between 200 and 299 included
+     */
+    _isSuccessStatus: function (status) {
+      return status >= 200 && status <= 299;
+    },
+    /**
+     * Parse the Sabre exception out of the given response, if any
+     *
+     * @param {object} response object
+     * @return {object} array of parsed message and exception (only the first one)
+     */
+    _getSabreException: function (response) {
+      const result = {};
+      const xml = response.xhr.responseXML;
+      if (xml === null) {
+        return result;
+      }
+      const messages = xml.getElementsByTagNameNS('http://sabredav.org/ns', 'message');
+      const exceptions = xml.getElementsByTagNameNS('http://sabredav.org/ns', 'exception');
+      if (messages.length) {
+        result.message = messages[0].textContent;
+      }
+      if (exceptions.length) {
+        result.exception = exceptions[0].textContent;
+      }
+      return result;
+    },
+    /**
+     * Returns the default PROPFIND properties to use during a call.
+     *
+     * @return {Array.<object>} array of properties
+     */
+    getPropfindProperties: function () {
+      if (!this._propfindProperties) {
+        this._propfindProperties = underscore__WEBPACK_IMPORTED_MODULE_3__["default"].map(Client._PROPFIND_PROPERTIES, function (propDef) {
+          return '{' + propDef[0] + '}' + propDef[1];
+        });
+      }
+      return this._propfindProperties;
+    },
+    /**
+     * Lists the contents of a directory
+     *
+     * @param {string} path path to retrieve
+     * @param {object} [options] options
+     * @param {boolean} [options.includeParent] set to true to keep
+     * the parent folder in the result list
+     * @param {Array} [options.properties] list of Webdav properties to retrieve
+     *
+     * @return {Promise} promise
+     */
+    getFolderContents: function (path, options) {
+      if (!path) {
+        path = '';
+      }
+      options = options || {};
+      const self = this;
+      const deferred = jquery__WEBPACK_IMPORTED_MODULE_2___default().Deferred();
+      const promise = deferred.promise();
+      let properties;
+      if (underscore__WEBPACK_IMPORTED_MODULE_3__["default"].isUndefined(options.properties)) {
+        properties = this.getPropfindProperties();
+      } else {
+        properties = options.properties;
+      }
+      this._client.propFind(this._buildUrl(path), properties, 1).then(function (result) {
+        if (self._isSuccessStatus(result.status)) {
+          const results = self._parseResult(result.body);
+          if (!options || !options.includeParent) {
+            // remove root dir, the first entry
+            results.shift();
+          }
+          deferred.resolve(result.status, results);
+        } else {
+          result = underscore__WEBPACK_IMPORTED_MODULE_3__["default"].extend(result, self._getSabreException(result));
+          deferred.reject(result.status, result);
+        }
+      });
+      return promise;
+    },
+    /**
+     * Fetches a flat list of files filtered by a given filter criteria.
+     * (currently system tags and circles are supported)
+     *
+     * @param {object} filter filter criteria
+     * @param {object} [filter.systemTagIds] list of system tag ids to filter by
+     * @param {boolean} [filter.favorite] set it to filter by favorites
+     * @param {object} [options] options
+     * @param {Array} [options.properties] list of Webdav properties to retrieve
+     *
+     * @return {Promise} promise
+     */
+    getFilteredFiles: function (filter, options) {
+      options = options || {};
+      const self = this;
+      const deferred = jquery__WEBPACK_IMPORTED_MODULE_2___default().Deferred();
+      const promise = deferred.promise();
+      let properties;
+      if (underscore__WEBPACK_IMPORTED_MODULE_3__["default"].isUndefined(options.properties)) {
+        properties = this.getPropfindProperties();
+      } else {
+        properties = options.properties;
+      }
+      if (!filter || !filter.systemTagIds && underscore__WEBPACK_IMPORTED_MODULE_3__["default"].isUndefined(filter.favorite) && !filter.circlesIds) {
+        throw 'Missing filter argument';
+      }
+
+      // root element with namespaces
+      let body = '<oc:filter-files ';
+      let namespace;
+      for (namespace in this._client.xmlNamespaces) {
+        body += ' xmlns:' + this._client.xmlNamespaces[namespace] + '="' + namespace + '"';
+      }
+      body += '>\n';
+
+      // properties query
+      body += '    <' + this._client.xmlNamespaces['DAV:'] + ':prop>\n';
+      underscore__WEBPACK_IMPORTED_MODULE_3__["default"].each(properties, function (prop) {
+        const property = self._client.parseClarkNotation(prop);
+        body += '        <' + self._client.xmlNamespaces[property.namespace] + ':' + property.name + ' />\n';
+      });
+      body += '    </' + this._client.xmlNamespaces['DAV:'] + ':prop>\n';
+
+      // rules block
+      body += '    <oc:filter-rules>\n';
+      underscore__WEBPACK_IMPORTED_MODULE_3__["default"].each(filter.systemTagIds, function (systemTagIds) {
+        body += '        <oc:systemtag>' + escape_html__WEBPACK_IMPORTED_MODULE_1___default()(systemTagIds) + '</oc:systemtag>\n';
+      });
+      underscore__WEBPACK_IMPORTED_MODULE_3__["default"].each(filter.circlesIds, function (circlesIds) {
+        body += '        <oc:circle>' + escape_html__WEBPACK_IMPORTED_MODULE_1___default()(circlesIds) + '</oc:circle>\n';
+      });
+      if (filter.favorite) {
+        body += '        <oc:favorite>' + (filter.favorite ? '1' : '0') + '</oc:favorite>\n';
+      }
+      body += '    </oc:filter-rules>\n';
+
+      // end of root
+      body += '</oc:filter-files>\n';
+      this._client.request('REPORT', this._buildUrl(), {}, body).then(function (result) {
+        if (self._isSuccessStatus(result.status)) {
+          const results = self._parseResult(result.body);
+          deferred.resolve(result.status, results);
+        } else {
+          result = underscore__WEBPACK_IMPORTED_MODULE_3__["default"].extend(result, self._getSabreException(result));
+          deferred.reject(result.status, result);
+        }
+      });
+      return promise;
+    },
+    /**
+     * Returns the file info of a given path.
+     *
+     * @param {string} path path
+     * @param {Array} [options.properties] list of Webdav properties to retrieve
+     *
+     * @param options
+     * @return {Promise} promise
+     */
+    getFileInfo: function (path, options) {
+      if (!path) {
+        path = '';
+      }
+      options = options || {};
+      const self = this;
+      const deferred = jquery__WEBPACK_IMPORTED_MODULE_2___default().Deferred();
+      const promise = deferred.promise();
+      let properties;
+      if (underscore__WEBPACK_IMPORTED_MODULE_3__["default"].isUndefined(options.properties)) {
+        properties = this.getPropfindProperties();
+      } else {
+        properties = options.properties;
+      }
+
+      // TODO: headers
+      this._client.propFind(this._buildUrl(path), properties, 0).then(function (result) {
+        if (self._isSuccessStatus(result.status)) {
+          deferred.resolve(result.status, self._parseResult([result.body])[0]);
+        } else {
+          result = underscore__WEBPACK_IMPORTED_MODULE_3__["default"].extend(result, self._getSabreException(result));
+          deferred.reject(result.status, result);
+        }
+      });
+      return promise;
+    },
+    /**
+     * Returns the contents of the given file.
+     *
+     * @param {string} path path to file
+     *
+     * @return {Promise}
+     */
+    getFileContents: function (path) {
+      if (!path) {
+        throw 'Missing argument "path"';
+      }
+      const self = this;
+      const deferred = jquery__WEBPACK_IMPORTED_MODULE_2___default().Deferred();
+      const promise = deferred.promise();
+      this._client.request('GET', this._buildUrl(path)).then(function (result) {
+        if (self._isSuccessStatus(result.status)) {
+          deferred.resolve(result.status, result.body);
+        } else {
+          result = underscore__WEBPACK_IMPORTED_MODULE_3__["default"].extend(result, self._getSabreException(result));
+          deferred.reject(result.status, result);
+        }
+      });
+      return promise;
+    },
+    /**
+     * Puts the given data into the given file.
+     *
+     * @param {string} path path to file
+     * @param {string} body file body
+     * @param {object} [options]
+     * @param {string} [options.contentType] content type
+     * @param {boolean} [options.overwrite] whether to overwrite an existing file
+     *
+     * @return {Promise}
+     */
+    putFileContents: function (path, body, options) {
+      if (!path) {
+        throw 'Missing argument "path"';
+      }
+      const self = this;
+      const deferred = jquery__WEBPACK_IMPORTED_MODULE_2___default().Deferred();
+      const promise = deferred.promise();
+      options = options || {};
+      const headers = {};
+      let contentType = 'text/plain;charset=utf-8';
+      if (options.contentType) {
+        contentType = options.contentType;
+      }
+      headers['Content-Type'] = contentType;
+      if (underscore__WEBPACK_IMPORTED_MODULE_3__["default"].isUndefined(options.overwrite) || options.overwrite) {
+        // will trigger 412 precondition failed if a file already exists
+        headers['If-None-Match'] = '*';
+      }
+      this._client.request('PUT', this._buildUrl(path), headers, body || '').then(function (result) {
+        if (self._isSuccessStatus(result.status)) {
+          deferred.resolve(result.status);
+        } else {
+          result = underscore__WEBPACK_IMPORTED_MODULE_3__["default"].extend(result, self._getSabreException(result));
+          deferred.reject(result.status, result);
+        }
+      });
+      return promise;
+    },
+    _simpleCall: function (method, path, headers) {
+      if (!path) {
+        throw 'Missing argument "path"';
+      }
+      const self = this;
+      const deferred = jquery__WEBPACK_IMPORTED_MODULE_2___default().Deferred();
+      const promise = deferred.promise();
+      this._client.request(method, this._buildUrl(path), headers ? headers : {}).then(function (result) {
+        if (self._isSuccessStatus(result.status)) {
+          deferred.resolve(result.status);
+        } else {
+          result = underscore__WEBPACK_IMPORTED_MODULE_3__["default"].extend(result, self._getSabreException(result));
+          deferred.reject(result.status, result);
+        }
+      });
+      return promise;
+    },
+    /**
+     * Creates a directory
+     *
+     * @param {string} path path to create
+     *
+     * @param headers
+     * @return {Promise}
+     */
+    createDirectory: function (path, headers) {
+      return this._simpleCall('MKCOL', path, headers);
+    },
+    /**
+     * Deletes a file or directory
+     *
+     * @param {string} path path to delete
+     *
+     * @return {Promise}
+     */
+    remove: function (path) {
+      return this._simpleCall('DELETE', path);
+    },
+    /**
+     * Moves path to another path
+     *
+     * @param {string} path path to move
+     * @param {string} destinationPath destination path
+     * @param {boolean} [allowOverwrite] true to allow overwriting,
+     * false otherwise
+     * @param {object} [headers] additional headers
+     *
+     * @return {Promise} promise
+     */
+    move: function (path, destinationPath, allowOverwrite, headers) {
+      if (!path) {
+        throw 'Missing argument "path"';
+      }
+      if (!destinationPath) {
+        throw 'Missing argument "destinationPath"';
+      }
+      const self = this;
+      const deferred = jquery__WEBPACK_IMPORTED_MODULE_2___default().Deferred();
+      const promise = deferred.promise();
+      headers = underscore__WEBPACK_IMPORTED_MODULE_3__["default"].extend({}, headers, {
+        Destination: this._buildUrl(destinationPath)
+      });
+      if (!allowOverwrite) {
+        headers.Overwrite = 'F';
+      }
+      this._client.request('MOVE', this._buildUrl(path), headers).then(function (result) {
+        if (self._isSuccessStatus(result.status)) {
+          deferred.resolve(result.status);
+        } else {
+          result = underscore__WEBPACK_IMPORTED_MODULE_3__["default"].extend(result, self._getSabreException(result));
+          deferred.reject(result.status, result);
+        }
+      });
+      return promise;
+    },
+    /**
+     * Copies path to another path
+     *
+     * @param {string} path path to copy
+     * @param {string} destinationPath destination path
+     * @param {boolean} [allowOverwrite] true to allow overwriting,
+     * false otherwise
+     *
+     * @return {Promise} promise
+     */
+    copy: function (path, destinationPath, allowOverwrite) {
+      if (!path) {
+        throw 'Missing argument "path"';
+      }
+      if (!destinationPath) {
+        throw 'Missing argument "destinationPath"';
+      }
+      const self = this;
+      const deferred = jquery__WEBPACK_IMPORTED_MODULE_2___default().Deferred();
+      const promise = deferred.promise();
+      const headers = {
+        Destination: this._buildUrl(destinationPath)
+      };
+      if (!allowOverwrite) {
+        headers.Overwrite = 'F';
+      }
+      this._client.request('COPY', this._buildUrl(path), headers).then(function (response) {
+        if (self._isSuccessStatus(response.status)) {
+          deferred.resolve(response.status);
+        } else {
+          deferred.reject(response.status);
+        }
+      });
+      return promise;
+    },
+    /**
+     * Add a file info parser function
+     *
+     * @param {OC.Files.Client~parseFileInfo} parserFunction
+     */
+    addFileInfoParser: function (parserFunction) {
+      this._fileInfoParsers.push(parserFunction);
+    },
+    /**
+     * Returns the dav.Client instance used internally
+     *
+     * @since 11.0.0
+     * @return {dav.Client}
+     */
+    getClient: function () {
+      return this._client;
+    },
+    /**
+     * Returns the user name
+     *
+     * @since 11.0.0
+     * @return {string} userName
+     */
+    getUserName: function () {
+      return this._client.userName;
+    },
+    /**
+     * Returns the password
+     *
+     * @since 11.0.0
+     * @return {string} password
+     */
+    getPassword: function () {
+      return this._client.password;
+    },
+    /**
+     * Returns the base URL
+     *
+     * @since 11.0.0
+     * @return {string} base URL
+     */
+    getBaseUrl: function () {
+      return this._client.baseUrl;
+    },
+    /**
+     * Returns the host
+     *
+     * @since 13.0.0
+     * @return {string} base URL
+     */
+    getHost: function () {
+      return this._host;
+    }
+  };
+
+  /**
+   * File info parser function
+   *
+   * This function receives a list of Webdav properties as input and
+   * should return a hash array of parsed properties, if applicable.
+   *
+   * @callback OC.Files.Client~parseFileInfo
+   * @param {object} XML Webdav properties
+   * @return {Array} array of parsed property values
+   */
+
+  if (!OC.Files) {
+    /**
+     * @namespace OC.Files
+     *
+     * @since 8.2
+     */
+    OC.Files = {};
+  }
+
+  /**
+   * Returns the default instance of the files client
+   *
+   * @return {OC.Files.Client} default client
+   *
+   * @since 8.2
+   */
+  OC.Files.getClient = function () {
+    if (OC.Files._defaultClient) {
+      return OC.Files._defaultClient;
+    }
+    const client = new OC.Files.Client({
+      host: window.location.host,
+      port: window.location.port,
+      root: OC.linkToRemoteBase('dav') + '/files/' + (0,_nextcloud_auth__WEBPACK_IMPORTED_MODULE_0__.getCurrentUser)().uid,
+      useHTTPS: window.location.protocol.startsWith('https')
+    });
+    OC.Files._defaultClient = client;
+    return client;
+  };
+  OC.Files.Client = Client;
+})(OC, OC.Files.FileInfo);
+
+/***/ },
+
+/***/ "./core/src/logger.js"
+/*!****************************!*\
+  !*** ./core/src/logger.js ***!
+  \****************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
+/* harmony export */   unifiedSearchLogger: () => (/* binding */ unifiedSearchLogger)
+/* harmony export */ });
+/* harmony import */ var _nextcloud_auth__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @nextcloud/auth */ "./node_modules/@nextcloud/auth/dist/index.mjs");
+/* harmony import */ var _nextcloud_logger__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @nextcloud/logger */ "./node_modules/@nextcloud/logger/dist/index.mjs");
+/**
+ * SPDX-FileCopyrightText: 2019 Nextcloud GmbH and Nextcloud contributors
+ * SPDX-License-Identifier: AGPL-3.0-or-later
+ */
+
+
+
+
+/**
+ *
+ * @param user
+ */
+function getLogger(user) {
+  if (user === null) {
+    return (0,_nextcloud_logger__WEBPACK_IMPORTED_MODULE_1__.getLoggerBuilder)().setApp('core').build();
+  }
+  return (0,_nextcloud_logger__WEBPACK_IMPORTED_MODULE_1__.getLoggerBuilder)().setApp('core').setUid(user.uid).build();
+}
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (getLogger((0,_nextcloud_auth__WEBPACK_IMPORTED_MODULE_0__.getCurrentUser)()));
+const unifiedSearchLogger = (0,_nextcloud_logger__WEBPACK_IMPORTED_MODULE_1__.getLoggerBuilder)().setApp('unified-search').detectUser().build();
+
+/***/ }
+
+/******/ 	});
+/************************************************************************/
+/******/ 	// The module cache
+/******/ 	var __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Check if module exists (development only)
+/******/ 		if (__webpack_modules__[moduleId] === undefined) {
+/******/ 			var e = new Error("Cannot find module '" + moduleId + "'");
+/******/ 			e.code = 'MODULE_NOT_FOUND';
+/******/ 			throw e;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 			id: moduleId,
+/******/ 			loaded: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		__webpack_modules__[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Flag the module as loaded
+/******/ 		module.loaded = true;
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = __webpack_modules__;
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/chunk loaded */
+/******/ 	(() => {
+/******/ 		var deferred = [];
+/******/ 		__webpack_require__.O = (result, chunkIds, fn, priority) => {
+/******/ 			if(chunkIds) {
+/******/ 				priority = priority || 0;
+/******/ 				for(var i = deferred.length; i > 0 && deferred[i - 1][2] > priority; i--) deferred[i] = deferred[i - 1];
+/******/ 				deferred[i] = [chunkIds, fn, priority];
+/******/ 				return;
+/******/ 			}
+/******/ 			var notFulfilled = Infinity;
+/******/ 			for (var i = 0; i < deferred.length; i++) {
+/******/ 				var [chunkIds, fn, priority] = deferred[i];
+/******/ 				var fulfilled = true;
+/******/ 				for (var j = 0; j < chunkIds.length; j++) {
+/******/ 					if ((priority & 1 === 0 || notFulfilled >= priority) && Object.keys(__webpack_require__.O).every((key) => (__webpack_require__.O[key](chunkIds[j])))) {
+/******/ 						chunkIds.splice(j--, 1);
+/******/ 					} else {
+/******/ 						fulfilled = false;
+/******/ 						if(priority < notFulfilled) notFulfilled = priority;
+/******/ 					}
+/******/ 				}
+/******/ 				if(fulfilled) {
+/******/ 					deferred.splice(i--, 1)
+/******/ 					var r = fn();
+/******/ 					if (r !== undefined) result = r;
+/******/ 				}
+/******/ 			}
+/******/ 			return result;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	(() => {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__webpack_require__.n = (module) => {
+/******/ 			var getter = module && module.__esModule ?
+/******/ 				() => (module['default']) :
+/******/ 				() => (module);
+/******/ 			__webpack_require__.d(getter, { a: getter });
+/******/ 			return getter;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/ensure chunk */
+/******/ 	(() => {
+/******/ 		// The chunk loading function for additional chunks
+/******/ 		// Since all referenced chunks are already included
+/******/ 		// in this file, this function is empty here.
+/******/ 		__webpack_require__.e = () => (Promise.resolve());
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	(() => {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = (exports) => {
+/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/node module decorator */
+/******/ 	(() => {
+/******/ 		__webpack_require__.nmd = (module) => {
+/******/ 			module.paths = [];
+/******/ 			if (!module.children) module.children = [];
+/******/ 			return module;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/jsonp chunk loading */
+/******/ 	(() => {
+/******/ 		__webpack_require__.b = (typeof document !== 'undefined' && document.baseURI) || self.location.href;
+/******/ 		
+/******/ 		// object to store loaded and loading chunks
+/******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
+/******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
+/******/ 		var installedChunks = {
+/******/ 			"core-files_client": 0
+/******/ 		};
+/******/ 		
+/******/ 		// no chunk on demand loading
+/******/ 		
+/******/ 		// no prefetching
+/******/ 		
+/******/ 		// no preloaded
+/******/ 		
+/******/ 		// no HMR
+/******/ 		
+/******/ 		// no HMR manifest
+/******/ 		
+/******/ 		__webpack_require__.O.j = (chunkId) => (installedChunks[chunkId] === 0);
+/******/ 		
+/******/ 		// install a JSONP callback for chunk loading
+/******/ 		var webpackJsonpCallback = (parentChunkLoadingFunction, data) => {
+/******/ 			var [chunkIds, moreModules, runtime] = data;
+/******/ 			// add "moreModules" to the modules object,
+/******/ 			// then flag all "chunkIds" as loaded and fire callback
+/******/ 			var moduleId, chunkId, i = 0;
+/******/ 			if(chunkIds.some((id) => (installedChunks[id] !== 0))) {
+/******/ 				for(moduleId in moreModules) {
+/******/ 					if(__webpack_require__.o(moreModules, moduleId)) {
+/******/ 						__webpack_require__.m[moduleId] = moreModules[moduleId];
+/******/ 					}
+/******/ 				}
+/******/ 				if(runtime) var result = runtime(__webpack_require__);
+/******/ 			}
+/******/ 			if(parentChunkLoadingFunction) parentChunkLoadingFunction(data);
+/******/ 			for(;i < chunkIds.length; i++) {
+/******/ 				chunkId = chunkIds[i];
+/******/ 				if(__webpack_require__.o(installedChunks, chunkId) && installedChunks[chunkId]) {
+/******/ 					installedChunks[chunkId][0]();
+/******/ 				}
+/******/ 				installedChunks[chunkId] = 0;
+/******/ 			}
+/******/ 			return __webpack_require__.O(result);
+/******/ 		}
+/******/ 		
+/******/ 		var chunkLoadingGlobal = globalThis["webpackChunknextcloud_ui_legacy"] = globalThis["webpackChunknextcloud_ui_legacy"] || [];
+/******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
+/******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/nonce */
+/******/ 	(() => {
+/******/ 		__webpack_require__.nc = undefined;
+/******/ 	})();
+/******/ 	
+/************************************************************************/
+/******/ 	
+/******/ 	// startup
+/******/ 	// Load entry module and return exports
+/******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["core-common"], () => (__webpack_require__("./core/src/files/client.js")))
+/******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
+/******/ 	
+/******/ })()
+;
+//# sourceMappingURL=core-files_client.js.map?v=87fa39bd7e099fb6cae4

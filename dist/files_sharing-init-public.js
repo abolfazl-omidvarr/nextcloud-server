@@ -1,2 +1,2021 @@
-(()=>{var e,t,i,r={84560(e,t,i){"use strict";i.d(t,{A:()=>r});const r=(0,i(35947).YK)().setApp("files").detectUser().build()},14668(e,t,i){"use strict";i.d(t,{h:()=>u});var r=i(77815),o=i(43627),n=i(84560),s=i(88975),a=i(88140),d=i(78246),l=i(99201),c=i(46502);async function u(e="/",t){const i=(0,d.j)((0,a.u)());return i.query.length<3?await async function(e,t){e=(0,o.join)((0,r.ei)(),e);const i=(0,r.aN)(),s=await l.S.getDirectoryContents(e,{details:!0,data:i,includeSelf:!0,signal:t?.signal}),a=s.data[0],d=s.data.slice(1);if(a?.filename!==e&&`${a?.filename}/`!==e)throw n.A.debug(`Exepected "${e}" but got filename "${a.filename}" instead.`),new Error("Root node does not match requested path");return{folder:(0,r.pO)(a),contents:d.map(e=>{try{return(0,r.pO)(e)}catch(t){return n.A.error(`Invalid node detected '${e.basename}'`,{error:t}),null}}).filter(Boolean)}}(e,t):await async function(e,t,i){let n=(0,s._)((0,a.u)()).getDirectoryByPath("files",e);if(!n){const t=(0,o.join)((0,r.ei)(),e),i=await l.S.stat(t,{details:!0});n=(0,r.pO)(i.data)}return{folder:n,contents:await(0,c.E)(t,{dir:e,signal:i})}}(e,i.query,t?.signal)}},46502(e,t,i){"use strict";i.d(t,{E:()=>d});var r=i(21777),o=i(77815),n=i(63814),s=i(84560),a=i(99201);async function d(e,{dir:t,signal:i}){const d=(0,r.HW)();if(!d)return[];if((e=e.trim()).length<3)return[];t&&!t.startsWith("/")&&(t=`/${t}`),s.A.debug("Searching for nodes",{query:e,dir:t});const{data:l}=await a.S.search("/",{details:!0,signal:i,data:`\n<d:searchrequest ${(0,o.CP)()}>\n\t <d:basicsearch>\n\t\t <d:select>\n\t\t\t <d:prop>\n\t\t\t ${(0,o.VX)()}\n\t\t\t </d:prop>\n\t\t </d:select>\n\t\t <d:from>\n\t\t\t <d:scope>\n\t\t\t\t <d:href>/files/${d.uid}${t||""}</d:href>\n\t\t\t\t <d:depth>infinity</d:depth>\n\t\t\t </d:scope>\n\t\t </d:from>\n\t\t <d:where>\n\t\t\t <d:like>\n\t\t\t\t <d:prop>\n\t\t\t\t\t <d:displayname/>\n\t\t\t\t </d:prop>\n\t\t\t\t <d:literal>%${e.replace("%","")}%</d:literal>\n\t\t\t </d:like>\n\t\t </d:where>\n\t\t <d:orderby/>\n\t</d:basicsearch>\n</d:searchrequest>`});return i?.aborted?[]:l.results.map(e=>(0,o.pO)(e,o.VA,(0,n.$_)()))}},99201(e,t,i){"use strict";i.d(t,{S:()=>o,t:()=>n});var r=i(77815);const o=(0,r.KU)();async function n(e){const t=(0,r.aN)(),i=await o.stat(`${(0,r.ei)()}${e}`,{details:!0,data:t});return(0,r.pO)(i.data)}},39992(e,t,i){"use strict";var r=i(21777),o=i(61338),n=i(35810),s=i(77815),a=i(10810),d=i(85471),l=i(84560);const c=new n.vd({id:0,source:(0,s.EY)()+(0,s.ei)(),root:(0,s.ei)(),owner:(0,r.HW)()?.uid||null,permissions:n.aX.NONE});(0,a.nY)("active",()=>{const e=(0,d.IJ)(),t=(0,d.KR)(),i=(0,d.IJ)(),r=(0,d.KR)(c);function s(e){t.value&&t.value.source===e.source&&(t.value=void 0)}function a(e=null){l.A.debug("Setting active view",{view:e}),i.value=e??void 0,t.value=void 0}return(0,d.wB)(t,()=>{"number"==typeof t.value?.fileid&&t.value.fileid!==r.value?.fileid&&(l.A.debug("Updating active fileid in URL query",{fileid:t.value.fileid}),window.OCP.Files.Router.goToRoute(null,{...window.OCP.Files.Router.params,fileid:String(t.value.fileid)},{...window.OCP.Files.Router.query},!0))}),function(){const e=(0,n.bh)();a(e.active),(0,o.B1)("files:node:deleted",s),e.addEventListener("updateActive",e=>{a(e.detail)})}(),{activeAction:e,activeFolder:r,activeNode:t,activeView:i}})},88975(e,t,i){"use strict";i.d(t,{_:()=>l});var r=i(61338),o=i(10810),n=i(85471),s=i(84560),a=i(99201),d=i(16488);function l(...e){const t=(0,o.nY)("files",{state:()=>({files:{},roots:{}}),getters:{getNode:e=>t=>e.files[t],getNodes:e=>t=>t.map(t=>e.files[t]).filter(Boolean),getNodesById:e=>t=>Object.values(e.files).filter(e=>e.fileid===t),getRoot:e=>t=>e.roots[t]},actions:{getDirectoryByPath(e,t){const i=(0,d.B)();let r;if(t&&"/"!==t){const o=i.getPath(e,t);o&&(r=this.getNode(o))}else r=this.getRoot(e);return r},getNodesByPath(e,t){const i=this.getDirectoryByPath(e,t);return(i?._children??[]).map(e=>this.getNode(e)).filter(Boolean)},updateNodes(e){const t=e.reduce((e,t)=>t.fileid?(e[t.source]=t,e):(s.A.error("Trying to update/set a node without fileid",{node:t}),e),{});n.Ay.set(this,"files",{...this.files,...t})},deleteNodes(e){e.forEach(e=>{e.source&&n.Ay.delete(this.files,e.source)})},setRoot({service:e,root:t}){n.Ay.set(this.roots,e,t)},onDeletedNode(e){this.deleteNodes([e])},onCreatedNode(e){this.updateNodes([e])},onMovedNode({node:e,oldSource:t}){e.fileid?(n.Ay.delete(this.files,t),this.updateNodes([e])):s.A.error("Trying to update/set a node without fileid",{node:e})},async onUpdatedNode(e){if(!e.fileid)return void s.A.error("Trying to update/set a node without fileid",{node:e});const t=this.getNodesById(e.fileid);if(t.length>1)return await Promise.all(t.map(e=>(0,a.t)(e.path))).then(this.updateNodes),void s.A.debug(t.length+" nodes updated in store",{fileid:e.fileid});1!==t.length||e.source!==t[0].source?(0,a.t)(e.path).then(e=>this.updateNodes([e])):this.updateNodes([e])},onAddFavorite(e){const t=this.getNode(e.source);t&&n.Ay.set(t.attributes,"favorite",1)},onRemoveFavorite(e){const t=this.getNode(e.source);t&&n.Ay.set(t.attributes,"favorite",0)}}})(...e);return t._initialized||((0,r.B1)("files:node:created",t.onCreatedNode),(0,r.B1)("files:node:deleted",t.onDeletedNode),(0,r.B1)("files:node:updated",t.onUpdatedNode),(0,r.B1)("files:node:moved",t.onMovedNode),(0,r.B1)("files:favorites:added",t.onAddFavorite),(0,r.B1)("files:favorites:removed",t.onRemoveFavorite),t._initialized=!0),t}},88140(e,t,i){"use strict";i.d(t,{u:()=>o});var r=i(10810);function o(){return window._nc_files_pinia||(window._nc_files_pinia=(0,r.Ey)()),window._nc_files_pinia}},16488(e,t,i){"use strict";i.d(t,{B:()=>c});var r=i(61338),o=i(35810),n=i(71225),s=i(10810),a=i(85471),d=i(84560),l=i(88975);function c(...e){const t=(0,l._)(...e),i=(0,s.nY)("paths",{state:()=>({paths:{}}),getters:{getPath:e=>(t,i)=>{if(e.paths[t])return e.paths[t][i]}},actions:{addPath(e){this.paths[e.service]||a.Ay.set(this.paths,e.service,{}),a.Ay.set(this.paths[e.service],e.path,e.source)},deletePath(e,t){this.paths[e]&&a.Ay.delete(this.paths[e],t)},onCreatedNode(e){const t=(0,o.bh)()?.active?.id||"files";e.fileid?(e.type===o.pt.Folder&&this.addPath({service:t,path:e.path,source:e.source}),this.addNodeToParentChildren(e)):d.A.error("Node has no fileid",{node:e})},onDeletedNode(e){const t=(0,o.bh)()?.active?.id||"files";e.type===o.pt.Folder&&this.deletePath(t,e.path),this.deleteNodeFromParentChildren(e)},onMovedNode({node:e,oldSource:t}){const i=(0,o.bh)()?.active?.id||"files";if(e.type===o.pt.Folder){const r=Object.entries(this.paths[i]).find(([,e])=>e===t);r?.[0]&&this.deletePath(i,r[0]),this.addPath({service:i,path:e.path,source:e.source})}const r=new o.ZH({source:t,owner:e.owner,mime:e.mime,root:e.root});this.deleteNodeFromParentChildren(r),this.addNodeToParentChildren(e)},deleteNodeFromParentChildren(e){const i=(0,o.bh)()?.active?.id||"files",r=(0,n.pD)(e.source),s="/"===e.dirname?t.getRoot(i):t.getNode(r);if(s){const t=new Set(s._children??[]);return t.delete(e.source),a.Ay.set(s,"_children",[...t.values()]),void d.A.debug("Children updated",{parent:s,node:e,children:s._children})}d.A.debug("Parent path does not exists, skipping children update",{node:e})},addNodeToParentChildren(e){const i=(0,o.bh)()?.active?.id||"files",r=(0,n.pD)(e.source),s="/"===e.dirname?t.getRoot(i):t.getNode(r);if(s){const t=new Set(s._children??[]);return t.add(e.source),a.Ay.set(s,"_children",[...t.values()]),void d.A.debug("Children updated",{parent:s,node:e,children:s._children})}d.A.debug("Parent path does not exists, skipping children update",{node:e})}}})(...e);return i._initialized||((0,r.B1)("files:node:created",i.onCreatedNode),(0,r.B1)("files:node:deleted",i.onDeletedNode),(0,r.B1)("files:node:moved",i.onMovedNode),i._initialized=!0),i}},78246(e,t,i){"use strict";i.d(t,{j:()=>l});var r=i(61338),o=i(46855),n=i(10810),s=i(85471),a=i(84560),d=i(10333);const l=(0,n.nY)("search",()=>{const e=(0,s.KR)(""),t=(0,s.KR)("filter");(0,s.wB)(t,n),(0,s.wB)(e,(e,t)=>{e.trim()!==t.trim()&&n()}),function(){(0,r.B1)("files:navigation:changed",l);const i=window.OCP.Files.Router;i.params.view===d.w&&(e.value=[i.query.query].flat()[0]??"",e.value?(t.value="globally",a.A.debug("Directly navigated to search view",{query:e.value})):(a.A.info("Directly navigated to search view without any query, redirect to files view."),i.goToRoute(void 0,{...i.params,view:"files"},{...i.query,query:void 0},!0)))}();const i=(0,o.A)(t=>{window.OCP.Files.Router.goToRoute(void 0,{view:d.w},{query:e.value},t)});function n(){(0,r.Ic)("files:search:updated",{query:e.value,scope:t.value});const o=window.OCP.Files.Router;if(o.params.view===d.w&&(""===e.value||"filter"===t.value))return t.value="filter",o.goToRoute(void 0,{view:"files"},{...o.query,query:void 0});if("filter"===t.value||!e.value)return;const n=o.params.view===d.w;a.A.debug("Update route for updated search query",{query:e.value,isSearch:n}),i(n)}function l(i){i.id!==d.w&&(e.value="",t.value="filter")}return{query:e,scope:t}})},66480(e,t,i){"use strict";i(61338),i(35810),i(53334),i(14668),i(39992)},10333(e,t,i){"use strict";i.d(t,{w:()=>r}),i(35810),i(53334),i(21777),i(77815),i(84560),i(78246),i(46502),i(66480);const r="search"},85908(e,t,i){"use strict";var r=i(61338),o=i(35810),n=i(81222);var s=i(77815),a=i(53334),d=i(85471);const l='<svg xmlns="http://www.w3.org/2000/svg" id="mdi-link" viewBox="0 0 24 24"><path d="M3.9,12C3.9,10.29 5.29,8.9 7,8.9H11V7H7A5,5 0 0,0 2,12A5,5 0 0,0 7,17H11V15.1H7C5.29,15.1 3.9,13.71 3.9,12M8,13H16V11H8V13M17,7H13V8.9H17C18.71,8.9 20.1,10.29 20.1,12C20.1,13.71 18.71,15.1 17,15.1H13V17H17A5,5 0 0,0 22,12A5,5 0 0,0 17,7Z" /></svg>';var c=i(99201);const u=(0,i(35947).YK)().setApp("files_sharing").detectUser().build();var p=i(14668),h=i(63814),f=i(82490),v=i(40173);const g=(0,n.C)("files_sharing","view"),m=(0,n.C)("files_sharing","sharingToken");d.Ay.use(v.Ay);const w=v.Ay.prototype.push;v.Ay.prototype.push=function(...e){return e.length>1?w.call(this,...e):w.call(this,e[0]).catch(b)};const y=v.Ay.prototype.replace;function b(e){if(!(0,v.Pq)(e,v.$c.duplicated))throw e;u.debug("Ignoring duplicated navigation from vue-router",{error:e})}v.Ay.prototype.replace=function(...e){return e.length>1?y.call(this,...e):y.call(this,e[0]).catch(b)};const A=new v.Ay({mode:"history",base:(0,h.Jv)("/s"),linkActiveClass:"active",routes:[{path:"/",redirect:{name:"filelist",params:{view:g,token:m}}},{path:"/:token",name:"filelist",props:!0}],stringifyQuery(e){const t=f.A.stringify(e).replace(/%2F/gim,"/");return t?"?"+t:""}});(()=>{const e=(0,n.C)("files_sharing","filename");let t,r;const l=new o.Ss({id:"public-file-drop",name:(0,a.Tl)("files_sharing","File drop"),caption:(0,a.Tl)("files_sharing","Upload files to {foldername}",{foldername:e}),icon:'<svg xmlns="http://www.w3.org/2000/svg" id="mdi-cloud-upload" viewBox="0 0 24 24"><path d="M11 20H6.5Q4.22 20 2.61 18.43 1 16.85 1 14.58 1 12.63 2.17 11.1 3.35 9.57 5.25 9.15 5.88 6.85 7.75 5.43 9.63 4 12 4 14.93 4 16.96 6.04 19 8.07 19 11 20.73 11.2 21.86 12.5 23 13.78 23 15.5 23 17.38 21.69 18.69 20.38 20 18.5 20H13V12.85L14.6 14.4L16 13L12 9L8 13L9.4 14.4L11 12.85Z" /></svg>',order:1,emptyView:async o=>{if(void 0===t){const{default:e}=await Promise.all([i.e(4208),i.e(8192)]).then(i.bind(i,28192));t=d.Ay.extend(e)}r&&r.$destroy(),r=new t({propsData:{foldername:e}}),r.$mount(o)},getContents:async()=>({contents:[],folder:new o.vd({id:0,source:`${s.Xn}${s.VA}`,root:s.VA,owner:null,permissions:o.aX.CREATE})})});(0,o.bh)().register(l)})(),(()=>{const e=new o.Ss({id:"public-share",name:(0,a.Tl)("files_sharing","Public share"),caption:(0,a.Tl)("files_sharing","Publicly shared files."),emptyTitle:(0,a.Tl)("files_sharing","No files"),emptyCaption:(0,a.Tl)("files_sharing","Files and folders shared with you will show up here"),icon:l,order:1,getContents:p.h});(0,o.bh)().register(e)})(),(()=>{const e=new o.Ss({id:"public-file-share",name:(0,a.Tl)("files_sharing","Public file share"),caption:(0,a.Tl)("files_sharing","Publicly shared file."),emptyTitle:(0,a.Tl)("files_sharing","No file"),emptyCaption:(0,a.Tl)("files_sharing","The file shared with you will show up here"),icon:l,order:1,getContents:async(e,{signal:t})=>{try{const e=await c.S.stat((0,s.ei)(),{data:(0,s.aN)(),details:!0,signal:t});return{contents:[(0,s.pO)(e.data)],folder:new o.vd({id:0,source:`${(0,s.EY)()}${(0,s.ei)()}`,root:(0,s.ei)(),owner:null,permissions:o.aX.READ,attributes:{note:e.data.props?.note}})}}catch(e){if(t.aborted)throw u.info("Fetching contents for public file share was aborted",{error:e}),new DOMException("Aborted","AbortError");throw u.error("Failed to get contents for public file share",{error:e}),e}}});(0,o.bh)().register(e)})();const N=(0,n.C)("files_sharing","view"),P=(0,o.bh)();try{P.setActive(N)}catch{P.setActive(null)}window.OCP.Files=window.OCP.Files??{},window.OCP.Files.Router=new class{constructor(e){var t,i,r;t=this,r=void 0,(i=function(e){var t=function(e){if("object"!=typeof e||!e)return e;var t=e[Symbol.toPrimitive];if(void 0!==t){var i=t.call(e,"string");if("object"!=typeof i)return i;throw new TypeError("@@toPrimitive must return a primitive value.")}return String(e)}(e);return"symbol"==typeof t?t:t+""}(i="router"))in t?Object.defineProperty(t,i,{value:r,enumerable:!0,configurable:!0,writable:!0}):t[i]=r,this.router=e}get name(){return this.router.currentRoute.name}get query(){return this.router.currentRoute.query||{}}get params(){return this.router.currentRoute.params||{}}get _router(){return this.router}goTo(e,t=!1){return this.router.push({path:e,replace:t})}goToRoute(e,t,i,r){e??=this.router.currentRoute.name;const o={name:e,query:i,params:t};return r?this._router.replace(o):this._router.push(o)}}(A);const C=(0,n.C)("files_sharing","fileId",null),_=(0,n.C)("files_sharing","sharingToken");null!==C&&window.OCP.Files.Router.goToRoute("filelist",{...window.OCP.Files.Router.params,token:_,fileid:String(C)},{...window.OCP.Files.Router.query,openfile:"true"}),(0,r.B1)("files:list:updated",function e({folder:t}){if((0,r.al)("files:list:updated",e),t.attributes["share-attributes"]){const e=JSON.parse(t.attributes["share-attributes"]||"[]").find(({scope:e,key:t})=>"config"===e&&"grid_view"===t);void 0!==e&&(u.debug("Loading share attributes",{gridViewAttribute:e}),(0,r.Ic)("files:config:updated",{key:"grid_view",value:!0===e.value}))}})},63779(){},77199(){},77815(e,t,i){"use strict";i.d(t,{CP:()=>u,EY:()=>v,KU:()=>m,VA:()=>f,VX:()=>c,Xn:()=>g,aN:()=>p,ei:()=>h,pO:()=>w});var r=i(21777),o=i(63814),n=i(9487),s=i(44719),a=i(70970);const d=["d:getcontentlength","d:getcontenttype","d:getetag","d:getlastmodified","d:creationdate","d:displayname","d:quota-available-bytes","d:resourcetype","nc:has-preview","nc:is-encrypted","nc:mount-type","oc:comments-unread","oc:favorite","oc:fileid","oc:owner-display-name","oc:owner-id","oc:permissions","oc:size"],l={d:"DAV:",nc:"http://nextcloud.org/ns",oc:"http://owncloud.org/ns",ocs:"http://open-collaboration-services.org/ns"};function c(){return a.s.davProperties??=[...d],a.s.davProperties.map(e=>`<${e} />`).join(" ")}function u(){return a.s.davNamespaces??={...l},Object.keys(a.s.davNamespaces).map(e=>`xmlns:${e}="${a.s.davNamespaces?.[e]}"`).join(" ")}function p(){return`<?xml version="1.0"?>\n\t\t<d:propfind ${u()}>\n\t\t\t<d:prop>\n\t\t\t\t${c()}\n\t\t\t</d:prop>\n\t\t</d:propfind>`}function h(){return(0,n.f)()?`/files/${(0,n.G)()}`:`/files/${(0,r.HW)()?.uid}`}const f=h();function v(){const e=(0,o.dC)("dav");return(0,n.f)()?e.replace("remote.php","public.php"):e}const g=v();function m(e=g,t={}){const i=(0,s.UU)(e,{headers:t});function o(e){i.setHeaders({...t,"X-Requested-With":"XMLHttpRequest",requesttoken:e??""})}return(0,r.zo)(o),o((0,r.do)()),(0,s.Gu)().patch("fetch",(e,t)=>{const i=t.headers;return i?.method&&(t.method=i.method,delete i.method),fetch(e,t)}),i}function w(e,t=f,i=g){let o=(0,r.HW)()?.uid;if((0,n.f)())o=o??"anonymous";else if(!o)throw new Error("No user id found");const s=e.props,d=function(e=""){let t=a.P.NONE;return e?(e.includes("G")&&(t|=a.P.READ),e.includes("W")&&(t|=a.P.WRITE),e.includes("CK")&&(t|=a.P.CREATE),e.includes("NV")&&(t|=a.P.UPDATE),e.includes("D")&&(t|=a.P.DELETE),e.includes("R")&&(t|=a.P.SHARE),t):t}(s?.permissions),l=String(s?.["owner-id"]||o),c=s.fileid||0,u=new Date(Date.parse(e.lastmod)),p=new Date(Date.parse(s.creationdate)),h={id:c,source:`${i}${e.filename}`,mtime:isNaN(u.getTime())||0===u.getTime()?void 0:u,crtime:isNaN(p.getTime())||0===p.getTime()?void 0:p,mime:e.mime||"application/octet-stream",displayname:void 0!==s.displayname?String(s.displayname):void 0,size:s?.size||Number.parseInt(s.getcontentlength||"0"),status:c<0?a.c.FAILED:void 0,permissions:d,owner:l,root:t,attributes:{...e,...s,hasPreview:s?.["has-preview"]}};return delete h.attributes?.props,"file"===e.type?new a.a(h):new a.b(h)}}},o={};function n(e){var t=o[e];if(void 0!==t)return t.exports;var i=o[e]={id:e,loaded:!1,exports:{}};return r[e].call(i.exports,i,i.exports,n),i.loaded=!0,i.exports}n.m=r,e=[],n.O=(t,i,r,o)=>{if(!i){var s=1/0;for(c=0;c<e.length;c++){for(var[i,r,o]=e[c],a=!0,d=0;d<i.length;d++)(!1&o||s>=o)&&Object.keys(n.O).every(e=>n.O[e](i[d]))?i.splice(d--,1):(a=!1,o<s&&(s=o));if(a){e.splice(c--,1);var l=r();void 0!==l&&(t=l)}}return t}o=o||0;for(var c=e.length;c>0&&e[c-1][2]>o;c--)e[c]=e[c-1];e[c]=[i,r,o]},n.n=e=>{var t=e&&e.__esModule?()=>e.default:()=>e;return n.d(t,{a:t}),t},n.d=(e,t)=>{for(var i in t)n.o(t,i)&&!n.o(e,i)&&Object.defineProperty(e,i,{enumerable:!0,get:t[i]})},n.f={},n.e=e=>Promise.all(Object.keys(n.f).reduce((t,i)=>(n.f[i](e,t),t),[])),n.u=e=>e+"-"+e+".js?v="+{1035:"da08d310d18692ca4e27",4271:"085eea602405daebb610",5402:"ce5fb7df66712267a1a9",6590:"24e01e0425b866f6b74c",6798:"995524658ab188a2d123",7471:"b4ac70873a3ab192efd0",8192:"08f414d4f8ca82402f37",9107:"5e0183d8d50cb5068bba",9281:"feab11896533ab67dcd8"}[e],n.o=(e,t)=>Object.prototype.hasOwnProperty.call(e,t),t={},i="nextcloud-ui-legacy:",n.l=(e,r,o,s)=>{if(t[e])t[e].push(r);else{var a,d;if(void 0!==o)for(var l=document.getElementsByTagName("script"),c=0;c<l.length;c++){var u=l[c];if(u.getAttribute("src")==e||u.getAttribute("data-webpack")==i+o){a=u;break}}a||(d=!0,(a=document.createElement("script")).charset="utf-8",n.nc&&a.setAttribute("nonce",n.nc),a.setAttribute("data-webpack",i+o),a.src=e),t[e]=[r];var p=(i,r)=>{a.onerror=a.onload=null,clearTimeout(h);var o=t[e];if(delete t[e],a.parentNode&&a.parentNode.removeChild(a),o&&o.forEach(e=>e(r)),i)return i(r)},h=setTimeout(p.bind(null,void 0,{type:"timeout",target:a}),12e4);a.onerror=p.bind(null,a.onerror),a.onload=p.bind(null,a.onload),d&&document.head.appendChild(a)}},n.r=e=>{"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},n.nmd=e=>(e.paths=[],e.children||(e.children=[]),e),n.j=5102,(()=>{var e;globalThis.importScripts&&(e=globalThis.location+"");var t=globalThis.document;if(!e&&t&&(t.currentScript&&"SCRIPT"===t.currentScript.tagName.toUpperCase()&&(e=t.currentScript.src),!e)){var i=t.getElementsByTagName("script");if(i.length)for(var r=i.length-1;r>-1&&(!e||!/^http(s?):/.test(e));)e=i[r--].src}if(!e)throw new Error("Automatic publicPath is not supported in this browser");e=e.replace(/^blob:/,"").replace(/#.*$/,"").replace(/\?.*$/,"").replace(/\/[^\/]+$/,"/"),n.p=e})(),(()=>{n.b="undefined"!=typeof document&&document.baseURI||self.location.href;var e={5102:0};n.f.j=(t,i)=>{var r=n.o(e,t)?e[t]:void 0;if(0!==r)if(r)i.push(r[2]);else{var o=new Promise((i,o)=>r=e[t]=[i,o]);i.push(r[2]=o);var s=n.p+n.u(t),a=new Error;n.l(s,i=>{if(n.o(e,t)&&(0!==(r=e[t])&&(e[t]=void 0),r)){var o=i&&("load"===i.type?"missing":i.type),s=i&&i.target&&i.target.src;a.message="Loading chunk "+t+" failed.\n("+o+": "+s+")",a.name="ChunkLoadError",a.type=o,a.request=s,r[1](a)}},"chunk-"+t,t)}},n.O.j=t=>0===e[t];var t=(t,i)=>{var r,o,[s,a,d]=i,l=0;if(s.some(t=>0!==e[t])){for(r in a)n.o(a,r)&&(n.m[r]=a[r]);if(d)var c=d(n)}for(t&&t(i);l<s.length;l++)o=s[l],n.o(e,o)&&e[o]&&e[o][0](),e[o]=0;return n.O(c)},i=globalThis.webpackChunknextcloud_ui_legacy=globalThis.webpackChunknextcloud_ui_legacy||[];i.forEach(t.bind(null,0)),i.push=t.bind(null,i.push.bind(i))})(),n.nc=void 0;var s=n.O(void 0,[4208],()=>n(85908));s=n.O(s)})();
-//# sourceMappingURL=files_sharing-init-public.js.map?v=f7d43b7fdfc424855c7d
+/******/ (() => { // webpackBootstrap
+/******/ 	var __webpack_modules__ = ({
+
+/***/ "./apps/files/src/logger.ts"
+/*!**********************************!*\
+  !*** ./apps/files/src/logger.ts ***!
+  \**********************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _nextcloud_logger__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @nextcloud/logger */ "./node_modules/@nextcloud/logger/dist/index.mjs");
+/**
+ * SPDX-FileCopyrightText: 2022 Nextcloud GmbH and Nextcloud contributors
+ * SPDX-License-Identifier: AGPL-3.0-or-later
+ */
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,_nextcloud_logger__WEBPACK_IMPORTED_MODULE_0__.getLoggerBuilder)().setApp('files').detectUser().build());
+
+/***/ },
+
+/***/ "./apps/files/src/services/Files.ts"
+/*!******************************************!*\
+  !*** ./apps/files/src/services/Files.ts ***!
+  \******************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   defaultGetContents: () => (/* binding */ defaultGetContents),
+/* harmony export */   getContents: () => (/* binding */ getContents)
+/* harmony export */ });
+/* harmony import */ var _nextcloud_files_dav__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @nextcloud/files/dav */ "./node_modules/@nextcloud/files/dist/dav.mjs");
+/* harmony import */ var path__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! path */ "./node_modules/path/path.js");
+/* harmony import */ var path__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(path__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _logger_ts__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../logger.ts */ "./apps/files/src/logger.ts");
+/* harmony import */ var _store_files_ts__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../store/files.ts */ "./apps/files/src/store/files.ts");
+/* harmony import */ var _store_index_ts__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../store/index.ts */ "./apps/files/src/store/index.ts");
+/* harmony import */ var _store_search_ts__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../store/search.ts */ "./apps/files/src/store/search.ts");
+/* harmony import */ var _WebdavClient_ts__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./WebdavClient.ts */ "./apps/files/src/services/WebdavClient.ts");
+/* harmony import */ var _WebDavSearch_ts__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./WebDavSearch.ts */ "./apps/files/src/services/WebDavSearch.ts");
+
+
+
+
+
+
+
+
+/**
+ * Get contents implementation for the files view.
+ * This also allows to fetch local search results when the user is currently filtering.
+ *
+ * @param path - The path to query
+ * @param options - Options
+ * @param options.signal - Abort signal to cancel the request
+ */
+async function getContents(path = '/', options) {
+  const searchStore = (0,_store_search_ts__WEBPACK_IMPORTED_MODULE_5__.useSearchStore)((0,_store_index_ts__WEBPACK_IMPORTED_MODULE_4__.getPinia)());
+  if (searchStore.query.length < 3) {
+    return await defaultGetContents(path, options);
+  }
+  return await getLocalSearch(path, searchStore.query, options?.signal);
+}
+/**
+ * Generic `getContents` implementation for the users files.
+ *
+ * @param path - The path to get the contents
+ * @param options - Options
+ * @param options.signal - Abort signal to cancel the request
+ */
+async function defaultGetContents(path, options) {
+  path = (0,path__WEBPACK_IMPORTED_MODULE_1__.join)((0,_nextcloud_files_dav__WEBPACK_IMPORTED_MODULE_0__.getRootPath)(), path);
+  const propfindPayload = (0,_nextcloud_files_dav__WEBPACK_IMPORTED_MODULE_0__.getDefaultPropfind)();
+  const contentsResponse = await _WebdavClient_ts__WEBPACK_IMPORTED_MODULE_6__.client.getDirectoryContents(path, {
+    details: true,
+    data: propfindPayload,
+    includeSelf: true,
+    signal: options?.signal
+  });
+  const root = contentsResponse.data[0];
+  const contents = contentsResponse.data.slice(1);
+  if (root?.filename !== path && `${root?.filename}/` !== path) {
+    _logger_ts__WEBPACK_IMPORTED_MODULE_2__["default"].debug(`Exepected "${path}" but got filename "${root.filename}" instead.`);
+    throw new Error('Root node does not match requested path');
+  }
+  return {
+    folder: (0,_nextcloud_files_dav__WEBPACK_IMPORTED_MODULE_0__.resultToNode)(root),
+    contents: contents.map(result => {
+      try {
+        return (0,_nextcloud_files_dav__WEBPACK_IMPORTED_MODULE_0__.resultToNode)(result);
+      } catch (error) {
+        _logger_ts__WEBPACK_IMPORTED_MODULE_2__["default"].error(`Invalid node detected '${result.basename}'`, {
+          error
+        });
+        return null;
+      }
+    }).filter(Boolean)
+  };
+}
+/**
+ * Get the local search results for the current folder.
+ *
+ * @param path - The path
+ * @param query - The current search query
+ * @param signal - The aboort signal
+ */
+async function getLocalSearch(path, query, signal) {
+  const filesStore = (0,_store_files_ts__WEBPACK_IMPORTED_MODULE_3__.useFilesStore)((0,_store_index_ts__WEBPACK_IMPORTED_MODULE_4__.getPinia)());
+  let folder = filesStore.getDirectoryByPath('files', path);
+  if (!folder) {
+    const rootPath = (0,path__WEBPACK_IMPORTED_MODULE_1__.join)((0,_nextcloud_files_dav__WEBPACK_IMPORTED_MODULE_0__.getRootPath)(), path);
+    const stat = await _WebdavClient_ts__WEBPACK_IMPORTED_MODULE_6__.client.stat(rootPath, {
+      details: true
+    });
+    folder = (0,_nextcloud_files_dav__WEBPACK_IMPORTED_MODULE_0__.resultToNode)(stat.data);
+  }
+  const contents = await (0,_WebDavSearch_ts__WEBPACK_IMPORTED_MODULE_7__.searchNodes)(query, {
+    dir: path,
+    signal
+  });
+  return {
+    folder,
+    contents
+  };
+}
+
+/***/ },
+
+/***/ "./apps/files/src/services/RouterService.ts"
+/*!**************************************************!*\
+  !*** ./apps/files/src/services/RouterService.ts ***!
+  \**************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ RouterService)
+/* harmony export */ });
+function _defineProperty(e, r, t) { return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
+function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == typeof i ? i : i + ""; }
+function _toPrimitive(t, r) { if ("object" != typeof t || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != typeof i) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+/*!
+ * SPDX-FileCopyrightText: 2023 Nextcloud GmbH and Nextcloud contributors
+ * SPDX-License-Identifier: AGPL-3.0-or-later
+ */
+class RouterService {
+  constructor(router) {
+    // typescript compiles this to `#router` to make it private even in JS,
+    // but in TS it needs to be called without the visibility specifier
+    _defineProperty(this, "router", void 0);
+    this.router = router;
+  }
+  get name() {
+    return this.router.currentRoute.name;
+  }
+  get query() {
+    return this.router.currentRoute.query || {};
+  }
+  get params() {
+    return this.router.currentRoute.params || {};
+  }
+  /**
+   * This is a protected getter only for internal use
+   *
+   */
+  get _router() {
+    return this.router;
+  }
+  /**
+   * Trigger a route change on the files app
+   *
+   * @param path the url path, eg: '/trashbin?dir=/Deleted'
+   * @param replace replace the current history
+   * @see https://router.vuejs.org/guide/essentials/navigation.html#navigate-to-a-different-location
+   */
+  goTo(path, replace = false) {
+    return this.router.push({
+      path,
+      replace
+    });
+  }
+  /**
+   * Trigger a route change on the files App
+   *
+   * @param name - The route name or null to keep current route and just update params/query
+   * @param params the route parameters
+   * @param query the url query parameters
+   * @param replace replace the current history
+   * @see https://router.vuejs.org/guide/essentials/navigation.html#navigate-to-a-different-location
+   */
+  goToRoute(name, params, query, replace) {
+    name ??= this.router.currentRoute.name;
+    const location = {
+      name,
+      query,
+      params
+    };
+    if (replace) {
+      return this._router.replace(location);
+    }
+    return this._router.push(location);
+  }
+}
+
+/***/ },
+
+/***/ "./apps/files/src/services/Search.ts"
+/*!*******************************************!*\
+  !*** ./apps/files/src/services/Search.ts ***!
+  \*******************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getContents: () => (/* binding */ getContents)
+/* harmony export */ });
+/* harmony import */ var _nextcloud_auth__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @nextcloud/auth */ "./node_modules/@nextcloud/auth/dist/index.mjs");
+/* harmony import */ var _nextcloud_files__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @nextcloud/files */ "./node_modules/@nextcloud/files/dist/index.mjs");
+/* harmony import */ var _nextcloud_files_dav__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @nextcloud/files/dav */ "./node_modules/@nextcloud/files/dist/dav.mjs");
+/* harmony import */ var _logger_ts__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../logger.ts */ "./apps/files/src/logger.ts");
+/* harmony import */ var _store_index_ts__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../store/index.ts */ "./apps/files/src/store/index.ts");
+/* harmony import */ var _store_search_ts__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../store/search.ts */ "./apps/files/src/store/search.ts");
+/* harmony import */ var _WebDavSearch_ts__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./WebDavSearch.ts */ "./apps/files/src/services/WebDavSearch.ts");
+/*!
+ * SPDX-FileCopyrightText: 2025 Nextcloud GmbH and Nextcloud contributors
+ * SPDX-License-Identifier: AGPL-3.0-or-later
+ */
+
+
+
+
+
+
+
+/**
+ * Get the contents for a search view
+ *
+ * @param path - (not used)
+ * @param options - Options including abort signal
+ * @param options.signal - Abort signal to cancel the request
+ */
+async function getContents(path, options) {
+  const searchStore = (0,_store_search_ts__WEBPACK_IMPORTED_MODULE_5__.useSearchStore)((0,_store_index_ts__WEBPACK_IMPORTED_MODULE_4__.getPinia)());
+  try {
+    const contents = await (0,_WebDavSearch_ts__WEBPACK_IMPORTED_MODULE_6__.searchNodes)(searchStore.query, {
+      signal: options.signal
+    });
+    return {
+      contents,
+      folder: new _nextcloud_files__WEBPACK_IMPORTED_MODULE_1__.Folder({
+        id: 0,
+        source: `${_nextcloud_files_dav__WEBPACK_IMPORTED_MODULE_2__.defaultRemoteURL}${(0,_nextcloud_files_dav__WEBPACK_IMPORTED_MODULE_2__.getRootPath)()}}#search`,
+        owner: (0,_nextcloud_auth__WEBPACK_IMPORTED_MODULE_0__.getCurrentUser)().uid,
+        permissions: _nextcloud_files__WEBPACK_IMPORTED_MODULE_1__.Permission.READ,
+        root: (0,_nextcloud_files_dav__WEBPACK_IMPORTED_MODULE_2__.getRootPath)()
+      })
+    };
+  } catch (error) {
+    if (options.signal.aborted) {
+      _logger_ts__WEBPACK_IMPORTED_MODULE_3__["default"].info('Fetching search results aborted');
+      throw new DOMException('Aborted', 'AbortError');
+    }
+    _logger_ts__WEBPACK_IMPORTED_MODULE_3__["default"].error('Failed to fetch search results', {
+      error
+    });
+    throw error;
+  }
+}
+
+/***/ },
+
+/***/ "./apps/files/src/services/WebDavSearch.ts"
+/*!*************************************************!*\
+  !*** ./apps/files/src/services/WebDavSearch.ts ***!
+  \*************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   searchNodes: () => (/* binding */ searchNodes)
+/* harmony export */ });
+/* harmony import */ var _nextcloud_auth__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @nextcloud/auth */ "./node_modules/@nextcloud/auth/dist/index.mjs");
+/* harmony import */ var _nextcloud_files_dav__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @nextcloud/files/dav */ "./node_modules/@nextcloud/files/dist/dav.mjs");
+/* harmony import */ var _nextcloud_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @nextcloud/router */ "./node_modules/@nextcloud/router/dist/index.mjs");
+/* harmony import */ var _logger_ts__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../logger.ts */ "./apps/files/src/logger.ts");
+/* harmony import */ var _WebdavClient_ts__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./WebdavClient.ts */ "./apps/files/src/services/WebdavClient.ts");
+/*!
+ * SPDX-FileCopyrightText: 2025 Nextcloud GmbH and Nextcloud contributors
+ * SPDX-License-Identifier: AGPL-3.0-or-later
+ */
+
+
+
+
+
+/**
+ * Search for nodes matching the given query.
+ *
+ * @param query - Search query
+ * @param options - Options
+ * @param options.dir - The base directory to scope the search to
+ * @param options.signal - Abort signal for the request
+ */
+async function searchNodes(query, {
+  dir,
+  signal
+}) {
+  const user = (0,_nextcloud_auth__WEBPACK_IMPORTED_MODULE_0__.getCurrentUser)();
+  if (!user) {
+    // the search plugin only works for user roots
+    return [];
+  }
+  query = query.trim();
+  if (query.length < 3) {
+    // the search plugin only works with queries of at least 3 characters
+    return [];
+  }
+  if (dir && !dir.startsWith('/')) {
+    dir = `/${dir}`;
+  }
+  _logger_ts__WEBPACK_IMPORTED_MODULE_3__["default"].debug('Searching for nodes', {
+    query,
+    dir
+  });
+  const {
+    data
+  } = await _WebdavClient_ts__WEBPACK_IMPORTED_MODULE_4__.client.search('/', {
+    details: true,
+    signal,
+    data: `
+<d:searchrequest ${(0,_nextcloud_files_dav__WEBPACK_IMPORTED_MODULE_1__.getDavNameSpaces)()}>
+	 <d:basicsearch>
+		 <d:select>
+			 <d:prop>
+			 ${(0,_nextcloud_files_dav__WEBPACK_IMPORTED_MODULE_1__.getDavProperties)()}
+			 </d:prop>
+		 </d:select>
+		 <d:from>
+			 <d:scope>
+				 <d:href>/files/${user.uid}${dir || ''}</d:href>
+				 <d:depth>infinity</d:depth>
+			 </d:scope>
+		 </d:from>
+		 <d:where>
+			 <d:like>
+				 <d:prop>
+					 <d:displayname/>
+				 </d:prop>
+				 <d:literal>%${query.replace('%', '')}%</d:literal>
+			 </d:like>
+		 </d:where>
+		 <d:orderby/>
+	</d:basicsearch>
+</d:searchrequest>`
+  });
+  // check if the request was aborted
+  if (signal?.aborted) {
+    return [];
+  }
+  // otherwise return the result mapped to Nextcloud nodes
+  return data.results.map(result => (0,_nextcloud_files_dav__WEBPACK_IMPORTED_MODULE_1__.resultToNode)(result, _nextcloud_files_dav__WEBPACK_IMPORTED_MODULE_1__.defaultRootPath, (0,_nextcloud_router__WEBPACK_IMPORTED_MODULE_2__.getBaseUrl)()));
+}
+
+/***/ },
+
+/***/ "./apps/files/src/services/WebdavClient.ts"
+/*!*************************************************!*\
+  !*** ./apps/files/src/services/WebdavClient.ts ***!
+  \*************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   client: () => (/* binding */ client),
+/* harmony export */   fetchNode: () => (/* binding */ fetchNode)
+/* harmony export */ });
+/* harmony import */ var _nextcloud_files_dav__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @nextcloud/files/dav */ "./node_modules/@nextcloud/files/dist/dav.mjs");
+/*!
+ * SPDX-FileCopyrightText: 2023 Nextcloud GmbH and Nextcloud contributors
+ * SPDX-License-Identifier: AGPL-3.0-or-later
+ */
+
+const client = (0,_nextcloud_files_dav__WEBPACK_IMPORTED_MODULE_0__.getClient)();
+/**
+ * Fetches a node from the given path
+ *
+ * @param path - The path to fetch the node from
+ */
+async function fetchNode(path) {
+  const propfindPayload = (0,_nextcloud_files_dav__WEBPACK_IMPORTED_MODULE_0__.getDefaultPropfind)();
+  const result = await client.stat(`${(0,_nextcloud_files_dav__WEBPACK_IMPORTED_MODULE_0__.getRootPath)()}${path}`, {
+    details: true,
+    data: propfindPayload
+  });
+  return (0,_nextcloud_files_dav__WEBPACK_IMPORTED_MODULE_0__.resultToNode)(result.data);
+}
+
+/***/ },
+
+/***/ "./apps/files/src/store/active.ts"
+/*!****************************************!*\
+  !*** ./apps/files/src/store/active.ts ***!
+  \****************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   useActiveStore: () => (/* binding */ useActiveStore)
+/* harmony export */ });
+/* harmony import */ var _nextcloud_auth__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @nextcloud/auth */ "./node_modules/@nextcloud/auth/dist/index.mjs");
+/* harmony import */ var _nextcloud_event_bus__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @nextcloud/event-bus */ "./node_modules/@nextcloud/event-bus/dist/index.mjs");
+/* harmony import */ var _nextcloud_files__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @nextcloud/files */ "./node_modules/@nextcloud/files/dist/index.mjs");
+/* harmony import */ var _nextcloud_files_dav__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @nextcloud/files/dav */ "./node_modules/@nextcloud/files/dist/dav.mjs");
+/* harmony import */ var pinia__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! pinia */ "./node_modules/pinia/dist/pinia.mjs");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.runtime.esm.js");
+/* harmony import */ var _logger_ts__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../logger.ts */ "./apps/files/src/logger.ts");
+/*!
+ * SPDX-FileCopyrightText: 2024 Nextcloud GmbH and Nextcloud contributors
+ * SPDX-License-Identifier: AGPL-3.0-or-later
+ */
+
+
+
+
+
+
+
+// Temporary fake folder to use until we have the first valid folder
+// fetched and cached. This allow us to mount the FilesListVirtual
+// at all time and avoid unmount/mount and undesired rendering issues.
+const dummyFolder = new _nextcloud_files__WEBPACK_IMPORTED_MODULE_2__.Folder({
+  id: 0,
+  source: (0,_nextcloud_files_dav__WEBPACK_IMPORTED_MODULE_3__.getRemoteURL)() + (0,_nextcloud_files_dav__WEBPACK_IMPORTED_MODULE_3__.getRootPath)(),
+  root: (0,_nextcloud_files_dav__WEBPACK_IMPORTED_MODULE_3__.getRootPath)(),
+  owner: (0,_nextcloud_auth__WEBPACK_IMPORTED_MODULE_0__.getCurrentUser)()?.uid || null,
+  permissions: _nextcloud_files__WEBPACK_IMPORTED_MODULE_2__.Permission.NONE
+});
+const useActiveStore = (0,pinia__WEBPACK_IMPORTED_MODULE_4__.defineStore)('active', () => {
+  /**
+   * The currently active action
+   */
+  const activeAction = (0,vue__WEBPACK_IMPORTED_MODULE_5__.shallowRef)();
+  /**
+   * The current active node within the folder
+   */
+  const activeNode = (0,vue__WEBPACK_IMPORTED_MODULE_5__.ref)();
+  /**
+   * The current active view
+   */
+  const activeView = (0,vue__WEBPACK_IMPORTED_MODULE_5__.shallowRef)();
+  /**
+   * The currently active folder
+   */
+  const activeFolder = (0,vue__WEBPACK_IMPORTED_MODULE_5__.ref)(dummyFolder);
+  // Set the active node on the router params
+  (0,vue__WEBPACK_IMPORTED_MODULE_5__.watch)(activeNode, () => {
+    if (typeof activeNode.value?.fileid !== 'number' || activeNode.value.fileid === activeFolder.value?.fileid) {
+      return;
+    }
+    _logger_ts__WEBPACK_IMPORTED_MODULE_6__["default"].debug('Updating active fileid in URL query', {
+      fileid: activeNode.value.fileid
+    });
+    window.OCP.Files.Router.goToRoute(null, {
+      ...window.OCP.Files.Router.params,
+      fileid: String(activeNode.value.fileid)
+    }, {
+      ...window.OCP.Files.Router.query
+    }, true);
+  });
+  initialize();
+  /**
+   * Unset the active node if deleted
+   *
+   * @param node - The node thats deleted
+   */
+  function onDeletedNode(node) {
+    if (activeNode.value && activeNode.value.source === node.source) {
+      activeNode.value = undefined;
+    }
+  }
+  /**
+   * Callback to update the current active view
+   *
+   * @param view - The new active view
+   */
+  function onChangedView(view = null) {
+    _logger_ts__WEBPACK_IMPORTED_MODULE_6__["default"].debug('Setting active view', {
+      view
+    });
+    activeView.value = view ?? undefined;
+    activeNode.value = undefined;
+  }
+  /**
+   * Initalize the store - connect all event listeners.
+   *
+   */
+  function initialize() {
+    const navigation = (0,_nextcloud_files__WEBPACK_IMPORTED_MODULE_2__.getNavigation)();
+    onChangedView(navigation.active);
+    // Make sure we only register the listeners once
+    (0,_nextcloud_event_bus__WEBPACK_IMPORTED_MODULE_1__.subscribe)('files:node:deleted', onDeletedNode);
+    // Or you can react to changes of the current active view
+    navigation.addEventListener('updateActive', event => {
+      onChangedView(event.detail);
+    });
+  }
+  return {
+    activeAction,
+    activeFolder,
+    activeNode,
+    activeView
+  };
+});
+
+/***/ },
+
+/***/ "./apps/files/src/store/files.ts"
+/*!***************************************!*\
+  !*** ./apps/files/src/store/files.ts ***!
+  \***************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   useFilesStore: () => (/* binding */ useFilesStore)
+/* harmony export */ });
+/* harmony import */ var _nextcloud_event_bus__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @nextcloud/event-bus */ "./node_modules/@nextcloud/event-bus/dist/index.mjs");
+/* harmony import */ var pinia__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! pinia */ "./node_modules/pinia/dist/pinia.mjs");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.runtime.esm.js");
+/* harmony import */ var _logger_ts__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../logger.ts */ "./apps/files/src/logger.ts");
+/* harmony import */ var _services_WebdavClient_ts__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../services/WebdavClient.ts */ "./apps/files/src/services/WebdavClient.ts");
+/* harmony import */ var _paths_ts__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./paths.ts */ "./apps/files/src/store/paths.ts");
+/**
+ * SPDX-FileCopyrightText: 2023 Nextcloud GmbH and Nextcloud contributors
+ * SPDX-License-Identifier: AGPL-3.0-or-later
+ */
+
+
+
+
+
+
+/**
+ *
+ * @param args
+ */
+function useFilesStore(...args) {
+  const store = (0,pinia__WEBPACK_IMPORTED_MODULE_1__.defineStore)('files', {
+    state: () => ({
+      files: {},
+      roots: {}
+    }),
+    getters: {
+      /**
+       * Get a file or folder by its source
+       *
+       * @param state
+       */
+      getNode: state => source => state.files[source],
+      /**
+       * Get a list of files or folders by their IDs
+       * Note: does not return undefined values
+       *
+       * @param state
+       */
+      getNodes: state => sources => sources.map(source => state.files[source]).filter(Boolean),
+      /**
+       * Get files or folders by their file ID
+       * Multiple nodes can have the same file ID but different sources
+       * (e.g. in a shared context)
+       *
+       * @param state
+       */
+      getNodesById: state => fileId => Object.values(state.files).filter(node => node.fileid === fileId),
+      /**
+       * Get the root folder of a service
+       *
+       * @param state
+       */
+      getRoot: state => service => state.roots[service]
+    },
+    actions: {
+      /**
+       * Get cached directory matching a given path
+       *
+       * @param service - The service (files view)
+       * @param path - The path relative within the service
+       * @return The folder if found
+       */
+      getDirectoryByPath(service, path) {
+        const pathsStore = (0,_paths_ts__WEBPACK_IMPORTED_MODULE_5__.usePathsStore)();
+        let folder;
+        // Get the containing folder from path store
+        if (!path || path === '/') {
+          folder = this.getRoot(service);
+        } else {
+          const source = pathsStore.getPath(service, path);
+          if (source) {
+            folder = this.getNode(source);
+          }
+        }
+        return folder;
+      },
+      /**
+       * Get cached child nodes within a given path
+       *
+       * @param service - The service (files view)
+       * @param path - The path relative within the service
+       * @return Array of cached nodes within the path
+       */
+      getNodesByPath(service, path) {
+        const folder = this.getDirectoryByPath(service, path);
+        // If we found a cache entry and the cache entry was already loaded (has children) then use it
+        return (folder?._children ?? []).map(source => this.getNode(source)).filter(Boolean);
+      },
+      updateNodes(nodes) {
+        // Update the store all at once
+        const files = nodes.reduce((acc, node) => {
+          if (!node.fileid) {
+            _logger_ts__WEBPACK_IMPORTED_MODULE_3__["default"].error('Trying to update/set a node without fileid', {
+              node
+            });
+            return acc;
+          }
+          acc[node.source] = node;
+          return acc;
+        }, {});
+        vue__WEBPACK_IMPORTED_MODULE_2__["default"].set(this, 'files', {
+          ...this.files,
+          ...files
+        });
+      },
+      deleteNodes(nodes) {
+        nodes.forEach(node => {
+          if (node.source) {
+            vue__WEBPACK_IMPORTED_MODULE_2__["default"].delete(this.files, node.source);
+          }
+        });
+      },
+      setRoot({
+        service,
+        root
+      }) {
+        vue__WEBPACK_IMPORTED_MODULE_2__["default"].set(this.roots, service, root);
+      },
+      onDeletedNode(node) {
+        this.deleteNodes([node]);
+      },
+      onCreatedNode(node) {
+        this.updateNodes([node]);
+      },
+      onMovedNode({
+        node,
+        oldSource
+      }) {
+        if (!node.fileid) {
+          _logger_ts__WEBPACK_IMPORTED_MODULE_3__["default"].error('Trying to update/set a node without fileid', {
+            node
+          });
+          return;
+        }
+        // Update the path of the node
+        vue__WEBPACK_IMPORTED_MODULE_2__["default"].delete(this.files, oldSource);
+        this.updateNodes([node]);
+      },
+      async onUpdatedNode(node) {
+        if (!node.fileid) {
+          _logger_ts__WEBPACK_IMPORTED_MODULE_3__["default"].error('Trying to update/set a node without fileid', {
+            node
+          });
+          return;
+        }
+        // If we have multiple nodes with the same file ID, we need to update all of them
+        const nodes = this.getNodesById(node.fileid);
+        if (nodes.length > 1) {
+          await Promise.all(nodes.map(node => (0,_services_WebdavClient_ts__WEBPACK_IMPORTED_MODULE_4__.fetchNode)(node.path))).then(this.updateNodes);
+          _logger_ts__WEBPACK_IMPORTED_MODULE_3__["default"].debug(nodes.length + ' nodes updated in store', {
+            fileid: node.fileid
+          });
+          return;
+        }
+        // If we have only one node with the file ID, we can update it directly
+        if (nodes.length === 1 && node.source === nodes[0].source) {
+          this.updateNodes([node]);
+          return;
+        }
+        // Otherwise, it means we receive an event for a node that is not in the store
+        (0,_services_WebdavClient_ts__WEBPACK_IMPORTED_MODULE_4__.fetchNode)(node.path).then(n => this.updateNodes([n]));
+      },
+      // Handlers for legacy sidebar (no real nodes support)
+      onAddFavorite(node) {
+        const ourNode = this.getNode(node.source);
+        if (ourNode) {
+          vue__WEBPACK_IMPORTED_MODULE_2__["default"].set(ourNode.attributes, 'favorite', 1);
+        }
+      },
+      onRemoveFavorite(node) {
+        const ourNode = this.getNode(node.source);
+        if (ourNode) {
+          vue__WEBPACK_IMPORTED_MODULE_2__["default"].set(ourNode.attributes, 'favorite', 0);
+        }
+      }
+    }
+  });
+  const fileStore = store(...args);
+  // Make sure we only register the listeners once
+  if (!fileStore._initialized) {
+    (0,_nextcloud_event_bus__WEBPACK_IMPORTED_MODULE_0__.subscribe)('files:node:created', fileStore.onCreatedNode);
+    (0,_nextcloud_event_bus__WEBPACK_IMPORTED_MODULE_0__.subscribe)('files:node:deleted', fileStore.onDeletedNode);
+    (0,_nextcloud_event_bus__WEBPACK_IMPORTED_MODULE_0__.subscribe)('files:node:updated', fileStore.onUpdatedNode);
+    (0,_nextcloud_event_bus__WEBPACK_IMPORTED_MODULE_0__.subscribe)('files:node:moved', fileStore.onMovedNode);
+    // legacy sidebar
+    (0,_nextcloud_event_bus__WEBPACK_IMPORTED_MODULE_0__.subscribe)('files:favorites:added', fileStore.onAddFavorite);
+    (0,_nextcloud_event_bus__WEBPACK_IMPORTED_MODULE_0__.subscribe)('files:favorites:removed', fileStore.onRemoveFavorite);
+    fileStore._initialized = true;
+  }
+  return fileStore;
+}
+
+/***/ },
+
+/***/ "./apps/files/src/store/index.ts"
+/*!***************************************!*\
+  !*** ./apps/files/src/store/index.ts ***!
+  \***************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getPinia: () => (/* binding */ getPinia)
+/* harmony export */ });
+/* harmony import */ var pinia__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! pinia */ "./node_modules/pinia/dist/pinia.mjs");
+/**
+ * SPDX-FileCopyrightText: 2024 Nextcloud GmbH and Nextcloud contributors
+ * SPDX-License-Identifier: AGPL-3.0-or-later
+ */
+
+/**
+ * Get the Pinia instance for the Files app.
+ */
+function getPinia() {
+  if (window._nc_files_pinia) {
+    return window._nc_files_pinia;
+  }
+  window._nc_files_pinia = (0,pinia__WEBPACK_IMPORTED_MODULE_0__.createPinia)();
+  return window._nc_files_pinia;
+}
+
+/***/ },
+
+/***/ "./apps/files/src/store/paths.ts"
+/*!***************************************!*\
+  !*** ./apps/files/src/store/paths.ts ***!
+  \***************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   usePathsStore: () => (/* binding */ usePathsStore)
+/* harmony export */ });
+/* harmony import */ var _nextcloud_event_bus__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @nextcloud/event-bus */ "./node_modules/@nextcloud/event-bus/dist/index.mjs");
+/* harmony import */ var _nextcloud_files__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @nextcloud/files */ "./node_modules/@nextcloud/files/dist/index.mjs");
+/* harmony import */ var _nextcloud_paths__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @nextcloud/paths */ "./node_modules/@nextcloud/paths/dist/index.mjs");
+/* harmony import */ var pinia__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! pinia */ "./node_modules/pinia/dist/pinia.mjs");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.runtime.esm.js");
+/* harmony import */ var _logger_ts__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../logger.ts */ "./apps/files/src/logger.ts");
+/* harmony import */ var _files_ts__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./files.ts */ "./apps/files/src/store/files.ts");
+/**
+ * SPDX-FileCopyrightText: 2023 Nextcloud GmbH and Nextcloud contributors
+ * SPDX-License-Identifier: AGPL-3.0-or-later
+ */
+
+
+
+
+
+
+
+/**
+ *
+ * @param args
+ */
+function usePathsStore(...args) {
+  const files = (0,_files_ts__WEBPACK_IMPORTED_MODULE_6__.useFilesStore)(...args);
+  const store = (0,pinia__WEBPACK_IMPORTED_MODULE_3__.defineStore)('paths', {
+    state: () => ({
+      paths: {}
+    }),
+    getters: {
+      getPath: state => {
+        return (service, path) => {
+          if (!state.paths[service]) {
+            return undefined;
+          }
+          return state.paths[service][path];
+        };
+      }
+    },
+    actions: {
+      addPath(payload) {
+        // If it doesn't exists, init the service state
+        if (!this.paths[payload.service]) {
+          vue__WEBPACK_IMPORTED_MODULE_4__["default"].set(this.paths, payload.service, {});
+        }
+        // Now we can set the provided path
+        vue__WEBPACK_IMPORTED_MODULE_4__["default"].set(this.paths[payload.service], payload.path, payload.source);
+      },
+      deletePath(service, path) {
+        // skip if service does not exist
+        if (!this.paths[service]) {
+          return;
+        }
+        vue__WEBPACK_IMPORTED_MODULE_4__["default"].delete(this.paths[service], path);
+      },
+      onCreatedNode(node) {
+        const service = (0,_nextcloud_files__WEBPACK_IMPORTED_MODULE_1__.getNavigation)()?.active?.id || 'files';
+        if (!node.fileid) {
+          _logger_ts__WEBPACK_IMPORTED_MODULE_5__["default"].error('Node has no fileid', {
+            node
+          });
+          return;
+        }
+        // Only add path if it's a folder
+        if (node.type === _nextcloud_files__WEBPACK_IMPORTED_MODULE_1__.FileType.Folder) {
+          this.addPath({
+            service,
+            path: node.path,
+            source: node.source
+          });
+        }
+        // Update parent folder children if exists
+        // If the folder is the root, get it and update it
+        this.addNodeToParentChildren(node);
+      },
+      onDeletedNode(node) {
+        const service = (0,_nextcloud_files__WEBPACK_IMPORTED_MODULE_1__.getNavigation)()?.active?.id || 'files';
+        if (node.type === _nextcloud_files__WEBPACK_IMPORTED_MODULE_1__.FileType.Folder) {
+          // Delete the path
+          this.deletePath(service, node.path);
+        }
+        this.deleteNodeFromParentChildren(node);
+      },
+      onMovedNode({
+        node,
+        oldSource
+      }) {
+        const service = (0,_nextcloud_files__WEBPACK_IMPORTED_MODULE_1__.getNavigation)()?.active?.id || 'files';
+        // Update the path of the node
+        if (node.type === _nextcloud_files__WEBPACK_IMPORTED_MODULE_1__.FileType.Folder) {
+          // Delete the old path if it exists
+          const oldPath = Object.entries(this.paths[service]).find(([, source]) => source === oldSource);
+          if (oldPath?.[0]) {
+            this.deletePath(service, oldPath[0]);
+          }
+          // Add the new path
+          this.addPath({
+            service,
+            path: node.path,
+            source: node.source
+          });
+        }
+        // Dummy simple clone of the renamed node from a previous state
+        const oldNode = new _nextcloud_files__WEBPACK_IMPORTED_MODULE_1__.File({
+          source: oldSource,
+          owner: node.owner,
+          mime: node.mime,
+          root: node.root
+        });
+        this.deleteNodeFromParentChildren(oldNode);
+        this.addNodeToParentChildren(node);
+      },
+      deleteNodeFromParentChildren(node) {
+        const service = (0,_nextcloud_files__WEBPACK_IMPORTED_MODULE_1__.getNavigation)()?.active?.id || 'files';
+        // Update children of a root folder
+        const parentSource = (0,_nextcloud_paths__WEBPACK_IMPORTED_MODULE_2__.dirname)(node.source);
+        const folder = node.dirname === '/' ? files.getRoot(service) : files.getNode(parentSource);
+        if (folder) {
+          // ensure sources are unique
+          const children = new Set(folder._children ?? []);
+          children.delete(node.source);
+          vue__WEBPACK_IMPORTED_MODULE_4__["default"].set(folder, '_children', [...children.values()]);
+          _logger_ts__WEBPACK_IMPORTED_MODULE_5__["default"].debug('Children updated', {
+            parent: folder,
+            node,
+            children: folder._children
+          });
+          return;
+        }
+        _logger_ts__WEBPACK_IMPORTED_MODULE_5__["default"].debug('Parent path does not exists, skipping children update', {
+          node
+        });
+      },
+      addNodeToParentChildren(node) {
+        const service = (0,_nextcloud_files__WEBPACK_IMPORTED_MODULE_1__.getNavigation)()?.active?.id || 'files';
+        // Update children of a root folder
+        const parentSource = (0,_nextcloud_paths__WEBPACK_IMPORTED_MODULE_2__.dirname)(node.source);
+        const folder = node.dirname === '/' ? files.getRoot(service) : files.getNode(parentSource);
+        if (folder) {
+          // ensure sources are unique
+          const children = new Set(folder._children ?? []);
+          children.add(node.source);
+          vue__WEBPACK_IMPORTED_MODULE_4__["default"].set(folder, '_children', [...children.values()]);
+          _logger_ts__WEBPACK_IMPORTED_MODULE_5__["default"].debug('Children updated', {
+            parent: folder,
+            node,
+            children: folder._children
+          });
+          return;
+        }
+        _logger_ts__WEBPACK_IMPORTED_MODULE_5__["default"].debug('Parent path does not exists, skipping children update', {
+          node
+        });
+      }
+    }
+  });
+  const pathsStore = store(...args);
+  // Make sure we only register the listeners once
+  if (!pathsStore._initialized) {
+    (0,_nextcloud_event_bus__WEBPACK_IMPORTED_MODULE_0__.subscribe)('files:node:created', pathsStore.onCreatedNode);
+    (0,_nextcloud_event_bus__WEBPACK_IMPORTED_MODULE_0__.subscribe)('files:node:deleted', pathsStore.onDeletedNode);
+    (0,_nextcloud_event_bus__WEBPACK_IMPORTED_MODULE_0__.subscribe)('files:node:moved', pathsStore.onMovedNode);
+    pathsStore._initialized = true;
+  }
+  return pathsStore;
+}
+
+/***/ },
+
+/***/ "./apps/files/src/store/search.ts"
+/*!****************************************!*\
+  !*** ./apps/files/src/store/search.ts ***!
+  \****************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   useSearchStore: () => (/* binding */ useSearchStore)
+/* harmony export */ });
+/* harmony import */ var _nextcloud_event_bus__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @nextcloud/event-bus */ "./node_modules/@nextcloud/event-bus/dist/index.mjs");
+/* harmony import */ var debounce__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! debounce */ "./node_modules/debounce/index.js");
+/* harmony import */ var pinia__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! pinia */ "./node_modules/pinia/dist/pinia.mjs");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.runtime.esm.js");
+/* harmony import */ var _logger_ts__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../logger.ts */ "./apps/files/src/logger.ts");
+/* harmony import */ var _views_search_ts__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../views/search.ts */ "./apps/files/src/views/search.ts");
+/*!
+ * SPDX-FileCopyrightText: 2025 Nextcloud GmbH and Nextcloud contributors
+ * SPDX-License-Identifier: AGPL-3.0-or-later
+ */
+
+
+
+
+
+
+const useSearchStore = (0,pinia__WEBPACK_IMPORTED_MODULE_2__.defineStore)('search', () => {
+  /**
+   * The current search query
+   */
+  const query = (0,vue__WEBPACK_IMPORTED_MODULE_3__.ref)('');
+  /**
+   * Scope of the search.
+   * Scopes:
+   * - filter: only filter current file list
+   * - globally: search everywhere
+   */
+  const scope = (0,vue__WEBPACK_IMPORTED_MODULE_3__.ref)('filter');
+  // reset the base if query is cleared
+  (0,vue__WEBPACK_IMPORTED_MODULE_3__.watch)(scope, updateSearch);
+  (0,vue__WEBPACK_IMPORTED_MODULE_3__.watch)(query, (old, current) => {
+    // skip if only whitespaces changed
+    if (old.trim() === current.trim()) {
+      return;
+    }
+    updateSearch();
+  });
+  // initialize the search store
+  initialize();
+  /**
+   * Debounced update of the current route
+   *
+   */
+  const updateRouter = (0,debounce__WEBPACK_IMPORTED_MODULE_1__["default"])(isSearch => {
+    const router = window.OCP.Files.Router;
+    router.goToRoute(undefined, {
+      view: _views_search_ts__WEBPACK_IMPORTED_MODULE_5__.VIEW_ID
+    }, {
+      query: query.value
+    }, isSearch);
+  });
+  /**
+   * Handle updating the filter if needed.
+   * Also update the search view by updating the current route if needed.
+   *
+   */
+  function updateSearch() {
+    // emit the search event to update the filter
+    (0,_nextcloud_event_bus__WEBPACK_IMPORTED_MODULE_0__.emit)('files:search:updated', {
+      query: query.value,
+      scope: scope.value
+    });
+    const router = window.OCP.Files.Router;
+    // if we are on the search view and the query was unset or scope was set to 'filter' we need to move back to the files view
+    if (router.params.view === _views_search_ts__WEBPACK_IMPORTED_MODULE_5__.VIEW_ID && (query.value === '' || scope.value === 'filter')) {
+      scope.value = 'filter';
+      return router.goToRoute(undefined, {
+        view: 'files'
+      }, {
+        ...router.query,
+        query: undefined
+      });
+    }
+    // for the filter scope we do not need to adjust the current route anymore
+    // also if the query is empty we do not need to do anything
+    if (scope.value === 'filter' || !query.value) {
+      return;
+    }
+    const isSearch = router.params.view === _views_search_ts__WEBPACK_IMPORTED_MODULE_5__.VIEW_ID;
+    _logger_ts__WEBPACK_IMPORTED_MODULE_4__["default"].debug('Update route for updated search query', {
+      query: query.value,
+      isSearch
+    });
+    updateRouter(isSearch);
+  }
+  /**
+   * Event handler that resets the store if the file list view was changed.
+   *
+   * @param view - The new view that is active
+   */
+  function onViewChanged(view) {
+    if (view.id !== _views_search_ts__WEBPACK_IMPORTED_MODULE_5__.VIEW_ID) {
+      query.value = '';
+      scope.value = 'filter';
+    }
+  }
+  /**
+   * Initialize the store from the router if needed
+   */
+  function initialize() {
+    (0,_nextcloud_event_bus__WEBPACK_IMPORTED_MODULE_0__.subscribe)('files:navigation:changed', onViewChanged);
+    const router = window.OCP.Files.Router;
+    // if we initially load the search view (e.g. hard page refresh)
+    // then we need to initialize the store from the router
+    if (router.params.view === _views_search_ts__WEBPACK_IMPORTED_MODULE_5__.VIEW_ID) {
+      query.value = [router.query.query].flat()[0] ?? '';
+      if (query.value) {
+        scope.value = 'globally';
+        _logger_ts__WEBPACK_IMPORTED_MODULE_4__["default"].debug('Directly navigated to search view', {
+          query: query.value
+        });
+      } else {
+        // we do not have any query so we need to move to the files list
+        _logger_ts__WEBPACK_IMPORTED_MODULE_4__["default"].info('Directly navigated to search view without any query, redirect to files view.');
+        router.goToRoute(undefined, {
+          ...router.params,
+          view: 'files'
+        }, {
+          ...router.query,
+          query: undefined
+        }, true);
+      }
+    }
+  }
+  return {
+    query,
+    scope
+  };
+});
+
+/***/ },
+
+/***/ "./apps/files/src/utils/filesViews.ts"
+/*!********************************************!*\
+  !*** ./apps/files/src/utils/filesViews.ts ***!
+  \********************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   defaultView: () => (/* binding */ defaultView),
+/* harmony export */   hasPersonalFilesView: () => (/* binding */ hasPersonalFilesView)
+/* harmony export */ });
+/* harmony import */ var _nextcloud_initial_state__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @nextcloud/initial-state */ "./node_modules/@nextcloud/initial-state/dist/index.js");
+/**
+ * SPDX-FileCopyrightText: 2024 Nextcloud GmbH and Nextcloud contributors
+ * SPDX-License-Identifier: AGPL-3.0-or-later
+ */
+
+/**
+ * Check whether the personal files view can be shown
+ */
+function hasPersonalFilesView() {
+  const storageStats = (0,_nextcloud_initial_state__WEBPACK_IMPORTED_MODULE_0__.loadState)('files', 'storageStats', {
+    quota: -1
+  });
+  // Don't show this view if the user has no storage quota
+  return storageStats.quota !== 0;
+}
+/**
+ * Get the default files view
+ */
+function defaultView() {
+  const {
+    default_view: defaultView
+  } = (0,_nextcloud_initial_state__WEBPACK_IMPORTED_MODULE_0__.loadState)('files', 'config', {
+    default_view: 'files'
+  });
+  // the default view - only use the personal one if it is enabled
+  if (defaultView !== 'personal' || hasPersonalFilesView()) {
+    return defaultView;
+  }
+  return 'files';
+}
+
+/***/ },
+
+/***/ "./apps/files/src/views/files.ts"
+/*!***************************************!*\
+  !*** ./apps/files/src/views/files.ts ***!
+  \***************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   VIEW_ID: () => (/* binding */ VIEW_ID),
+/* harmony export */   registerFilesView: () => (/* binding */ registerFilesView)
+/* harmony export */ });
+/* harmony import */ var _mdi_svg_svg_folder_outline_svg_raw__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @mdi/svg/svg/folder-outline.svg?raw */ "./node_modules/@mdi/svg/svg/folder-outline.svg?raw");
+/* harmony import */ var _nextcloud_event_bus__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @nextcloud/event-bus */ "./node_modules/@nextcloud/event-bus/dist/index.mjs");
+/* harmony import */ var _nextcloud_files__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @nextcloud/files */ "./node_modules/@nextcloud/files/dist/index.mjs");
+/* harmony import */ var _nextcloud_l10n__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @nextcloud/l10n */ "./node_modules/@nextcloud/l10n/dist/index.mjs");
+/* harmony import */ var _services_Files_ts__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../services/Files.ts */ "./apps/files/src/services/Files.ts");
+/* harmony import */ var _store_active_ts__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../store/active.ts */ "./apps/files/src/store/active.ts");
+/* harmony import */ var _utils_filesViews_ts__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../utils/filesViews.ts */ "./apps/files/src/utils/filesViews.ts");
+/**
+ * SPDX-FileCopyrightText: 2023 Nextcloud GmbH and Nextcloud contributors
+ * SPDX-License-Identifier: AGPL-3.0-or-later
+ */
+
+
+
+
+
+
+
+const VIEW_ID = 'files';
+/**
+ * Register the files view to the navigation
+ */
+function registerFilesView() {
+  // we cache the query to allow more performant search (see below in event listener)
+  let oldQuery = '';
+  const Navigation = (0,_nextcloud_files__WEBPACK_IMPORTED_MODULE_2__.getNavigation)();
+  Navigation.register(new _nextcloud_files__WEBPACK_IMPORTED_MODULE_2__.View({
+    id: VIEW_ID,
+    name: (0,_nextcloud_l10n__WEBPACK_IMPORTED_MODULE_3__.t)('files', 'All files'),
+    caption: (0,_nextcloud_l10n__WEBPACK_IMPORTED_MODULE_3__.t)('files', 'List of your files and folders.'),
+    icon: _mdi_svg_svg_folder_outline_svg_raw__WEBPACK_IMPORTED_MODULE_0__,
+    // if this is the default view we set it at the top of the list - otherwise below it
+    order: (0,_utils_filesViews_ts__WEBPACK_IMPORTED_MODULE_6__.defaultView)() === VIEW_ID ? 0 : 5,
+    getContents: _services_Files_ts__WEBPACK_IMPORTED_MODULE_4__.getContents
+  }));
+  // when the search is updated
+  // and we are in the files view
+  // and there is already a folder fetched
+  // then we "update" it to trigger a new `getContents` call to search for the query while the filelist is filtered
+  (0,_nextcloud_event_bus__WEBPACK_IMPORTED_MODULE_1__.subscribe)('files:search:updated', ({
+    scope,
+    query
+  }) => {
+    if (scope === 'globally') {
+      return;
+    }
+    if (Navigation.active?.id !== VIEW_ID) {
+      return;
+    }
+    // If neither the old query nor the new query is longer than the search minimum
+    // then we do not need to trigger a new PROPFIND / SEARCH
+    // so we skip unneccessary requests here
+    if (oldQuery.length < 3 && query.length < 3) {
+      return;
+    }
+    const store = (0,_store_active_ts__WEBPACK_IMPORTED_MODULE_5__.useActiveStore)();
+    if (!store.activeFolder) {
+      return;
+    }
+    oldQuery = query;
+    (0,_nextcloud_event_bus__WEBPACK_IMPORTED_MODULE_1__.emit)('files:node:updated', store.activeFolder);
+  });
+}
+
+/***/ },
+
+/***/ "./apps/files/src/views/search.ts"
+/*!****************************************!*\
+  !*** ./apps/files/src/views/search.ts ***!
+  \****************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   VIEW_ID: () => (/* binding */ VIEW_ID),
+/* harmony export */   registerSearchView: () => (/* binding */ registerSearchView)
+/* harmony export */ });
+/* harmony import */ var _mdi_svg_svg_magnify_svg_raw__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @mdi/svg/svg/magnify.svg?raw */ "./node_modules/@mdi/svg/svg/magnify.svg?raw");
+/* harmony import */ var _nextcloud_files__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @nextcloud/files */ "./node_modules/@nextcloud/files/dist/index.mjs");
+/* harmony import */ var _nextcloud_l10n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @nextcloud/l10n */ "./node_modules/@nextcloud/l10n/dist/index.mjs");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.runtime.esm.js");
+/* harmony import */ var _services_Search_ts__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../services/Search.ts */ "./apps/files/src/services/Search.ts");
+/* harmony import */ var _files_ts__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./files.ts */ "./apps/files/src/views/files.ts");
+/**
+ * SPDX-FileCopyrightText: 2023 Nextcloud GmbH and Nextcloud contributors
+ * SPDX-License-Identifier: AGPL-3.0-or-later
+ */
+
+
+
+
+
+
+const VIEW_ID = 'search';
+/**
+ * Register the search-in-files view
+ */
+function registerSearchView() {
+  let instance;
+  let view;
+  const Navigation = (0,_nextcloud_files__WEBPACK_IMPORTED_MODULE_1__.getNavigation)();
+  Navigation.register(new _nextcloud_files__WEBPACK_IMPORTED_MODULE_1__.View({
+    id: VIEW_ID,
+    name: (0,_nextcloud_l10n__WEBPACK_IMPORTED_MODULE_2__.t)('files', 'Search'),
+    caption: (0,_nextcloud_l10n__WEBPACK_IMPORTED_MODULE_2__.t)('files', 'Search results within your files.'),
+    async emptyView(el) {
+      if (!view) {
+        view = (await Promise.all(/*! import() */[__webpack_require__.e("core-common"), __webpack_require__.e("apps_files_src_views_SearchEmptyView_vue")]).then(__webpack_require__.bind(__webpack_require__, /*! ./SearchEmptyView.vue */ "./apps/files/src/views/SearchEmptyView.vue"))).default;
+      } else {
+        instance.$destroy();
+      }
+      instance = new vue__WEBPACK_IMPORTED_MODULE_3__["default"](view);
+      instance.$mount(el);
+    },
+    icon: _mdi_svg_svg_magnify_svg_raw__WEBPACK_IMPORTED_MODULE_0__,
+    order: 10,
+    parent: _files_ts__WEBPACK_IMPORTED_MODULE_5__.VIEW_ID,
+    // it should be shown expanded
+    expanded: true,
+    // this view is hidden by default and only shown when active
+    hidden: true,
+    getContents: _services_Search_ts__WEBPACK_IMPORTED_MODULE_4__.getContents
+  }));
+}
+
+/***/ },
+
+/***/ "./apps/files_sharing/src/files_views/publicFileDrop.ts"
+/*!**************************************************************!*\
+  !*** ./apps/files_sharing/src/files_views/publicFileDrop.ts ***!
+  \**************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _mdi_svg_svg_cloud_upload_svg_raw__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @mdi/svg/svg/cloud-upload.svg?raw */ "./node_modules/@mdi/svg/svg/cloud-upload.svg?raw");
+/* harmony import */ var _nextcloud_files__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @nextcloud/files */ "./node_modules/@nextcloud/files/dist/index.mjs");
+/* harmony import */ var _nextcloud_files_dav__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @nextcloud/files/dav */ "./node_modules/@nextcloud/files/dist/dav.mjs");
+/* harmony import */ var _nextcloud_initial_state__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @nextcloud/initial-state */ "./node_modules/@nextcloud/initial-state/dist/index.js");
+/* harmony import */ var _nextcloud_l10n__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @nextcloud/l10n */ "./node_modules/@nextcloud/l10n/dist/index.mjs");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.runtime.esm.js");
+
+
+
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (() => {
+  const foldername = (0,_nextcloud_initial_state__WEBPACK_IMPORTED_MODULE_3__.loadState)('files_sharing', 'filename');
+  let FilesViewFileDropEmptyContent;
+  let fileDropEmptyContentInstance;
+  const view = new _nextcloud_files__WEBPACK_IMPORTED_MODULE_1__.View({
+    id: 'public-file-drop',
+    name: (0,_nextcloud_l10n__WEBPACK_IMPORTED_MODULE_4__.translate)('files_sharing', 'File drop'),
+    caption: (0,_nextcloud_l10n__WEBPACK_IMPORTED_MODULE_4__.translate)('files_sharing', 'Upload files to {foldername}', {
+      foldername
+    }),
+    icon: _mdi_svg_svg_cloud_upload_svg_raw__WEBPACK_IMPORTED_MODULE_0__,
+    order: 1,
+    emptyView: async div => {
+      if (FilesViewFileDropEmptyContent === undefined) {
+        const {
+          default: component
+        } = await Promise.all(/*! import() */[__webpack_require__.e("core-common"), __webpack_require__.e("apps_files_sharing_src_views_FilesViewFileDropEmptyContent_vue")]).then(__webpack_require__.bind(__webpack_require__, /*! ../views/FilesViewFileDropEmptyContent.vue */ "./apps/files_sharing/src/views/FilesViewFileDropEmptyContent.vue"));
+        FilesViewFileDropEmptyContent = vue__WEBPACK_IMPORTED_MODULE_5__["default"].extend(component);
+      }
+      if (fileDropEmptyContentInstance) {
+        fileDropEmptyContentInstance.$destroy();
+      }
+      fileDropEmptyContentInstance = new FilesViewFileDropEmptyContent({
+        propsData: {
+          foldername
+        }
+      });
+      fileDropEmptyContentInstance.$mount(div);
+    },
+    getContents: async () => {
+      return {
+        contents: [],
+        // Fake a writeonly folder as root
+        folder: new _nextcloud_files__WEBPACK_IMPORTED_MODULE_1__.Folder({
+          id: 0,
+          source: `${_nextcloud_files_dav__WEBPACK_IMPORTED_MODULE_2__.defaultRemoteURL}${_nextcloud_files_dav__WEBPACK_IMPORTED_MODULE_2__.defaultRootPath}`,
+          root: _nextcloud_files_dav__WEBPACK_IMPORTED_MODULE_2__.defaultRootPath,
+          owner: null,
+          permissions: _nextcloud_files__WEBPACK_IMPORTED_MODULE_1__.Permission.CREATE
+        })
+      };
+    }
+  });
+  const Navigation = (0,_nextcloud_files__WEBPACK_IMPORTED_MODULE_1__.getNavigation)();
+  Navigation.register(view);
+});
+
+/***/ },
+
+/***/ "./apps/files_sharing/src/files_views/publicFileShare.ts"
+/*!***************************************************************!*\
+  !*** ./apps/files_sharing/src/files_views/publicFileShare.ts ***!
+  \***************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _mdi_svg_svg_link_svg_raw__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @mdi/svg/svg/link.svg?raw */ "./node_modules/@mdi/svg/svg/link.svg?raw");
+/* harmony import */ var _nextcloud_files__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @nextcloud/files */ "./node_modules/@nextcloud/files/dist/index.mjs");
+/* harmony import */ var _nextcloud_files_dav__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @nextcloud/files/dav */ "./node_modules/@nextcloud/files/dist/dav.mjs");
+/* harmony import */ var _nextcloud_l10n__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @nextcloud/l10n */ "./node_modules/@nextcloud/l10n/dist/index.mjs");
+/* harmony import */ var _files_src_services_WebdavClient_ts__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../files/src/services/WebdavClient.ts */ "./apps/files/src/services/WebdavClient.ts");
+/* harmony import */ var _services_logger_ts__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../services/logger.ts */ "./apps/files_sharing/src/services/logger.ts");
+/**
+ * SPDX-FileCopyrightText: 2024 Nextcloud GmbH and Nextcloud contributors
+ * SPDX-License-Identifier: AGPL-3.0-or-later
+ */
+
+
+
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (() => {
+  const view = new _nextcloud_files__WEBPACK_IMPORTED_MODULE_1__.View({
+    id: 'public-file-share',
+    name: (0,_nextcloud_l10n__WEBPACK_IMPORTED_MODULE_3__.translate)('files_sharing', 'Public file share'),
+    caption: (0,_nextcloud_l10n__WEBPACK_IMPORTED_MODULE_3__.translate)('files_sharing', 'Publicly shared file.'),
+    emptyTitle: (0,_nextcloud_l10n__WEBPACK_IMPORTED_MODULE_3__.translate)('files_sharing', 'No file'),
+    emptyCaption: (0,_nextcloud_l10n__WEBPACK_IMPORTED_MODULE_3__.translate)('files_sharing', 'The file shared with you will show up here'),
+    icon: _mdi_svg_svg_link_svg_raw__WEBPACK_IMPORTED_MODULE_0__,
+    order: 1,
+    getContents: async (path, {
+      signal
+    }) => {
+      try {
+        const node = await _files_src_services_WebdavClient_ts__WEBPACK_IMPORTED_MODULE_4__.client.stat((0,_nextcloud_files_dav__WEBPACK_IMPORTED_MODULE_2__.getRootPath)(), {
+          data: (0,_nextcloud_files_dav__WEBPACK_IMPORTED_MODULE_2__.getDefaultPropfind)(),
+          details: true,
+          signal
+        });
+        return {
+          // We only have one file as the content
+          contents: [(0,_nextcloud_files_dav__WEBPACK_IMPORTED_MODULE_2__.resultToNode)(node.data)],
+          // Fake a readonly folder as root
+          folder: new _nextcloud_files__WEBPACK_IMPORTED_MODULE_1__.Folder({
+            id: 0,
+            source: `${(0,_nextcloud_files_dav__WEBPACK_IMPORTED_MODULE_2__.getRemoteURL)()}${(0,_nextcloud_files_dav__WEBPACK_IMPORTED_MODULE_2__.getRootPath)()}`,
+            root: (0,_nextcloud_files_dav__WEBPACK_IMPORTED_MODULE_2__.getRootPath)(),
+            owner: null,
+            permissions: _nextcloud_files__WEBPACK_IMPORTED_MODULE_1__.Permission.READ,
+            attributes: {
+              // Ensure the share note is set on the root
+              note: node.data.props?.note
+            }
+          })
+        };
+      } catch (error) {
+        if (signal.aborted) {
+          _services_logger_ts__WEBPACK_IMPORTED_MODULE_5__["default"].info('Fetching contents for public file share was aborted', {
+            error
+          });
+          throw new DOMException('Aborted', 'AbortError');
+        }
+        _services_logger_ts__WEBPACK_IMPORTED_MODULE_5__["default"].error('Failed to get contents for public file share', {
+          error
+        });
+        throw error;
+      }
+    }
+  });
+  const Navigation = (0,_nextcloud_files__WEBPACK_IMPORTED_MODULE_1__.getNavigation)();
+  Navigation.register(view);
+});
+
+/***/ },
+
+/***/ "./apps/files_sharing/src/files_views/publicShare.ts"
+/*!***********************************************************!*\
+  !*** ./apps/files_sharing/src/files_views/publicShare.ts ***!
+  \***********************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _mdi_svg_svg_link_svg_raw__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @mdi/svg/svg/link.svg?raw */ "./node_modules/@mdi/svg/svg/link.svg?raw");
+/* harmony import */ var _nextcloud_files__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @nextcloud/files */ "./node_modules/@nextcloud/files/dist/index.mjs");
+/* harmony import */ var _nextcloud_l10n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @nextcloud/l10n */ "./node_modules/@nextcloud/l10n/dist/index.mjs");
+/* harmony import */ var _files_src_services_Files_ts__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../files/src/services/Files.ts */ "./apps/files/src/services/Files.ts");
+
+
+/**
+ * SPDX-FileCopyrightText: 2024 Nextcloud GmbH and Nextcloud contributors
+ * SPDX-License-Identifier: AGPL-3.0-or-later
+ */
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (() => {
+  const view = new _nextcloud_files__WEBPACK_IMPORTED_MODULE_1__.View({
+    id: 'public-share',
+    name: (0,_nextcloud_l10n__WEBPACK_IMPORTED_MODULE_2__.translate)('files_sharing', 'Public share'),
+    caption: (0,_nextcloud_l10n__WEBPACK_IMPORTED_MODULE_2__.translate)('files_sharing', 'Publicly shared files.'),
+    emptyTitle: (0,_nextcloud_l10n__WEBPACK_IMPORTED_MODULE_2__.translate)('files_sharing', 'No files'),
+    emptyCaption: (0,_nextcloud_l10n__WEBPACK_IMPORTED_MODULE_2__.translate)('files_sharing', 'Files and folders shared with you will show up here'),
+    icon: _mdi_svg_svg_link_svg_raw__WEBPACK_IMPORTED_MODULE_0__,
+    order: 1,
+    getContents: _files_src_services_Files_ts__WEBPACK_IMPORTED_MODULE_3__.getContents
+  });
+  const Navigation = (0,_nextcloud_files__WEBPACK_IMPORTED_MODULE_1__.getNavigation)();
+  Navigation.register(view);
+});
+
+/***/ },
+
+/***/ "./apps/files_sharing/src/init-public.ts"
+/*!***********************************************!*\
+  !*** ./apps/files_sharing/src/init-public.ts ***!
+  \***********************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _nextcloud_event_bus__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @nextcloud/event-bus */ "./node_modules/@nextcloud/event-bus/dist/index.mjs");
+/* harmony import */ var _nextcloud_files__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @nextcloud/files */ "./node_modules/@nextcloud/files/dist/index.mjs");
+/* harmony import */ var _nextcloud_initial_state__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @nextcloud/initial-state */ "./node_modules/@nextcloud/initial-state/dist/index.js");
+/* harmony import */ var _files_src_services_RouterService_ts__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../files/src/services/RouterService.ts */ "./apps/files/src/services/RouterService.ts");
+/* harmony import */ var _files_views_publicFileDrop_ts__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./files_views/publicFileDrop.ts */ "./apps/files_sharing/src/files_views/publicFileDrop.ts");
+/* harmony import */ var _files_views_publicFileShare_ts__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./files_views/publicFileShare.ts */ "./apps/files_sharing/src/files_views/publicFileShare.ts");
+/* harmony import */ var _files_views_publicShare_ts__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./files_views/publicShare.ts */ "./apps/files_sharing/src/files_views/publicShare.ts");
+/* harmony import */ var _router_index_ts__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./router/index.ts */ "./apps/files_sharing/src/router/index.ts");
+/* harmony import */ var _services_logger_ts__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./services/logger.ts */ "./apps/files_sharing/src/services/logger.ts");
+/*!
+ * SPDX-FileCopyrightText: 2024 Nextcloud GmbH and Nextcloud contributors
+ * SPDX-License-Identifier: AGPL-3.0-or-later
+ */
+
+
+
+
+
+
+
+
+
+(0,_files_views_publicFileDrop_ts__WEBPACK_IMPORTED_MODULE_4__["default"])();
+(0,_files_views_publicShare_ts__WEBPACK_IMPORTED_MODULE_6__["default"])();
+(0,_files_views_publicFileShare_ts__WEBPACK_IMPORTED_MODULE_5__["default"])();
+// Get the current view from state and set it active
+const view = (0,_nextcloud_initial_state__WEBPACK_IMPORTED_MODULE_2__.loadState)('files_sharing', 'view');
+const navigation = (0,_nextcloud_files__WEBPACK_IMPORTED_MODULE_1__.getNavigation)();
+try {
+  navigation.setActive(view);
+} catch {
+  // no such view
+  navigation.setActive(null);
+}
+// Force our own router
+window.OCP.Files = window.OCP.Files ?? {};
+window.OCP.Files.Router = new _files_src_services_RouterService_ts__WEBPACK_IMPORTED_MODULE_3__["default"](_router_index_ts__WEBPACK_IMPORTED_MODULE_7__["default"]);
+// If this is a single file share, so set the fileid as active in the URL
+const fileId = (0,_nextcloud_initial_state__WEBPACK_IMPORTED_MODULE_2__.loadState)('files_sharing', 'fileId', null);
+const token = (0,_nextcloud_initial_state__WEBPACK_IMPORTED_MODULE_2__.loadState)('files_sharing', 'sharingToken');
+if (fileId !== null) {
+  window.OCP.Files.Router.goToRoute('filelist', {
+    ...window.OCP.Files.Router.params,
+    token,
+    fileid: String(fileId)
+  }, {
+    ...window.OCP.Files.Router.query,
+    openfile: 'true'
+  });
+}
+// When the file list is loaded we need to apply the "userconfig" setup on the share
+(0,_nextcloud_event_bus__WEBPACK_IMPORTED_MODULE_0__.subscribe)('files:list:updated', loadShareConfig);
+/**
+ * Event handler to load the view config for the current share.
+ * This is done on the `files:list:updated` event to ensure the list and especially the config store was correctly initialized.
+ *
+ * @param context The event context
+ * @param context.folder The current folder
+ */
+function loadShareConfig({
+  folder
+}) {
+  // Only setup config once
+  (0,_nextcloud_event_bus__WEBPACK_IMPORTED_MODULE_0__.unsubscribe)('files:list:updated', loadShareConfig);
+  // Share attributes (the same) are set on all folders of a share
+  if (folder.attributes['share-attributes']) {
+    const shareAttributes = JSON.parse(folder.attributes['share-attributes'] || '[]');
+    const gridViewAttribute = shareAttributes.find(({
+      scope,
+      key
+    }) => scope === 'config' && key === 'grid_view');
+    if (gridViewAttribute !== undefined) {
+      _services_logger_ts__WEBPACK_IMPORTED_MODULE_8__["default"].debug('Loading share attributes', {
+        gridViewAttribute
+      });
+      (0,_nextcloud_event_bus__WEBPACK_IMPORTED_MODULE_0__.emit)('files:config:updated', {
+        key: 'grid_view',
+        value: gridViewAttribute.value === true
+      });
+    }
+  }
+}
+
+/***/ },
+
+/***/ "./apps/files_sharing/src/router/index.ts"
+/*!************************************************!*\
+  !*** ./apps/files_sharing/src/router/index.ts ***!
+  \************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _nextcloud_initial_state__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @nextcloud/initial-state */ "./node_modules/@nextcloud/initial-state/dist/index.js");
+/* harmony import */ var _nextcloud_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @nextcloud/router */ "./node_modules/@nextcloud/router/dist/index.mjs");
+/* harmony import */ var query_string__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! query-string */ "./node_modules/query-string/index.js");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.runtime.esm.js");
+/* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
+/* harmony import */ var _services_logger_ts__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../services/logger.ts */ "./apps/files_sharing/src/services/logger.ts");
+
+
+
+
+
+
+const view = (0,_nextcloud_initial_state__WEBPACK_IMPORTED_MODULE_0__.loadState)('files_sharing', 'view');
+const sharingToken = (0,_nextcloud_initial_state__WEBPACK_IMPORTED_MODULE_0__.loadState)('files_sharing', 'sharingToken');
+vue__WEBPACK_IMPORTED_MODULE_3__["default"].use(vue_router__WEBPACK_IMPORTED_MODULE_4__["default"]);
+// Prevent router from throwing errors when we're already on the page we're trying to go to
+const originalPush = vue_router__WEBPACK_IMPORTED_MODULE_4__["default"].prototype.push;
+vue_router__WEBPACK_IMPORTED_MODULE_4__["default"].prototype.push = function (...args) {
+  if (args.length > 1) {
+    return originalPush.call(this, ...args);
+  }
+  return originalPush.call(this, args[0]).catch(ignoreDuplicateNavigation);
+};
+const originalReplace = vue_router__WEBPACK_IMPORTED_MODULE_4__["default"].prototype.replace;
+vue_router__WEBPACK_IMPORTED_MODULE_4__["default"].prototype.replace = function (...args) {
+  if (args.length > 1) {
+    return originalReplace.call(this, ...args);
+  }
+  return originalReplace.call(this, args[0]).catch(ignoreDuplicateNavigation);
+};
+/**
+ * Ignore duplicated-navigation error but forward real exceptions
+ *
+ * @param error The thrown error
+ */
+function ignoreDuplicateNavigation(error) {
+  if ((0,vue_router__WEBPACK_IMPORTED_MODULE_4__.isNavigationFailure)(error, vue_router__WEBPACK_IMPORTED_MODULE_4__.NavigationFailureType.duplicated)) {
+    _services_logger_ts__WEBPACK_IMPORTED_MODULE_5__["default"].debug('Ignoring duplicated navigation from vue-router', {
+      error
+    });
+  } else {
+    throw error;
+  }
+}
+const router = new vue_router__WEBPACK_IMPORTED_MODULE_4__["default"]({
+  mode: 'history',
+  // if index.php is in the url AND we got this far, then it's working:
+  // let's keep using index.php in the url
+  base: (0,_nextcloud_router__WEBPACK_IMPORTED_MODULE_1__.generateUrl)('/s'),
+  linkActiveClass: 'active',
+  routes: [{
+    path: '/',
+    // Pretending we're using the default view
+    redirect: {
+      name: 'filelist',
+      params: {
+        view,
+        token: sharingToken
+      }
+    }
+  }, {
+    path: '/:token',
+    name: 'filelist',
+    props: true
+  }],
+  // Custom stringifyQuery to prevent encoding of slashes in the url
+  stringifyQuery(query) {
+    const result = query_string__WEBPACK_IMPORTED_MODULE_2__["default"].stringify(query).replace(/%2F/gmi, '/');
+    return result ? '?' + result : '';
+  }
+});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (router);
+
+/***/ },
+
+/***/ "./apps/files_sharing/src/services/logger.ts"
+/*!***************************************************!*\
+  !*** ./apps/files_sharing/src/services/logger.ts ***!
+  \***************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _nextcloud_logger__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @nextcloud/logger */ "./node_modules/@nextcloud/logger/dist/index.mjs");
+/**
+ * SPDX-FileCopyrightText: 2022 Nextcloud GmbH and Nextcloud contributors
+ * SPDX-License-Identifier: AGPL-3.0-or-later
+ */
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,_nextcloud_logger__WEBPACK_IMPORTED_MODULE_0__.getLoggerBuilder)().setApp('files_sharing').detectUser().build());
+
+/***/ },
+
+/***/ "./node_modules/@mdi/svg/svg/cloud-upload.svg?raw"
+/*!********************************************************!*\
+  !*** ./node_modules/@mdi/svg/svg/cloud-upload.svg?raw ***!
+  \********************************************************/
+(module) {
+
+"use strict";
+module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" id=\"mdi-cloud-upload\" viewBox=\"0 0 24 24\"><path d=\"M11 20H6.5Q4.22 20 2.61 18.43 1 16.85 1 14.58 1 12.63 2.17 11.1 3.35 9.57 5.25 9.15 5.88 6.85 7.75 5.43 9.63 4 12 4 14.93 4 16.96 6.04 19 8.07 19 11 20.73 11.2 21.86 12.5 23 13.78 23 15.5 23 17.38 21.69 18.69 20.38 20 18.5 20H13V12.85L14.6 14.4L16 13L12 9L8 13L9.4 14.4L11 12.85Z\" /></svg>";
+
+/***/ },
+
+/***/ "./node_modules/@mdi/svg/svg/link.svg?raw"
+/*!************************************************!*\
+  !*** ./node_modules/@mdi/svg/svg/link.svg?raw ***!
+  \************************************************/
+(module) {
+
+"use strict";
+module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" id=\"mdi-link\" viewBox=\"0 0 24 24\"><path d=\"M3.9,12C3.9,10.29 5.29,8.9 7,8.9H11V7H7A5,5 0 0,0 2,12A5,5 0 0,0 7,17H11V15.1H7C5.29,15.1 3.9,13.71 3.9,12M8,13H16V11H8V13M17,7H13V8.9H17C18.71,8.9 20.1,10.29 20.1,12C20.1,13.71 18.71,15.1 17,15.1H13V17H17A5,5 0 0,0 22,12A5,5 0 0,0 17,7Z\" /></svg>";
+
+/***/ },
+
+/***/ "?3e83"
+/*!**********************!*\
+  !*** util (ignored) ***!
+  \**********************/
+() {
+
+/* (ignored) */
+
+/***/ },
+
+/***/ "?19e6"
+/*!**********************!*\
+  !*** util (ignored) ***!
+  \**********************/
+() {
+
+/* (ignored) */
+
+/***/ }
+
+/******/ 	});
+/************************************************************************/
+/******/ 	// The module cache
+/******/ 	var __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Check if module exists (development only)
+/******/ 		if (__webpack_modules__[moduleId] === undefined) {
+/******/ 			var e = new Error("Cannot find module '" + moduleId + "'");
+/******/ 			e.code = 'MODULE_NOT_FOUND';
+/******/ 			throw e;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 			id: moduleId,
+/******/ 			loaded: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		__webpack_modules__[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Flag the module as loaded
+/******/ 		module.loaded = true;
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = __webpack_modules__;
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/chunk loaded */
+/******/ 	(() => {
+/******/ 		var deferred = [];
+/******/ 		__webpack_require__.O = (result, chunkIds, fn, priority) => {
+/******/ 			if(chunkIds) {
+/******/ 				priority = priority || 0;
+/******/ 				for(var i = deferred.length; i > 0 && deferred[i - 1][2] > priority; i--) deferred[i] = deferred[i - 1];
+/******/ 				deferred[i] = [chunkIds, fn, priority];
+/******/ 				return;
+/******/ 			}
+/******/ 			var notFulfilled = Infinity;
+/******/ 			for (var i = 0; i < deferred.length; i++) {
+/******/ 				var [chunkIds, fn, priority] = deferred[i];
+/******/ 				var fulfilled = true;
+/******/ 				for (var j = 0; j < chunkIds.length; j++) {
+/******/ 					if ((priority & 1 === 0 || notFulfilled >= priority) && Object.keys(__webpack_require__.O).every((key) => (__webpack_require__.O[key](chunkIds[j])))) {
+/******/ 						chunkIds.splice(j--, 1);
+/******/ 					} else {
+/******/ 						fulfilled = false;
+/******/ 						if(priority < notFulfilled) notFulfilled = priority;
+/******/ 					}
+/******/ 				}
+/******/ 				if(fulfilled) {
+/******/ 					deferred.splice(i--, 1)
+/******/ 					var r = fn();
+/******/ 					if (r !== undefined) result = r;
+/******/ 				}
+/******/ 			}
+/******/ 			return result;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	(() => {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__webpack_require__.n = (module) => {
+/******/ 			var getter = module && module.__esModule ?
+/******/ 				() => (module['default']) :
+/******/ 				() => (module);
+/******/ 			__webpack_require__.d(getter, { a: getter });
+/******/ 			return getter;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/ensure chunk */
+/******/ 	(() => {
+/******/ 		__webpack_require__.f = {};
+/******/ 		// This file contains only the entry chunk.
+/******/ 		// The chunk loading function for additional chunks
+/******/ 		__webpack_require__.e = (chunkId) => {
+/******/ 			return Promise.all(Object.keys(__webpack_require__.f).reduce((promises, key) => {
+/******/ 				__webpack_require__.f[key](chunkId, promises);
+/******/ 				return promises;
+/******/ 			}, []));
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/get javascript chunk filename */
+/******/ 	(() => {
+/******/ 		// This function allow to reference async chunks
+/******/ 		__webpack_require__.u = (chunkId) => {
+/******/ 			// return url for filenames based on template
+/******/ 			return "" + chunkId + "-" + chunkId + ".js?v=" + {"apps_files_src_views_SearchEmptyView_vue":"c89c8810000f6e1ad0d9","apps_files_sharing_src_views_FilesViewFileDropEmptyContent_vue":"b404e8befe97222402be","node_modules_nextcloud_upload_dist_chunks_ConflictPicker-DUp0Tl_A_mjs":"6f2ec8339d006bab7017","node_modules_nextcloud_upload_dist_chunks_InvalidFilenameDialog-B_BCSatD_mjs":"8ec761eaf82ce56f053d","node_modules_nextcloud_upload_node_modules_nextcloud_dialogs_dist_chunks_index-BMbtc3xh_mjs":"313d1a40718226ae766e","node_modules_nextcloud_upload_node_modules_nextcloud_dialogs_dist_chunks_PublicAuthPrompt-CfO-95d64a":"35af0b481109fcc029fa","node_modules_nextcloud_upload_node_modules_nextcloud_dialogs_dist_chunks_FilePicker-JKNLPCbR_mjs":"ce0ac64180a1b91e4a5f","node_modules_nextcloud_vue_dist_Components_NcColorPicker_mjs":"cc9a80a105a480079016","data_image_svg_xml_3c_21--_20-_20SPDX-FileCopyrightText_202020_20Google_20Inc_20-_20SPDX-Lice-cc29b1":"21fc91c563f5cd8d04c3"}[chunkId] + "";
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/load script */
+/******/ 	(() => {
+/******/ 		var inProgress = {};
+/******/ 		var dataWebpackPrefix = "nextcloud-ui-legacy:";
+/******/ 		// loadScript function to load a script via script tag
+/******/ 		__webpack_require__.l = (url, done, key, chunkId) => {
+/******/ 			if(inProgress[url]) { inProgress[url].push(done); return; }
+/******/ 			var script, needAttach;
+/******/ 			if(key !== undefined) {
+/******/ 				var scripts = document.getElementsByTagName("script");
+/******/ 				for(var i = 0; i < scripts.length; i++) {
+/******/ 					var s = scripts[i];
+/******/ 					if(s.getAttribute("src") == url || s.getAttribute("data-webpack") == dataWebpackPrefix + key) { script = s; break; }
+/******/ 				}
+/******/ 			}
+/******/ 			if(!script) {
+/******/ 				needAttach = true;
+/******/ 				script = document.createElement('script');
+/******/ 		
+/******/ 				script.charset = 'utf-8';
+/******/ 				if (__webpack_require__.nc) {
+/******/ 					script.setAttribute("nonce", __webpack_require__.nc);
+/******/ 				}
+/******/ 				script.setAttribute("data-webpack", dataWebpackPrefix + key);
+/******/ 		
+/******/ 				script.src = url;
+/******/ 			}
+/******/ 			inProgress[url] = [done];
+/******/ 			var onScriptComplete = (prev, event) => {
+/******/ 				// avoid mem leaks in IE.
+/******/ 				script.onerror = script.onload = null;
+/******/ 				clearTimeout(timeout);
+/******/ 				var doneFns = inProgress[url];
+/******/ 				delete inProgress[url];
+/******/ 				script.parentNode && script.parentNode.removeChild(script);
+/******/ 				doneFns && doneFns.forEach((fn) => (fn(event)));
+/******/ 				if(prev) return prev(event);
+/******/ 			}
+/******/ 			var timeout = setTimeout(onScriptComplete.bind(null, undefined, { type: 'timeout', target: script }), 120000);
+/******/ 			script.onerror = onScriptComplete.bind(null, script.onerror);
+/******/ 			script.onload = onScriptComplete.bind(null, script.onload);
+/******/ 			needAttach && document.head.appendChild(script);
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	(() => {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = (exports) => {
+/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/node module decorator */
+/******/ 	(() => {
+/******/ 		__webpack_require__.nmd = (module) => {
+/******/ 			module.paths = [];
+/******/ 			if (!module.children) module.children = [];
+/******/ 			return module;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/publicPath */
+/******/ 	(() => {
+/******/ 		var scriptUrl;
+/******/ 		if (globalThis.importScripts) scriptUrl = globalThis.location + "";
+/******/ 		var document = globalThis.document;
+/******/ 		if (!scriptUrl && document) {
+/******/ 			if (document.currentScript && document.currentScript.tagName.toUpperCase() === 'SCRIPT')
+/******/ 				scriptUrl = document.currentScript.src;
+/******/ 			if (!scriptUrl) {
+/******/ 				var scripts = document.getElementsByTagName("script");
+/******/ 				if(scripts.length) {
+/******/ 					var i = scripts.length - 1;
+/******/ 					while (i > -1 && (!scriptUrl || !/^http(s?):/.test(scriptUrl))) scriptUrl = scripts[i--].src;
+/******/ 				}
+/******/ 			}
+/******/ 		}
+/******/ 		// When supporting browsers where an automatic publicPath is not supported you must specify an output.publicPath manually via configuration
+/******/ 		// or pass an empty string ("") and set the __webpack_public_path__ variable from your code to use your own logic.
+/******/ 		if (!scriptUrl) throw new Error("Automatic publicPath is not supported in this browser");
+/******/ 		scriptUrl = scriptUrl.replace(/^blob:/, "").replace(/#.*$/, "").replace(/\?.*$/, "").replace(/\/[^\/]+$/, "/");
+/******/ 		__webpack_require__.p = scriptUrl;
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/jsonp chunk loading */
+/******/ 	(() => {
+/******/ 		__webpack_require__.b = (typeof document !== 'undefined' && document.baseURI) || self.location.href;
+/******/ 		
+/******/ 		// object to store loaded and loading chunks
+/******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
+/******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
+/******/ 		var installedChunks = {
+/******/ 			"files_sharing-init-public": 0
+/******/ 		};
+/******/ 		
+/******/ 		__webpack_require__.f.j = (chunkId, promises) => {
+/******/ 				// JSONP chunk loading for javascript
+/******/ 				var installedChunkData = __webpack_require__.o(installedChunks, chunkId) ? installedChunks[chunkId] : undefined;
+/******/ 				if(installedChunkData !== 0) { // 0 means "already installed".
+/******/ 		
+/******/ 					// a Promise means "currently loading".
+/******/ 					if(installedChunkData) {
+/******/ 						promises.push(installedChunkData[2]);
+/******/ 					} else {
+/******/ 						if(true) { // all chunks have JS
+/******/ 							// setup Promise in chunk cache
+/******/ 							var promise = new Promise((resolve, reject) => (installedChunkData = installedChunks[chunkId] = [resolve, reject]));
+/******/ 							promises.push(installedChunkData[2] = promise);
+/******/ 		
+/******/ 							// start chunk loading
+/******/ 							var url = __webpack_require__.p + __webpack_require__.u(chunkId);
+/******/ 							// create error before stack unwound to get useful stacktrace later
+/******/ 							var error = new Error();
+/******/ 							var loadingEnded = (event) => {
+/******/ 								if(__webpack_require__.o(installedChunks, chunkId)) {
+/******/ 									installedChunkData = installedChunks[chunkId];
+/******/ 									if(installedChunkData !== 0) installedChunks[chunkId] = undefined;
+/******/ 									if(installedChunkData) {
+/******/ 										var errorType = event && (event.type === 'load' ? 'missing' : event.type);
+/******/ 										var realSrc = event && event.target && event.target.src;
+/******/ 										error.message = 'Loading chunk ' + chunkId + ' failed.\n(' + errorType + ': ' + realSrc + ')';
+/******/ 										error.name = 'ChunkLoadError';
+/******/ 										error.type = errorType;
+/******/ 										error.request = realSrc;
+/******/ 										installedChunkData[1](error);
+/******/ 									}
+/******/ 								}
+/******/ 							};
+/******/ 							__webpack_require__.l(url, loadingEnded, "chunk-" + chunkId, chunkId);
+/******/ 						}
+/******/ 					}
+/******/ 				}
+/******/ 		};
+/******/ 		
+/******/ 		// no prefetching
+/******/ 		
+/******/ 		// no preloaded
+/******/ 		
+/******/ 		// no HMR
+/******/ 		
+/******/ 		// no HMR manifest
+/******/ 		
+/******/ 		__webpack_require__.O.j = (chunkId) => (installedChunks[chunkId] === 0);
+/******/ 		
+/******/ 		// install a JSONP callback for chunk loading
+/******/ 		var webpackJsonpCallback = (parentChunkLoadingFunction, data) => {
+/******/ 			var [chunkIds, moreModules, runtime] = data;
+/******/ 			// add "moreModules" to the modules object,
+/******/ 			// then flag all "chunkIds" as loaded and fire callback
+/******/ 			var moduleId, chunkId, i = 0;
+/******/ 			if(chunkIds.some((id) => (installedChunks[id] !== 0))) {
+/******/ 				for(moduleId in moreModules) {
+/******/ 					if(__webpack_require__.o(moreModules, moduleId)) {
+/******/ 						__webpack_require__.m[moduleId] = moreModules[moduleId];
+/******/ 					}
+/******/ 				}
+/******/ 				if(runtime) var result = runtime(__webpack_require__);
+/******/ 			}
+/******/ 			if(parentChunkLoadingFunction) parentChunkLoadingFunction(data);
+/******/ 			for(;i < chunkIds.length; i++) {
+/******/ 				chunkId = chunkIds[i];
+/******/ 				if(__webpack_require__.o(installedChunks, chunkId) && installedChunks[chunkId]) {
+/******/ 					installedChunks[chunkId][0]();
+/******/ 				}
+/******/ 				installedChunks[chunkId] = 0;
+/******/ 			}
+/******/ 			return __webpack_require__.O(result);
+/******/ 		}
+/******/ 		
+/******/ 		var chunkLoadingGlobal = globalThis["webpackChunknextcloud_ui_legacy"] = globalThis["webpackChunknextcloud_ui_legacy"] || [];
+/******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
+/******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/nonce */
+/******/ 	(() => {
+/******/ 		__webpack_require__.nc = undefined;
+/******/ 	})();
+/******/ 	
+/************************************************************************/
+/******/ 	
+/******/ 	// startup
+/******/ 	// Load entry module and return exports
+/******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["core-common"], () => (__webpack_require__("./apps/files_sharing/src/init-public.ts")))
+/******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
+/******/ 	
+/******/ })()
+;
+//# sourceMappingURL=files_sharing-init-public.js.map?v=84a0f2857f5092f7f5a1

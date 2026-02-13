@@ -1,2 +1,1688 @@
-import{d as he,c as xe}from"./pinia-eNUbsHsw.chunk.mjs";import{a5 as Z,a1 as Y,I as we,p as C,b as $,s as B,c as V,o as u,u as e,r as M,q as Q,v as I,j as h,l as T,n as x,k as y,t as v,F as S,L as Ve,C as q,E as z,G as K,a0 as ne,e as b,w,g as k,V as G,H as ke,h as Se}from"./runtime-dom.esm-bundler-DSTOTAEf.chunk.mjs";import{N as ue,l as Ce,n as Me,o as Ae,p as Ue,f as $e,q as Te,e as qe}from"./mdi-Dg3BMFGG.chunk.mjs";import{a as O,l as A}from"./index-DCpg1aui.chunk.mjs";import{t as n,b as Oe}from"./translation-DoG5ZELJ-2ffMJaM4.chunk.mjs";import{c as N,N as F}from"./logger-D3RVzcfQ-u5jICcTJ.chunk.mjs";import"./Plus-D4QQbLoD.chunk.mjs";import{N as oe}from"./NcNoteCard-CVhtNL04-xecBaCCz.chunk.mjs";import{N as de}from"./ContentCopy-BuXj5niD.chunk.mjs";import{c as Ee,N as Ne,s as Pe}from"./index-RbJ3SLsu.chunk.mjs";import{N as X}from"./NcSelect-Czzsi3P_-DQ1pX7Ad.chunk.mjs";import{_ as ce}from"./TrashCanOutline-MY5RRFZ7.chunk.mjs";import{c as U}from"./index-DKddA51s.chunk.mjs";import{g as R}from"./createElementId-DhjFt1I9-DnDDFk77.chunk.mjs";import{N as Re}from"./index-Dfoiix6T.chunk.mjs";import"./PencilOutline-BbbiWpuA.chunk.mjs";import"./NcBreadcrumbs-DYfGaSjT-B0sOzfON.chunk.mjs";import"./NcDateTime.vue_vue_type_script_setup_true_lang-BhB8yA4U-BZtT1htT.chunk.mjs";import"./NcAvatar-DmUGApWA-JlRtP4v4.chunk.mjs";import"./NcRichText-CBMtJzE_-Dhx6yDK3.chunk.mjs";import"./index-6_gsQFyp.chunk.mjs";import{N as P}from"./NcCheckboxRadioSwitch-BCSKF7Tk-C_RQDZ7j.chunk.mjs";import{N as Fe}from"./NcChip-D8tGFzRl-Hh2_NyPj.chunk.mjs";import"./NcColorPicker-Kc0JqRtp-BUWSVNT6.chunk.mjs";import"./TrayArrowDown-BXE7diwi.chunk.mjs";import"./NcEmojiPicker-pM4Pg2yq-CCmupwRs.chunk.mjs";/* empty css                                       */import"./NcInputField-Bwsh2aHY-CQ8dmik7.chunk.mjs";import{N as Be}from"./NcPasswordField-djttkA5Q-PkdHfBrA.chunk.mjs";import"./index-RGOW28oI.chunk.mjs";import{N as Le}from"./NcUserBubble-DPAmU2_J-CCD2l4DH.chunk.mjs";import"./NcUserStatusIcon-CGEf7fej-DpJR4ABu.chunk.mjs";import"./colors-Go3zmZRD-CiwiiY9I.chunk.mjs";import{_ as _e}from"./AuthMechanismRsa-DzDNnSKp.chunk.mjs";import{C as me,a as D,M as L,S as j,b as je,c as De}from"./types-Bf04JA8q.chunk.mjs";import{a as pe,P as H}from"./index-BZr_2PFS.chunk.mjs";import{d as ee,a as ae}from"./index-JpgrUA2Z-CjbNveLz.chunk.mjs";import{l as fe}from"./logger-CrDakPzW.chunk.mjs";import"./string_decoder-BO00msnV.chunk.mjs";const He='<svg xmlns="http://www.w3.org/2000/svg" id="mdi-account-group-outline" viewBox="0 0 24 24"><path d="M12,5A3.5,3.5 0 0,0 8.5,8.5A3.5,3.5 0 0,0 12,12A3.5,3.5 0 0,0 15.5,8.5A3.5,3.5 0 0,0 12,5M12,7A1.5,1.5 0 0,1 13.5,8.5A1.5,1.5 0 0,1 12,10A1.5,1.5 0 0,1 10.5,8.5A1.5,1.5 0 0,1 12,7M5.5,8A2.5,2.5 0 0,0 3,10.5C3,11.44 3.53,12.25 4.29,12.68C4.65,12.88 5.06,13 5.5,13C5.94,13 6.35,12.88 6.71,12.68C7.08,12.47 7.39,12.17 7.62,11.81C6.89,10.86 6.5,9.7 6.5,8.5C6.5,8.41 6.5,8.31 6.5,8.22C6.2,8.08 5.86,8 5.5,8M18.5,8C18.14,8 17.8,8.08 17.5,8.22C17.5,8.31 17.5,8.41 17.5,8.5C17.5,9.7 17.11,10.86 16.38,11.81C16.5,12 16.63,12.15 16.78,12.3C16.94,12.45 17.1,12.58 17.29,12.68C17.65,12.88 18.06,13 18.5,13C18.94,13 19.35,12.88 19.71,12.68C20.47,12.25 21,11.44 21,10.5A2.5,2.5 0 0,0 18.5,8M12,14C9.66,14 5,15.17 5,17.5V19H19V17.5C19,15.17 14.34,14 12,14M4.71,14.55C2.78,14.78 0,15.76 0,17.5V19H3V17.07C3,16.06 3.69,15.22 4.71,14.55M19.29,14.55C20.31,15.22 21,16.06 21,17.07V19H24V17.5C24,15.76 21.22,14.78 19.29,14.55M12,16C13.53,16 15.24,16.5 16.23,17H7.77C8.76,16.5 10.47,16 12,16Z" /></svg>',W=we(new Map);function ge(s){const a=C(()=>Y(s).map(l=>({id:`user:${l}`,user:l,displayName:W.get(l)||l})));return Z(async()=>{const l=Y(s).filter(r=>!W.has(r));if(l.length>0){const{data:r}=await U.post(R("/displaynames"),{users:l});for(const[c,_]of Object.entries(r.users))W.set(c,_)}}),a}function Ge(s){return C(()=>Y(s).map(ve))}function ve(s){return{id:s,isNoUser:!0,displayName:s,iconSvg:He}}const Ie=$({__name:"ApplicableEntities",props:{groups:{default:()=>[]},groupsModifiers:{},users:{default:()=>[]},usersModifiers:{}},emits:["update:groups","update:users"],setup(s){const a=B(s,"groups"),l=B(s,"users"),r=M([]),c=ge(l),_=Ge(a),o=C({get(){return[..._.value,...c.value]},set(p){l.value=p.filter(d=>d.user).map(d=>d.user),a.value=p.filter(d=>d.isNoUser).map(d=>d.id)}}),i=Ee(t,500);async function t(p){const{data:d}=await U.get(R("apps/files_external/ajax/applicable"),{params:{pattern:p,limit:20}}),m=[...r.value.map(f=>[f.id,f]),...Object.entries(d.groups).map(([f,g])=>[f,{...ve(f),displayName:g}]),...Object.entries(d.users).map(([f,g])=>[`user:${f}`,{id:`user:${f}`,user:f,displayName:g}])];r.value=[...new Map(m).values()]}return(p,d)=>(u(),V(e(Re),{modelValue:o.value,"onUpdate:modelValue":d[0]||(d[0]=m=>o.value=m),keepOpen:"",multiple:"",options:r.value,inputLabel:e(n)("files_external","Restrict to"),onSearch:e(i)},null,8,["modelValue","options","inputLabel","onSearch"]))}}),Qe=$({__name:"AuthMechanismConfiguration",props:Q({authMechanism:{}},{modelValue:{required:!0},modelModifiers:{}}),emits:["update:modelValue"],setup(s){const a=B(s,"modelValue"),l=s,r=C(()=>{if(!l.authMechanism.configuration)return;const t=Object.entries(l.authMechanism.configuration).filter(([,p])=>!(p.flags&D.UserProvided));return Object.fromEntries(t)}),c=C(()=>window.OCA.FilesExternal.AuthMechanism.getHandler(l.authMechanism)),_=C(()=>{if(!r.value)return!1;for(const t of Object.values(r.value))if(!(t.flags&D.Hidden||t.flags&D.UserProvided))return!0;return!1}),o=M(!1);Z(async()=>{c.value&&(o.value=!0,await window.customElements.whenDefined(c.value.tagName),o.value=!1)}),I(r,()=>{for(const t in r.value)t in a.value||(a.value[t]=r.value[t]?.type===me.Boolean?!1:"")});function i(t){const p=[t.detail].flat()[0];a.value={...a.value,...p}}return(t,p)=>_.value?(u(),h("fieldset",{key:0,class:x(t.$style.authMechanismConfiguration)},[y("legend",null,v(e(n)("files_external","Authentication")),1),c.value?(u(),h(S,{key:0},[o.value?(u(),V(e(ue),{key:0})):(u(),V(Ve(c.value.tagName),{key:1,".modelValue":a.value,".authMechanism":s.authMechanism,"onUpdate:modelValue":i},null,40,[".modelValue",".authMechanism"]))],64)):(u(!0),h(S,{key:1},q(r.value,(d,m)=>z((u(),V(_e,{key:d.value,modelValue:a.value[m],"onUpdate:modelValue":f=>a.value[m]=f,"config-key":m,"config-option":d},null,8,["modelValue","onUpdate:modelValue","config-key","config-option"])),[[K,!(d.flags&e(D).Hidden)]])),128))],2)):T("",!0)}}),Ze="_authMechanismConfiguration_kpcpy_2",ze={authMechanismConfiguration:Ze},Ke={$style:ze},We=O(Qe,[["__cssModules",Ke]]),Je=$({__name:"BackendConfiguration",props:Q({configuration:{}},{modelValue:{required:!0},modelModifiers:{}}),emits:["update:modelValue"],setup(s){const a=B(s,"modelValue"),l=s;return I(()=>l.configuration,()=>{for(const r in l.configuration)r in a.value||(a.value[r]=l.configuration[r]?.type===me.Boolean?!1:"")}),(r,c)=>(u(),h("fieldset",{class:x(r.$style.backendConfiguration)},[y("legend",null,v(e(n)("files_external","Storage configuration")),1),(u(!0),h(S,null,q(s.configuration,(_,o)=>z((u(),V(_e,{key:_.value,modelValue:a.value[o],"onUpdate:modelValue":i=>a.value[o]=i,configKey:o,configOption:_},null,8,["modelValue","onUpdate:modelValue","configKey","configOption"])),[[K,!(_.flags&e(D).Hidden)]])),128))],2))}}),Ye="_backendConfiguration_1sf6y_2",Xe={backendConfiguration:Ye},ea={$style:Xe},aa=O(Je,[["__cssModules",ea]]),la=["id","aria-labelledby"],ta=$({__name:"MountOptions",props:{modelValue:{required:!0},modelModifiers:{}},emits:["update:modelValue"],setup(s){const a=B(s,"modelValue");Z(()=>{Object.keys(a.value).length===0&&(a.value.encrypt=!0,a.value.previews=!0,a.value.enable_sharing=!1,a.value.filesystem_check_changes=L.OncePerRequest,a.value.encoding_compatibility=!1,a.value.readonly=!1)});const{hasEncryption:l}=A("files_external","settings"),r=ne(),c=ne(),_=M(!1),o=[{label:n("files_external","Never"),value:L.Never},{label:n("files_external","Once every direct access"),value:L.OncePerRequest},{label:n("files_external","Always"),value:L.Always}],i=C({get(){return o.find(t=>t.value===a.value.filesystem_check_changes)},set(t){a.value.filesystem_check_changes=t?.value??L.OncePerRequest}});return(t,p)=>(u(),h("div",{class:x(t.$style.mountOptions)},[b(e(N),{id:e(r),"aria-controls":e(c),"aria-expanded":_.value,variant:"tertiary-no-background",onClick:p[0]||(p[0]=d=>_.value=!_.value)},{icon:w(()=>[b(e(F),{directional:"",path:_.value?e(Ce):e(Me)},null,8,["path"])]),default:w(()=>[k(" "+v(e(n)("files_external","Mount options")),1)]),_:1},8,["id","aria-controls","aria-expanded"]),z(y("fieldset",{id:e(c),class:x(t.$style.mountOptions__fieldset),"aria-labelledby":e(r)},[b(e(X),{modelValue:i.value,"onUpdate:modelValue":p[1]||(p[1]=d=>i.value=d),inputLabel:e(n)("files_external","Check filesystem changes"),options:o},null,8,["modelValue","inputLabel"]),b(e(P),{modelValue:s.modelValue.readonly,"onUpdate:modelValue":p[2]||(p[2]=d=>s.modelValue.readonly=d),type:"switch"},{default:w(()=>[k(v(e(n)("files_external","Read only")),1)]),_:1},8,["modelValue"]),b(e(P),{modelValue:s.modelValue.previews,"onUpdate:modelValue":p[3]||(p[3]=d=>s.modelValue.previews=d),type:"switch"},{default:w(()=>[k(v(e(n)("files_external","Enable previews")),1)]),_:1},8,["modelValue"]),b(e(P),{modelValue:s.modelValue.enable_sharing,"onUpdate:modelValue":p[4]||(p[4]=d=>s.modelValue.enable_sharing=d),type:"switch"},{default:w(()=>[k(v(e(n)("files_external","Enable sharing")),1)]),_:1},8,["modelValue"]),e(l)?(u(),V(e(P),{key:0,modelValue:s.modelValue.encrypt,"onUpdate:modelValue":p[5]||(p[5]=d=>s.modelValue.encrypt=d),type:"switch"},{default:w(()=>[k(v(e(n)("files_external","Enable encryption")),1)]),_:1},8,["modelValue"])):T("",!0),b(e(P),{modelValue:s.modelValue.encoding_compatibility,"onUpdate:modelValue":p[6]||(p[6]=d=>s.modelValue.encoding_compatibility=d),type:"switch"},{default:w(()=>[k(v(e(n)("files_external","Compatibility with Mac NFD encoding (slow)")),1)]),_:1},8,["modelValue"])],10,la),[[K,_.value]])],2))}}),sa="_mountOptions_1fqyb_2",na="_mountOptions__fieldset_1fqyb_12",oa={mountOptions:sa,mountOptions__fieldset:na},ia={$style:oa},ra=O(ta,[["__cssModules",ia]]),{isAdmin:ie}=A("files_external","settings"),ua=A("files_external","allowedBackends"),re=A("files_external","backends").filter(s=>ua.includes(s.identifier)),da=A("files_external","authMechanisms"),ca=$({__name:"AddExternalStorageDialog",props:Q({storage:{default:()=>({backendOptions:{},mountOptions:{},type:ie?"system":"personal"})}},{open:{type:Boolean,default:!0},openModifiers:{}}),emits:Q(["close"],["update:open"]),setup(s){const a=B(s,"open"),l=M(structuredClone(G(s.storage)));Z(()=>{a.value&&(l.value=structuredClone(G(s.storage)))});const r=C({get(){return re.find(o=>o.identifier===l.value.backend)},set(o){l.value.backend=o?.identifier}}),c=C(()=>da.filter(({scheme:o})=>r.value?.authSchemes[o])),_=C({get(){return c.value.find(o=>o.identifier===l.value.authMechanism)},set(o){l.value.authMechanism=o?.identifier}});return I(c,()=>{c.value.length===1&&(l.value.authMechanism=c.value[0].identifier)}),(o,i)=>(u(),V(e(Ne),{open:a.value,"onUpdate:open":[i[9]||(i[9]=t=>a.value=t),i[11]||(i[11]=t=>t||o.$emit("close"))],isForm:"",contentClasses:o.$style.externalStorageDialog,name:l.value.id?e(n)("files_external","Edit storage"):e(n)("files_external","Add storage"),onSubmit:i[10]||(i[10]=t=>o.$emit("close",l.value))},{actions:w(()=>[s.storage.id?(u(),V(e(N),{key:0,onClick:i[8]||(i[8]=t=>o.$emit("close"))},{default:w(()=>[k(v(e(n)("files_external","Cancel")),1)]),_:1})):T("",!0),b(e(N),{variant:"primary",type:"submit"},{default:w(()=>[k(v(s.storage.id?e(n)("files_external","Edit"):e(n)("files_external","Create")),1)]),_:1})]),default:w(()=>[b(e(ce),{modelValue:l.value.mountPoint,"onUpdate:modelValue":i[0]||(i[0]=t=>l.value.mountPoint=t),label:e(n)("files_external","Folder name"),required:""},null,8,["modelValue","label"]),b(ra,{modelValue:l.value.mountOptions,"onUpdate:modelValue":i[1]||(i[1]=t=>l.value.mountOptions=t)},null,8,["modelValue"]),e(ie)?(u(),V(Ie,{key:0,groups:l.value.applicableGroups,"onUpdate:groups":i[2]||(i[2]=t=>l.value.applicableGroups=t),users:l.value.applicableUsers,"onUpdate:users":i[3]||(i[3]=t=>l.value.applicableUsers=t)},null,8,["groups","users"])):T("",!0),b(e(X),{modelValue:r.value,"onUpdate:modelValue":i[4]||(i[4]=t=>r.value=t),options:e(re),disabled:!!(l.value.id&&l.value.backend),inputLabel:e(n)("files_external","External storage"),label:"name",required:""},null,8,["modelValue","options","disabled","inputLabel"]),b(e(X),{modelValue:_.value,"onUpdate:modelValue":i[5]||(i[5]=t=>_.value=t),options:c.value,disabled:!l.value.backend||c.value.length<=1||!!(l.value.id&&l.value.authMechanism),inputLabel:e(n)("files_external","Authentication"),label:"name",required:""},null,8,["modelValue","options","disabled","inputLabel"]),r.value?(u(),V(aa,{key:1,modelValue:l.value.backendOptions,"onUpdate:modelValue":i[6]||(i[6]=t=>l.value.backendOptions=t),class:x(o.$style.externalStorageDialog__configuration),configuration:r.value.configuration},null,8,["modelValue","class","configuration"])):T("",!0),_.value?(u(),V(We,{key:2,modelValue:l.value.backendOptions,"onUpdate:modelValue":i[7]||(i[7]=t=>l.value.backendOptions=t),class:x(o.$style.externalStorageDialog__configuration),authMechanism:_.value},null,8,["modelValue","class","authMechanism"])):T("",!0)]),_:1},8,["open","contentClasses","name"]))}}),_a="_externalStorageDialog_9wew8_2",ma="_externalStorageDialog__configuration_9wew8_9",pa={externalStorageDialog:_a,externalStorageDialog__configuration:ma},fa={$style:pa},be=O(ca,[["__cssModules",fa]]),{isAdmin:ga}=A("files_external","settings"),le=he("files_external--storages",()=>{const s=M([]),a=M([]);async function l(m){const f=R("apps/files_external/globalstorages"),{data:g}=await U.post(f,G(m),{confirmPassword:H.Strict});s.value.push(g)}async function r(m){const f=R("apps/files_external/userstorages"),{data:g}=await U.post(f,G(m),{confirmPassword:H.Strict});a.value.push(g)}async function c(m){await U.delete(p(m),{confirmPassword:H.Strict}),m.type==="personal"?a.value=a.value.filter(f=>f.id!==m.id):s.value=s.value.filter(f=>f.id!==m.id)}async function _(m){const{data:f}=await U.put(p(m),G(m),{confirmPassword:H.Strict});d(f)}async function o(m){const{data:f}=await U.get(p(m));d(f)}return t(),{globalStorages:s,userStorages:a,createGlobalStorage:l,createUserStorage:r,deleteStorage:c,reloadStorage:o,updateStorage:_};async function i(m){const f=`apps/files_external/${m}`,{data:g}=await U.get(R(f));return Object.values(g)}async function t(){pe(U),ga?s.value=await i("globalstorages"):(a.value=await i("userstorages"),s.value=await i("userglobalstorages"))}function p(m){const f=m.type==="personal"?"userstorages":"globalstorages";return R(`apps/files_external/${f}/${m.id}`)}function d(m){if(m.type==="personal"){const f=a.value.findIndex(g=>g.id===m.id);a.value.splice(f,1,m)}else{const f=s.value.findIndex(g=>g.id===m.id);s.value.splice(f,1,m)}}}),va={class:"hidden-visually"},ba={key:0},ya=$({__name:"ExternalStorageTableRow",props:{storage:{},isAdmin:{type:Boolean}},setup(s){const a=s,l=le(),r=A("files_external","backends"),c=C(()=>r.find(g=>g.identifier===a.storage.backend).name),_=A("files_external","authMechanisms"),o=C(()=>_.find(g=>g.identifier===a.storage.authMechanism).name),i=M(!1),t=C(()=>{if(i.value)return{icon:"loading",label:n("files_external","Checking …")};const g=a.storage.status??j.Indeterminate,te=a.storage.statusMessage||je[g],E=De[g],se=g===j.NetworkError||g===j.Timeout,ye=!se&&g!==j.Success&&g!==j.Indeterminate;return{icon:E,label:te,isWarning:se,isError:ye}}),p=ge(()=>a.storage.applicableUsers||[]);async function d(){await l.deleteStorage(a.storage)}async function m(){const g=await Pe(be,{storage:a.storage});g&&await l.updateStorage(g)}async function f(){i.value=!0;try{await l.reloadStorage(a.storage)}finally{i.value=!1}}return(g,te)=>(u(),h("tr",{class:x(g.$style.storageTableRow)},[y("td",null,[y("span",va,v(t.value.label),1),b(e(N),{"aria-label":e(n)("files_external","Recheck status"),title:t.value.label,variant:"tertiary-no-background",onClick:f},{icon:w(()=>[t.value.icon==="loading"?(u(),V(e(ue),{key:0})):(u(),V(e(F),{key:1,class:x({[g.$style.storageTableRow__status_error]:t.value.isError,[g.$style.storageTableRow__status_warning]:t.value.isWarning}),path:t.value.icon},null,8,["class","path"]))]),_:1},8,["aria-label","title"])]),y("td",null,v(s.storage.mountPoint),1),y("td",null,v(c.value),1),y("td",null,v(o.value),1),s.isAdmin?(u(),h("td",ba,[y("div",{class:x(g.$style.storageTableRow__cellApplicable)},[(u(!0),h(S,null,q(s.storage.applicableGroups,E=>(u(),V(e(Fe),{key:E,iconPath:e(Ae),noClose:"",text:E},null,8,["iconPath","text"]))),128)),(u(!0),h(S,null,q(e(p),E=>(u(),V(e(Le),{key:E.user,displayName:E.displayName,size:24,user:E.user},null,8,["displayName","user"]))),128))],2)])):T("",!0),y("td",null,[s.isAdmin||s.storage.type==="personal"?(u(),h("div",{key:0,class:x(g.$style.storageTableRow__cellActions)},[b(e(N),{"aria-label":e(n)("files_external","Edit"),title:e(n)("files_external","Edit"),onClick:m},{icon:w(()=>[b(e(F),{path:e(Ue)},null,8,["path"])]),_:1},8,["aria-label","title"]),b(e(N),{"aria-label":e(n)("files_external","Delete"),title:e(n)("files_external","Delete"),variant:"error",onClick:d},{icon:w(()=>[b(e(F),{path:e($e)},null,8,["path"])]),_:1},8,["aria-label","title"])],2)):(u(),V(e(F),{key:1,inline:"",path:e(Te),name:e(n)("files_external","System provided storage"),title:e(n)("files_external","System provided storage")},null,8,["path","name","title"]))])],2))}}),ha="_storageTableRow__cellActions_1k62p_2",xa="_storageTableRow__cellApplicable_1k62p_7",wa="_storageTableRow__status_warning_1k62p_17",Va="_storageTableRow__status_error_1k62p_21",ka={storageTableRow__cellActions:ha,storageTableRow__cellApplicable:xa,storageTableRow__status_warning:wa,storageTableRow__status_error:Va},Sa={$style:ka},Ca=O(ya,[["__cssModules",Sa]]),Ma=["aria-label"],Aa={class:"hidden-visually"},Ua={key:0},$a={class:"hidden-visually"},Ta=$({__name:"ExternalStorageTable",setup(s){const a=le(),{isAdmin:l}=A("files_external","settings"),r=C(()=>l?a.globalStorages:[...a.userStorages,...a.globalStorages]);return(c,_)=>(u(),h("table",{class:x(c.$style.storageTable),"aria-label":e(n)("files_external","External storages")},[y("thead",{class:x(c.$style.storageTable__header)},[y("tr",null,[y("th",{class:x(c.$style.storageTable__headerStatus)},[y("span",Aa,v(e(n)("files_external","Status")),1)],2),y("th",{class:x(c.$style.storageTable__headerFolder)},v(e(n)("files_external","Folder name")),3),y("th",{class:x(c.$style.storageTable__headerBackend)},v(e(n)("files_external","External storage")),3),y("th",{class:x(c.$style.storageTable__headerAuthentication)},v(e(n)("files_external","Authentication")),3),e(l)?(u(),h("th",Ua,v(e(n)("files_external","Restricted to")),1)):T("",!0),y("th",{class:x(c.$style.storageTable__headerActions)},[y("span",$a,v(e(n)("files_external","Actions")),1)],2)])],2),y("tbody",null,[(u(!0),h(S,null,q(r.value,o=>(u(),V(Ca,{key:o.id,isAdmin:e(l),storage:o},null,8,["isAdmin","storage"]))),128))])],10,Ma))}}),qa="_storageTable_1dqte_2",Oa="_storageTable__header_1dqte_11",Ea="_storageTable__headerStatus_1dqte_16",Na="_storageTable__headerFolder_1dqte_20",Pa="_storageTable__headerBackend_1dqte_24",Ra="_storageTable__headerFAuthentication_1dqte_28",Fa="_storageTable__headerActions_1dqte_32",Ba={storageTable:qa,storageTable__header:Oa,storageTable__headerStatus:Ea,storageTable__headerFolder:Na,storageTable__headerBackend:Pa,storageTable__headerFAuthentication:Ra,storageTable__headerActions:Fa},La={$style:Ba},ja=O(Ta,[["__cssModules",La]]),Da=$({__name:"UserMountSettings",setup(s){const a=A("files_external","user-mounting"),l=A("files_external","backends"),r=M(a.allowUserMounting),c=M(a.allowedBackends);return I(r,()=>{const _=!r.value;window.OCP.AppConfig.setValue("files_external","allow_user_mounting",r.value?"yes":"no",{success:()=>ee(n("files_external","Saved")),error:()=>{r.value=_,ae(n("files_external","Error while saving"))}})}),I(c,(_,o)=>{window.OCP.AppConfig.setValue("files_external","user_mounting_backends",_.join(","),{success:()=>ee(n("files_external","Saved allowed backends")),error:()=>{ae(n("files_external","Failed to save allowed backends")),c.value=o}})}),(_,o)=>(u(),h("form",null,[y("h3",{class:x(_.$style.userMountSettings__heading)},v(e(n)("files_external","Advanced options for external storage mounts")),3),b(e(P),{modelValue:r.value,"onUpdate:modelValue":o[0]||(o[0]=i=>r.value=i),type:"switch"},{default:w(()=>[k(v(e(n)("files_external","Allow people to mount external storage")),1)]),_:1},8,["modelValue"]),z(y("fieldset",{class:x(_.$style.userMountSettings__backends)},[y("legend",null,v(e(n)("files_external","External storage backends people are allowed to mount")),1),(u(!0),h(S,null,q(e(l),i=>(u(),V(e(P),{key:i.identifier,modelValue:c.value,"onUpdate:modelValue":o[1]||(o[1]=t=>c.value=t),value:i.identifier,name:"allowUserMountingBackends[]"},{default:w(()=>[k(v(i.name),1)]),_:2},1032,["modelValue","value"]))),128))],2),[[K,r.value]])]))}}),Ha="_userMountSettings__heading_59moz_2",Ga="_userMountSettings__backends_59moz_9",Ia={userMountSettings__heading:Ha,userMountSettings__backends:Ga},Qa={$style:Ia},Za=O(Da,[["__cssModules",Qa]]);const za=["aria-label"],Ka=$({__name:"ExternalStoragesSection",setup(s){const a=A("files_external","settings",{docUrl:"",dependencyIssues:{messages:null,modules:null},isAdmin:!1}),l=le(),r=a.dependencyIssues?.messages??[],c=a.dependencyIssues?.modules??{},_=M(!1),o=M();async function i(t){if(_.value=!1,!!t)try{a.isAdmin?await l.createGlobalStorage(t):await l.createUserStorage(t),o.value=void 0}catch(p){fe.error("Failed to add external storage",{error:p}),_.value=!0}}return(t,p)=>(u(),V(e(de),{docUrl:e(a).docUrl,name:e(n)("files_external","External storage"),description:e(n)("files_external","External storage enables you to mount external storage services and devices as secondary Nextcloud storage devices.")+(e(a).isAdmin?" "+e(n)("files_external","You may also allow people to mount their own external storage services."):"")},{default:w(()=>[(u(!0),h(S,null,q(e(r),(d,m)=>(u(),V(e(oe),{key:m,type:"error"},{default:w(()=>[k(v(d),1)]),_:2},1024))),128)),(u(!0),h(S,null,q(e(c),(d,m)=>(u(),V(e(oe),{key:m,type:"warning"},{default:w(()=>[y("p",null,[m==="curl"?(u(),h(S,{key:0},[k(v(e(n)("files_external","The cURL support in PHP is not enabled or installed.")),1)],64)):m==="ftp"?(u(),h(S,{key:1},[k(v(e(n)("files_external","The FTP support in PHP is not enabled or installed.")),1)],64)):(u(),h(S,{key:2},[k(v(e(n)("files_external","{module} is not installed.",{module:m})),1)],64)),k(" "+v(e(Oe)("files_external","Please ask your system administrator to install it as otherwise mounting the following backend is not possible:","Please ask your system administrator to install it as otherwise mounting the following backends is not possible:",d.length)),1)]),y("ul",{class:x(t.$style.externalStoragesSection__dependantList),"aria-label":e(n)("files_external","Dependant backends")},[(u(!0),h(S,null,q(d,f=>(u(),h("li",{key:f},v(f),1))),128))],10,za)]),_:2},1024))),128)),T("",!0),b(ja),b(e(N),{class:x(t.$style.externalStoragesSection__newStorageButton),variant:"primary",onClick:p[0]||(p[0]=d=>_.value=!_.value)},{icon:w(()=>[b(e(F),{path:e(qe)},null,8,["path"])]),default:w(()=>[k(" "+v(e(n)("files_external","Add external storage")),1)]),_:1},8,["class"]),b(be,{modelValue:o.value,"onUpdate:modelValue":p[1]||(p[1]=d=>o.value=d),open:_.value,"onUpdate:open":p[2]||(p[2]=d=>_.value=d),onClose:i},null,8,["modelValue","open"]),e(a).isAdmin?(u(),V(Za,{key:1})):T("",!0)]),_:1},8,["docUrl","name","description"]))}}),Wa="_externalStoragesSection__dependantList_atsmn_2",Ja="_externalStoragesSection__newStorageButton_atsmn_7",Ya={externalStoragesSection__dependantList:Wa,externalStoragesSection__newStorageButton:Ja},Xa={$style:Ya},el=O(Ka,[["__cssModules",Xa]]),al=$({__name:"GlobalCredentialsSection",setup(s){const a=A("files_external","global-credentials"),l=M(!1),r=M(a.user),c=M(a.password);pe(U);async function _(){try{l.value=!0;const{data:o}=await U.post(R("apps/files_external/globalcredentials"),{uid:a.uid,user:r.value,password:c.value},{confirmPassword:H.Strict});if(o){ee(n("files_external","Global credentials saved"));return}}catch(o){fe.error(o)}finally{l.value=!1}ae(n("files_external","Could not save global credentials")),r.value=a.user,c.value=a.password}return(o,i)=>(u(),V(e(de),{name:e(n)("files_external","Global credentials"),description:e(n)("files_external","Global credentials can be used to authenticate with multiple external storages that have the same credentials.")},{default:w(()=>[y("form",{id:"global_credentials",class:x(o.$style.globalCredentialsSectionForm),autocomplete:"false",onSubmit:ke(_,["prevent"])},[b(e(ce),{modelValue:r.value,"onUpdate:modelValue":i[0]||(i[0]=t=>r.value=t),name:"username",autocomplete:"false",label:e(n)("files_external","Login")},null,8,["modelValue","label"]),b(e(Be),{modelValue:c.value,"onUpdate:modelValue":i[1]||(i[1]=t=>c.value=t),name:"password",autocomplete:"false",label:e(n)("files_external","Password")},null,8,["modelValue","label"]),b(e(N),{class:x(o.$style.globalCredentialsSectionForm__submit),disabled:l.value,variant:"primary",type:"submit"},{default:w(()=>[k(v(l.value?e(n)("files_external","Saving …"):e(n)("files_external","Save")),1)]),_:1},8,["class","disabled"])],34)]),_:1},8,["name","description"]))}}),ll="_globalCredentialsSectionForm_bgjv2_2",tl="_globalCredentialsSectionForm__submit_bgjv2_10",sl={globalCredentialsSectionForm:ll,globalCredentialsSectionForm__submit:tl},nl={$style:sl},ol=O(al,[["__cssModules",nl]]),il=$({__name:"FilesExternalSettings",setup(s){return(a,l)=>(u(),h(S,null,[b(el),b(ol)],64))}}),rl=xe(),J=Se(il);J.config.idPrefix="files-external",J.use(rl),J.mount("#files-external");
+const appName = "nextcloud-ui";
+const appVersion = "1.0.0";
+import { d as defineStore, c as createPinia } from "./pinia-BIkl02pf.chunk.mjs";
+import { h as computed, _ as watchEffect, V as toValue, N as reactive, b as defineComponent, s as useModel, p as ref, i as createBlock, o as openBlock, q as mergeModels, v as watch, c as createElementBlock, f as createCommentVNode, e as createBaseVNode, t as toDisplayString, F as Fragment, M as resolveDynamicComponent, C as renderList, E as withDirectives, G as vShow, n as normalizeClass, U as useId, j as createVNode, w as withCtx, g as createTextVNode, a2 as toRaw, I as withModifiers, m as createApp } from "./vue.runtime.esm-bundler-UjrxUCWV.chunk.mjs";
+import { w as mdiChevronRight, x as mdiChevronDown, k as mdiTrashCanOutline, y as mdiPencilOutline, z as mdiInformationOutline, A as mdiAccountGroupOutline, j as mdiPlus } from "./mdi-CCQ2KgUK.chunk.mjs";
+import { a as _export_sfc, l as loadState } from "./index-CEzAKfoK.chunk.mjs";
+import { t as translate, b as translatePlural } from "./translation-DoG5ZELJ-BX7lsMna.chunk.mjs";
+import { N as NcIconSvgWrapper, c as NcButton } from "./logger-D3RVzcfQ-D08Lqsc3.chunk.mjs";
+import { N as NcEmptyContent } from "./Plus-DX3lsEjd.chunk.mjs";
+import { N as NcNoteCard } from "./NcNoteCard-CVhtNL04-xGysk9Jq.chunk.mjs";
+import { N as NcSettingsSection } from "./ContentCopy-B6NO0ksw.chunk.mjs";
+import { k as useDebounceFn, a as NcDialog, s as spawnDialog } from "./index-DZkDsHXr.chunk.mjs";
+import { N as NcSelect } from "./NcSelect-Czzsi3P_-DrnUjQ4_.chunk.mjs";
+import { _ as _sfc_main$b } from "./TrashCanOutline-BquAR0NR.chunk.mjs";
+import { c as cancelableClient } from "./index-iNeUnB75.chunk.mjs";
+import { g as generateUrl } from "./createElementId-DhjFt1I9-D95yphbb.chunk.mjs";
+import { N as NcSelectUsers } from "./index-SdYoB8n_.chunk.mjs";
+import "./NcActionButton-pKOSrlGE-By2YA-_F.chunk.mjs";
+import "./NcBreadcrumbs-DYfGaSjT-BVqo2_j4.chunk.mjs";
+import "./NcDateTime.vue_vue_type_script_setup_true_lang-BhB8yA4U-3Cg9SqZ9.chunk.mjs";
+import "./NcAvatar-DmUGApWA-C2lPLiNg.chunk.mjs";
+import "./NcRichText-CBMtJzE_-s0VCYNde.chunk.mjs";
+import { N as NcLoadingIcon } from "./PencilOutline-CRype3Oz.chunk.mjs";
+import { N as NcCheckboxRadioSwitch } from "./NcCheckboxRadioSwitch-BCSKF7Tk-CVZU7Pjt.chunk.mjs";
+import { N as NcChip } from "./NcChip-D8tGFzRl-CkdhiclE.chunk.mjs";
+import "./NcColorPicker-Kc0JqRtp-BW-FXqa7.chunk.mjs";
+import "./TrayArrowDown-SN39FuG_.chunk.mjs";
+import "./NcEmojiPicker-pM4Pg2yq-D_xkM2xT.chunk.mjs";
+/* empty css                                        */
+import "./NcInputField-Bwsh2aHY-DY6YZAwi.chunk.mjs";
+import { N as NcPasswordField } from "./NcPasswordField-djttkA5Q-B3cAwMPj.chunk.mjs";
+import "./index-DsQhqJ3N.chunk.mjs";
+import { N as NcUserBubble } from "./NcUserBubble-DPAmU2_J-CqdP4dk7.chunk.mjs";
+import "./NcUserStatusIcon-CGEf7fej-CB09VdBp.chunk.mjs";
+import "./colors-Go3zmZRD-CRyYiZ-p.chunk.mjs";
+import { C as ConfigurationEntry } from "./AuthMechanismRsa-DdFazP2q.chunk.mjs";
+import { C as ConfigurationType, a as ConfigurationFlag, M as MountOptionsCheckFilesystem, S as StorageStatus, b as StorageStatusMessage, c as StorageStatusIcons } from "./types-cvVeoaZM.chunk.mjs";
+import { a as addPasswordConfirmationInterceptors, P as PwdConfirmationMode } from "./index-ly_D7ZWO.chunk.mjs";
+import { c as showSuccess, a as showError } from "./index-JpgrUA2Z-CDVhFt4l.chunk.mjs";
+import { l as logger } from "./logger-CHMHherF.chunk.mjs";
+import "./string_decoder-CSsspFHV.chunk.mjs";
+const svgAccountGroupOutline = '<svg xmlns="http://www.w3.org/2000/svg" id="mdi-account-group-outline" viewBox="0 0 24 24"><path d="M12,5A3.5,3.5 0 0,0 8.5,8.5A3.5,3.5 0 0,0 12,12A3.5,3.5 0 0,0 15.5,8.5A3.5,3.5 0 0,0 12,5M12,7A1.5,1.5 0 0,1 13.5,8.5A1.5,1.5 0 0,1 12,10A1.5,1.5 0 0,1 10.5,8.5A1.5,1.5 0 0,1 12,7M5.5,8A2.5,2.5 0 0,0 3,10.5C3,11.44 3.53,12.25 4.29,12.68C4.65,12.88 5.06,13 5.5,13C5.94,13 6.35,12.88 6.71,12.68C7.08,12.47 7.39,12.17 7.62,11.81C6.89,10.86 6.5,9.7 6.5,8.5C6.5,8.41 6.5,8.31 6.5,8.22C6.2,8.08 5.86,8 5.5,8M18.5,8C18.14,8 17.8,8.08 17.5,8.22C17.5,8.31 17.5,8.41 17.5,8.5C17.5,9.7 17.11,10.86 16.38,11.81C16.5,12 16.63,12.15 16.78,12.3C16.94,12.45 17.1,12.58 17.29,12.68C17.65,12.88 18.06,13 18.5,13C18.94,13 19.35,12.88 19.71,12.68C20.47,12.25 21,11.44 21,10.5A2.5,2.5 0 0,0 18.5,8M12,14C9.66,14 5,15.17 5,17.5V19H19V17.5C19,15.17 14.34,14 12,14M4.71,14.55C2.78,14.78 0,15.76 0,17.5V19H3V17.07C3,16.06 3.69,15.22 4.71,14.55M19.29,14.55C20.31,15.22 21,16.06 21,17.07V19H24V17.5C24,15.76 21.22,14.78 19.29,14.55M12,16C13.53,16 15.24,16.5 16.23,17H7.77C8.76,16.5 10.47,16 12,16Z" /></svg>';
+/*!
+ * SPDX-FileCopyrightText: 2026 Nextcloud GmbH and Nextcloud contributors
+ * SPDX-License-Identifier: AGPL-3.0-or-later
+ */
+const displayNames = reactive(/* @__PURE__ */ new Map());
+function useUsers(uids) {
+  const users = computed(() => toValue(uids).map((uid) => ({
+    id: `user:${uid}`,
+    user: uid,
+    displayName: displayNames.get(uid) || uid
+  })));
+  watchEffect(async () => {
+    const missingUsers = toValue(uids).filter((uid) => !displayNames.has(uid));
+    if (missingUsers.length > 0) {
+      const { data } = await cancelableClient.post(generateUrl("/displaynames"), {
+        users: missingUsers
+      });
+      for (const [uid, displayName] of Object.entries(data.users)) {
+        displayNames.set(uid, displayName);
+      }
+    }
+  });
+  return users;
+}
+function useGroups(gids) {
+  return computed(() => toValue(gids).map(mapGroupToUserData));
+}
+function mapGroupToUserData(gid) {
+  return {
+    id: gid,
+    isNoUser: true,
+    displayName: gid,
+    iconSvg: svgAccountGroupOutline
+  };
+}
+const _sfc_main$a = /* @__PURE__ */ defineComponent({
+  __name: "ApplicableEntities",
+  props: {
+    "groups": { type: Array, ...{ default: () => [] } },
+    "groupsModifiers": {},
+    "users": { type: Array, ...{ default: () => [] } },
+    "usersModifiers": {}
+  },
+  emits: ["update:groups", "update:users"],
+  setup(__props, { expose: __expose }) {
+    __expose();
+    const groups = useModel(__props, "groups");
+    const users = useModel(__props, "users");
+    const entities = ref([]);
+    const selectedUsers = useUsers(users);
+    const selectedGroups = useGroups(groups);
+    const model = computed({
+      get() {
+        return [...selectedGroups.value, ...selectedUsers.value];
+      },
+      set(value) {
+        users.value = value.filter((u) => u.user).map((u) => u.user);
+        groups.value = value.filter((g) => g.isNoUser).map((g) => g.id);
+      }
+    });
+    const debouncedSearch = useDebounceFn(onSearch, 500);
+    async function onSearch(pattern) {
+      const { data } = await cancelableClient.get(
+        generateUrl("apps/files_external/ajax/applicable"),
+        { params: { pattern, limit: 20 } }
+      );
+      const newEntries = [
+        ...entities.value.map((e) => [e.id, e]),
+        ...Object.entries(data.groups).map(([id, displayName]) => [id, { ...mapGroupToUserData(id), displayName }]),
+        ...Object.entries(data.users).map(([id, displayName]) => [`user:${id}`, { id: `user:${id}`, user: id, displayName }])
+      ];
+      entities.value = [...new Map(newEntries).values()];
+    }
+    const __returned__ = { groups, users, entities, selectedUsers, selectedGroups, model, debouncedSearch, onSearch, get t() {
+      return translate;
+    }, get NcSelectUsers() {
+      return NcSelectUsers;
+    } };
+    Object.defineProperty(__returned__, "__isScriptSetup", { enumerable: false, value: true });
+    return __returned__;
+  }
+});
+function _sfc_render$a(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createBlock($setup["NcSelectUsers"], {
+    modelValue: $setup.model,
+    "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => $setup.model = $event),
+    keepOpen: "",
+    multiple: "",
+    options: $setup.entities,
+    inputLabel: $setup.t("files_external", "Restrict to"),
+    onSearch: $setup.debouncedSearch
+  }, null, 8, ["modelValue", "options", "inputLabel", "onSearch"]);
+}
+const ApplicableEntities = /* @__PURE__ */ _export_sfc(_sfc_main$a, [["render", _sfc_render$a], ["__file", "/home/abolfazl/code/nextcloud/build/frontend/apps/files_external/src/components/AddExternalStorageDialog/ApplicableEntities.vue"]]);
+const _sfc_main$9 = /* @__PURE__ */ defineComponent({
+  __name: "AuthMechanismConfiguration",
+  props: /* @__PURE__ */ mergeModels({
+    authMechanism: { type: Object, required: true }
+  }, {
+    "modelValue": { type: Object, ...{ required: true } },
+    "modelModifiers": {}
+  }),
+  emits: ["update:modelValue"],
+  setup(__props, { expose: __expose }) {
+    __expose();
+    const modelValue = useModel(__props, "modelValue");
+    const props = __props;
+    const configuration = computed(() => {
+      if (!props.authMechanism.configuration) {
+        return void 0;
+      }
+      const entries = Object.entries(props.authMechanism.configuration).filter(([, option]) => !(option.flags & ConfigurationFlag.UserProvided));
+      return Object.fromEntries(entries);
+    });
+    const customComponent = computed(() => window.OCA.FilesExternal.AuthMechanism.getHandler(props.authMechanism));
+    const hasConfiguration = computed(() => {
+      if (!configuration.value) {
+        return false;
+      }
+      for (const option of Object.values(configuration.value)) {
+        if (option.flags & ConfigurationFlag.Hidden || option.flags & ConfigurationFlag.UserProvided) {
+          continue;
+        }
+        return true;
+      }
+      return false;
+    });
+    const isLoadingCustomComponent = ref(false);
+    watchEffect(async () => {
+      if (customComponent.value) {
+        isLoadingCustomComponent.value = true;
+        await window.customElements.whenDefined(customComponent.value.tagName);
+        isLoadingCustomComponent.value = false;
+      }
+    });
+    watch(configuration, () => {
+      for (const key in configuration.value) {
+        if (!(key in modelValue.value)) {
+          modelValue.value[key] = configuration.value[key]?.type === ConfigurationType.Boolean ? false : "";
+        }
+      }
+    });
+    function onUpdateModelValue(event) {
+      const config = [event.detail].flat()[0];
+      modelValue.value = { ...modelValue.value, ...config };
+    }
+    const __returned__ = { modelValue, props, configuration, customComponent, hasConfiguration, isLoadingCustomComponent, onUpdateModelValue, get t() {
+      return translate;
+    }, get NcLoadingIcon() {
+      return NcLoadingIcon;
+    }, ConfigurationEntry, get ConfigurationFlag() {
+      return ConfigurationFlag;
+    } };
+    Object.defineProperty(__returned__, "__isScriptSetup", { enumerable: false, value: true });
+    return __returned__;
+  }
+});
+const authMechanismConfiguration = "_authMechanismConfiguration_kpcpy_2";
+const style0$8 = {
+  authMechanismConfiguration
+};
+function _sfc_render$9(_ctx, _cache, $props, $setup, $data, $options) {
+  return $setup.hasConfiguration ? (openBlock(), createElementBlock(
+    "fieldset",
+    {
+      key: 0,
+      class: normalizeClass(_ctx.$style.authMechanismConfiguration)
+    },
+    [
+      createBaseVNode(
+        "legend",
+        null,
+        toDisplayString($setup.t("files_external", "Authentication")),
+        1
+        /* TEXT */
+      ),
+      $setup.customComponent ? (openBlock(), createElementBlock(
+        Fragment,
+        { key: 0 },
+        [
+          $setup.isLoadingCustomComponent ? (openBlock(), createBlock($setup["NcLoadingIcon"], { key: 0 })) : (openBlock(), createElementBlock(
+            Fragment,
+            { key: 1 },
+            [
+              createCommentVNode(" eslint-disable vue/attribute-hyphenation,vue/v-on-event-hyphenation -- for custom elements the casing is fixed! "),
+              (openBlock(), createBlock(resolveDynamicComponent($setup.customComponent.tagName), {
+                ".modelValue": $setup.modelValue,
+                ".authMechanism": $props.authMechanism,
+                "onUpdate:modelValue": $setup.onUpdateModelValue
+              }, null, 40, [".modelValue", ".authMechanism"]))
+            ],
+            2112
+            /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */
+          ))
+        ],
+        64
+        /* STABLE_FRAGMENT */
+      )) : (openBlock(true), createElementBlock(
+        Fragment,
+        { key: 1 },
+        renderList($setup.configuration, (configOption, configKey) => {
+          return withDirectives((openBlock(), createBlock($setup["ConfigurationEntry"], {
+            key: configOption.value,
+            modelValue: $setup.modelValue[configKey],
+            "onUpdate:modelValue": ($event) => $setup.modelValue[configKey] = $event,
+            "config-key": configKey,
+            "config-option": configOption
+          }, null, 8, ["modelValue", "onUpdate:modelValue", "config-key", "config-option"])), [
+            [vShow, !(configOption.flags & $setup.ConfigurationFlag.Hidden)]
+          ]);
+        }),
+        128
+        /* KEYED_FRAGMENT */
+      ))
+    ],
+    2
+    /* CLASS */
+  )) : createCommentVNode("v-if", true);
+}
+const cssModules$8 = {
+  "$style": style0$8
+};
+const AuthMechanismConfiguration = /* @__PURE__ */ _export_sfc(_sfc_main$9, [["render", _sfc_render$9], ["__cssModules", cssModules$8], ["__file", "/home/abolfazl/code/nextcloud/build/frontend/apps/files_external/src/components/AddExternalStorageDialog/AuthMechanismConfiguration.vue"]]);
+const _sfc_main$8 = /* @__PURE__ */ defineComponent({
+  __name: "BackendConfiguration",
+  props: /* @__PURE__ */ mergeModels({
+    configuration: { type: Object, required: true }
+  }, {
+    "modelValue": { type: Object, ...{ required: true } },
+    "modelModifiers": {}
+  }),
+  emits: ["update:modelValue"],
+  setup(__props, { expose: __expose }) {
+    __expose();
+    const modelValue = useModel(__props, "modelValue");
+    const props = __props;
+    watch(() => props.configuration, () => {
+      for (const key in props.configuration) {
+        if (!(key in modelValue.value)) {
+          modelValue.value[key] = props.configuration[key]?.type === ConfigurationType.Boolean ? false : "";
+        }
+      }
+    });
+    const __returned__ = { modelValue, props, get t() {
+      return translate;
+    }, ConfigurationEntry, get ConfigurationFlag() {
+      return ConfigurationFlag;
+    } };
+    Object.defineProperty(__returned__, "__isScriptSetup", { enumerable: false, value: true });
+    return __returned__;
+  }
+});
+const backendConfiguration = "_backendConfiguration_1sf6y_2";
+const style0$7 = {
+  backendConfiguration
+};
+function _sfc_render$8(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createElementBlock(
+    "fieldset",
+    {
+      class: normalizeClass(_ctx.$style.backendConfiguration)
+    },
+    [
+      createBaseVNode(
+        "legend",
+        null,
+        toDisplayString($setup.t("files_external", "Storage configuration")),
+        1
+        /* TEXT */
+      ),
+      (openBlock(true), createElementBlock(
+        Fragment,
+        null,
+        renderList($props.configuration, (configOption, configKey) => {
+          return withDirectives((openBlock(), createBlock($setup["ConfigurationEntry"], {
+            key: configOption.value,
+            modelValue: $setup.modelValue[configKey],
+            "onUpdate:modelValue": ($event) => $setup.modelValue[configKey] = $event,
+            configKey,
+            configOption
+          }, null, 8, ["modelValue", "onUpdate:modelValue", "configKey", "configOption"])), [
+            [vShow, !(configOption.flags & $setup.ConfigurationFlag.Hidden)]
+          ]);
+        }),
+        128
+        /* KEYED_FRAGMENT */
+      ))
+    ],
+    2
+    /* CLASS */
+  );
+}
+const cssModules$7 = {
+  "$style": style0$7
+};
+const BackendConfiguration = /* @__PURE__ */ _export_sfc(_sfc_main$8, [["render", _sfc_render$8], ["__cssModules", cssModules$7], ["__file", "/home/abolfazl/code/nextcloud/build/frontend/apps/files_external/src/components/AddExternalStorageDialog/BackendConfiguration.vue"]]);
+const _sfc_main$7 = /* @__PURE__ */ defineComponent({
+  __name: "MountOptions",
+  props: {
+    "modelValue": { type: Object, ...{ required: true } },
+    "modelModifiers": {}
+  },
+  emits: ["update:modelValue"],
+  setup(__props, { expose: __expose }) {
+    __expose();
+    const mountOptions2 = useModel(__props, "modelValue");
+    watchEffect(() => {
+      if (Object.keys(mountOptions2.value).length === 0) {
+        mountOptions2.value.encrypt = true;
+        mountOptions2.value.previews = true;
+        mountOptions2.value.enable_sharing = false;
+        mountOptions2.value.filesystem_check_changes = MountOptionsCheckFilesystem.OncePerRequest;
+        mountOptions2.value.encoding_compatibility = false;
+        mountOptions2.value.readonly = false;
+      }
+    });
+    const { hasEncryption } = loadState("files_external", "settings");
+    const idButton = useId();
+    const idFieldset = useId();
+    const isExpanded = ref(false);
+    const checkFilesystemOptions = [
+      {
+        label: translate("files_external", "Never"),
+        value: MountOptionsCheckFilesystem.Never
+      },
+      {
+        label: translate("files_external", "Once every direct access"),
+        value: MountOptionsCheckFilesystem.OncePerRequest
+      },
+      {
+        label: translate("files_external", "Always"),
+        value: MountOptionsCheckFilesystem.Always
+      }
+    ];
+    const checkFilesystem = computed({
+      get() {
+        return checkFilesystemOptions.find((option) => option.value === mountOptions2.value.filesystem_check_changes);
+      },
+      set(value) {
+        mountOptions2.value.filesystem_check_changes = value?.value ?? MountOptionsCheckFilesystem.OncePerRequest;
+      }
+    });
+    const __returned__ = { mountOptions: mountOptions2, hasEncryption, idButton, idFieldset, isExpanded, checkFilesystemOptions, checkFilesystem, get mdiChevronDown() {
+      return mdiChevronDown;
+    }, get mdiChevronRight() {
+      return mdiChevronRight;
+    }, get t() {
+      return translate;
+    }, get NcButton() {
+      return NcButton;
+    }, get NcCheckboxRadioSwitch() {
+      return NcCheckboxRadioSwitch;
+    }, get NcIconSvgWrapper() {
+      return NcIconSvgWrapper;
+    }, get NcSelect() {
+      return NcSelect;
+    } };
+    Object.defineProperty(__returned__, "__isScriptSetup", { enumerable: false, value: true });
+    return __returned__;
+  }
+});
+const mountOptions = "_mountOptions_1fqyb_2";
+const mountOptions__fieldset = "_mountOptions__fieldset_1fqyb_12";
+const style0$6 = {
+  mountOptions,
+  mountOptions__fieldset
+};
+const _hoisted_1$3 = ["id", "aria-labelledby"];
+function _sfc_render$7(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createElementBlock(
+    "div",
+    {
+      class: normalizeClass(_ctx.$style.mountOptions)
+    },
+    [
+      createVNode($setup["NcButton"], {
+        id: $setup.idButton,
+        "aria-controls": $setup.idFieldset,
+        "aria-expanded": $setup.isExpanded,
+        variant: "tertiary-no-background",
+        onClick: _cache[0] || (_cache[0] = ($event) => $setup.isExpanded = !$setup.isExpanded)
+      }, {
+        icon: withCtx(() => [
+          createVNode($setup["NcIconSvgWrapper"], {
+            directional: "",
+            path: $setup.isExpanded ? $setup.mdiChevronDown : $setup.mdiChevronRight
+          }, null, 8, ["path"])
+        ]),
+        default: withCtx(() => [
+          createTextVNode(
+            " " + toDisplayString($setup.t("files_external", "Mount options")),
+            1
+            /* TEXT */
+          )
+        ]),
+        _: 1
+        /* STABLE */
+      }, 8, ["id", "aria-controls", "aria-expanded"]),
+      withDirectives(createBaseVNode("fieldset", {
+        id: $setup.idFieldset,
+        class: normalizeClass(_ctx.$style.mountOptions__fieldset),
+        "aria-labelledby": $setup.idButton
+      }, [
+        createVNode($setup["NcSelect"], {
+          modelValue: $setup.checkFilesystem,
+          "onUpdate:modelValue": _cache[1] || (_cache[1] = ($event) => $setup.checkFilesystem = $event),
+          inputLabel: $setup.t("files_external", "Check filesystem changes"),
+          options: $setup.checkFilesystemOptions
+        }, null, 8, ["modelValue", "inputLabel"]),
+        createVNode($setup["NcCheckboxRadioSwitch"], {
+          modelValue: $props.modelValue.readonly,
+          "onUpdate:modelValue": _cache[2] || (_cache[2] = ($event) => $props.modelValue.readonly = $event),
+          type: "switch"
+        }, {
+          default: withCtx(() => [
+            createTextVNode(
+              toDisplayString($setup.t("files_external", "Read only")),
+              1
+              /* TEXT */
+            )
+          ]),
+          _: 1
+          /* STABLE */
+        }, 8, ["modelValue"]),
+        createVNode($setup["NcCheckboxRadioSwitch"], {
+          modelValue: $props.modelValue.previews,
+          "onUpdate:modelValue": _cache[3] || (_cache[3] = ($event) => $props.modelValue.previews = $event),
+          type: "switch"
+        }, {
+          default: withCtx(() => [
+            createTextVNode(
+              toDisplayString($setup.t("files_external", "Enable previews")),
+              1
+              /* TEXT */
+            )
+          ]),
+          _: 1
+          /* STABLE */
+        }, 8, ["modelValue"]),
+        createVNode($setup["NcCheckboxRadioSwitch"], {
+          modelValue: $props.modelValue.enable_sharing,
+          "onUpdate:modelValue": _cache[4] || (_cache[4] = ($event) => $props.modelValue.enable_sharing = $event),
+          type: "switch"
+        }, {
+          default: withCtx(() => [
+            createTextVNode(
+              toDisplayString($setup.t("files_external", "Enable sharing")),
+              1
+              /* TEXT */
+            )
+          ]),
+          _: 1
+          /* STABLE */
+        }, 8, ["modelValue"]),
+        $setup.hasEncryption ? (openBlock(), createBlock($setup["NcCheckboxRadioSwitch"], {
+          key: 0,
+          modelValue: $props.modelValue.encrypt,
+          "onUpdate:modelValue": _cache[5] || (_cache[5] = ($event) => $props.modelValue.encrypt = $event),
+          type: "switch"
+        }, {
+          default: withCtx(() => [
+            createTextVNode(
+              toDisplayString($setup.t("files_external", "Enable encryption")),
+              1
+              /* TEXT */
+            )
+          ]),
+          _: 1
+          /* STABLE */
+        }, 8, ["modelValue"])) : createCommentVNode("v-if", true),
+        createVNode($setup["NcCheckboxRadioSwitch"], {
+          modelValue: $props.modelValue.encoding_compatibility,
+          "onUpdate:modelValue": _cache[6] || (_cache[6] = ($event) => $props.modelValue.encoding_compatibility = $event),
+          type: "switch"
+        }, {
+          default: withCtx(() => [
+            createTextVNode(
+              toDisplayString($setup.t("files_external", "Compatibility with Mac NFD encoding (slow)")),
+              1
+              /* TEXT */
+            )
+          ]),
+          _: 1
+          /* STABLE */
+        }, 8, ["modelValue"])
+      ], 10, _hoisted_1$3), [
+        [vShow, $setup.isExpanded]
+      ])
+    ],
+    2
+    /* CLASS */
+  );
+}
+const cssModules$6 = {
+  "$style": style0$6
+};
+const MountOptions = /* @__PURE__ */ _export_sfc(_sfc_main$7, [["render", _sfc_render$7], ["__cssModules", cssModules$6], ["__file", "/home/abolfazl/code/nextcloud/build/frontend/apps/files_external/src/components/AddExternalStorageDialog/MountOptions.vue"]]);
+const { isAdmin: isAdmin$1 } = loadState("files_external", "settings");
+const allowedBackendIds = loadState("files_external", "allowedBackends");
+const backends = loadState("files_external", "backends").filter((b) => allowedBackendIds.includes(b.identifier));
+const allAuthMechanisms = loadState("files_external", "authMechanisms");
+const _sfc_main$6 = /* @__PURE__ */ defineComponent({
+  __name: "AddExternalStorageDialog",
+  props: /* @__PURE__ */ mergeModels({
+    storage: { type: Object, required: false, default: () => ({ backendOptions: {}, mountOptions: {}, type: isAdmin$1 ? "system" : "personal" }) }
+  }, {
+    "open": { type: Boolean, ...{ default: true } },
+    "openModifiers": {}
+  }),
+  emits: /* @__PURE__ */ mergeModels(["close"], ["update:open"]),
+  setup(__props, { expose: __expose }) {
+    __expose();
+    const open = useModel(__props, "open");
+    const internalStorage = ref(structuredClone(toRaw(__props.storage)));
+    watchEffect(() => {
+      if (open.value) {
+        internalStorage.value = structuredClone(toRaw(__props.storage));
+      }
+    });
+    const backend = computed({
+      get() {
+        return backends.find((b) => b.identifier === internalStorage.value.backend);
+      },
+      set(value) {
+        internalStorage.value.backend = value?.identifier;
+      }
+    });
+    const authMechanisms = computed(() => allAuthMechanisms.filter(({ scheme }) => backend.value?.authSchemes[scheme]));
+    const authMechanism = computed({
+      get() {
+        return authMechanisms.value.find((a) => a.identifier === internalStorage.value.authMechanism);
+      },
+      set(value) {
+        internalStorage.value.authMechanism = value?.identifier;
+      }
+    });
+    watch(authMechanisms, () => {
+      if (authMechanisms.value.length === 1) {
+        internalStorage.value.authMechanism = authMechanisms.value[0].identifier;
+      }
+    });
+    const __returned__ = { isAdmin: isAdmin$1, allowedBackendIds, backends, allAuthMechanisms, open, internalStorage, backend, authMechanisms, authMechanism, get t() {
+      return translate;
+    }, get NcButton() {
+      return NcButton;
+    }, get NcDialog() {
+      return NcDialog;
+    }, get NcSelect() {
+      return NcSelect;
+    }, get NcTextField() {
+      return _sfc_main$b;
+    }, ApplicableEntities, AuthMechanismConfiguration, BackendConfiguration, MountOptions };
+    Object.defineProperty(__returned__, "__isScriptSetup", { enumerable: false, value: true });
+    return __returned__;
+  }
+});
+const externalStorageDialog = "_externalStorageDialog_9wew8_2";
+const externalStorageDialog__configuration = "_externalStorageDialog__configuration_9wew8_9";
+const style0$5 = {
+  externalStorageDialog,
+  externalStorageDialog__configuration
+};
+function _sfc_render$6(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createBlock($setup["NcDialog"], {
+    open: $setup.open,
+    "onUpdate:open": [
+      _cache[9] || (_cache[9] = ($event) => $setup.open = $event),
+      _cache[11] || (_cache[11] = ($event) => $event || _ctx.$emit("close"))
+    ],
+    isForm: "",
+    contentClasses: _ctx.$style.externalStorageDialog,
+    name: $setup.internalStorage.id ? $setup.t("files_external", "Edit storage") : $setup.t("files_external", "Add storage"),
+    onSubmit: _cache[10] || (_cache[10] = ($event) => _ctx.$emit("close", $setup.internalStorage))
+  }, {
+    actions: withCtx(() => [
+      $props.storage.id ? (openBlock(), createBlock($setup["NcButton"], {
+        key: 0,
+        onClick: _cache[8] || (_cache[8] = ($event) => _ctx.$emit("close"))
+      }, {
+        default: withCtx(() => [
+          createTextVNode(
+            toDisplayString($setup.t("files_external", "Cancel")),
+            1
+            /* TEXT */
+          )
+        ]),
+        _: 1
+        /* STABLE */
+      })) : createCommentVNode("v-if", true),
+      createVNode($setup["NcButton"], {
+        variant: "primary",
+        type: "submit"
+      }, {
+        default: withCtx(() => [
+          createTextVNode(
+            toDisplayString($props.storage.id ? $setup.t("files_external", "Edit") : $setup.t("files_external", "Create")),
+            1
+            /* TEXT */
+          )
+        ]),
+        _: 1
+        /* STABLE */
+      })
+    ]),
+    default: withCtx(() => [
+      createVNode($setup["NcTextField"], {
+        modelValue: $setup.internalStorage.mountPoint,
+        "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => $setup.internalStorage.mountPoint = $event),
+        label: $setup.t("files_external", "Folder name"),
+        required: ""
+      }, null, 8, ["modelValue", "label"]),
+      createVNode($setup["MountOptions"], {
+        modelValue: $setup.internalStorage.mountOptions,
+        "onUpdate:modelValue": _cache[1] || (_cache[1] = ($event) => $setup.internalStorage.mountOptions = $event)
+      }, null, 8, ["modelValue"]),
+      $setup.isAdmin ? (openBlock(), createBlock($setup["ApplicableEntities"], {
+        key: 0,
+        groups: $setup.internalStorage.applicableGroups,
+        "onUpdate:groups": _cache[2] || (_cache[2] = ($event) => $setup.internalStorage.applicableGroups = $event),
+        users: $setup.internalStorage.applicableUsers,
+        "onUpdate:users": _cache[3] || (_cache[3] = ($event) => $setup.internalStorage.applicableUsers = $event)
+      }, null, 8, ["groups", "users"])) : createCommentVNode("v-if", true),
+      createVNode($setup["NcSelect"], {
+        modelValue: $setup.backend,
+        "onUpdate:modelValue": _cache[4] || (_cache[4] = ($event) => $setup.backend = $event),
+        options: $setup.backends,
+        disabled: !!($setup.internalStorage.id && $setup.internalStorage.backend),
+        inputLabel: $setup.t("files_external", "External storage"),
+        label: "name",
+        required: ""
+      }, null, 8, ["modelValue", "options", "disabled", "inputLabel"]),
+      createVNode($setup["NcSelect"], {
+        modelValue: $setup.authMechanism,
+        "onUpdate:modelValue": _cache[5] || (_cache[5] = ($event) => $setup.authMechanism = $event),
+        options: $setup.authMechanisms,
+        disabled: !$setup.internalStorage.backend || $setup.authMechanisms.length <= 1 || !!($setup.internalStorage.id && $setup.internalStorage.authMechanism),
+        inputLabel: $setup.t("files_external", "Authentication"),
+        label: "name",
+        required: ""
+      }, null, 8, ["modelValue", "options", "disabled", "inputLabel"]),
+      $setup.backend ? (openBlock(), createBlock($setup["BackendConfiguration"], {
+        key: 1,
+        modelValue: $setup.internalStorage.backendOptions,
+        "onUpdate:modelValue": _cache[6] || (_cache[6] = ($event) => $setup.internalStorage.backendOptions = $event),
+        class: normalizeClass(_ctx.$style.externalStorageDialog__configuration),
+        configuration: $setup.backend.configuration
+      }, null, 8, ["modelValue", "class", "configuration"])) : createCommentVNode("v-if", true),
+      $setup.authMechanism ? (openBlock(), createBlock($setup["AuthMechanismConfiguration"], {
+        key: 2,
+        modelValue: $setup.internalStorage.backendOptions,
+        "onUpdate:modelValue": _cache[7] || (_cache[7] = ($event) => $setup.internalStorage.backendOptions = $event),
+        class: normalizeClass(_ctx.$style.externalStorageDialog__configuration),
+        authMechanism: $setup.authMechanism
+      }, null, 8, ["modelValue", "class", "authMechanism"])) : createCommentVNode("v-if", true)
+    ]),
+    _: 1
+    /* STABLE */
+  }, 8, ["open", "contentClasses", "name"]);
+}
+const cssModules$5 = {
+  "$style": style0$5
+};
+const AddExternalStorageDialog = /* @__PURE__ */ _export_sfc(_sfc_main$6, [["render", _sfc_render$6], ["__cssModules", cssModules$5], ["__file", "/home/abolfazl/code/nextcloud/build/frontend/apps/files_external/src/components/AddExternalStorageDialog/AddExternalStorageDialog.vue"]]);
+/*!
+ * SPDX-FileCopyrightText: 2026 Nextcloud GmbH and Nextcloud contributors
+ * SPDX-License-Identifier: AGPL-3.0-or-later
+ */
+const { isAdmin } = loadState("files_external", "settings");
+const useStorages = defineStore("files_external--storages", () => {
+  const globalStorages = ref([]);
+  const userStorages = ref([]);
+  async function createGlobalStorage(storage) {
+    const url = generateUrl("apps/files_external/globalstorages");
+    const { data } = await cancelableClient.post(
+      url,
+      toRaw(storage),
+      { confirmPassword: PwdConfirmationMode.Strict }
+    );
+    globalStorages.value.push(data);
+  }
+  async function createUserStorage(storage) {
+    const url = generateUrl("apps/files_external/userstorages");
+    const { data } = await cancelableClient.post(
+      url,
+      toRaw(storage),
+      { confirmPassword: PwdConfirmationMode.Strict }
+    );
+    userStorages.value.push(data);
+  }
+  async function deleteStorage(storage) {
+    await cancelableClient.delete(getUrl(storage), {
+      confirmPassword: PwdConfirmationMode.Strict
+    });
+    if (storage.type === "personal") {
+      userStorages.value = userStorages.value.filter((s) => s.id !== storage.id);
+    } else {
+      globalStorages.value = globalStorages.value.filter((s) => s.id !== storage.id);
+    }
+  }
+  async function updateStorage(storage) {
+    const { data } = await cancelableClient.put(
+      getUrl(storage),
+      toRaw(storage),
+      { confirmPassword: PwdConfirmationMode.Strict }
+    );
+    overrideStorage(data);
+  }
+  async function reloadStorage(storage) {
+    const { data } = await cancelableClient.get(getUrl(storage));
+    overrideStorage(data);
+  }
+  initialize();
+  return {
+    globalStorages,
+    userStorages,
+    createGlobalStorage,
+    createUserStorage,
+    deleteStorage,
+    reloadStorage,
+    updateStorage
+  };
+  async function loadStorages(type) {
+    const url = `apps/files_external/${type}`;
+    const { data } = await cancelableClient.get(generateUrl(url));
+    return Object.values(data);
+  }
+  async function initialize() {
+    addPasswordConfirmationInterceptors(cancelableClient);
+    if (isAdmin) {
+      globalStorages.value = await loadStorages("globalstorages");
+    } else {
+      userStorages.value = await loadStorages("userstorages");
+      globalStorages.value = await loadStorages("userglobalstorages");
+    }
+  }
+  function getUrl(storage) {
+    const type = storage.type === "personal" ? "userstorages" : "globalstorages";
+    return generateUrl(`apps/files_external/${type}/${storage.id}`);
+  }
+  function overrideStorage(storage) {
+    if (storage.type === "personal") {
+      const index = userStorages.value.findIndex((s) => s.id === storage.id);
+      userStorages.value.splice(index, 1, storage);
+    } else {
+      const index = globalStorages.value.findIndex((s) => s.id === storage.id);
+      globalStorages.value.splice(index, 1, storage);
+    }
+  }
+});
+const _sfc_main$5 = /* @__PURE__ */ defineComponent({
+  __name: "ExternalStorageTableRow",
+  props: {
+    storage: { type: Object, required: true },
+    isAdmin: { type: Boolean, required: true }
+  },
+  setup(__props, { expose: __expose }) {
+    __expose();
+    const props = __props;
+    const store = useStorages();
+    const backends2 = loadState("files_external", "backends");
+    const backendName = computed(() => backends2.find((b) => b.identifier === props.storage.backend).name);
+    const authMechanisms = loadState("files_external", "authMechanisms");
+    const authMechanismName = computed(() => authMechanisms.find((a) => a.identifier === props.storage.authMechanism).name);
+    const checkingStatus = ref(false);
+    const status = computed(() => {
+      if (checkingStatus.value) {
+        return {
+          icon: "loading",
+          label: translate("files_external", "Checking …")
+        };
+      }
+      const status2 = props.storage.status ?? StorageStatus.Indeterminate;
+      const label = props.storage.statusMessage || StorageStatusMessage[status2];
+      const icon = StorageStatusIcons[status2];
+      const isWarning = status2 === StorageStatus.NetworkError || status2 === StorageStatus.Timeout;
+      const isError = !isWarning && status2 !== StorageStatus.Success && status2 !== StorageStatus.Indeterminate;
+      return { icon, label, isWarning, isError };
+    });
+    const users = useUsers(() => props.storage.applicableUsers || []);
+    async function onDelete() {
+      await store.deleteStorage(props.storage);
+    }
+    async function onEdit() {
+      const storage = await spawnDialog(AddExternalStorageDialog, {
+        storage: props.storage
+      });
+      if (!storage) {
+        return;
+      }
+      await store.updateStorage(storage);
+    }
+    async function reloadStatus() {
+      checkingStatus.value = true;
+      try {
+        await store.reloadStorage(props.storage);
+      } finally {
+        checkingStatus.value = false;
+      }
+    }
+    const __returned__ = { props, store, backends: backends2, backendName, authMechanisms, authMechanismName, checkingStatus, status, users, onDelete, onEdit, reloadStatus, get mdiAccountGroupOutline() {
+      return mdiAccountGroupOutline;
+    }, get mdiInformationOutline() {
+      return mdiInformationOutline;
+    }, get mdiPencilOutline() {
+      return mdiPencilOutline;
+    }, get mdiTrashCanOutline() {
+      return mdiTrashCanOutline;
+    }, get t() {
+      return translate;
+    }, get NcChip() {
+      return NcChip;
+    }, get NcLoadingIcon() {
+      return NcLoadingIcon;
+    }, get NcUserBubble() {
+      return NcUserBubble;
+    }, get NcButton() {
+      return NcButton;
+    }, get NcIconSvgWrapper() {
+      return NcIconSvgWrapper;
+    } };
+    Object.defineProperty(__returned__, "__isScriptSetup", { enumerable: false, value: true });
+    return __returned__;
+  }
+});
+const storageTableRow__cellActions = "_storageTableRow__cellActions_1k62p_2";
+const storageTableRow__cellApplicable = "_storageTableRow__cellApplicable_1k62p_7";
+const storageTableRow__status_warning = "_storageTableRow__status_warning_1k62p_17";
+const storageTableRow__status_error = "_storageTableRow__status_error_1k62p_21";
+const style0$4 = {
+  storageTableRow__cellActions,
+  storageTableRow__cellApplicable,
+  storageTableRow__status_warning,
+  storageTableRow__status_error
+};
+const _hoisted_1$2 = { class: "hidden-visually" };
+const _hoisted_2$1 = { key: 0 };
+function _sfc_render$5(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createElementBlock(
+    "tr",
+    {
+      class: normalizeClass(_ctx.$style.storageTableRow)
+    },
+    [
+      createBaseVNode("td", null, [
+        createBaseVNode(
+          "span",
+          _hoisted_1$2,
+          toDisplayString($setup.status.label),
+          1
+          /* TEXT */
+        ),
+        createVNode($setup["NcButton"], {
+          "aria-label": $setup.t("files_external", "Recheck status"),
+          title: $setup.status.label,
+          variant: "tertiary-no-background",
+          onClick: $setup.reloadStatus
+        }, {
+          icon: withCtx(() => [
+            $setup.status.icon === "loading" ? (openBlock(), createBlock($setup["NcLoadingIcon"], { key: 0 })) : (openBlock(), createBlock($setup["NcIconSvgWrapper"], {
+              key: 1,
+              class: normalizeClass({
+                [_ctx.$style.storageTableRow__status_error]: $setup.status.isError,
+                [_ctx.$style.storageTableRow__status_warning]: $setup.status.isWarning
+              }),
+              path: $setup.status.icon
+            }, null, 8, ["class", "path"]))
+          ]),
+          _: 1
+          /* STABLE */
+        }, 8, ["aria-label", "title"])
+      ]),
+      createBaseVNode(
+        "td",
+        null,
+        toDisplayString($props.storage.mountPoint),
+        1
+        /* TEXT */
+      ),
+      createBaseVNode(
+        "td",
+        null,
+        toDisplayString($setup.backendName),
+        1
+        /* TEXT */
+      ),
+      createBaseVNode(
+        "td",
+        null,
+        toDisplayString($setup.authMechanismName),
+        1
+        /* TEXT */
+      ),
+      $props.isAdmin ? (openBlock(), createElementBlock("td", _hoisted_2$1, [
+        createBaseVNode(
+          "div",
+          {
+            class: normalizeClass(_ctx.$style.storageTableRow__cellApplicable)
+          },
+          [
+            (openBlock(true), createElementBlock(
+              Fragment,
+              null,
+              renderList($props.storage.applicableGroups, (group) => {
+                return openBlock(), createBlock($setup["NcChip"], {
+                  key: group,
+                  iconPath: $setup.mdiAccountGroupOutline,
+                  noClose: "",
+                  text: group
+                }, null, 8, ["iconPath", "text"]);
+              }),
+              128
+              /* KEYED_FRAGMENT */
+            )),
+            (openBlock(true), createElementBlock(
+              Fragment,
+              null,
+              renderList($setup.users, (user) => {
+                return openBlock(), createBlock($setup["NcUserBubble"], {
+                  key: user.user,
+                  displayName: user.displayName,
+                  size: 24,
+                  user: user.user
+                }, null, 8, ["displayName", "user"]);
+              }),
+              128
+              /* KEYED_FRAGMENT */
+            ))
+          ],
+          2
+          /* CLASS */
+        )
+      ])) : createCommentVNode("v-if", true),
+      createBaseVNode("td", null, [
+        $props.isAdmin || $props.storage.type === "personal" ? (openBlock(), createElementBlock(
+          "div",
+          {
+            key: 0,
+            class: normalizeClass(_ctx.$style.storageTableRow__cellActions)
+          },
+          [
+            createVNode($setup["NcButton"], {
+              "aria-label": $setup.t("files_external", "Edit"),
+              title: $setup.t("files_external", "Edit"),
+              onClick: $setup.onEdit
+            }, {
+              icon: withCtx(() => [
+                createVNode($setup["NcIconSvgWrapper"], { path: $setup.mdiPencilOutline }, null, 8, ["path"])
+              ]),
+              _: 1
+              /* STABLE */
+            }, 8, ["aria-label", "title"]),
+            createVNode($setup["NcButton"], {
+              "aria-label": $setup.t("files_external", "Delete"),
+              title: $setup.t("files_external", "Delete"),
+              variant: "error",
+              onClick: $setup.onDelete
+            }, {
+              icon: withCtx(() => [
+                createVNode($setup["NcIconSvgWrapper"], { path: $setup.mdiTrashCanOutline }, null, 8, ["path"])
+              ]),
+              _: 1
+              /* STABLE */
+            }, 8, ["aria-label", "title"])
+          ],
+          2
+          /* CLASS */
+        )) : (openBlock(), createBlock($setup["NcIconSvgWrapper"], {
+          key: 1,
+          inline: "",
+          path: $setup.mdiInformationOutline,
+          name: $setup.t("files_external", "System provided storage"),
+          title: $setup.t("files_external", "System provided storage")
+        }, null, 8, ["path", "name", "title"]))
+      ])
+    ],
+    2
+    /* CLASS */
+  );
+}
+const cssModules$4 = {
+  "$style": style0$4
+};
+const ExternalStorageTableRow = /* @__PURE__ */ _export_sfc(_sfc_main$5, [["render", _sfc_render$5], ["__cssModules", cssModules$4], ["__file", "/home/abolfazl/code/nextcloud/build/frontend/apps/files_external/src/components/ExternalStorageTableRow.vue"]]);
+const _sfc_main$4 = /* @__PURE__ */ defineComponent({
+  __name: "ExternalStorageTable",
+  setup(__props, { expose: __expose }) {
+    __expose();
+    const store = useStorages();
+    const { isAdmin: isAdmin2 } = loadState("files_external", "settings");
+    const storages = computed(() => {
+      if (isAdmin2) {
+        return store.globalStorages;
+      } else {
+        return [
+          ...store.userStorages,
+          ...store.globalStorages
+        ];
+      }
+    });
+    const __returned__ = { store, isAdmin: isAdmin2, storages, get t() {
+      return translate;
+    }, ExternalStorageTableRow };
+    Object.defineProperty(__returned__, "__isScriptSetup", { enumerable: false, value: true });
+    return __returned__;
+  }
+});
+const storageTable = "_storageTable_1dqte_2";
+const storageTable__header = "_storageTable__header_1dqte_11";
+const storageTable__headerStatus = "_storageTable__headerStatus_1dqte_16";
+const storageTable__headerFolder = "_storageTable__headerFolder_1dqte_20";
+const storageTable__headerBackend = "_storageTable__headerBackend_1dqte_24";
+const storageTable__headerFAuthentication = "_storageTable__headerFAuthentication_1dqte_28";
+const storageTable__headerActions = "_storageTable__headerActions_1dqte_32";
+const style0$3 = {
+  storageTable,
+  storageTable__header,
+  storageTable__headerStatus,
+  storageTable__headerFolder,
+  storageTable__headerBackend,
+  storageTable__headerFAuthentication,
+  storageTable__headerActions
+};
+const _hoisted_1$1 = ["aria-label"];
+const _hoisted_2 = { class: "hidden-visually" };
+const _hoisted_3 = { key: 0 };
+const _hoisted_4 = { class: "hidden-visually" };
+function _sfc_render$4(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createElementBlock("table", {
+    class: normalizeClass(_ctx.$style.storageTable),
+    "aria-label": $setup.t("files_external", "External storages")
+  }, [
+    createBaseVNode(
+      "thead",
+      {
+        class: normalizeClass(_ctx.$style.storageTable__header)
+      },
+      [
+        createBaseVNode("tr", null, [
+          createBaseVNode(
+            "th",
+            {
+              class: normalizeClass(_ctx.$style.storageTable__headerStatus)
+            },
+            [
+              createBaseVNode(
+                "span",
+                _hoisted_2,
+                toDisplayString($setup.t("files_external", "Status")),
+                1
+                /* TEXT */
+              )
+            ],
+            2
+            /* CLASS */
+          ),
+          createBaseVNode(
+            "th",
+            {
+              class: normalizeClass(_ctx.$style.storageTable__headerFolder)
+            },
+            toDisplayString($setup.t("files_external", "Folder name")),
+            3
+            /* TEXT, CLASS */
+          ),
+          createBaseVNode(
+            "th",
+            {
+              class: normalizeClass(_ctx.$style.storageTable__headerBackend)
+            },
+            toDisplayString($setup.t("files_external", "External storage")),
+            3
+            /* TEXT, CLASS */
+          ),
+          createBaseVNode(
+            "th",
+            {
+              class: normalizeClass(_ctx.$style.storageTable__headerAuthentication)
+            },
+            toDisplayString($setup.t("files_external", "Authentication")),
+            3
+            /* TEXT, CLASS */
+          ),
+          $setup.isAdmin ? (openBlock(), createElementBlock(
+            "th",
+            _hoisted_3,
+            toDisplayString($setup.t("files_external", "Restricted to")),
+            1
+            /* TEXT */
+          )) : createCommentVNode("v-if", true),
+          createBaseVNode(
+            "th",
+            {
+              class: normalizeClass(_ctx.$style.storageTable__headerActions)
+            },
+            [
+              createBaseVNode(
+                "span",
+                _hoisted_4,
+                toDisplayString($setup.t("files_external", "Actions")),
+                1
+                /* TEXT */
+              )
+            ],
+            2
+            /* CLASS */
+          )
+        ])
+      ],
+      2
+      /* CLASS */
+    ),
+    createBaseVNode("tbody", null, [
+      (openBlock(true), createElementBlock(
+        Fragment,
+        null,
+        renderList($setup.storages, (storage) => {
+          return openBlock(), createBlock($setup["ExternalStorageTableRow"], {
+            key: storage.id,
+            isAdmin: $setup.isAdmin,
+            storage
+          }, null, 8, ["isAdmin", "storage"]);
+        }),
+        128
+        /* KEYED_FRAGMENT */
+      ))
+    ])
+  ], 10, _hoisted_1$1);
+}
+const cssModules$3 = {
+  "$style": style0$3
+};
+const ExternalStorageTable = /* @__PURE__ */ _export_sfc(_sfc_main$4, [["render", _sfc_render$4], ["__cssModules", cssModules$3], ["__file", "/home/abolfazl/code/nextcloud/build/frontend/apps/files_external/src/components/ExternalStorageTable.vue"]]);
+const _sfc_main$3 = /* @__PURE__ */ defineComponent({
+  __name: "UserMountSettings",
+  setup(__props, { expose: __expose }) {
+    __expose();
+    const userMounting = loadState("files_external", "user-mounting");
+    const availableBackends = loadState("files_external", "backends");
+    const allowUserMounting = ref(userMounting.allowUserMounting);
+    const allowedBackends = ref(userMounting.allowedBackends);
+    watch(allowUserMounting, () => {
+      const backupValue = !allowUserMounting.value;
+      window.OCP.AppConfig.setValue(
+        "files_external",
+        "allow_user_mounting",
+        allowUserMounting.value ? "yes" : "no",
+        {
+          success: () => showSuccess(translate("files_external", "Saved")),
+          error: () => {
+            allowUserMounting.value = backupValue;
+            showError(translate("files_external", "Error while saving"));
+          }
+        }
+      );
+    });
+    watch(allowedBackends, (newValue, oldValue) => {
+      window.OCP.AppConfig.setValue(
+        "files_external",
+        "user_mounting_backends",
+        newValue.join(","),
+        {
+          success: () => showSuccess(translate("files_external", "Saved allowed backends")),
+          error: () => {
+            showError(translate("files_external", "Failed to save allowed backends"));
+            allowedBackends.value = oldValue;
+          }
+        }
+      );
+    });
+    const __returned__ = { userMounting, availableBackends, allowUserMounting, allowedBackends, get t() {
+      return translate;
+    }, get NcCheckboxRadioSwitch() {
+      return NcCheckboxRadioSwitch;
+    } };
+    Object.defineProperty(__returned__, "__isScriptSetup", { enumerable: false, value: true });
+    return __returned__;
+  }
+});
+const userMountSettings__heading = "_userMountSettings__heading_59moz_2";
+const userMountSettings__backends = "_userMountSettings__backends_59moz_9";
+const style0$2 = {
+  userMountSettings__heading,
+  userMountSettings__backends
+};
+function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createElementBlock("form", null, [
+    createBaseVNode(
+      "h3",
+      {
+        class: normalizeClass(_ctx.$style.userMountSettings__heading)
+      },
+      toDisplayString($setup.t("files_external", "Advanced options for external storage mounts")),
+      3
+      /* TEXT, CLASS */
+    ),
+    createVNode($setup["NcCheckboxRadioSwitch"], {
+      modelValue: $setup.allowUserMounting,
+      "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => $setup.allowUserMounting = $event),
+      type: "switch"
+    }, {
+      default: withCtx(() => [
+        createTextVNode(
+          toDisplayString($setup.t("files_external", "Allow people to mount external storage")),
+          1
+          /* TEXT */
+        )
+      ]),
+      _: 1
+      /* STABLE */
+    }, 8, ["modelValue"]),
+    withDirectives(createBaseVNode(
+      "fieldset",
+      {
+        class: normalizeClass(_ctx.$style.userMountSettings__backends)
+      },
+      [
+        createBaseVNode(
+          "legend",
+          null,
+          toDisplayString($setup.t("files_external", "External storage backends people are allowed to mount")),
+          1
+          /* TEXT */
+        ),
+        (openBlock(true), createElementBlock(
+          Fragment,
+          null,
+          renderList($setup.availableBackends, (backend) => {
+            return openBlock(), createBlock($setup["NcCheckboxRadioSwitch"], {
+              key: backend.identifier,
+              modelValue: $setup.allowedBackends,
+              "onUpdate:modelValue": _cache[1] || (_cache[1] = ($event) => $setup.allowedBackends = $event),
+              value: backend.identifier,
+              name: "allowUserMountingBackends[]"
+            }, {
+              default: withCtx(() => [
+                createTextVNode(
+                  toDisplayString(backend.name),
+                  1
+                  /* TEXT */
+                )
+              ]),
+              _: 2
+              /* DYNAMIC */
+            }, 1032, ["modelValue", "value"]);
+          }),
+          128
+          /* KEYED_FRAGMENT */
+        ))
+      ],
+      2
+      /* CLASS */
+    ), [
+      [vShow, $setup.allowUserMounting]
+    ])
+  ]);
+}
+const cssModules$2 = {
+  "$style": style0$2
+};
+const UserMountSettings = /* @__PURE__ */ _export_sfc(_sfc_main$3, [["render", _sfc_render$3], ["__cssModules", cssModules$2], ["__file", "/home/abolfazl/code/nextcloud/build/frontend/apps/files_external/src/components/UserMountSettings.vue"]]);
+const filesExternalSvg = '<svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px"><path d="M456-432h156.48q24.96 0 42.24-17.39Q672-466.77 672-491.89q0-25.11-17.42-42.61T612-552h-1q-4.83-30.72-27.99-51.36Q559.85-624 528-624q-26 0-45.98 12.96-19.99 12.96-30.46 35.04-28.54 1.92-48.05 22.56Q384-532.8 384-504q0 28.8 21 50.4 21 21.6 51 21.6ZM120-144q-29.7 0-50.85-21.15Q48-186.3 48-216v-504h72v504h633v72H120Zm144-144q-29.7 0-50.85-21.15Q192-330.3 192-360v-432q0-29.7 21.15-50.85Q234.3-864 264-864h168l96 96h264q30-1 51 20.44 21 21.45 21 51.56v336q0 29.7-21.15 50.85Q821.7-288 792-288H264Z"/></svg>\n';
+const _sfc_main$2 = /* @__PURE__ */ defineComponent({
+  __name: "ExternalStoragesSection",
+  setup(__props, { expose: __expose }) {
+    __expose();
+    const settings = loadState("files_external", "settings", {
+      docUrl: "",
+      dependencyIssues: {
+        messages: null,
+        modules: null
+      },
+      isAdmin: false
+    });
+    const store = useStorages();
+    const dependencyIssues = settings.dependencyIssues?.messages ?? [];
+    const missingModules = settings.dependencyIssues?.modules ?? {};
+    const showDialog = ref(false);
+    const newStorage = ref();
+    async function addStorage(storage) {
+      showDialog.value = false;
+      if (!storage) {
+        return;
+      }
+      try {
+        if (settings.isAdmin) {
+          await store.createGlobalStorage(storage);
+        } else {
+          await store.createUserStorage(storage);
+        }
+        newStorage.value = void 0;
+      } catch (error) {
+        logger.error("Failed to add external storage", { error });
+        showDialog.value = true;
+      }
+    }
+    const __returned__ = { settings, store, dependencyIssues, missingModules, showDialog, newStorage, addStorage, get mdiPlus() {
+      return mdiPlus;
+    }, get n() {
+      return translatePlural;
+    }, get t() {
+      return translate;
+    }, get NcButton() {
+      return NcButton;
+    }, get NcEmptyContent() {
+      return NcEmptyContent;
+    }, get NcIconSvgWrapper() {
+      return NcIconSvgWrapper;
+    }, get NcNoteCard() {
+      return NcNoteCard;
+    }, get NcSettingsSection() {
+      return NcSettingsSection;
+    }, AddExternalStorageDialog, ExternalStorageTable, UserMountSettings, get filesExternalSvg() {
+      return filesExternalSvg;
+    } };
+    Object.defineProperty(__returned__, "__isScriptSetup", { enumerable: false, value: true });
+    return __returned__;
+  }
+});
+const externalStoragesSection__dependantList = "_externalStoragesSection__dependantList_atsmn_2";
+const externalStoragesSection__newStorageButton = "_externalStoragesSection__newStorageButton_atsmn_7";
+const style0$1 = {
+  externalStoragesSection__dependantList,
+  externalStoragesSection__newStorageButton
+};
+const _hoisted_1 = ["aria-label"];
+function _sfc_render$2(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createBlock($setup["NcSettingsSection"], {
+    docUrl: $setup.settings.docUrl,
+    name: $setup.t("files_external", "External storage"),
+    description: $setup.t("files_external", "External storage enables you to mount external storage services and devices as secondary Nextcloud storage devices.") + ($setup.settings.isAdmin ? " " + $setup.t("files_external", "You may also allow people to mount their own external storage services.") : "")
+  }, {
+    default: withCtx(() => [
+      createCommentVNode(" Dependency error messages "),
+      (openBlock(true), createElementBlock(
+        Fragment,
+        null,
+        renderList($setup.dependencyIssues, (message, index) => {
+          return openBlock(), createBlock(
+            $setup["NcNoteCard"],
+            {
+              key: index,
+              type: "error"
+            },
+            {
+              default: withCtx(() => [
+                createTextVNode(
+                  toDisplayString(message),
+                  1
+                  /* TEXT */
+                )
+              ]),
+              _: 2
+              /* DYNAMIC */
+            },
+            1024
+            /* DYNAMIC_SLOTS */
+          );
+        }),
+        128
+        /* KEYED_FRAGMENT */
+      )),
+      createCommentVNode(" Missing modules for backends "),
+      (openBlock(true), createElementBlock(
+        Fragment,
+        null,
+        renderList($setup.missingModules, (dependants, module) => {
+          return openBlock(), createBlock(
+            $setup["NcNoteCard"],
+            {
+              key: module,
+              type: "warning"
+            },
+            {
+              default: withCtx(() => [
+                createBaseVNode("p", null, [
+                  module === "curl" ? (openBlock(), createElementBlock(
+                    Fragment,
+                    { key: 0 },
+                    [
+                      createTextVNode(
+                        toDisplayString($setup.t("files_external", "The cURL support in PHP is not enabled or installed.")),
+                        1
+                        /* TEXT */
+                      )
+                    ],
+                    64
+                    /* STABLE_FRAGMENT */
+                  )) : module === "ftp" ? (openBlock(), createElementBlock(
+                    Fragment,
+                    { key: 1 },
+                    [
+                      createTextVNode(
+                        toDisplayString($setup.t("files_external", "The FTP support in PHP is not enabled or installed.")),
+                        1
+                        /* TEXT */
+                      )
+                    ],
+                    64
+                    /* STABLE_FRAGMENT */
+                  )) : (openBlock(), createElementBlock(
+                    Fragment,
+                    { key: 2 },
+                    [
+                      createTextVNode(
+                        toDisplayString($setup.t("files_external", "{module} is not installed.", { module })),
+                        1
+                        /* TEXT */
+                      )
+                    ],
+                    64
+                    /* STABLE_FRAGMENT */
+                  )),
+                  createTextVNode(
+                    " " + toDisplayString($setup.n(
+                      "files_external",
+                      "Please ask your system administrator to install it as otherwise mounting the following backend is not possible:",
+                      "Please ask your system administrator to install it as otherwise mounting the following backends is not possible:",
+                      dependants.length
+                    )),
+                    1
+                    /* TEXT */
+                  )
+                ]),
+                createBaseVNode("ul", {
+                  class: normalizeClass(_ctx.$style.externalStoragesSection__dependantList),
+                  "aria-label": $setup.t("files_external", "Dependant backends")
+                }, [
+                  (openBlock(true), createElementBlock(
+                    Fragment,
+                    null,
+                    renderList(dependants, (backend) => {
+                      return openBlock(), createElementBlock(
+                        "li",
+                        { key: backend },
+                        toDisplayString(backend),
+                        1
+                        /* TEXT */
+                      );
+                    }),
+                    128
+                    /* KEYED_FRAGMENT */
+                  ))
+                ], 10, _hoisted_1)
+              ]),
+              _: 2
+              /* DYNAMIC */
+            },
+            1024
+            /* DYNAMIC_SLOTS */
+          );
+        }),
+        128
+        /* KEYED_FRAGMENT */
+      )),
+      createCommentVNode(" For user settings if the user has no permission or for user and admin settings if no storage was configured "),
+      false ? (openBlock(), createBlock($setup["NcEmptyContent"], {
+        key: 0,
+        description: $setup.t("files_external", "No external storage configured or you do not have the permission to configure them")
+      }, {
+        icon: withCtx(() => [
+          createVNode($setup["NcIconSvgWrapper"], {
+            svg: $setup.filesExternalSvg,
+            size: 64
+          }, null, 8, ["svg"])
+        ]),
+        _: 1
+        /* STABLE */
+      }, 8, ["description"])) : createCommentVNode("v-if", true),
+      createVNode($setup["ExternalStorageTable"]),
+      createVNode($setup["NcButton"], {
+        class: normalizeClass(_ctx.$style.externalStoragesSection__newStorageButton),
+        variant: "primary",
+        onClick: _cache[0] || (_cache[0] = ($event) => $setup.showDialog = !$setup.showDialog)
+      }, {
+        icon: withCtx(() => [
+          createVNode($setup["NcIconSvgWrapper"], { path: $setup.mdiPlus }, null, 8, ["path"])
+        ]),
+        default: withCtx(() => [
+          createTextVNode(
+            " " + toDisplayString($setup.t("files_external", "Add external storage")),
+            1
+            /* TEXT */
+          )
+        ]),
+        _: 1
+        /* STABLE */
+      }, 8, ["class"]),
+      createVNode($setup["AddExternalStorageDialog"], {
+        modelValue: $setup.newStorage,
+        "onUpdate:modelValue": _cache[1] || (_cache[1] = ($event) => $setup.newStorage = $event),
+        open: $setup.showDialog,
+        "onUpdate:open": _cache[2] || (_cache[2] = ($event) => $setup.showDialog = $event),
+        onClose: $setup.addStorage
+      }, null, 8, ["modelValue", "open"]),
+      $setup.settings.isAdmin ? (openBlock(), createBlock($setup["UserMountSettings"], { key: 1 })) : createCommentVNode("v-if", true)
+    ]),
+    _: 1
+    /* STABLE */
+  }, 8, ["docUrl", "name", "description"]);
+}
+const cssModules$1 = {
+  "$style": style0$1
+};
+const ExternalStoragesSection = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["render", _sfc_render$2], ["__cssModules", cssModules$1], ["__file", "/home/abolfazl/code/nextcloud/build/frontend/apps/files_external/src/views/ExternalStoragesSection.vue"]]);
+const _sfc_main$1 = /* @__PURE__ */ defineComponent({
+  __name: "GlobalCredentialsSection",
+  setup(__props, { expose: __expose }) {
+    __expose();
+    const globalCredentials = loadState("files_external", "global-credentials");
+    const loading = ref(false);
+    const username = ref(globalCredentials.user);
+    const password = ref(globalCredentials.password);
+    addPasswordConfirmationInterceptors(cancelableClient);
+    async function onSubmit() {
+      try {
+        loading.value = true;
+        const { data } = await cancelableClient.post(generateUrl("apps/files_external/globalcredentials"), {
+          // This is the UID of the user to save the credentials (admins can set that also for other users)
+          uid: globalCredentials.uid,
+          user: username.value,
+          password: password.value
+        }, { confirmPassword: PwdConfirmationMode.Strict });
+        if (data) {
+          showSuccess(translate("files_external", "Global credentials saved"));
+          return;
+        }
+      } catch (e) {
+        logger.error(e);
+      } finally {
+        loading.value = false;
+      }
+      showError(translate("files_external", "Could not save global credentials"));
+      username.value = globalCredentials.user;
+      password.value = globalCredentials.password;
+    }
+    const __returned__ = { globalCredentials, loading, username, password, onSubmit, get t() {
+      return translate;
+    }, get NcButton() {
+      return NcButton;
+    }, get NcPasswordField() {
+      return NcPasswordField;
+    }, get NcSettingsSection() {
+      return NcSettingsSection;
+    }, get NcTextField() {
+      return _sfc_main$b;
+    } };
+    Object.defineProperty(__returned__, "__isScriptSetup", { enumerable: false, value: true });
+    return __returned__;
+  }
+});
+const globalCredentialsSectionForm = "_globalCredentialsSectionForm_bgjv2_2";
+const globalCredentialsSectionForm__submit = "_globalCredentialsSectionForm__submit_bgjv2_10";
+const style0 = {
+  globalCredentialsSectionForm,
+  globalCredentialsSectionForm__submit
+};
+function _sfc_render$1(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createBlock($setup["NcSettingsSection"], {
+    name: $setup.t("files_external", "Global credentials"),
+    description: $setup.t("files_external", "Global credentials can be used to authenticate with multiple external storages that have the same credentials.")
+  }, {
+    default: withCtx(() => [
+      createBaseVNode(
+        "form",
+        {
+          id: "global_credentials",
+          class: normalizeClass(_ctx.$style.globalCredentialsSectionForm),
+          autocomplete: "false",
+          onSubmit: withModifiers($setup.onSubmit, ["prevent"])
+        },
+        [
+          createVNode($setup["NcTextField"], {
+            modelValue: $setup.username,
+            "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => $setup.username = $event),
+            name: "username",
+            autocomplete: "false",
+            label: $setup.t("files_external", "Login")
+          }, null, 8, ["modelValue", "label"]),
+          createVNode($setup["NcPasswordField"], {
+            modelValue: $setup.password,
+            "onUpdate:modelValue": _cache[1] || (_cache[1] = ($event) => $setup.password = $event),
+            name: "password",
+            autocomplete: "false",
+            label: $setup.t("files_external", "Password")
+          }, null, 8, ["modelValue", "label"]),
+          createVNode($setup["NcButton"], {
+            class: normalizeClass(_ctx.$style.globalCredentialsSectionForm__submit),
+            disabled: $setup.loading,
+            variant: "primary",
+            type: "submit"
+          }, {
+            default: withCtx(() => [
+              createTextVNode(
+                toDisplayString($setup.loading ? $setup.t("files_external", "Saving …") : $setup.t("files_external", "Save")),
+                1
+                /* TEXT */
+              )
+            ]),
+            _: 1
+            /* STABLE */
+          }, 8, ["class", "disabled"])
+        ],
+        34
+        /* CLASS, NEED_HYDRATION */
+      )
+    ]),
+    _: 1
+    /* STABLE */
+  }, 8, ["name", "description"]);
+}
+const cssModules = {
+  "$style": style0
+};
+const GlobalCredentialsSection = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["render", _sfc_render$1], ["__cssModules", cssModules], ["__file", "/home/abolfazl/code/nextcloud/build/frontend/apps/files_external/src/views/GlobalCredentialsSection.vue"]]);
+const _sfc_main = /* @__PURE__ */ defineComponent({
+  __name: "FilesExternalSettings",
+  setup(__props, { expose: __expose }) {
+    __expose();
+    const __returned__ = { ExternalStoragesSection, GlobalCredentialsSection };
+    Object.defineProperty(__returned__, "__isScriptSetup", { enumerable: false, value: true });
+    return __returned__;
+  }
+});
+function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createElementBlock(
+    Fragment,
+    null,
+    [
+      createVNode($setup["ExternalStoragesSection"]),
+      createVNode($setup["GlobalCredentialsSection"])
+    ],
+    64
+    /* STABLE_FRAGMENT */
+  );
+}
+const FilesExternalApp = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "/home/abolfazl/code/nextcloud/build/frontend/apps/files_external/src/views/FilesExternalSettings.vue"]]);
+/*!
+ * SPDX-FileCopyrightText: 2026 Nextcloud GmbH and Nextcloud contributors
+ * SPDX-License-Identifier: AGPL-3.0-or-later
+ */
+const pinia = createPinia();
+const app = createApp(FilesExternalApp);
+app.config.idPrefix = "files-external";
+app.use(pinia);
+app.mount("#files-external");
 //# sourceMappingURL=files_external-settings.mjs.map

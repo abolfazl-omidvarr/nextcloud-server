@@ -17,6 +17,7 @@ node_modules/
 
 # ignore all apps except core ones
 /apps*/*
+!/apps/simpledashboard
 !/apps/cloud_federation_api
 !/apps/comments
 !/apps/contactsinteraction
@@ -179,3 +180,5 @@ cypress/snapshots
 cypress/videos
 
 /.direnv
+.idea
+dist

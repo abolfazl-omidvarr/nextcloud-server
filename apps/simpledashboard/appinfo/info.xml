@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<info xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	  xsi:noNamespaceSchemaLocation="https://apps.nextcloud.com/schema/apps/info.xsd">
+	<id>simpledashboard</id>
+	<name>Simple Dashboard</name>
+	<summary>a simple apps dashboard</summary>
+	<description>a simple apps dashboard</description>
+	<version>1.0.0</version>
+	<licence>AGPL-3.0-or-later</licence>
+	<author mail="abolfazl.omidvar44@gmail.com" homepage="">abolfazl</author>
+	<namespace>SimpleDashboard</namespace>
+	<category>dashboard</category>
+	<bugs>http://text.local</bugs>
+	<dependencies>
+		<nextcloud min-version="31" max-version="32"/>
+	</dependencies>
+	<navigations>
+		<navigation>
+			<id>simpledashboard</id>
+			<name>Simple Dashboard</name>
+			<route>simpledashboard.page.index</route>
+			<icon>app.svg</icon>
+			<type>link</type>
+		</navigation>
+	</navigations>
+</info>

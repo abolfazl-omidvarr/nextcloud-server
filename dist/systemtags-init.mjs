@@ -1,11 +1,2093 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=[window.OC.filePath('', '', 'dist/SystemTagPicker-C4cNLFyk.chunk.mjs'),window.OC.filePath('', '', 'dist/index-6_gsQFyp.chunk.mjs'),window.OC.filePath('', '', 'dist/index-JpgrUA2Z-CjbNveLz.chunk.mjs'),window.OC.filePath('', '', 'dist/index-DCpg1aui.chunk.mjs'),window.OC.filePath('', '', 'dist/index-RbJ3SLsu.chunk.mjs'),window.OC.filePath('', '', 'dist/runtime-dom.esm-bundler-DSTOTAEf.chunk.mjs'),window.OC.filePath('', '', 'dist/createElementId-DhjFt1I9-DnDDFk77.chunk.mjs'),window.OC.filePath('', '', 'dist/translation-DoG5ZELJ-2ffMJaM4.chunk.mjs'),window.OC.filePath('', '', 'dist/logger-D3RVzcfQ-u5jICcTJ.chunk.mjs'),window.OC.filePath('', '', 'dist/logger-D3RVzcfQ-Bx-uhVVO.chunk.css'),window.OC.filePath('', '', 'dist/mdi-Dg3BMFGG.chunk.mjs'),window.OC.filePath('', '', 'dist/mdi-BYHcrfvW.chunk.css'),window.OC.filePath('', '', 'dist/index-PxDoi4mB.chunk.css'),window.OC.filePath('', '', 'dist/NcNoteCard-CVhtNL04-xecBaCCz.chunk.mjs'),window.OC.filePath('', '', 'dist/NcNoteCard-CVhtNL04-Jq77EThs.chunk.css'),window.OC.filePath('', '', 'dist/NcCheckboxRadioSwitch-BCSKF7Tk-C_RQDZ7j.chunk.mjs'),window.OC.filePath('', '', 'dist/NcCheckboxRadioSwitch-BCSKF7Tk-BgdwjgMO.chunk.css'),window.OC.filePath('', '', 'dist/NcChip-D8tGFzRl-Hh2_NyPj.chunk.mjs'),window.OC.filePath('', '', 'dist/PencilOutline-BbbiWpuA.chunk.mjs'),window.OC.filePath('', '', 'dist/PencilOutline-DdQinVMt.chunk.css'),window.OC.filePath('', '', 'dist/NcChip-D8tGFzRl-CxOElZ_5.chunk.css'),window.OC.filePath('', '', 'dist/NcColorPicker-Kc0JqRtp-BUWSVNT6.chunk.mjs'),window.OC.filePath('', '', 'dist/colors-Go3zmZRD-CiwiiY9I.chunk.mjs'),window.OC.filePath('', '', 'dist/NcColorPicker-Kc0JqRtp-BOLDG5h-.chunk.css'),window.OC.filePath('', '', 'dist/Plus-D4QQbLoD.chunk.mjs'),window.OC.filePath('', '', 'dist/Plus-DoZPzs7J.chunk.css'),window.OC.filePath('', '', 'dist/TrashCanOutline-MY5RRFZ7.chunk.mjs'),window.OC.filePath('', '', 'dist/NcInputField-Bwsh2aHY-CQ8dmik7.chunk.mjs'),window.OC.filePath('', '', 'dist/NcInputField-Bwsh2aHY-_gyGHRGx.chunk.css'),window.OC.filePath('', '', 'dist/api-E3cRNuCY.chunk.mjs'),window.OC.filePath('', '', 'dist/index-DKddA51s.chunk.mjs'),window.OC.filePath('', '', 'dist/string_decoder-BO00msnV.chunk.mjs'),window.OC.filePath('', '', 'dist/index-BZr_2PFS.chunk.mjs'),window.OC.filePath('', '', 'dist/NcPasswordField-djttkA5Q-PkdHfBrA.chunk.mjs'),window.OC.filePath('', '', 'dist/NcPasswordField-djttkA5Q-2EzJaBaw.chunk.css'),window.OC.filePath('', '', 'dist/dav-BkWy6VCn.chunk.mjs'),window.OC.filePath('', '', 'dist/index-Dpy2yt9b.chunk.mjs'),window.OC.filePath('', '', 'dist/public-ClPO2oEz.chunk.mjs'),window.OC.filePath('', '', 'dist/index-C3ez-Nnm.chunk.mjs'),window.OC.filePath('', '', 'dist/systemtags-SystemTagPicker-r37hCiyq.chunk.css')])))=>i.map(i=>d[i]);
-import{c as ne,g as te,V as oe,D as ae,b as E}from"./index-C3ez-Nnm.chunk.mjs";import{g as se,e as R,f as le,r as ie,a as ce,b as ue,c as he}from"./dav-BkWy6VCn.chunk.mjs";import{_ as U}from"./index-DCpg1aui.chunk.mjs";import{i as de,P,b as H,F as D}from"./public-ClPO2oEz.chunk.mjs";import{t as w}from"./translation-DoG5ZELJ-2ffMJaM4.chunk.mjs";import{s as B}from"./index-RbJ3SLsu.chunk.mjs";import{a as J}from"./runtime-dom.esm-bundler-DSTOTAEf.chunk.mjs";import{s as O,a as Z}from"./index-6_gsQFyp.chunk.mjs";import{e as ge,f as W,l as be}from"./api-E3cRNuCY.chunk.mjs";import"./string_decoder-BO00msnV.chunk.mjs";import"./createElementId-DhjFt1I9-DnDDFk77.chunk.mjs";import"./index-Dpy2yt9b.chunk.mjs";import"./logger-D3RVzcfQ-u5jICcTJ.chunk.mjs";import"./mdi-Dg3BMFGG.chunk.mjs";import"./index-DKddA51s.chunk.mjs";import"./index-BZr_2PFS.chunk.mjs";import"./NcPasswordField-djttkA5Q-PkdHfBrA.chunk.mjs";import"./NcInputField-Bwsh2aHY-CQ8dmik7.chunk.mjs";const Y='<svg xmlns="http://www.w3.org/2000/svg" id="mdi-tag-multiple-outline" viewBox="0 0 24 24"><path d="M6.5 10C7.3 10 8 9.3 8 8.5S7.3 7 6.5 7 5 7.7 5 8.5 5.7 10 6.5 10M9 6L16 13L11 18L4 11V6H9M9 4H4C2.9 4 2 4.9 2 6V11C2 11.6 2.2 12.1 2.6 12.4L9.6 19.4C9.9 19.8 10.4 20 11 20S12.1 19.8 12.4 19.4L17.4 14.4C17.8 14 18 13.5 18 13C18 12.4 17.8 11.9 17.4 11.6L10.4 4.6C10.1 4.2 9.6 4 9 4M13.5 5.7L14.5 4.7L21.4 11.6C21.8 12 22 12.5 22 13S21.8 14.1 21.4 14.4L16 19.8L15 18.8L20.7 13L13.5 5.7Z" /></svg>';async function T({nodes:e}){const r=await B(J(()=>U(()=>import("./SystemTagPicker-C4cNLFyk.chunk.mjs"),__vite__mapDeps([0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39]),import.meta.url)),{nodes:e});return Array(e.length).fill(r)}const fe={id:"systemtags:bulk",displayName:()=>w("systemtags","Manage tags"),iconSvgInline:()=>Y,enabled({nodes:e}){return de()||e.length===0||e.some(r=>!r.isDavResource)?!1:!e.some(r=>(r.permissions&P.UPDATE)===0)},async exec(e){const[r]=await T(e);return r},execBatch:T,hotkey:{description:w("systemtags","Manage tags"),key:"t"}},me='<svg xmlns="http://www.w3.org/2000/svg" id="mdi-tag-outline" viewBox="0 0 24 24"><path d="M21.41 11.58L12.41 2.58A2 2 0 0 0 11 2H4A2 2 0 0 0 2 4V11A2 2 0 0 0 2.59 12.42L11.59 21.42A2 2 0 0 0 13 22A2 2 0 0 0 14.41 21.41L21.41 14.41A2 2 0 0 0 22 13A2 2 0 0 0 21.41 11.58M13 20L4 11V4H11L20 13M6.5 5A1.5 1.5 0 1 1 5 6.5A1.5 1.5 0 0 1 6.5 5Z" /></svg>';function pe(){ne({id:"systemtags",order:20,displayName(){return w("systemtags","Add tags")},enabled(){return!0},iconSvgInline(){return me},onClick({node:e}){return B(J(()=>U(()=>import("./SystemTagPicker-C4cNLFyk.chunk.mjs"),__vite__mapDeps([0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39]),import.meta.url)),{nodes:[e]})}})}const S={aliceblue:[240,248,255],antiquewhite:[250,235,215],aqua:[0,255,255],aquamarine:[127,255,212],azure:[240,255,255],beige:[245,245,220],bisque:[255,228,196],black:[0,0,0],blanchedalmond:[255,235,205],blue:[0,0,255],blueviolet:[138,43,226],brown:[165,42,42],burlywood:[222,184,135],cadetblue:[95,158,160],chartreuse:[127,255,0],chocolate:[210,105,30],coral:[255,127,80],cornflowerblue:[100,149,237],cornsilk:[255,248,220],crimson:[220,20,60],cyan:[0,255,255],darkblue:[0,0,139],darkcyan:[0,139,139],darkgoldenrod:[184,134,11],darkgray:[169,169,169],darkgreen:[0,100,0],darkgrey:[169,169,169],darkkhaki:[189,183,107],darkmagenta:[139,0,139],darkolivegreen:[85,107,47],darkorange:[255,140,0],darkorchid:[153,50,204],darkred:[139,0,0],darksalmon:[233,150,122],darkseagreen:[143,188,143],darkslateblue:[72,61,139],darkslategray:[47,79,79],darkslategrey:[47,79,79],darkturquoise:[0,206,209],darkviolet:[148,0,211],deeppink:[255,20,147],deepskyblue:[0,191,255],dimgray:[105,105,105],dimgrey:[105,105,105],dodgerblue:[30,144,255],firebrick:[178,34,34],floralwhite:[255,250,240],forestgreen:[34,139,34],fuchsia:[255,0,255],gainsboro:[220,220,220],ghostwhite:[248,248,255],gold:[255,215,0],goldenrod:[218,165,32],gray:[128,128,128],green:[0,128,0],greenyellow:[173,255,47],grey:[128,128,128],honeydew:[240,255,240],hotpink:[255,105,180],indianred:[205,92,92],indigo:[75,0,130],ivory:[255,255,240],khaki:[240,230,140],lavender:[230,230,250],lavenderblush:[255,240,245],lawngreen:[124,252,0],lemonchiffon:[255,250,205],lightblue:[173,216,230],lightcoral:[240,128,128],lightcyan:[224,255,255],lightgoldenrodyellow:[250,250,210],lightgray:[211,211,211],lightgreen:[144,238,144],lightgrey:[211,211,211],lightpink:[255,182,193],lightsalmon:[255,160,122],lightseagreen:[32,178,170],lightskyblue:[135,206,250],lightslategray:[119,136,153],lightslategrey:[119,136,153],lightsteelblue:[176,196,222],lightyellow:[255,255,224],lime:[0,255,0],limegreen:[50,205,50],linen:[250,240,230],magenta:[255,0,255],maroon:[128,0,0],mediumaquamarine:[102,205,170],mediumblue:[0,0,205],mediumorchid:[186,85,211],mediumpurple:[147,112,219],mediumseagreen:[60,179,113],mediumslateblue:[123,104,238],mediumspringgreen:[0,250,154],mediumturquoise:[72,209,204],mediumvioletred:[199,21,133],midnightblue:[25,25,112],mintcream:[245,255,250],mistyrose:[255,228,225],moccasin:[255,228,181],navajowhite:[255,222,173],navy:[0,0,128],oldlace:[253,245,230],olive:[128,128,0],olivedrab:[107,142,35],orange:[255,165,0],orangered:[255,69,0],orchid:[218,112,214],palegoldenrod:[238,232,170],palegreen:[152,251,152],paleturquoise:[175,238,238],palevioletred:[219,112,147],papayawhip:[255,239,213],peachpuff:[255,218,185],peru:[205,133,63],pink:[255,192,203],plum:[221,160,221],powderblue:[176,224,230],purple:[128,0,128],rebeccapurple:[102,51,153],red:[255,0,0],rosybrown:[188,143,143],royalblue:[65,105,225],saddlebrown:[139,69,19],salmon:[250,128,114],sandybrown:[244,164,96],seagreen:[46,139,87],seashell:[255,245,238],sienna:[160,82,45],silver:[192,192,192],skyblue:[135,206,235],slateblue:[106,90,205],slategray:[112,128,144],slategrey:[112,128,144],snow:[255,250,250],springgreen:[0,255,127],steelblue:[70,130,180],tan:[210,180,140],teal:[0,128,128],thistle:[216,191,216],tomato:[255,99,71],turquoise:[64,224,208],violet:[238,130,238],wheat:[245,222,179],white:[255,255,255],whitesmoke:[245,245,245],yellow:[255,255,0],yellowgreen:[154,205,50]};for(const e in S)Object.freeze(S[e]);const N=Object.freeze(S),G=Object.create(null);for(const e in N)Object.hasOwn(N,e)&&(G[N[e]]=e);const b={to:{},get:{}};b.get=function(e){const r=e.slice(0,3).toLowerCase();let n,t;switch(r){case"hsl":{n=b.get.hsl(e),t="hsl";break}case"hwb":{n=b.get.hwb(e),t="hwb";break}default:{n=b.get.rgb(e),t="rgb";break}}return n?{model:t,value:n}:null},b.get.rgb=function(e){if(!e)return null;const r=/^#([a-f\d]{3,4})$/i,n=/^#([a-f\d]{6})([a-f\d]{2})?$/i,t=/^rgba?\(\s*([+-]?(?:\d*\.)?\d+(?:e\d+)?)(?=[\s,])\s*(?:,\s*)?([+-]?(?:\d*\.)?\d+(?:e\d+)?)(?=[\s,])\s*(?:,\s*)?([+-]?(?:\d*\.)?\d+(?:e\d+)?)\s*(?:[\s,|/]\s*([+-]?(?:\d*\.)?\d+(?:e\d+)?)(%?)\s*)?\)$/i,o=/^rgba?\(\s*([+-]?[\d.]+)%\s*,?\s*([+-]?[\d.]+)%\s*,?\s*([+-]?[\d.]+)%\s*(?:[\s,|/]\s*([+-]?[\d.]+)(%?)\s*)?\)$/i,a=/^(\w+)$/;let s=[0,0,0,1],l,i,u;if(l=e.match(n)){for(u=l[2],l=l[1],i=0;i<3;i++){const m=i*2;s[i]=Number.parseInt(l.slice(m,m+2),16)}u&&(s[3]=Number.parseInt(u,16)/255)}else if(l=e.match(r)){for(l=l[1],u=l[3],i=0;i<3;i++)s[i]=Number.parseInt(l[i]+l[i],16);u&&(s[3]=Number.parseInt(u+u,16)/255)}else if(l=e.match(t)){for(i=0;i<3;i++)s[i]=Number.parseFloat(l[i+1]);l[4]&&(s[3]=l[5]?Number.parseFloat(l[4])*.01:Number.parseFloat(l[4]))}else if(l=e.match(o)){for(i=0;i<3;i++)s[i]=Math.round(Number.parseFloat(l[i+1])*2.55);l[4]&&(s[3]=l[5]?Number.parseFloat(l[4])*.01:Number.parseFloat(l[4]))}else return(l=e.toLowerCase().match(a))?l[1]==="transparent"?[0,0,0,0]:Object.hasOwn(N,l[1])?(s=N[l[1]].slice(),s[3]=1,s):null:null;for(i=0;i<3;i++)s[i]=k(s[i],0,255);return s[3]=k(s[3],0,1),s},b.get.hsl=function(e){if(!e)return null;const r=/^hsla?\(\s*([+-]?(?:\d{0,3}\.)?\d+)(?:deg)?\s*,?\s*([+-]?[\d.]+)%\s*,?\s*([+-]?[\d.]+)%\s*(?:[,|/]\s*([+-]?(?=\.\d|\d)(?:0|[1-9]\d*)?(?:\.\d*)?(?:e[+-]?\d+)?)\s*)?\)$/i,n=e.match(r);if(n){const t=Number.parseFloat(n[4]),o=(Number.parseFloat(n[1])%360+360)%360,a=k(Number.parseFloat(n[2]),0,100),s=k(Number.parseFloat(n[3]),0,100),l=k(Number.isNaN(t)?1:t,0,1);return[o,a,s,l]}return null},b.get.hwb=function(e){if(!e)return null;const r=/^hwb\(\s*([+-]?\d{0,3}(?:\.\d+)?)(?:deg)?\s*[\s,]\s*([+-]?[\d.]+)%\s*[\s,]\s*([+-]?[\d.]+)%\s*(?:[\s,]\s*([+-]?(?=\.\d|\d)(?:0|[1-9]\d*)?(?:\.\d*)?(?:e[+-]?\d+)?)\s*)?\)$/i,n=e.match(r);if(n){const t=Number.parseFloat(n[4]),o=(Number.parseFloat(n[1])%360+360)%360,a=k(Number.parseFloat(n[2]),0,100),s=k(Number.parseFloat(n[3]),0,100),l=k(Number.isNaN(t)?1:t,0,1);return[o,a,s,l]}return null},b.to.hex=function(...e){return"#"+j(e[0])+j(e[1])+j(e[2])+(e[3]<1?j(Math.round(e[3]*255)):"")},b.to.rgb=function(...e){return e.length<4||e[3]===1?"rgb("+Math.round(e[0])+", "+Math.round(e[1])+", "+Math.round(e[2])+")":"rgba("+Math.round(e[0])+", "+Math.round(e[1])+", "+Math.round(e[2])+", "+e[3]+")"},b.to.rgb.percent=function(...e){const r=Math.round(e[0]/255*100),n=Math.round(e[1]/255*100),t=Math.round(e[2]/255*100);return e.length<4||e[3]===1?"rgb("+r+"%, "+n+"%, "+t+"%)":"rgba("+r+"%, "+n+"%, "+t+"%, "+e[3]+")"},b.to.hsl=function(...e){return e.length<4||e[3]===1?"hsl("+e[0]+", "+e[1]+"%, "+e[2]+"%)":"hsla("+e[0]+", "+e[1]+"%, "+e[2]+"%, "+e[3]+")"},b.to.hwb=function(...e){let r="";return e.length>=4&&e[3]!==1&&(r=", "+e[3]),"hwb("+e[0]+", "+e[1]+"%, "+e[2]+"%"+r+")"},b.to.keyword=function(...e){return G[e.slice(0,3)]};function k(e,r,n){return Math.min(Math.max(r,e),n)}function j(e){const r=Math.round(e).toString(16).toUpperCase();return r.length<2?"0"+r:r}const q={aliceblue:[240,248,255],antiquewhite:[250,235,215],aqua:[0,255,255],aquamarine:[127,255,212],azure:[240,255,255],beige:[245,245,220],bisque:[255,228,196],black:[0,0,0],blanchedalmond:[255,235,205],blue:[0,0,255],blueviolet:[138,43,226],brown:[165,42,42],burlywood:[222,184,135],cadetblue:[95,158,160],chartreuse:[127,255,0],chocolate:[210,105,30],coral:[255,127,80],cornflowerblue:[100,149,237],cornsilk:[255,248,220],crimson:[220,20,60],cyan:[0,255,255],darkblue:[0,0,139],darkcyan:[0,139,139],darkgoldenrod:[184,134,11],darkgray:[169,169,169],darkgreen:[0,100,0],darkgrey:[169,169,169],darkkhaki:[189,183,107],darkmagenta:[139,0,139],darkolivegreen:[85,107,47],darkorange:[255,140,0],darkorchid:[153,50,204],darkred:[139,0,0],darksalmon:[233,150,122],darkseagreen:[143,188,143],darkslateblue:[72,61,139],darkslategray:[47,79,79],darkslategrey:[47,79,79],darkturquoise:[0,206,209],darkviolet:[148,0,211],deeppink:[255,20,147],deepskyblue:[0,191,255],dimgray:[105,105,105],dimgrey:[105,105,105],dodgerblue:[30,144,255],firebrick:[178,34,34],floralwhite:[255,250,240],forestgreen:[34,139,34],fuchsia:[255,0,255],gainsboro:[220,220,220],ghostwhite:[248,248,255],gold:[255,215,0],goldenrod:[218,165,32],gray:[128,128,128],green:[0,128,0],greenyellow:[173,255,47],grey:[128,128,128],honeydew:[240,255,240],hotpink:[255,105,180],indianred:[205,92,92],indigo:[75,0,130],ivory:[255,255,240],khaki:[240,230,140],lavender:[230,230,250],lavenderblush:[255,240,245],lawngreen:[124,252,0],lemonchiffon:[255,250,205],lightblue:[173,216,230],lightcoral:[240,128,128],lightcyan:[224,255,255],lightgoldenrodyellow:[250,250,210],lightgray:[211,211,211],lightgreen:[144,238,144],lightgrey:[211,211,211],lightpink:[255,182,193],lightsalmon:[255,160,122],lightseagreen:[32,178,170],lightskyblue:[135,206,250],lightslategray:[119,136,153],lightslategrey:[119,136,153],lightsteelblue:[176,196,222],lightyellow:[255,255,224],lime:[0,255,0],limegreen:[50,205,50],linen:[250,240,230],magenta:[255,0,255],maroon:[128,0,0],mediumaquamarine:[102,205,170],mediumblue:[0,0,205],mediumorchid:[186,85,211],mediumpurple:[147,112,219],mediumseagreen:[60,179,113],mediumslateblue:[123,104,238],mediumspringgreen:[0,250,154],mediumturquoise:[72,209,204],mediumvioletred:[199,21,133],midnightblue:[25,25,112],mintcream:[245,255,250],mistyrose:[255,228,225],moccasin:[255,228,181],navajowhite:[255,222,173],navy:[0,0,128],oldlace:[253,245,230],olive:[128,128,0],olivedrab:[107,142,35],orange:[255,165,0],orangered:[255,69,0],orchid:[218,112,214],palegoldenrod:[238,232,170],palegreen:[152,251,152],paleturquoise:[175,238,238],palevioletred:[219,112,147],papayawhip:[255,239,213],peachpuff:[255,218,185],peru:[205,133,63],pink:[255,192,203],plum:[221,160,221],powderblue:[176,224,230],purple:[128,0,128],rebeccapurple:[102,51,153],red:[255,0,0],rosybrown:[188,143,143],royalblue:[65,105,225],saddlebrown:[139,69,19],salmon:[250,128,114],sandybrown:[244,164,96],seagreen:[46,139,87],seashell:[255,245,238],sienna:[160,82,45],silver:[192,192,192],skyblue:[135,206,235],slateblue:[106,90,205],slategray:[112,128,144],slategrey:[112,128,144],snow:[255,250,250],springgreen:[0,255,127],steelblue:[70,130,180],tan:[210,180,140],teal:[0,128,128],thistle:[216,191,216],tomato:[255,99,71],turquoise:[64,224,208],violet:[238,130,238],wheat:[245,222,179],white:[255,255,255],whitesmoke:[245,245,245],yellow:[255,255,0],yellowgreen:[154,205,50]};for(const e in q)Object.freeze(q[e]);const A=Object.freeze(q),K={};for(const e of Object.keys(A))K[A[e]]=e;const c={rgb:{channels:3,labels:"rgb"},hsl:{channels:3,labels:"hsl"},hsv:{channels:3,labels:"hsv"},hwb:{channels:3,labels:"hwb"},cmyk:{channels:4,labels:"cmyk"},xyz:{channels:3,labels:"xyz"},lab:{channels:3,labels:"lab"},oklab:{channels:3,labels:["okl","oka","okb"]},lch:{channels:3,labels:"lch"},oklch:{channels:3,labels:["okl","okc","okh"]},hex:{channels:1,labels:["hex"]},keyword:{channels:1,labels:["keyword"]},ansi16:{channels:1,labels:["ansi16"]},ansi256:{channels:1,labels:["ansi256"]},hcg:{channels:3,labels:["h","c","g"]},apple:{channels:3,labels:["r16","g16","b16"]},gray:{channels:1,labels:["gray"]}},y=(6/29)**3;function M(e){const r=e>.0031308?1.055*e**.4166666666666667-.055:e*12.92;return Math.min(Math.max(0,r),1)}function x(e){return e>.04045?((e+.055)/1.055)**2.4:e/12.92}for(const e of Object.keys(c)){if(!("channels"in c[e]))throw new Error("missing channels property: "+e);if(!("labels"in c[e]))throw new Error("missing channel labels property: "+e);if(c[e].labels.length!==c[e].channels)throw new Error("channel and label counts mismatch: "+e);const{channels:r,labels:n}=c[e];delete c[e].channels,delete c[e].labels,Object.defineProperty(c[e],"channels",{value:r}),Object.defineProperty(c[e],"labels",{value:n})}c.rgb.hsl=function(e){const r=e[0]/255,n=e[1]/255,t=e[2]/255,o=Math.min(r,n,t),a=Math.max(r,n,t),s=a-o;let l,i;switch(a){case o:{l=0;break}case r:{l=(n-t)/s;break}case n:{l=2+(t-r)/s;break}case t:{l=4+(r-n)/s;break}}l=Math.min(l*60,360),l<0&&(l+=360);const u=(o+a)/2;return a===o?i=0:u<=.5?i=s/(a+o):i=s/(2-a-o),[l,i*100,u*100]},c.rgb.hsv=function(e){let r,n,t,o,a;const s=e[0]/255,l=e[1]/255,i=e[2]/255,u=Math.max(s,l,i),m=u-Math.min(s,l,i),p=function(re){return(u-re)/6/m+1/2};if(m===0)o=0,a=0;else{switch(a=m/u,r=p(s),n=p(l),t=p(i),u){case s:{o=t-n;break}case l:{o=1/3+r-t;break}case i:{o=2/3+n-r;break}}o<0?o+=1:o>1&&(o-=1)}return[o*360,a*100,u*100]},c.rgb.hwb=function(e){const r=e[0],n=e[1];let t=e[2];const o=c.rgb.hsl(e)[0],a=1/255*Math.min(r,Math.min(n,t));return t=1-1/255*Math.max(r,Math.max(n,t)),[o,a*100,t*100]},c.rgb.oklab=function(e){const r=x(e[0]/255),n=x(e[1]/255),t=x(e[2]/255),o=Math.cbrt(.4122214708*r+.5363325363*n+.0514459929*t),a=Math.cbrt(.2119034982*r+.6806995451*n+.1073969566*t),s=Math.cbrt(.0883024619*r+.2817188376*n+.6299787005*t),l=.2104542553*o+.793617785*a-.0040720468*s,i=1.9779984951*o-2.428592205*a+.4505937099*s,u=.0259040371*o+.7827717662*a-.808675766*s;return[l*100,i*100,u*100]},c.rgb.cmyk=function(e){const r=e[0]/255,n=e[1]/255,t=e[2]/255,o=Math.min(1-r,1-n,1-t),a=(1-r-o)/(1-o)||0,s=(1-n-o)/(1-o)||0,l=(1-t-o)/(1-o)||0;return[a*100,s*100,l*100,o*100]};function ye(e,r){return(e[0]-r[0])**2+(e[1]-r[1])**2+(e[2]-r[2])**2}c.rgb.keyword=function(e){const r=K[e];if(r)return r;let n=Number.POSITIVE_INFINITY,t;for(const o of Object.keys(A)){const a=A[o],s=ye(e,a);s<n&&(n=s,t=o)}return t},c.keyword.rgb=function(e){return[...A[e]]},c.rgb.xyz=function(e){const r=x(e[0]/255),n=x(e[1]/255),t=x(e[2]/255),o=r*.4124564+n*.3575761+t*.1804375,a=r*.2126729+n*.7151522+t*.072175,s=r*.0193339+n*.119192+t*.9503041;return[o*100,a*100,s*100]},c.rgb.lab=function(e){const r=c.rgb.xyz(e);let n=r[0],t=r[1],o=r[2];n/=95.047,t/=100,o/=108.883,n=n>y?n**(1/3):7.787*n+16/116,t=t>y?t**(1/3):7.787*t+16/116,o=o>y?o**(1/3):7.787*o+16/116;const a=116*t-16,s=500*(n-t),l=200*(t-o);return[a,s,l]},c.hsl.rgb=function(e){const r=e[0]/360,n=e[1]/100,t=e[2]/100;let o,a;if(n===0)return a=t*255,[a,a,a];const s=t<.5?t*(1+n):t+n-t*n,l=2*t-s,i=[0,0,0];for(let u=0;u<3;u++)o=r+1/3*-(u-1),o<0&&o++,o>1&&o--,6*o<1?a=l+(s-l)*6*o:2*o<1?a=s:3*o<2?a=l+(s-l)*(2/3-o)*6:a=l,i[u]=a*255;return i},c.hsl.hsv=function(e){const r=e[0];let n=e[1]/100,t=e[2]/100,o=n;const a=Math.max(t,.01);t*=2,n*=t<=1?t:2-t,o*=a<=1?a:2-a;const s=(t+n)/2,l=t===0?2*o/(a+o):2*n/(t+n);return[r,l*100,s*100]},c.hsv.rgb=function(e){const r=e[0]/60,n=e[1]/100;let t=e[2]/100;const o=Math.floor(r)%6,a=r-Math.floor(r),s=255*t*(1-n),l=255*t*(1-n*a),i=255*t*(1-n*(1-a));switch(t*=255,o){case 0:return[t,i,s];case 1:return[l,t,s];case 2:return[s,t,i];case 3:return[s,l,t];case 4:return[i,s,t];case 5:return[t,s,l]}},c.hsv.hsl=function(e){const r=e[0],n=e[1]/100,t=e[2]/100,o=Math.max(t,.01);let a,s;s=(2-n)*t;const l=(2-n)*o;return a=n*o,a/=l<=1?l:2-l,a=a||0,s/=2,[r,a*100,s*100]},c.hwb.rgb=function(e){const r=e[0]/360;let n=e[1]/100,t=e[2]/100;const o=n+t;let a;o>1&&(n/=o,t/=o);const s=Math.floor(6*r),l=1-t;a=6*r-s,(s&1)!==0&&(a=1-a);const i=n+a*(l-n);let u,m,p;switch(s){default:case 6:case 0:{u=l,m=i,p=n;break}case 1:{u=i,m=l,p=n;break}case 2:{u=n,m=l,p=i;break}case 3:{u=n,m=i,p=l;break}case 4:{u=i,m=n,p=l;break}case 5:{u=l,m=n,p=i;break}}return[u*255,m*255,p*255]},c.cmyk.rgb=function(e){const r=e[0]/100,n=e[1]/100,t=e[2]/100,o=e[3]/100,a=1-Math.min(1,r*(1-o)+o),s=1-Math.min(1,n*(1-o)+o),l=1-Math.min(1,t*(1-o)+o);return[a*255,s*255,l*255]},c.xyz.rgb=function(e){const r=e[0]/100,n=e[1]/100,t=e[2]/100;let o,a,s;return o=r*3.2404542+n*-1.5371385+t*-.4985314,a=r*-.969266+n*1.8760108+t*.041556,s=r*.0556434+n*-.2040259+t*1.0572252,o=M(o),a=M(a),s=M(s),[o*255,a*255,s*255]},c.xyz.lab=function(e){let r=e[0],n=e[1],t=e[2];r/=95.047,n/=100,t/=108.883,r=r>y?r**(1/3):7.787*r+16/116,n=n>y?n**(1/3):7.787*n+16/116,t=t>y?t**(1/3):7.787*t+16/116;const o=116*n-16,a=500*(r-n),s=200*(n-t);return[o,a,s]},c.xyz.oklab=function(e){const r=e[0]/100,n=e[1]/100,t=e[2]/100,o=Math.cbrt(.8189330101*r+.3618667424*n-.1288597137*t),a=Math.cbrt(.0329845436*r+.9293118715*n+.0361456387*t),s=Math.cbrt(.0482003018*r+.2643662691*n+.633851707*t),l=.2104542553*o+.793617785*a-.0040720468*s,i=1.9779984951*o-2.428592205*a+.4505937099*s,u=.0259040371*o+.7827717662*a-.808675766*s;return[l*100,i*100,u*100]},c.oklab.oklch=function(e){return c.lab.lch(e)},c.oklab.xyz=function(e){const r=e[0]/100,n=e[1]/100,t=e[2]/100,o=(.999999998*r+.396337792*n+.215803758*t)**3,a=(1.000000008*r-.105561342*n-.063854175*t)**3,s=(1.000000055*r-.089484182*n-1.291485538*t)**3,l=1.227013851*o-.55779998*a+.281256149*s,i=-.040580178*o+1.11225687*a-.071676679*s,u=-.076381285*o-.421481978*a+1.58616322*s;return[l*100,i*100,u*100]},c.oklab.rgb=function(e){const r=e[0]/100,n=e[1]/100,t=e[2]/100,o=(r+.3963377774*n+.2158037573*t)**3,a=(r-.1055613458*n-.0638541728*t)**3,s=(r-.0894841775*n-1.291485548*t)**3,l=M(4.0767416621*o-3.3077115913*a+.2309699292*s),i=M(-1.2684380046*o+2.6097574011*a-.3413193965*s),u=M(-.0041960863*o-.7034186147*a+1.707614701*s);return[l*255,i*255,u*255]},c.oklch.oklab=function(e){return c.lch.lab(e)},c.lab.xyz=function(e){const r=e[0],n=e[1],t=e[2];let o,a,s;a=(r+16)/116,o=n/500+a,s=a-t/200;const l=a**3,i=o**3,u=s**3;return a=l>y?l:(a-16/116)/7.787,o=i>y?i:(o-16/116)/7.787,s=u>y?u:(s-16/116)/7.787,o*=95.047,a*=100,s*=108.883,[o,a,s]},c.lab.lch=function(e){const r=e[0],n=e[1],t=e[2];let o;o=Math.atan2(t,n)*360/2/Math.PI,o<0&&(o+=360);const a=Math.sqrt(n*n+t*t);return[r,a,o]},c.lch.lab=function(e){const r=e[0],n=e[1],t=e[2]/360*2*Math.PI,o=n*Math.cos(t),a=n*Math.sin(t);return[r,o,a]},c.rgb.ansi16=function(e,r=null){const[n,t,o]=e;let a=r===null?c.rgb.hsv(e)[2]:r;if(a=Math.round(a/50),a===0)return 30;let s=30+(Math.round(o/255)<<2|Math.round(t/255)<<1|Math.round(n/255));return a===2&&(s+=60),s},c.hsv.ansi16=function(e){return c.rgb.ansi16(c.hsv.rgb(e),e[2])},c.rgb.ansi256=function(e){const r=e[0],n=e[1],t=e[2];return r>>4===n>>4&&n>>4===t>>4?r<8?16:r>248?231:Math.round((r-8)/247*24)+232:16+36*Math.round(r/255*5)+6*Math.round(n/255*5)+Math.round(t/255*5)},c.ansi16.rgb=function(e){e=e[0];let r=e%10;if(r===0||r===7)return e>50&&(r+=3.5),r=r/10.5*255,[r,r,r];const n=(Math.trunc(e>50)+1)*.5,t=(r&1)*n*255,o=(r>>1&1)*n*255,a=(r>>2&1)*n*255;return[t,o,a]},c.ansi256.rgb=function(e){if(e=e[0],e>=232){const a=(e-232)*10+8;return[a,a,a]}e-=16;let r;const n=Math.floor(e/36)/5*255,t=Math.floor((r=e%36)/6)/5*255,o=r%6/5*255;return[n,t,o]},c.rgb.hex=function(e){const r=(((Math.round(e[0])&255)<<16)+((Math.round(e[1])&255)<<8)+(Math.round(e[2])&255)).toString(16).toUpperCase();return"000000".slice(r.length)+r},c.hex.rgb=function(e){const r=e.toString(16).match(/[a-f\d]{6}|[a-f\d]{3}/i);if(!r)return[0,0,0];let n=r[0];r[0].length===3&&(n=[...n].map(l=>l+l).join(""));const t=Number.parseInt(n,16),o=t>>16&255,a=t>>8&255,s=t&255;return[o,a,s]},c.rgb.hcg=function(e){const r=e[0]/255,n=e[1]/255,t=e[2]/255,o=Math.max(Math.max(r,n),t),a=Math.min(Math.min(r,n),t),s=o-a;let l;const i=s<1?a/(1-s):0;return s<=0?l=0:o===r?l=(n-t)/s%6:o===n?l=2+(t-r)/s:l=4+(r-n)/s,l/=6,l%=1,[l*360,s*100,i*100]},c.hsl.hcg=function(e){const r=e[1]/100,n=e[2]/100,t=n<.5?2*r*n:2*r*(1-n);let o=0;return t<1&&(o=(n-.5*t)/(1-t)),[e[0],t*100,o*100]},c.hsv.hcg=function(e){const r=e[1]/100,n=e[2]/100,t=r*n;let o=0;return t<1&&(o=(n-t)/(1-t)),[e[0],t*100,o*100]},c.hcg.rgb=function(e){const r=e[0]/360,n=e[1]/100,t=e[2]/100;if(n===0)return[t*255,t*255,t*255];const o=[0,0,0],a=r%1*6,s=a%1,l=1-s;let i=0;switch(Math.floor(a)){case 0:{o[0]=1,o[1]=s,o[2]=0;break}case 1:{o[0]=l,o[1]=1,o[2]=0;break}case 2:{o[0]=0,o[1]=1,o[2]=s;break}case 3:{o[0]=0,o[1]=l,o[2]=1;break}case 4:{o[0]=s,o[1]=0,o[2]=1;break}default:o[0]=1,o[1]=0,o[2]=l}return i=(1-n)*t,[(n*o[0]+i)*255,(n*o[1]+i)*255,(n*o[2]+i)*255]},c.hcg.hsv=function(e){const r=e[1]/100,n=e[2]/100,t=r+n*(1-r);let o=0;return t>0&&(o=r/t),[e[0],o*100,t*100]},c.hcg.hsl=function(e){const r=e[1]/100,n=e[2]/100*(1-r)+.5*r;let t=0;return n>0&&n<.5?t=r/(2*n):n>=.5&&n<1&&(t=r/(2*(1-n))),[e[0],t*100,n*100]},c.hcg.hwb=function(e){const r=e[1]/100,n=e[2]/100,t=r+n*(1-r);return[e[0],(t-r)*100,(1-t)*100]},c.hwb.hcg=function(e){const r=e[1]/100,n=1-e[2]/100,t=n-r;let o=0;return t<1&&(o=(n-t)/(1-t)),[e[0],t*100,o*100]},c.apple.rgb=function(e){return[e[0]/65535*255,e[1]/65535*255,e[2]/65535*255]},c.rgb.apple=function(e){return[e[0]/255*65535,e[1]/255*65535,e[2]/255*65535]},c.gray.rgb=function(e){return[e[0]/100*255,e[0]/100*255,e[0]/100*255]},c.gray.hsl=function(e){return[0,0,e[0]]},c.gray.hsv=c.gray.hsl,c.gray.hwb=function(e){return[0,100,e[0]]},c.gray.cmyk=function(e){return[0,0,0,e[0]]},c.gray.lab=function(e){return[e[0],0,0]},c.gray.hex=function(e){const r=Math.round(e[0]/100*255)&255,n=((r<<16)+(r<<8)+r).toString(16).toUpperCase();return"000000".slice(n.length)+n},c.rgb.gray=function(e){return[(e[0]+e[1]+e[2])/3/255*100]};function we(){const e={},r=Object.keys(c);for(let{length:n}=r,t=0;t<n;t++)e[r[t]]={distance:-1,parent:null};return e}function ke(e){const r=we(),n=[e];for(r[e].distance=0;n.length>0;){const t=n.pop(),o=Object.keys(c[t]);for(let{length:a}=o,s=0;s<a;s++){const l=o[s],i=r[l];i.distance===-1&&(i.distance=r[t].distance+1,i.parent=t,n.unshift(l))}}return r}function ve(e,r){return function(n){return r(e(n))}}function Me(e,r){const n=[r[e].parent,e];let t=c[r[e].parent][e],o=r[e].parent;for(;r[o].parent;)n.unshift(r[o].parent),t=ve(c[r[o].parent][o],t),o=r[o].parent;return t.conversion=n,t}function xe(e){const r=ke(e),n={},t=Object.keys(r);for(let{length:o}=t,a=0;a<o;a++){const s=t[a];r[s].parent!==null&&(n[s]=Me(s,r))}return n}const f={},Ne=Object.keys(c);function Ae(e){const r=function(...n){const t=n[0];return t==null?t:(t.length>1&&(n=t),e(n))};return"conversion"in e&&(r.conversion=e.conversion),r}function Oe(e){const r=function(...n){const t=n[0];if(t==null)return t;t.length>1&&(n=t);const o=e(n);if(typeof o=="object")for(let{length:a}=o,s=0;s<a;s++)o[s]=Math.round(o[s]);return o};return"conversion"in e&&(r.conversion=e.conversion),r}for(const e of Ne){f[e]={},Object.defineProperty(f[e],"channels",{value:c[e].channels}),Object.defineProperty(f[e],"labels",{value:c[e].labels});const r=xe(e),n=Object.keys(r);for(const t of n){const o=r[t];f[e][t]=Oe(o),f[e][t].raw=Ae(o)}}const Q=["keyword","gray","hex"],C={};for(const e of Object.keys(f))C[[...f[e].labels].sort().join("")]=e;const F={};function d(e,r){if(!(this instanceof d))return new d(e,r);if(r&&r in Q&&(r=null),r&&!(r in f))throw new Error("Unknown model: "+r);let n,t;if(e==null)this.model="rgb",this.color=[0,0,0],this.valpha=1;else if(e instanceof d)this.model=e.model,this.color=[...e.color],this.valpha=e.valpha;else if(typeof e=="string"){const o=b.get(e);if(o===null)throw new Error("Unable to parse color from string: "+e);this.model=o.model,t=f[this.model].channels,this.color=o.value.slice(0,t),this.valpha=typeof o.value[t]=="number"?o.value[t]:1}else if(e.length>0){this.model=r||"rgb",t=f[this.model].channels;const o=Array.prototype.slice.call(e,0,t);this.color=z(o,t),this.valpha=typeof e[t]=="number"?e[t]:1}else if(typeof e=="number")this.model="rgb",this.color=[e>>16&255,e>>8&255,e&255],this.valpha=1;else{this.valpha=1;const o=Object.keys(e);"alpha"in e&&(o.splice(o.indexOf("alpha"),1),this.valpha=typeof e.alpha=="number"?e.alpha:0);const a=o.sort().join("");if(!(a in C))throw new Error("Unable to parse color from object: "+JSON.stringify(e));this.model=C[a];const{labels:s}=f[this.model],l=[];for(n=0;n<s.length;n++)l.push(e[s[n]]);this.color=z(l)}if(F[this.model])for(t=f[this.model].channels,n=0;n<t;n++){const o=F[this.model][n];o&&(this.color[n]=o(this.color[n]))}this.valpha=Math.max(0,Math.min(1,this.valpha)),Object.freeze&&Object.freeze(this)}d.prototype={toString(){return this.string()},toJSON(){return this[this.model]()},string(e){let r=this.model in b.to?this:this.rgb();r=r.round(typeof e=="number"?e:1);const n=r.valpha===1?r.color:[...r.color,this.valpha];return b.to[r.model](...n)},percentString(e){const r=this.rgb().round(typeof e=="number"?e:1),n=r.valpha===1?r.color:[...r.color,this.valpha];return b.to.rgb.percent(...n)},array(){return this.valpha===1?[...this.color]:[...this.color,this.valpha]},object(){const e={},{channels:r}=f[this.model],{labels:n}=f[this.model];for(let t=0;t<r;t++)e[n[t]]=this.color[t];return this.valpha!==1&&(e.alpha=this.valpha),e},unitArray(){const e=this.rgb().color;return e[0]/=255,e[1]/=255,e[2]/=255,this.valpha!==1&&e.push(this.valpha),e},unitObject(){const e=this.rgb().object();return e.r/=255,e.g/=255,e.b/=255,this.valpha!==1&&(e.alpha=this.valpha),e},round(e){return e=Math.max(e||0,0),new d([...this.color.map(Le(e)),this.valpha],this.model)},alpha(e){return e!==void 0?new d([...this.color,Math.max(0,Math.min(1,e))],this.model):this.valpha},red:h("rgb",0,g(255)),green:h("rgb",1,g(255)),blue:h("rgb",2,g(255)),hue:h(["hsl","hsv","hsl","hwb","hcg"],0,e=>(e%360+360)%360),saturationl:h("hsl",1,g(100)),lightness:h("hsl",2,g(100)),saturationv:h("hsv",1,g(100)),value:h("hsv",2,g(100)),chroma:h("hcg",1,g(100)),gray:h("hcg",2,g(100)),white:h("hwb",1,g(100)),wblack:h("hwb",2,g(100)),cyan:h("cmyk",0,g(100)),magenta:h("cmyk",1,g(100)),yellow:h("cmyk",2,g(100)),black:h("cmyk",3,g(100)),x:h("xyz",0,g(95.047)),y:h("xyz",1,g(100)),z:h("xyz",2,g(108.833)),l:h("lab",0,g(100)),a:h("lab",1),b:h("lab",2),keyword(e){return e!==void 0?new d(e):f[this.model].keyword(this.color)},hex(e){return e!==void 0?new d(e):b.to.hex(...this.rgb().round().color)},hexa(e){if(e!==void 0)return new d(e);const r=this.rgb().round().color;let n=Math.round(this.valpha*255).toString(16).toUpperCase();return n.length===1&&(n="0"+n),b.to.hex(...r)+n},rgbNumber(){const e=this.rgb().color;return(e[0]&255)<<16|(e[1]&255)<<8|e[2]&255},luminosity(){const e=this.rgb().color,r=[];for(const[n,t]of e.entries()){const o=t/255;r[n]=o<=.04045?o/12.92:((o+.055)/1.055)**2.4}return .2126*r[0]+.7152*r[1]+.0722*r[2]},contrast(e){const r=this.luminosity(),n=e.luminosity();return r>n?(r+.05)/(n+.05):(n+.05)/(r+.05)},level(e){const r=this.contrast(e);return r>=7?"AAA":r>=4.5?"AA":""},isDark(){const e=this.rgb().color;return(e[0]*2126+e[1]*7152+e[2]*722)/1e4<128},isLight(){return!this.isDark()},negate(){const e=this.rgb();for(let r=0;r<3;r++)e.color[r]=255-e.color[r];return e},lighten(e){const r=this.hsl();return r.color[2]+=r.color[2]*e,r},darken(e){const r=this.hsl();return r.color[2]-=r.color[2]*e,r},saturate(e){const r=this.hsl();return r.color[1]+=r.color[1]*e,r},desaturate(e){const r=this.hsl();return r.color[1]-=r.color[1]*e,r},whiten(e){const r=this.hwb();return r.color[1]+=r.color[1]*e,r},blacken(e){const r=this.hwb();return r.color[2]+=r.color[2]*e,r},grayscale(){const e=this.rgb().color,r=e[0]*.3+e[1]*.59+e[2]*.11;return d.rgb(r,r,r)},fade(e){return this.alpha(this.valpha-this.valpha*e)},opaquer(e){return this.alpha(this.valpha+this.valpha*e)},rotate(e){const r=this.hsl();let n=r.color[0];return n=(n+e)%360,n=n<0?360+n:n,r.color[0]=n,r},mix(e,r){if(!e||!e.rgb)throw new Error('Argument to "mix" was not a Color instance, but rather an instance of '+typeof e);const n=e.rgb(),t=this.rgb(),o=r===void 0?.5:r,a=2*o-1,s=n.alpha()-t.alpha(),l=((a*s===-1?a:(a+s)/(1+a*s))+1)/2,i=1-l;return d.rgb(l*n.red()+i*t.red(),l*n.green()+i*t.green(),l*n.blue()+i*t.blue(),n.alpha()*o+t.alpha()*(1-o))}};for(const e of Object.keys(f)){if(Q.includes(e))continue;const{channels:r}=f[e];d.prototype[e]=function(...n){return this.model===e?new d(this):n.length>0?new d(n,e):new d([...Ie(f[this.model][e].raw(this.color)),this.valpha],e)},d[e]=function(...n){let t=n[0];return typeof t=="number"&&(t=z(n,r)),new d(t,e)}}function je(e,r){return Number(e.toFixed(r))}function Le(e){return function(r){return je(r,e)}}function h(e,r,n){e=Array.isArray(e)?e:[e];for(const t of e)(F[t]||=[])[r]=n;return e=e[0],function(t){let o;return t!==void 0?(n&&(t=n(t)),o=this[e](),o.color[r]=t,o):(o=this[e]().color[r],n&&(o=n(o)),o)}}function g(e){return function(r){return Math.max(0,Math.min(e,r))}}function Ie(e){return Array.isArray(e)?e:[e]}function z(e,r){for(let n=0;n<r;n++)typeof e[n]!="number"&&(e[n]=0);return e}function Ee(){const e=window?.matchMedia?.("(prefers-color-scheme: dark)")?.matches;return document.body.getAttribute("data-themes")?.includes("dark")||e||!1}function Se(){const e=window?.matchMedia?.("(forced-colors: active)")?.matches;return document.body.getAttribute("data-themes")?.includes("highcontrast")||e||!1}function gr(e){return _(e,"#ffffff")<4.5}function qe(e){return $(e)>.6}function Ce(e,r){const n=qe(r),t=Fe(r,n?e:"#ffffff",66);let o=_(e,t);const a=Se()?5.6:3.2;let s=0,l=e;const i=(n?-100:100)/255;for(;o<a&&s++<100;){const u=$e(l),m=Math.max(0,Math.min(255,u.l+i));l=_e({h:u.h,s:u.s,l:m}),o=_(l,t)}return l}function Fe(e,r,n){return new d(r).mix(new d(e),(n+100)/200).hex()}function $(e){const r=ze(e).map(a=>(a/=255,a<=.03928?a/12.92:Math.pow((a+.055)/1.055,2.4))),[n,t,o]=r;return .2126*n+.7152*t+.0722*o}function _(e,r){const n=$(e)+.05,t=$(r)+.05;return Math.max(n,t)/Math.min(n,t)}function ze(e){return new d(e).rgb().array()}function $e(e){const r=new d(e).hsl();return{h:r.color[0],s:r.color[1],l:r.color[2]}}function _e(e){return new d(e).hex()}const v=[],Pe={id:"system-tags",displayName:()=>"",iconSvgInline:()=>"",enabled({nodes:e}){return e.length===1},exec:async()=>null,renderInline:({nodes:e})=>e.length!==1||!e[0]?Promise.resolve(null):X(e[0]),order:0};O("systemtags:node:updated",De),O("systemtags:tag:created",Te),O("systemtags:tag:deleted",Ve),O("systemtags:tag:updated",Re);function De(e){X(e).then(r=>{document.querySelectorAll(`[data-systemtags-fileid="${e.fileid}"]`).forEach(n=>{n.replaceWith(r)})})}function Te(e){v.push(e)}function Ve(e){v.splice(v.findIndex(r=>r.id===e.id),1)}function Re(e){const r=v.findIndex(n=>n.id===e.id);r!==-1&&(v[r]=e),Ue(e)}function Ue(e){document.querySelectorAll(`[data-systemtag-name="${e.displayName}"]`).forEach(r=>{r.style.setProperty("--systemtag-color",`#${e.color}`)})}function L(e,r=!1){const n=document.createElement("li");n.classList.add("files-list__system-tag"),n.setAttribute("data-systemtag-name",e),n.textContent=e;const t=v.find(o=>o.displayName===e);if(t?.color){const o=getComputedStyle(document.body).getPropertyValue("--color-main-background").replace("#","")||(Ee()?"000000":"ffffff"),a=Ce(`#${t.color}`,`#${o}`);n.style.setProperty("--systemtag-color",a),n.setAttribute("data-systemtag-color","true")}return r&&n.classList.add("files-list__system-tag--more"),n}async function X(e){const r=ge(e),n=document.createElement("ul");if(n.classList.add("files-list__system-tags"),n.setAttribute("aria-label",w("files","Assigned collaborative tags")),n.setAttribute("data-systemtags-fileid",e.fileid?.toString()||""),r.length===0)return n;if(v.length===0)try{v.push(...await W())}catch(t){be.error("Failed to fetch tags",{error:t})}if(n.append(L(r[0])),r.length===2)n.append(L(r[1]));else if(r.length>1){const t=L("+"+(r.length-1),!0);t.setAttribute("title",r.slice(1).join(", ")),t.setAttribute("aria-hidden","true"),t.setAttribute("role","presentation"),n.append(t);for(const o of r.slice(1)){const a=L(o);a.classList.add("hidden-visually"),n.append(a)}}return n}const I="/systemtags",He=se();function Be(e){return`<?xml version="1.0"?>
-<oc:filter-files ${ce()}>
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=[window.OC.filePath('', '', 'dist/SystemTagPicker-CUkOyouF.chunk.mjs'),window.OC.filePath('', '', 'dist/mdi-CCQ2KgUK.chunk.mjs'),window.OC.filePath('', '', 'dist/index-JpgrUA2Z-CDVhFt4l.chunk.mjs'),window.OC.filePath('', '', 'dist/index-CEzAKfoK.chunk.mjs'),window.OC.filePath('', '', 'dist/index-DZkDsHXr.chunk.mjs'),window.OC.filePath('', '', 'dist/vue.runtime.esm-bundler-UjrxUCWV.chunk.mjs'),window.OC.filePath('', '', 'dist/createElementId-DhjFt1I9-D95yphbb.chunk.mjs'),window.OC.filePath('', '', 'dist/translation-DoG5ZELJ-BX7lsMna.chunk.mjs'),window.OC.filePath('', '', 'dist/logger-D3RVzcfQ-D08Lqsc3.chunk.mjs'),window.OC.filePath('', '', 'dist/logger-D3RVzcfQ-DWAMka5N.chunk.css'),window.OC.filePath('', '', 'dist/PencilOutline-CRype3Oz.chunk.mjs'),window.OC.filePath('', '', 'dist/PencilOutline-CWUlo4XY.chunk.css'),window.OC.filePath('', '', 'dist/index-DFa5IGZB.chunk.css'),window.OC.filePath('', '', 'dist/NcNoteCard-CVhtNL04-xGysk9Jq.chunk.mjs'),window.OC.filePath('', '', 'dist/NcNoteCard-CVhtNL04-DZSuYX4-.chunk.css'),window.OC.filePath('', '', 'dist/NcCheckboxRadioSwitch-BCSKF7Tk-CVZU7Pjt.chunk.mjs'),window.OC.filePath('', '', 'dist/NcCheckboxRadioSwitch-BCSKF7Tk-C_70VMQr.chunk.css'),window.OC.filePath('', '', 'dist/NcChip-D8tGFzRl-CkdhiclE.chunk.mjs'),window.OC.filePath('', '', 'dist/NcActionButton-pKOSrlGE-By2YA-_F.chunk.mjs'),window.OC.filePath('', '', 'dist/NcActionButton-pKOSrlGE-Bb0ihLdt.chunk.css'),window.OC.filePath('', '', 'dist/NcChip-D8tGFzRl-DZ8dUSFy.chunk.css'),window.OC.filePath('', '', 'dist/NcColorPicker-Kc0JqRtp-BW-FXqa7.chunk.mjs'),window.OC.filePath('', '', 'dist/colors-Go3zmZRD-CRyYiZ-p.chunk.mjs'),window.OC.filePath('', '', 'dist/NcColorPicker-Kc0JqRtp-CO_Jq2Ow.chunk.css'),window.OC.filePath('', '', 'dist/Plus-DX3lsEjd.chunk.mjs'),window.OC.filePath('', '', 'dist/Plus-CLjlZ-UT.chunk.css'),window.OC.filePath('', '', 'dist/TrashCanOutline-BquAR0NR.chunk.mjs'),window.OC.filePath('', '', 'dist/NcInputField-Bwsh2aHY-DY6YZAwi.chunk.mjs'),window.OC.filePath('', '', 'dist/NcInputField-Bwsh2aHY-B9DSDOEd.chunk.css'),window.OC.filePath('', '', 'dist/api-B10WyQqR.chunk.mjs'),window.OC.filePath('', '', 'dist/index-iNeUnB75.chunk.mjs'),window.OC.filePath('', '', 'dist/string_decoder-CSsspFHV.chunk.mjs'),window.OC.filePath('', '', 'dist/index-ly_D7ZWO.chunk.mjs'),window.OC.filePath('', '', 'dist/NcPasswordField-djttkA5Q-B3cAwMPj.chunk.mjs'),window.OC.filePath('', '', 'dist/NcPasswordField-djttkA5Q-BCJ0LHSS.chunk.css'),window.OC.filePath('', '', 'dist/dav-CCFVdbCj.chunk.mjs'),window.OC.filePath('', '', 'dist/index-CIWHtE7-.chunk.mjs'),window.OC.filePath('', '', 'dist/public-SXOFh1vA.chunk.mjs'),window.OC.filePath('', '', 'dist/index-DiROoqva.chunk.mjs'),window.OC.filePath('', '', 'dist/systemtags-SystemTagPicker-DOC_907u.chunk.css')])))=>i.map(i=>d[i]);
+const appName = "nextcloud-ui";
+const appVersion = "1.0.0";
+import { c as registerSidebarAction, g as getNavigation, V as View, D as DefaultType, b as registerFileAction } from "./index-DiROoqva.chunk.mjs";
+import { g as getClient, e as getRemoteURL, f as getRootPath, r as resultToNode, a as getDavNameSpaces, b as getDavProperties, c as registerDavProperty } from "./dav-CCFVdbCj.chunk.mjs";
+import { _ as __vitePreload } from "./index-CEzAKfoK.chunk.mjs";
+import { i as isPublicShare, P as Permission, b as Folder, F as FileType } from "./public-SXOFh1vA.chunk.mjs";
+import { t as translate } from "./translation-DoG5ZELJ-BX7lsMna.chunk.mjs";
+import { s as spawnDialog } from "./index-DZkDsHXr.chunk.mjs";
+import { a as defineAsyncComponent } from "./vue.runtime.esm-bundler-UjrxUCWV.chunk.mjs";
+import { s as subscribe, a as getCurrentUser } from "./mdi-CCQ2KgUK.chunk.mjs";
+import { e as getNodeSystemTags, f as fetchTags, l as logger } from "./api-B10WyQqR.chunk.mjs";
+import "./string_decoder-CSsspFHV.chunk.mjs";
+import "./createElementId-DhjFt1I9-D95yphbb.chunk.mjs";
+import "./index-CIWHtE7-.chunk.mjs";
+import "./logger-D3RVzcfQ-D08Lqsc3.chunk.mjs";
+import "./PencilOutline-CRype3Oz.chunk.mjs";
+import "./index-iNeUnB75.chunk.mjs";
+import "./index-ly_D7ZWO.chunk.mjs";
+import "./NcPasswordField-djttkA5Q-B3cAwMPj.chunk.mjs";
+import "./NcInputField-Bwsh2aHY-DY6YZAwi.chunk.mjs";
+const svgTagMultiple = '<svg xmlns="http://www.w3.org/2000/svg" id="mdi-tag-multiple-outline" viewBox="0 0 24 24"><path d="M6.5 10C7.3 10 8 9.3 8 8.5S7.3 7 6.5 7 5 7.7 5 8.5 5.7 10 6.5 10M9 6L16 13L11 18L4 11V6H9M9 4H4C2.9 4 2 4.9 2 6V11C2 11.6 2.2 12.1 2.6 12.4L9.6 19.4C9.9 19.8 10.4 20 11 20S12.1 19.8 12.4 19.4L17.4 14.4C17.8 14 18 13.5 18 13C18 12.4 17.8 11.9 17.4 11.6L10.4 4.6C10.1 4.2 9.6 4 9 4M13.5 5.7L14.5 4.7L21.4 11.6C21.8 12 22 12.5 22 13S21.8 14.1 21.4 14.4L16 19.8L15 18.8L20.7 13L13.5 5.7Z" /></svg>';
+async function execBatch({ nodes }) {
+  const response = await spawnDialog(
+    defineAsyncComponent(() => __vitePreload(() => import("./SystemTagPicker-CUkOyouF.chunk.mjs"), true ? __vite__mapDeps([0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39]) : void 0, import.meta.url)),
+    {
+      nodes
+    }
+  );
+  return Array(nodes.length).fill(response);
+}
+const action$2 = {
+  id: "systemtags:bulk",
+  displayName: () => translate("systemtags", "Manage tags"),
+  iconSvgInline: () => svgTagMultiple,
+  // If the app is disabled, the action is not available anyway
+  enabled({ nodes }) {
+    if (isPublicShare()) {
+      return false;
+    }
+    if (nodes.length === 0) {
+      return false;
+    }
+    if (nodes.some((node) => !node.isDavResource)) {
+      return false;
+    }
+    return !nodes.some((node) => (node.permissions & Permission.UPDATE) === 0);
+  },
+  async exec(context) {
+    const [result] = await execBatch(context);
+    return result;
+  },
+  execBatch,
+  hotkey: {
+    description: translate("systemtags", "Manage tags"),
+    key: "t"
+  }
+};
+const tagSvg = '<svg xmlns="http://www.w3.org/2000/svg" id="mdi-tag-outline" viewBox="0 0 24 24"><path d="M21.41 11.58L12.41 2.58A2 2 0 0 0 11 2H4A2 2 0 0 0 2 4V11A2 2 0 0 0 2.59 12.42L11.59 21.42A2 2 0 0 0 13 22A2 2 0 0 0 14.41 21.41L21.41 14.41A2 2 0 0 0 22 13A2 2 0 0 0 21.41 11.58M13 20L4 11V4H11L20 13M6.5 5A1.5 1.5 0 1 1 5 6.5A1.5 1.5 0 0 1 6.5 5Z" /></svg>';
+function registerFileSidebarAction() {
+  registerSidebarAction({
+    id: "systemtags",
+    order: 20,
+    displayName() {
+      return translate("systemtags", "Add tags");
+    },
+    enabled() {
+      return true;
+    },
+    iconSvgInline() {
+      return tagSvg;
+    },
+    onClick({ node }) {
+      return spawnDialog(
+        defineAsyncComponent(() => __vitePreload(() => import("./SystemTagPicker-CUkOyouF.chunk.mjs"), true ? __vite__mapDeps([0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39]) : void 0, import.meta.url)),
+        {
+          nodes: [node]
+        }
+      );
+    }
+  });
+}
+const colors$1 = {
+  aliceblue: [240, 248, 255],
+  antiquewhite: [250, 235, 215],
+  aqua: [0, 255, 255],
+  aquamarine: [127, 255, 212],
+  azure: [240, 255, 255],
+  beige: [245, 245, 220],
+  bisque: [255, 228, 196],
+  black: [0, 0, 0],
+  blanchedalmond: [255, 235, 205],
+  blue: [0, 0, 255],
+  blueviolet: [138, 43, 226],
+  brown: [165, 42, 42],
+  burlywood: [222, 184, 135],
+  cadetblue: [95, 158, 160],
+  chartreuse: [127, 255, 0],
+  chocolate: [210, 105, 30],
+  coral: [255, 127, 80],
+  cornflowerblue: [100, 149, 237],
+  cornsilk: [255, 248, 220],
+  crimson: [220, 20, 60],
+  cyan: [0, 255, 255],
+  darkblue: [0, 0, 139],
+  darkcyan: [0, 139, 139],
+  darkgoldenrod: [184, 134, 11],
+  darkgray: [169, 169, 169],
+  darkgreen: [0, 100, 0],
+  darkgrey: [169, 169, 169],
+  darkkhaki: [189, 183, 107],
+  darkmagenta: [139, 0, 139],
+  darkolivegreen: [85, 107, 47],
+  darkorange: [255, 140, 0],
+  darkorchid: [153, 50, 204],
+  darkred: [139, 0, 0],
+  darksalmon: [233, 150, 122],
+  darkseagreen: [143, 188, 143],
+  darkslateblue: [72, 61, 139],
+  darkslategray: [47, 79, 79],
+  darkslategrey: [47, 79, 79],
+  darkturquoise: [0, 206, 209],
+  darkviolet: [148, 0, 211],
+  deeppink: [255, 20, 147],
+  deepskyblue: [0, 191, 255],
+  dimgray: [105, 105, 105],
+  dimgrey: [105, 105, 105],
+  dodgerblue: [30, 144, 255],
+  firebrick: [178, 34, 34],
+  floralwhite: [255, 250, 240],
+  forestgreen: [34, 139, 34],
+  fuchsia: [255, 0, 255],
+  gainsboro: [220, 220, 220],
+  ghostwhite: [248, 248, 255],
+  gold: [255, 215, 0],
+  goldenrod: [218, 165, 32],
+  gray: [128, 128, 128],
+  green: [0, 128, 0],
+  greenyellow: [173, 255, 47],
+  grey: [128, 128, 128],
+  honeydew: [240, 255, 240],
+  hotpink: [255, 105, 180],
+  indianred: [205, 92, 92],
+  indigo: [75, 0, 130],
+  ivory: [255, 255, 240],
+  khaki: [240, 230, 140],
+  lavender: [230, 230, 250],
+  lavenderblush: [255, 240, 245],
+  lawngreen: [124, 252, 0],
+  lemonchiffon: [255, 250, 205],
+  lightblue: [173, 216, 230],
+  lightcoral: [240, 128, 128],
+  lightcyan: [224, 255, 255],
+  lightgoldenrodyellow: [250, 250, 210],
+  lightgray: [211, 211, 211],
+  lightgreen: [144, 238, 144],
+  lightgrey: [211, 211, 211],
+  lightpink: [255, 182, 193],
+  lightsalmon: [255, 160, 122],
+  lightseagreen: [32, 178, 170],
+  lightskyblue: [135, 206, 250],
+  lightslategray: [119, 136, 153],
+  lightslategrey: [119, 136, 153],
+  lightsteelblue: [176, 196, 222],
+  lightyellow: [255, 255, 224],
+  lime: [0, 255, 0],
+  limegreen: [50, 205, 50],
+  linen: [250, 240, 230],
+  magenta: [255, 0, 255],
+  maroon: [128, 0, 0],
+  mediumaquamarine: [102, 205, 170],
+  mediumblue: [0, 0, 205],
+  mediumorchid: [186, 85, 211],
+  mediumpurple: [147, 112, 219],
+  mediumseagreen: [60, 179, 113],
+  mediumslateblue: [123, 104, 238],
+  mediumspringgreen: [0, 250, 154],
+  mediumturquoise: [72, 209, 204],
+  mediumvioletred: [199, 21, 133],
+  midnightblue: [25, 25, 112],
+  mintcream: [245, 255, 250],
+  mistyrose: [255, 228, 225],
+  moccasin: [255, 228, 181],
+  navajowhite: [255, 222, 173],
+  navy: [0, 0, 128],
+  oldlace: [253, 245, 230],
+  olive: [128, 128, 0],
+  olivedrab: [107, 142, 35],
+  orange: [255, 165, 0],
+  orangered: [255, 69, 0],
+  orchid: [218, 112, 214],
+  palegoldenrod: [238, 232, 170],
+  palegreen: [152, 251, 152],
+  paleturquoise: [175, 238, 238],
+  palevioletred: [219, 112, 147],
+  papayawhip: [255, 239, 213],
+  peachpuff: [255, 218, 185],
+  peru: [205, 133, 63],
+  pink: [255, 192, 203],
+  plum: [221, 160, 221],
+  powderblue: [176, 224, 230],
+  purple: [128, 0, 128],
+  rebeccapurple: [102, 51, 153],
+  red: [255, 0, 0],
+  rosybrown: [188, 143, 143],
+  royalblue: [65, 105, 225],
+  saddlebrown: [139, 69, 19],
+  salmon: [250, 128, 114],
+  sandybrown: [244, 164, 96],
+  seagreen: [46, 139, 87],
+  seashell: [255, 245, 238],
+  sienna: [160, 82, 45],
+  silver: [192, 192, 192],
+  skyblue: [135, 206, 235],
+  slateblue: [106, 90, 205],
+  slategray: [112, 128, 144],
+  slategrey: [112, 128, 144],
+  snow: [255, 250, 250],
+  springgreen: [0, 255, 127],
+  steelblue: [70, 130, 180],
+  tan: [210, 180, 140],
+  teal: [0, 128, 128],
+  thistle: [216, 191, 216],
+  tomato: [255, 99, 71],
+  turquoise: [64, 224, 208],
+  violet: [238, 130, 238],
+  wheat: [245, 222, 179],
+  white: [255, 255, 255],
+  whitesmoke: [245, 245, 245],
+  yellow: [255, 255, 0],
+  yellowgreen: [154, 205, 50]
+};
+for (const key in colors$1) Object.freeze(colors$1[key]);
+const colorNames = Object.freeze(colors$1);
+const reverseNames = /* @__PURE__ */ Object.create(null);
+for (const name in colorNames) {
+  if (Object.hasOwn(colorNames, name)) {
+    reverseNames[colorNames[name]] = name;
+  }
+}
+const cs = {
+  to: {},
+  get: {}
+};
+cs.get = function(string) {
+  const prefix = string.slice(0, 3).toLowerCase();
+  let value;
+  let model;
+  switch (prefix) {
+    case "hsl": {
+      value = cs.get.hsl(string);
+      model = "hsl";
+      break;
+    }
+    case "hwb": {
+      value = cs.get.hwb(string);
+      model = "hwb";
+      break;
+    }
+    default: {
+      value = cs.get.rgb(string);
+      model = "rgb";
+      break;
+    }
+  }
+  if (!value) {
+    return null;
+  }
+  return { model, value };
+};
+cs.get.rgb = function(string) {
+  if (!string) {
+    return null;
+  }
+  const abbr = /^#([a-f\d]{3,4})$/i;
+  const hex = /^#([a-f\d]{6})([a-f\d]{2})?$/i;
+  const rgba = /^rgba?\(\s*([+-]?(?:\d*\.)?\d+(?:e\d+)?)(?=[\s,])\s*(?:,\s*)?([+-]?(?:\d*\.)?\d+(?:e\d+)?)(?=[\s,])\s*(?:,\s*)?([+-]?(?:\d*\.)?\d+(?:e\d+)?)\s*(?:[\s,|/]\s*([+-]?(?:\d*\.)?\d+(?:e\d+)?)(%?)\s*)?\)$/i;
+  const per = /^rgba?\(\s*([+-]?[\d.]+)%\s*,?\s*([+-]?[\d.]+)%\s*,?\s*([+-]?[\d.]+)%\s*(?:[\s,|/]\s*([+-]?[\d.]+)(%?)\s*)?\)$/i;
+  const keyword = /^(\w+)$/;
+  let rgb = [0, 0, 0, 1];
+  let match;
+  let i;
+  let hexAlpha;
+  if (match = string.match(hex)) {
+    hexAlpha = match[2];
+    match = match[1];
+    for (i = 0; i < 3; i++) {
+      const i2 = i * 2;
+      rgb[i] = Number.parseInt(match.slice(i2, i2 + 2), 16);
+    }
+    if (hexAlpha) {
+      rgb[3] = Number.parseInt(hexAlpha, 16) / 255;
+    }
+  } else if (match = string.match(abbr)) {
+    match = match[1];
+    hexAlpha = match[3];
+    for (i = 0; i < 3; i++) {
+      rgb[i] = Number.parseInt(match[i] + match[i], 16);
+    }
+    if (hexAlpha) {
+      rgb[3] = Number.parseInt(hexAlpha + hexAlpha, 16) / 255;
+    }
+  } else if (match = string.match(rgba)) {
+    for (i = 0; i < 3; i++) {
+      rgb[i] = Number.parseFloat(match[i + 1]);
+    }
+    if (match[4]) {
+      rgb[3] = match[5] ? Number.parseFloat(match[4]) * 0.01 : Number.parseFloat(match[4]);
+    }
+  } else if (match = string.match(per)) {
+    for (i = 0; i < 3; i++) {
+      rgb[i] = Math.round(Number.parseFloat(match[i + 1]) * 2.55);
+    }
+    if (match[4]) {
+      rgb[3] = match[5] ? Number.parseFloat(match[4]) * 0.01 : Number.parseFloat(match[4]);
+    }
+  } else if (match = string.toLowerCase().match(keyword)) {
+    if (match[1] === "transparent") {
+      return [0, 0, 0, 0];
+    }
+    if (!Object.hasOwn(colorNames, match[1])) {
+      return null;
+    }
+    rgb = colorNames[match[1]].slice();
+    rgb[3] = 1;
+    return rgb;
+  } else {
+    return null;
+  }
+  for (i = 0; i < 3; i++) {
+    rgb[i] = clamp(rgb[i], 0, 255);
+  }
+  rgb[3] = clamp(rgb[3], 0, 1);
+  return rgb;
+};
+cs.get.hsl = function(string) {
+  if (!string) {
+    return null;
+  }
+  const hsl = /^hsla?\(\s*([+-]?(?:\d{0,3}\.)?\d+)(?:deg)?\s*,?\s*([+-]?[\d.]+)%\s*,?\s*([+-]?[\d.]+)%\s*(?:[,|/]\s*([+-]?(?=\.\d|\d)(?:0|[1-9]\d*)?(?:\.\d*)?(?:e[+-]?\d+)?)\s*)?\)$/i;
+  const match = string.match(hsl);
+  if (match) {
+    const alpha = Number.parseFloat(match[4]);
+    const h = (Number.parseFloat(match[1]) % 360 + 360) % 360;
+    const s = clamp(Number.parseFloat(match[2]), 0, 100);
+    const l = clamp(Number.parseFloat(match[3]), 0, 100);
+    const a = clamp(Number.isNaN(alpha) ? 1 : alpha, 0, 1);
+    return [h, s, l, a];
+  }
+  return null;
+};
+cs.get.hwb = function(string) {
+  if (!string) {
+    return null;
+  }
+  const hwb = /^hwb\(\s*([+-]?\d{0,3}(?:\.\d+)?)(?:deg)?\s*[\s,]\s*([+-]?[\d.]+)%\s*[\s,]\s*([+-]?[\d.]+)%\s*(?:[\s,]\s*([+-]?(?=\.\d|\d)(?:0|[1-9]\d*)?(?:\.\d*)?(?:e[+-]?\d+)?)\s*)?\)$/i;
+  const match = string.match(hwb);
+  if (match) {
+    const alpha = Number.parseFloat(match[4]);
+    const h = (Number.parseFloat(match[1]) % 360 + 360) % 360;
+    const w = clamp(Number.parseFloat(match[2]), 0, 100);
+    const b = clamp(Number.parseFloat(match[3]), 0, 100);
+    const a = clamp(Number.isNaN(alpha) ? 1 : alpha, 0, 1);
+    return [h, w, b, a];
+  }
+  return null;
+};
+cs.to.hex = function(...rgba) {
+  return "#" + hexDouble(rgba[0]) + hexDouble(rgba[1]) + hexDouble(rgba[2]) + (rgba[3] < 1 ? hexDouble(Math.round(rgba[3] * 255)) : "");
+};
+cs.to.rgb = function(...rgba) {
+  return rgba.length < 4 || rgba[3] === 1 ? "rgb(" + Math.round(rgba[0]) + ", " + Math.round(rgba[1]) + ", " + Math.round(rgba[2]) + ")" : "rgba(" + Math.round(rgba[0]) + ", " + Math.round(rgba[1]) + ", " + Math.round(rgba[2]) + ", " + rgba[3] + ")";
+};
+cs.to.rgb.percent = function(...rgba) {
+  const r = Math.round(rgba[0] / 255 * 100);
+  const g = Math.round(rgba[1] / 255 * 100);
+  const b = Math.round(rgba[2] / 255 * 100);
+  return rgba.length < 4 || rgba[3] === 1 ? "rgb(" + r + "%, " + g + "%, " + b + "%)" : "rgba(" + r + "%, " + g + "%, " + b + "%, " + rgba[3] + ")";
+};
+cs.to.hsl = function(...hsla) {
+  return hsla.length < 4 || hsla[3] === 1 ? "hsl(" + hsla[0] + ", " + hsla[1] + "%, " + hsla[2] + "%)" : "hsla(" + hsla[0] + ", " + hsla[1] + "%, " + hsla[2] + "%, " + hsla[3] + ")";
+};
+cs.to.hwb = function(...hwba) {
+  let a = "";
+  if (hwba.length >= 4 && hwba[3] !== 1) {
+    a = ", " + hwba[3];
+  }
+  return "hwb(" + hwba[0] + ", " + hwba[1] + "%, " + hwba[2] + "%" + a + ")";
+};
+cs.to.keyword = function(...rgb) {
+  return reverseNames[rgb.slice(0, 3)];
+};
+function clamp(number_, min, max) {
+  return Math.min(Math.max(min, number_), max);
+}
+function hexDouble(number_) {
+  const string_ = Math.round(number_).toString(16).toUpperCase();
+  return string_.length < 2 ? "0" + string_ : string_;
+}
+const colors = {
+  aliceblue: [240, 248, 255],
+  antiquewhite: [250, 235, 215],
+  aqua: [0, 255, 255],
+  aquamarine: [127, 255, 212],
+  azure: [240, 255, 255],
+  beige: [245, 245, 220],
+  bisque: [255, 228, 196],
+  black: [0, 0, 0],
+  blanchedalmond: [255, 235, 205],
+  blue: [0, 0, 255],
+  blueviolet: [138, 43, 226],
+  brown: [165, 42, 42],
+  burlywood: [222, 184, 135],
+  cadetblue: [95, 158, 160],
+  chartreuse: [127, 255, 0],
+  chocolate: [210, 105, 30],
+  coral: [255, 127, 80],
+  cornflowerblue: [100, 149, 237],
+  cornsilk: [255, 248, 220],
+  crimson: [220, 20, 60],
+  cyan: [0, 255, 255],
+  darkblue: [0, 0, 139],
+  darkcyan: [0, 139, 139],
+  darkgoldenrod: [184, 134, 11],
+  darkgray: [169, 169, 169],
+  darkgreen: [0, 100, 0],
+  darkgrey: [169, 169, 169],
+  darkkhaki: [189, 183, 107],
+  darkmagenta: [139, 0, 139],
+  darkolivegreen: [85, 107, 47],
+  darkorange: [255, 140, 0],
+  darkorchid: [153, 50, 204],
+  darkred: [139, 0, 0],
+  darksalmon: [233, 150, 122],
+  darkseagreen: [143, 188, 143],
+  darkslateblue: [72, 61, 139],
+  darkslategray: [47, 79, 79],
+  darkslategrey: [47, 79, 79],
+  darkturquoise: [0, 206, 209],
+  darkviolet: [148, 0, 211],
+  deeppink: [255, 20, 147],
+  deepskyblue: [0, 191, 255],
+  dimgray: [105, 105, 105],
+  dimgrey: [105, 105, 105],
+  dodgerblue: [30, 144, 255],
+  firebrick: [178, 34, 34],
+  floralwhite: [255, 250, 240],
+  forestgreen: [34, 139, 34],
+  fuchsia: [255, 0, 255],
+  gainsboro: [220, 220, 220],
+  ghostwhite: [248, 248, 255],
+  gold: [255, 215, 0],
+  goldenrod: [218, 165, 32],
+  gray: [128, 128, 128],
+  green: [0, 128, 0],
+  greenyellow: [173, 255, 47],
+  grey: [128, 128, 128],
+  honeydew: [240, 255, 240],
+  hotpink: [255, 105, 180],
+  indianred: [205, 92, 92],
+  indigo: [75, 0, 130],
+  ivory: [255, 255, 240],
+  khaki: [240, 230, 140],
+  lavender: [230, 230, 250],
+  lavenderblush: [255, 240, 245],
+  lawngreen: [124, 252, 0],
+  lemonchiffon: [255, 250, 205],
+  lightblue: [173, 216, 230],
+  lightcoral: [240, 128, 128],
+  lightcyan: [224, 255, 255],
+  lightgoldenrodyellow: [250, 250, 210],
+  lightgray: [211, 211, 211],
+  lightgreen: [144, 238, 144],
+  lightgrey: [211, 211, 211],
+  lightpink: [255, 182, 193],
+  lightsalmon: [255, 160, 122],
+  lightseagreen: [32, 178, 170],
+  lightskyblue: [135, 206, 250],
+  lightslategray: [119, 136, 153],
+  lightslategrey: [119, 136, 153],
+  lightsteelblue: [176, 196, 222],
+  lightyellow: [255, 255, 224],
+  lime: [0, 255, 0],
+  limegreen: [50, 205, 50],
+  linen: [250, 240, 230],
+  magenta: [255, 0, 255],
+  maroon: [128, 0, 0],
+  mediumaquamarine: [102, 205, 170],
+  mediumblue: [0, 0, 205],
+  mediumorchid: [186, 85, 211],
+  mediumpurple: [147, 112, 219],
+  mediumseagreen: [60, 179, 113],
+  mediumslateblue: [123, 104, 238],
+  mediumspringgreen: [0, 250, 154],
+  mediumturquoise: [72, 209, 204],
+  mediumvioletred: [199, 21, 133],
+  midnightblue: [25, 25, 112],
+  mintcream: [245, 255, 250],
+  mistyrose: [255, 228, 225],
+  moccasin: [255, 228, 181],
+  navajowhite: [255, 222, 173],
+  navy: [0, 0, 128],
+  oldlace: [253, 245, 230],
+  olive: [128, 128, 0],
+  olivedrab: [107, 142, 35],
+  orange: [255, 165, 0],
+  orangered: [255, 69, 0],
+  orchid: [218, 112, 214],
+  palegoldenrod: [238, 232, 170],
+  palegreen: [152, 251, 152],
+  paleturquoise: [175, 238, 238],
+  palevioletred: [219, 112, 147],
+  papayawhip: [255, 239, 213],
+  peachpuff: [255, 218, 185],
+  peru: [205, 133, 63],
+  pink: [255, 192, 203],
+  plum: [221, 160, 221],
+  powderblue: [176, 224, 230],
+  purple: [128, 0, 128],
+  rebeccapurple: [102, 51, 153],
+  red: [255, 0, 0],
+  rosybrown: [188, 143, 143],
+  royalblue: [65, 105, 225],
+  saddlebrown: [139, 69, 19],
+  salmon: [250, 128, 114],
+  sandybrown: [244, 164, 96],
+  seagreen: [46, 139, 87],
+  seashell: [255, 245, 238],
+  sienna: [160, 82, 45],
+  silver: [192, 192, 192],
+  skyblue: [135, 206, 235],
+  slateblue: [106, 90, 205],
+  slategray: [112, 128, 144],
+  slategrey: [112, 128, 144],
+  snow: [255, 250, 250],
+  springgreen: [0, 255, 127],
+  steelblue: [70, 130, 180],
+  tan: [210, 180, 140],
+  teal: [0, 128, 128],
+  thistle: [216, 191, 216],
+  tomato: [255, 99, 71],
+  turquoise: [64, 224, 208],
+  violet: [238, 130, 238],
+  wheat: [245, 222, 179],
+  white: [255, 255, 255],
+  whitesmoke: [245, 245, 245],
+  yellow: [255, 255, 0],
+  yellowgreen: [154, 205, 50]
+};
+for (const key in colors) Object.freeze(colors[key]);
+const cssKeywords = Object.freeze(colors);
+const reverseKeywords = {};
+for (const key of Object.keys(cssKeywords)) {
+  reverseKeywords[cssKeywords[key]] = key;
+}
+const convert$1 = {
+  rgb: { channels: 3, labels: "rgb" },
+  hsl: { channels: 3, labels: "hsl" },
+  hsv: { channels: 3, labels: "hsv" },
+  hwb: { channels: 3, labels: "hwb" },
+  cmyk: { channels: 4, labels: "cmyk" },
+  xyz: { channels: 3, labels: "xyz" },
+  lab: { channels: 3, labels: "lab" },
+  oklab: { channels: 3, labels: ["okl", "oka", "okb"] },
+  lch: { channels: 3, labels: "lch" },
+  oklch: { channels: 3, labels: ["okl", "okc", "okh"] },
+  hex: { channels: 1, labels: ["hex"] },
+  keyword: { channels: 1, labels: ["keyword"] },
+  ansi16: { channels: 1, labels: ["ansi16"] },
+  ansi256: { channels: 1, labels: ["ansi256"] },
+  hcg: { channels: 3, labels: ["h", "c", "g"] },
+  apple: { channels: 3, labels: ["r16", "g16", "b16"] },
+  gray: { channels: 1, labels: ["gray"] }
+};
+const LAB_FT = (6 / 29) ** 3;
+function srgbNonlinearTransform(c) {
+  const cc = c > 31308e-7 ? 1.055 * c ** (1 / 2.4) - 0.055 : c * 12.92;
+  return Math.min(Math.max(0, cc), 1);
+}
+function srgbNonlinearTransformInv(c) {
+  return c > 0.04045 ? ((c + 0.055) / 1.055) ** 2.4 : c / 12.92;
+}
+for (const model of Object.keys(convert$1)) {
+  if (!("channels" in convert$1[model])) {
+    throw new Error("missing channels property: " + model);
+  }
+  if (!("labels" in convert$1[model])) {
+    throw new Error("missing channel labels property: " + model);
+  }
+  if (convert$1[model].labels.length !== convert$1[model].channels) {
+    throw new Error("channel and label counts mismatch: " + model);
+  }
+  const { channels, labels } = convert$1[model];
+  delete convert$1[model].channels;
+  delete convert$1[model].labels;
+  Object.defineProperty(convert$1[model], "channels", { value: channels });
+  Object.defineProperty(convert$1[model], "labels", { value: labels });
+}
+convert$1.rgb.hsl = function(rgb) {
+  const r = rgb[0] / 255;
+  const g = rgb[1] / 255;
+  const b = rgb[2] / 255;
+  const min = Math.min(r, g, b);
+  const max = Math.max(r, g, b);
+  const delta = max - min;
+  let h;
+  let s;
+  switch (max) {
+    case min: {
+      h = 0;
+      break;
+    }
+    case r: {
+      h = (g - b) / delta;
+      break;
+    }
+    case g: {
+      h = 2 + (b - r) / delta;
+      break;
+    }
+    case b: {
+      h = 4 + (r - g) / delta;
+      break;
+    }
+  }
+  h = Math.min(h * 60, 360);
+  if (h < 0) {
+    h += 360;
+  }
+  const l = (min + max) / 2;
+  if (max === min) {
+    s = 0;
+  } else if (l <= 0.5) {
+    s = delta / (max + min);
+  } else {
+    s = delta / (2 - max - min);
+  }
+  return [h, s * 100, l * 100];
+};
+convert$1.rgb.hsv = function(rgb) {
+  let rdif;
+  let gdif;
+  let bdif;
+  let h;
+  let s;
+  const r = rgb[0] / 255;
+  const g = rgb[1] / 255;
+  const b = rgb[2] / 255;
+  const v = Math.max(r, g, b);
+  const diff = v - Math.min(r, g, b);
+  const diffc = function(c) {
+    return (v - c) / 6 / diff + 1 / 2;
+  };
+  if (diff === 0) {
+    h = 0;
+    s = 0;
+  } else {
+    s = diff / v;
+    rdif = diffc(r);
+    gdif = diffc(g);
+    bdif = diffc(b);
+    switch (v) {
+      case r: {
+        h = bdif - gdif;
+        break;
+      }
+      case g: {
+        h = 1 / 3 + rdif - bdif;
+        break;
+      }
+      case b: {
+        h = 2 / 3 + gdif - rdif;
+        break;
+      }
+    }
+    if (h < 0) {
+      h += 1;
+    } else if (h > 1) {
+      h -= 1;
+    }
+  }
+  return [
+    h * 360,
+    s * 100,
+    v * 100
+  ];
+};
+convert$1.rgb.hwb = function(rgb) {
+  const r = rgb[0];
+  const g = rgb[1];
+  let b = rgb[2];
+  const h = convert$1.rgb.hsl(rgb)[0];
+  const w = 1 / 255 * Math.min(r, Math.min(g, b));
+  b = 1 - 1 / 255 * Math.max(r, Math.max(g, b));
+  return [h, w * 100, b * 100];
+};
+convert$1.rgb.oklab = function(rgb) {
+  const r = srgbNonlinearTransformInv(rgb[0] / 255);
+  const g = srgbNonlinearTransformInv(rgb[1] / 255);
+  const b = srgbNonlinearTransformInv(rgb[2] / 255);
+  const lp = Math.cbrt(0.4122214708 * r + 0.5363325363 * g + 0.0514459929 * b);
+  const mp = Math.cbrt(0.2119034982 * r + 0.6806995451 * g + 0.1073969566 * b);
+  const sp = Math.cbrt(0.0883024619 * r + 0.2817188376 * g + 0.6299787005 * b);
+  const l = 0.2104542553 * lp + 0.793617785 * mp - 0.0040720468 * sp;
+  const aa = 1.9779984951 * lp - 2.428592205 * mp + 0.4505937099 * sp;
+  const bb = 0.0259040371 * lp + 0.7827717662 * mp - 0.808675766 * sp;
+  return [l * 100, aa * 100, bb * 100];
+};
+convert$1.rgb.cmyk = function(rgb) {
+  const r = rgb[0] / 255;
+  const g = rgb[1] / 255;
+  const b = rgb[2] / 255;
+  const k = Math.min(1 - r, 1 - g, 1 - b);
+  const c = (1 - r - k) / (1 - k) || 0;
+  const m = (1 - g - k) / (1 - k) || 0;
+  const y = (1 - b - k) / (1 - k) || 0;
+  return [c * 100, m * 100, y * 100, k * 100];
+};
+function comparativeDistance(x, y) {
+  return (x[0] - y[0]) ** 2 + (x[1] - y[1]) ** 2 + (x[2] - y[2]) ** 2;
+}
+convert$1.rgb.keyword = function(rgb) {
+  const reversed = reverseKeywords[rgb];
+  if (reversed) {
+    return reversed;
+  }
+  let currentClosestDistance = Number.POSITIVE_INFINITY;
+  let currentClosestKeyword;
+  for (const keyword of Object.keys(cssKeywords)) {
+    const value = cssKeywords[keyword];
+    const distance = comparativeDistance(rgb, value);
+    if (distance < currentClosestDistance) {
+      currentClosestDistance = distance;
+      currentClosestKeyword = keyword;
+    }
+  }
+  return currentClosestKeyword;
+};
+convert$1.keyword.rgb = function(keyword) {
+  return [...cssKeywords[keyword]];
+};
+convert$1.rgb.xyz = function(rgb) {
+  const r = srgbNonlinearTransformInv(rgb[0] / 255);
+  const g = srgbNonlinearTransformInv(rgb[1] / 255);
+  const b = srgbNonlinearTransformInv(rgb[2] / 255);
+  const x = r * 0.4124564 + g * 0.3575761 + b * 0.1804375;
+  const y = r * 0.2126729 + g * 0.7151522 + b * 0.072175;
+  const z = r * 0.0193339 + g * 0.119192 + b * 0.9503041;
+  return [x * 100, y * 100, z * 100];
+};
+convert$1.rgb.lab = function(rgb) {
+  const xyz = convert$1.rgb.xyz(rgb);
+  let x = xyz[0];
+  let y = xyz[1];
+  let z = xyz[2];
+  x /= 95.047;
+  y /= 100;
+  z /= 108.883;
+  x = x > LAB_FT ? x ** (1 / 3) : 7.787 * x + 16 / 116;
+  y = y > LAB_FT ? y ** (1 / 3) : 7.787 * y + 16 / 116;
+  z = z > LAB_FT ? z ** (1 / 3) : 7.787 * z + 16 / 116;
+  const l = 116 * y - 16;
+  const a = 500 * (x - y);
+  const b = 200 * (y - z);
+  return [l, a, b];
+};
+convert$1.hsl.rgb = function(hsl) {
+  const h = hsl[0] / 360;
+  const s = hsl[1] / 100;
+  const l = hsl[2] / 100;
+  let t3;
+  let value;
+  if (s === 0) {
+    value = l * 255;
+    return [value, value, value];
+  }
+  const t2 = l < 0.5 ? l * (1 + s) : l + s - l * s;
+  const t1 = 2 * l - t2;
+  const rgb = [0, 0, 0];
+  for (let i = 0; i < 3; i++) {
+    t3 = h + 1 / 3 * -(i - 1);
+    if (t3 < 0) {
+      t3++;
+    }
+    if (t3 > 1) {
+      t3--;
+    }
+    if (6 * t3 < 1) {
+      value = t1 + (t2 - t1) * 6 * t3;
+    } else if (2 * t3 < 1) {
+      value = t2;
+    } else if (3 * t3 < 2) {
+      value = t1 + (t2 - t1) * (2 / 3 - t3) * 6;
+    } else {
+      value = t1;
+    }
+    rgb[i] = value * 255;
+  }
+  return rgb;
+};
+convert$1.hsl.hsv = function(hsl) {
+  const h = hsl[0];
+  let s = hsl[1] / 100;
+  let l = hsl[2] / 100;
+  let smin = s;
+  const lmin = Math.max(l, 0.01);
+  l *= 2;
+  s *= l <= 1 ? l : 2 - l;
+  smin *= lmin <= 1 ? lmin : 2 - lmin;
+  const v = (l + s) / 2;
+  const sv = l === 0 ? 2 * smin / (lmin + smin) : 2 * s / (l + s);
+  return [h, sv * 100, v * 100];
+};
+convert$1.hsv.rgb = function(hsv) {
+  const h = hsv[0] / 60;
+  const s = hsv[1] / 100;
+  let v = hsv[2] / 100;
+  const hi = Math.floor(h) % 6;
+  const f = h - Math.floor(h);
+  const p = 255 * v * (1 - s);
+  const q = 255 * v * (1 - s * f);
+  const t = 255 * v * (1 - s * (1 - f));
+  v *= 255;
+  switch (hi) {
+    case 0: {
+      return [v, t, p];
+    }
+    case 1: {
+      return [q, v, p];
+    }
+    case 2: {
+      return [p, v, t];
+    }
+    case 3: {
+      return [p, q, v];
+    }
+    case 4: {
+      return [t, p, v];
+    }
+    case 5: {
+      return [v, p, q];
+    }
+  }
+};
+convert$1.hsv.hsl = function(hsv) {
+  const h = hsv[0];
+  const s = hsv[1] / 100;
+  const v = hsv[2] / 100;
+  const vmin = Math.max(v, 0.01);
+  let sl;
+  let l;
+  l = (2 - s) * v;
+  const lmin = (2 - s) * vmin;
+  sl = s * vmin;
+  sl /= lmin <= 1 ? lmin : 2 - lmin;
+  sl = sl || 0;
+  l /= 2;
+  return [h, sl * 100, l * 100];
+};
+convert$1.hwb.rgb = function(hwb) {
+  const h = hwb[0] / 360;
+  let wh = hwb[1] / 100;
+  let bl = hwb[2] / 100;
+  const ratio = wh + bl;
+  let f;
+  if (ratio > 1) {
+    wh /= ratio;
+    bl /= ratio;
+  }
+  const i = Math.floor(6 * h);
+  const v = 1 - bl;
+  f = 6 * h - i;
+  if ((i & 1) !== 0) {
+    f = 1 - f;
+  }
+  const n = wh + f * (v - wh);
+  let r;
+  let g;
+  let b;
+  switch (i) {
+    default:
+    case 6:
+    case 0: {
+      r = v;
+      g = n;
+      b = wh;
+      break;
+    }
+    case 1: {
+      r = n;
+      g = v;
+      b = wh;
+      break;
+    }
+    case 2: {
+      r = wh;
+      g = v;
+      b = n;
+      break;
+    }
+    case 3: {
+      r = wh;
+      g = n;
+      b = v;
+      break;
+    }
+    case 4: {
+      r = n;
+      g = wh;
+      b = v;
+      break;
+    }
+    case 5: {
+      r = v;
+      g = wh;
+      b = n;
+      break;
+    }
+  }
+  return [r * 255, g * 255, b * 255];
+};
+convert$1.cmyk.rgb = function(cmyk) {
+  const c = cmyk[0] / 100;
+  const m = cmyk[1] / 100;
+  const y = cmyk[2] / 100;
+  const k = cmyk[3] / 100;
+  const r = 1 - Math.min(1, c * (1 - k) + k);
+  const g = 1 - Math.min(1, m * (1 - k) + k);
+  const b = 1 - Math.min(1, y * (1 - k) + k);
+  return [r * 255, g * 255, b * 255];
+};
+convert$1.xyz.rgb = function(xyz) {
+  const x = xyz[0] / 100;
+  const y = xyz[1] / 100;
+  const z = xyz[2] / 100;
+  let r;
+  let g;
+  let b;
+  r = x * 3.2404542 + y * -1.5371385 + z * -0.4985314;
+  g = x * -0.969266 + y * 1.8760108 + z * 0.041556;
+  b = x * 0.0556434 + y * -0.2040259 + z * 1.0572252;
+  r = srgbNonlinearTransform(r);
+  g = srgbNonlinearTransform(g);
+  b = srgbNonlinearTransform(b);
+  return [r * 255, g * 255, b * 255];
+};
+convert$1.xyz.lab = function(xyz) {
+  let x = xyz[0];
+  let y = xyz[1];
+  let z = xyz[2];
+  x /= 95.047;
+  y /= 100;
+  z /= 108.883;
+  x = x > LAB_FT ? x ** (1 / 3) : 7.787 * x + 16 / 116;
+  y = y > LAB_FT ? y ** (1 / 3) : 7.787 * y + 16 / 116;
+  z = z > LAB_FT ? z ** (1 / 3) : 7.787 * z + 16 / 116;
+  const l = 116 * y - 16;
+  const a = 500 * (x - y);
+  const b = 200 * (y - z);
+  return [l, a, b];
+};
+convert$1.xyz.oklab = function(xyz) {
+  const x = xyz[0] / 100;
+  const y = xyz[1] / 100;
+  const z = xyz[2] / 100;
+  const lp = Math.cbrt(0.8189330101 * x + 0.3618667424 * y - 0.1288597137 * z);
+  const mp = Math.cbrt(0.0329845436 * x + 0.9293118715 * y + 0.0361456387 * z);
+  const sp = Math.cbrt(0.0482003018 * x + 0.2643662691 * y + 0.633851707 * z);
+  const l = 0.2104542553 * lp + 0.793617785 * mp - 0.0040720468 * sp;
+  const a = 1.9779984951 * lp - 2.428592205 * mp + 0.4505937099 * sp;
+  const b = 0.0259040371 * lp + 0.7827717662 * mp - 0.808675766 * sp;
+  return [l * 100, a * 100, b * 100];
+};
+convert$1.oklab.oklch = function(oklab) {
+  return convert$1.lab.lch(oklab);
+};
+convert$1.oklab.xyz = function(oklab) {
+  const ll = oklab[0] / 100;
+  const a = oklab[1] / 100;
+  const b = oklab[2] / 100;
+  const l = (0.999999998 * ll + 0.396337792 * a + 0.215803758 * b) ** 3;
+  const m = (1.000000008 * ll - 0.105561342 * a - 0.063854175 * b) ** 3;
+  const s = (1.000000055 * ll - 0.089484182 * a - 1.291485538 * b) ** 3;
+  const x = 1.227013851 * l - 0.55779998 * m + 0.281256149 * s;
+  const y = -0.040580178 * l + 1.11225687 * m - 0.071676679 * s;
+  const z = -0.076381285 * l - 0.421481978 * m + 1.58616322 * s;
+  return [x * 100, y * 100, z * 100];
+};
+convert$1.oklab.rgb = function(oklab) {
+  const ll = oklab[0] / 100;
+  const aa = oklab[1] / 100;
+  const bb = oklab[2] / 100;
+  const l = (ll + 0.3963377774 * aa + 0.2158037573 * bb) ** 3;
+  const m = (ll - 0.1055613458 * aa - 0.0638541728 * bb) ** 3;
+  const s = (ll - 0.0894841775 * aa - 1.291485548 * bb) ** 3;
+  const r = srgbNonlinearTransform(4.0767416621 * l - 3.3077115913 * m + 0.2309699292 * s);
+  const g = srgbNonlinearTransform(-1.2684380046 * l + 2.6097574011 * m - 0.3413193965 * s);
+  const b = srgbNonlinearTransform(-0.0041960863 * l - 0.7034186147 * m + 1.707614701 * s);
+  return [r * 255, g * 255, b * 255];
+};
+convert$1.oklch.oklab = function(oklch) {
+  return convert$1.lch.lab(oklch);
+};
+convert$1.lab.xyz = function(lab) {
+  const l = lab[0];
+  const a = lab[1];
+  const b = lab[2];
+  let x;
+  let y;
+  let z;
+  y = (l + 16) / 116;
+  x = a / 500 + y;
+  z = y - b / 200;
+  const y2 = y ** 3;
+  const x2 = x ** 3;
+  const z2 = z ** 3;
+  y = y2 > LAB_FT ? y2 : (y - 16 / 116) / 7.787;
+  x = x2 > LAB_FT ? x2 : (x - 16 / 116) / 7.787;
+  z = z2 > LAB_FT ? z2 : (z - 16 / 116) / 7.787;
+  x *= 95.047;
+  y *= 100;
+  z *= 108.883;
+  return [x, y, z];
+};
+convert$1.lab.lch = function(lab) {
+  const l = lab[0];
+  const a = lab[1];
+  const b = lab[2];
+  let h;
+  const hr = Math.atan2(b, a);
+  h = hr * 360 / 2 / Math.PI;
+  if (h < 0) {
+    h += 360;
+  }
+  const c = Math.sqrt(a * a + b * b);
+  return [l, c, h];
+};
+convert$1.lch.lab = function(lch) {
+  const l = lch[0];
+  const c = lch[1];
+  const h = lch[2];
+  const hr = h / 360 * 2 * Math.PI;
+  const a = c * Math.cos(hr);
+  const b = c * Math.sin(hr);
+  return [l, a, b];
+};
+convert$1.rgb.ansi16 = function(args, saturation = null) {
+  const [r, g, b] = args;
+  let value = saturation === null ? convert$1.rgb.hsv(args)[2] : saturation;
+  value = Math.round(value / 50);
+  if (value === 0) {
+    return 30;
+  }
+  let ansi = 30 + (Math.round(b / 255) << 2 | Math.round(g / 255) << 1 | Math.round(r / 255));
+  if (value === 2) {
+    ansi += 60;
+  }
+  return ansi;
+};
+convert$1.hsv.ansi16 = function(args) {
+  return convert$1.rgb.ansi16(convert$1.hsv.rgb(args), args[2]);
+};
+convert$1.rgb.ansi256 = function(args) {
+  const r = args[0];
+  const g = args[1];
+  const b = args[2];
+  if (r >> 4 === g >> 4 && g >> 4 === b >> 4) {
+    if (r < 8) {
+      return 16;
+    }
+    if (r > 248) {
+      return 231;
+    }
+    return Math.round((r - 8) / 247 * 24) + 232;
+  }
+  const ansi = 16 + 36 * Math.round(r / 255 * 5) + 6 * Math.round(g / 255 * 5) + Math.round(b / 255 * 5);
+  return ansi;
+};
+convert$1.ansi16.rgb = function(args) {
+  args = args[0];
+  let color = args % 10;
+  if (color === 0 || color === 7) {
+    if (args > 50) {
+      color += 3.5;
+    }
+    color = color / 10.5 * 255;
+    return [color, color, color];
+  }
+  const mult = (Math.trunc(args > 50) + 1) * 0.5;
+  const r = (color & 1) * mult * 255;
+  const g = (color >> 1 & 1) * mult * 255;
+  const b = (color >> 2 & 1) * mult * 255;
+  return [r, g, b];
+};
+convert$1.ansi256.rgb = function(args) {
+  args = args[0];
+  if (args >= 232) {
+    const c = (args - 232) * 10 + 8;
+    return [c, c, c];
+  }
+  args -= 16;
+  let rem;
+  const r = Math.floor(args / 36) / 5 * 255;
+  const g = Math.floor((rem = args % 36) / 6) / 5 * 255;
+  const b = rem % 6 / 5 * 255;
+  return [r, g, b];
+};
+convert$1.rgb.hex = function(args) {
+  const integer = ((Math.round(args[0]) & 255) << 16) + ((Math.round(args[1]) & 255) << 8) + (Math.round(args[2]) & 255);
+  const string = integer.toString(16).toUpperCase();
+  return "000000".slice(string.length) + string;
+};
+convert$1.hex.rgb = function(args) {
+  const match = args.toString(16).match(/[a-f\d]{6}|[a-f\d]{3}/i);
+  if (!match) {
+    return [0, 0, 0];
+  }
+  let colorString = match[0];
+  if (match[0].length === 3) {
+    colorString = [...colorString].map((char) => char + char).join("");
+  }
+  const integer = Number.parseInt(colorString, 16);
+  const r = integer >> 16 & 255;
+  const g = integer >> 8 & 255;
+  const b = integer & 255;
+  return [r, g, b];
+};
+convert$1.rgb.hcg = function(rgb) {
+  const r = rgb[0] / 255;
+  const g = rgb[1] / 255;
+  const b = rgb[2] / 255;
+  const max = Math.max(Math.max(r, g), b);
+  const min = Math.min(Math.min(r, g), b);
+  const chroma = max - min;
+  let hue;
+  const grayscale = chroma < 1 ? min / (1 - chroma) : 0;
+  if (chroma <= 0) {
+    hue = 0;
+  } else if (max === r) {
+    hue = (g - b) / chroma % 6;
+  } else if (max === g) {
+    hue = 2 + (b - r) / chroma;
+  } else {
+    hue = 4 + (r - g) / chroma;
+  }
+  hue /= 6;
+  hue %= 1;
+  return [hue * 360, chroma * 100, grayscale * 100];
+};
+convert$1.hsl.hcg = function(hsl) {
+  const s = hsl[1] / 100;
+  const l = hsl[2] / 100;
+  const c = l < 0.5 ? 2 * s * l : 2 * s * (1 - l);
+  let f = 0;
+  if (c < 1) {
+    f = (l - 0.5 * c) / (1 - c);
+  }
+  return [hsl[0], c * 100, f * 100];
+};
+convert$1.hsv.hcg = function(hsv) {
+  const s = hsv[1] / 100;
+  const v = hsv[2] / 100;
+  const c = s * v;
+  let f = 0;
+  if (c < 1) {
+    f = (v - c) / (1 - c);
+  }
+  return [hsv[0], c * 100, f * 100];
+};
+convert$1.hcg.rgb = function(hcg) {
+  const h = hcg[0] / 360;
+  const c = hcg[1] / 100;
+  const g = hcg[2] / 100;
+  if (c === 0) {
+    return [g * 255, g * 255, g * 255];
+  }
+  const pure = [0, 0, 0];
+  const hi = h % 1 * 6;
+  const v = hi % 1;
+  const w = 1 - v;
+  let mg = 0;
+  switch (Math.floor(hi)) {
+    case 0: {
+      pure[0] = 1;
+      pure[1] = v;
+      pure[2] = 0;
+      break;
+    }
+    case 1: {
+      pure[0] = w;
+      pure[1] = 1;
+      pure[2] = 0;
+      break;
+    }
+    case 2: {
+      pure[0] = 0;
+      pure[1] = 1;
+      pure[2] = v;
+      break;
+    }
+    case 3: {
+      pure[0] = 0;
+      pure[1] = w;
+      pure[2] = 1;
+      break;
+    }
+    case 4: {
+      pure[0] = v;
+      pure[1] = 0;
+      pure[2] = 1;
+      break;
+    }
+    default: {
+      pure[0] = 1;
+      pure[1] = 0;
+      pure[2] = w;
+    }
+  }
+  mg = (1 - c) * g;
+  return [
+    (c * pure[0] + mg) * 255,
+    (c * pure[1] + mg) * 255,
+    (c * pure[2] + mg) * 255
+  ];
+};
+convert$1.hcg.hsv = function(hcg) {
+  const c = hcg[1] / 100;
+  const g = hcg[2] / 100;
+  const v = c + g * (1 - c);
+  let f = 0;
+  if (v > 0) {
+    f = c / v;
+  }
+  return [hcg[0], f * 100, v * 100];
+};
+convert$1.hcg.hsl = function(hcg) {
+  const c = hcg[1] / 100;
+  const g = hcg[2] / 100;
+  const l = g * (1 - c) + 0.5 * c;
+  let s = 0;
+  if (l > 0 && l < 0.5) {
+    s = c / (2 * l);
+  } else if (l >= 0.5 && l < 1) {
+    s = c / (2 * (1 - l));
+  }
+  return [hcg[0], s * 100, l * 100];
+};
+convert$1.hcg.hwb = function(hcg) {
+  const c = hcg[1] / 100;
+  const g = hcg[2] / 100;
+  const v = c + g * (1 - c);
+  return [hcg[0], (v - c) * 100, (1 - v) * 100];
+};
+convert$1.hwb.hcg = function(hwb) {
+  const w = hwb[1] / 100;
+  const b = hwb[2] / 100;
+  const v = 1 - b;
+  const c = v - w;
+  let g = 0;
+  if (c < 1) {
+    g = (v - c) / (1 - c);
+  }
+  return [hwb[0], c * 100, g * 100];
+};
+convert$1.apple.rgb = function(apple) {
+  return [apple[0] / 65535 * 255, apple[1] / 65535 * 255, apple[2] / 65535 * 255];
+};
+convert$1.rgb.apple = function(rgb) {
+  return [rgb[0] / 255 * 65535, rgb[1] / 255 * 65535, rgb[2] / 255 * 65535];
+};
+convert$1.gray.rgb = function(args) {
+  return [args[0] / 100 * 255, args[0] / 100 * 255, args[0] / 100 * 255];
+};
+convert$1.gray.hsl = function(args) {
+  return [0, 0, args[0]];
+};
+convert$1.gray.hsv = convert$1.gray.hsl;
+convert$1.gray.hwb = function(gray) {
+  return [0, 100, gray[0]];
+};
+convert$1.gray.cmyk = function(gray) {
+  return [0, 0, 0, gray[0]];
+};
+convert$1.gray.lab = function(gray) {
+  return [gray[0], 0, 0];
+};
+convert$1.gray.hex = function(gray) {
+  const value = Math.round(gray[0] / 100 * 255) & 255;
+  const integer = (value << 16) + (value << 8) + value;
+  const string = integer.toString(16).toUpperCase();
+  return "000000".slice(string.length) + string;
+};
+convert$1.rgb.gray = function(rgb) {
+  const value = (rgb[0] + rgb[1] + rgb[2]) / 3;
+  return [value / 255 * 100];
+};
+function buildGraph() {
+  const graph = {};
+  const models2 = Object.keys(convert$1);
+  for (let { length } = models2, i = 0; i < length; i++) {
+    graph[models2[i]] = {
+      // http://jsperf.com/1-vs-infinity
+      // micro-opt, but this is simple.
+      distance: -1,
+      parent: null
+    };
+  }
+  return graph;
+}
+function deriveBFS(fromModel) {
+  const graph = buildGraph();
+  const queue = [fromModel];
+  graph[fromModel].distance = 0;
+  while (queue.length > 0) {
+    const current = queue.pop();
+    const adjacents = Object.keys(convert$1[current]);
+    for (let { length } = adjacents, i = 0; i < length; i++) {
+      const adjacent = adjacents[i];
+      const node = graph[adjacent];
+      if (node.distance === -1) {
+        node.distance = graph[current].distance + 1;
+        node.parent = current;
+        queue.unshift(adjacent);
+      }
+    }
+  }
+  return graph;
+}
+function link(from, to) {
+  return function(args) {
+    return to(from(args));
+  };
+}
+function wrapConversion(toModel, graph) {
+  const path = [graph[toModel].parent, toModel];
+  let fn = convert$1[graph[toModel].parent][toModel];
+  let cur = graph[toModel].parent;
+  while (graph[cur].parent) {
+    path.unshift(graph[cur].parent);
+    fn = link(convert$1[graph[cur].parent][cur], fn);
+    cur = graph[cur].parent;
+  }
+  fn.conversion = path;
+  return fn;
+}
+function route(fromModel) {
+  const graph = deriveBFS(fromModel);
+  const conversion = {};
+  const models2 = Object.keys(graph);
+  for (let { length } = models2, i = 0; i < length; i++) {
+    const toModel = models2[i];
+    const node = graph[toModel];
+    if (node.parent === null) {
+      continue;
+    }
+    conversion[toModel] = wrapConversion(toModel, graph);
+  }
+  return conversion;
+}
+const convert = {};
+const models = Object.keys(convert$1);
+function wrapRaw(fn) {
+  const wrappedFn = function(...args) {
+    const arg0 = args[0];
+    if (arg0 === void 0 || arg0 === null) {
+      return arg0;
+    }
+    if (arg0.length > 1) {
+      args = arg0;
+    }
+    return fn(args);
+  };
+  if ("conversion" in fn) {
+    wrappedFn.conversion = fn.conversion;
+  }
+  return wrappedFn;
+}
+function wrapRounded(fn) {
+  const wrappedFn = function(...args) {
+    const arg0 = args[0];
+    if (arg0 === void 0 || arg0 === null) {
+      return arg0;
+    }
+    if (arg0.length > 1) {
+      args = arg0;
+    }
+    const result = fn(args);
+    if (typeof result === "object") {
+      for (let { length } = result, i = 0; i < length; i++) {
+        result[i] = Math.round(result[i]);
+      }
+    }
+    return result;
+  };
+  if ("conversion" in fn) {
+    wrappedFn.conversion = fn.conversion;
+  }
+  return wrappedFn;
+}
+for (const fromModel of models) {
+  convert[fromModel] = {};
+  Object.defineProperty(convert[fromModel], "channels", { value: convert$1[fromModel].channels });
+  Object.defineProperty(convert[fromModel], "labels", { value: convert$1[fromModel].labels });
+  const routes = route(fromModel);
+  const routeModels = Object.keys(routes);
+  for (const toModel of routeModels) {
+    const fn = routes[toModel];
+    convert[fromModel][toModel] = wrapRounded(fn);
+    convert[fromModel][toModel].raw = wrapRaw(fn);
+  }
+}
+const skippedModels = [
+  // To be honest, I don't really feel like keyword belongs in color convert, but eh.
+  "keyword",
+  // Gray conflicts with some method names, and has its own method defined.
+  "gray",
+  // Shouldn't really be in color-convert either...
+  "hex"
+];
+const hashedModelKeys = {};
+for (const model of Object.keys(convert)) {
+  hashedModelKeys[[...convert[model].labels].sort().join("")] = model;
+}
+const limiters = {};
+function Color(object, model) {
+  if (!(this instanceof Color)) {
+    return new Color(object, model);
+  }
+  if (model && model in skippedModels) {
+    model = null;
+  }
+  if (model && !(model in convert)) {
+    throw new Error("Unknown model: " + model);
+  }
+  let i;
+  let channels;
+  if (object == null) {
+    this.model = "rgb";
+    this.color = [0, 0, 0];
+    this.valpha = 1;
+  } else if (object instanceof Color) {
+    this.model = object.model;
+    this.color = [...object.color];
+    this.valpha = object.valpha;
+  } else if (typeof object === "string") {
+    const result = cs.get(object);
+    if (result === null) {
+      throw new Error("Unable to parse color from string: " + object);
+    }
+    this.model = result.model;
+    channels = convert[this.model].channels;
+    this.color = result.value.slice(0, channels);
+    this.valpha = typeof result.value[channels] === "number" ? result.value[channels] : 1;
+  } else if (object.length > 0) {
+    this.model = model || "rgb";
+    channels = convert[this.model].channels;
+    const newArray = Array.prototype.slice.call(object, 0, channels);
+    this.color = zeroArray(newArray, channels);
+    this.valpha = typeof object[channels] === "number" ? object[channels] : 1;
+  } else if (typeof object === "number") {
+    this.model = "rgb";
+    this.color = [
+      object >> 16 & 255,
+      object >> 8 & 255,
+      object & 255
+    ];
+    this.valpha = 1;
+  } else {
+    this.valpha = 1;
+    const keys = Object.keys(object);
+    if ("alpha" in object) {
+      keys.splice(keys.indexOf("alpha"), 1);
+      this.valpha = typeof object.alpha === "number" ? object.alpha : 0;
+    }
+    const hashedKeys = keys.sort().join("");
+    if (!(hashedKeys in hashedModelKeys)) {
+      throw new Error("Unable to parse color from object: " + JSON.stringify(object));
+    }
+    this.model = hashedModelKeys[hashedKeys];
+    const { labels } = convert[this.model];
+    const color = [];
+    for (i = 0; i < labels.length; i++) {
+      color.push(object[labels[i]]);
+    }
+    this.color = zeroArray(color);
+  }
+  if (limiters[this.model]) {
+    channels = convert[this.model].channels;
+    for (i = 0; i < channels; i++) {
+      const limit = limiters[this.model][i];
+      if (limit) {
+        this.color[i] = limit(this.color[i]);
+      }
+    }
+  }
+  this.valpha = Math.max(0, Math.min(1, this.valpha));
+  if (Object.freeze) {
+    Object.freeze(this);
+  }
+}
+Color.prototype = {
+  toString() {
+    return this.string();
+  },
+  toJSON() {
+    return this[this.model]();
+  },
+  string(places) {
+    let self = this.model in cs.to ? this : this.rgb();
+    self = self.round(typeof places === "number" ? places : 1);
+    const arguments_ = self.valpha === 1 ? self.color : [...self.color, this.valpha];
+    return cs.to[self.model](...arguments_);
+  },
+  percentString(places) {
+    const self = this.rgb().round(typeof places === "number" ? places : 1);
+    const arguments_ = self.valpha === 1 ? self.color : [...self.color, this.valpha];
+    return cs.to.rgb.percent(...arguments_);
+  },
+  array() {
+    return this.valpha === 1 ? [...this.color] : [...this.color, this.valpha];
+  },
+  object() {
+    const result = {};
+    const { channels } = convert[this.model];
+    const { labels } = convert[this.model];
+    for (let i = 0; i < channels; i++) {
+      result[labels[i]] = this.color[i];
+    }
+    if (this.valpha !== 1) {
+      result.alpha = this.valpha;
+    }
+    return result;
+  },
+  unitArray() {
+    const rgb = this.rgb().color;
+    rgb[0] /= 255;
+    rgb[1] /= 255;
+    rgb[2] /= 255;
+    if (this.valpha !== 1) {
+      rgb.push(this.valpha);
+    }
+    return rgb;
+  },
+  unitObject() {
+    const rgb = this.rgb().object();
+    rgb.r /= 255;
+    rgb.g /= 255;
+    rgb.b /= 255;
+    if (this.valpha !== 1) {
+      rgb.alpha = this.valpha;
+    }
+    return rgb;
+  },
+  round(places) {
+    places = Math.max(places || 0, 0);
+    return new Color([...this.color.map(roundToPlace(places)), this.valpha], this.model);
+  },
+  alpha(value) {
+    if (value !== void 0) {
+      return new Color([...this.color, Math.max(0, Math.min(1, value))], this.model);
+    }
+    return this.valpha;
+  },
+  // Rgb
+  red: getset("rgb", 0, maxfn(255)),
+  green: getset("rgb", 1, maxfn(255)),
+  blue: getset("rgb", 2, maxfn(255)),
+  hue: getset(["hsl", "hsv", "hsl", "hwb", "hcg"], 0, (value) => (value % 360 + 360) % 360),
+  saturationl: getset("hsl", 1, maxfn(100)),
+  lightness: getset("hsl", 2, maxfn(100)),
+  saturationv: getset("hsv", 1, maxfn(100)),
+  value: getset("hsv", 2, maxfn(100)),
+  chroma: getset("hcg", 1, maxfn(100)),
+  gray: getset("hcg", 2, maxfn(100)),
+  white: getset("hwb", 1, maxfn(100)),
+  wblack: getset("hwb", 2, maxfn(100)),
+  cyan: getset("cmyk", 0, maxfn(100)),
+  magenta: getset("cmyk", 1, maxfn(100)),
+  yellow: getset("cmyk", 2, maxfn(100)),
+  black: getset("cmyk", 3, maxfn(100)),
+  x: getset("xyz", 0, maxfn(95.047)),
+  y: getset("xyz", 1, maxfn(100)),
+  z: getset("xyz", 2, maxfn(108.833)),
+  l: getset("lab", 0, maxfn(100)),
+  a: getset("lab", 1),
+  b: getset("lab", 2),
+  keyword(value) {
+    if (value !== void 0) {
+      return new Color(value);
+    }
+    return convert[this.model].keyword(this.color);
+  },
+  hex(value) {
+    if (value !== void 0) {
+      return new Color(value);
+    }
+    return cs.to.hex(...this.rgb().round().color);
+  },
+  hexa(value) {
+    if (value !== void 0) {
+      return new Color(value);
+    }
+    const rgbArray = this.rgb().round().color;
+    let alphaHex = Math.round(this.valpha * 255).toString(16).toUpperCase();
+    if (alphaHex.length === 1) {
+      alphaHex = "0" + alphaHex;
+    }
+    return cs.to.hex(...rgbArray) + alphaHex;
+  },
+  rgbNumber() {
+    const rgb = this.rgb().color;
+    return (rgb[0] & 255) << 16 | (rgb[1] & 255) << 8 | rgb[2] & 255;
+  },
+  luminosity() {
+    const rgb = this.rgb().color;
+    const lum = [];
+    for (const [i, element] of rgb.entries()) {
+      const chan = element / 255;
+      lum[i] = chan <= 0.04045 ? chan / 12.92 : ((chan + 0.055) / 1.055) ** 2.4;
+    }
+    return 0.2126 * lum[0] + 0.7152 * lum[1] + 0.0722 * lum[2];
+  },
+  contrast(color2) {
+    const lum1 = this.luminosity();
+    const lum2 = color2.luminosity();
+    if (lum1 > lum2) {
+      return (lum1 + 0.05) / (lum2 + 0.05);
+    }
+    return (lum2 + 0.05) / (lum1 + 0.05);
+  },
+  level(color2) {
+    const contrastRatio = this.contrast(color2);
+    if (contrastRatio >= 7) {
+      return "AAA";
+    }
+    return contrastRatio >= 4.5 ? "AA" : "";
+  },
+  isDark() {
+    const rgb = this.rgb().color;
+    const yiq = (rgb[0] * 2126 + rgb[1] * 7152 + rgb[2] * 722) / 1e4;
+    return yiq < 128;
+  },
+  isLight() {
+    return !this.isDark();
+  },
+  negate() {
+    const rgb = this.rgb();
+    for (let i = 0; i < 3; i++) {
+      rgb.color[i] = 255 - rgb.color[i];
+    }
+    return rgb;
+  },
+  lighten(ratio) {
+    const hsl = this.hsl();
+    hsl.color[2] += hsl.color[2] * ratio;
+    return hsl;
+  },
+  darken(ratio) {
+    const hsl = this.hsl();
+    hsl.color[2] -= hsl.color[2] * ratio;
+    return hsl;
+  },
+  saturate(ratio) {
+    const hsl = this.hsl();
+    hsl.color[1] += hsl.color[1] * ratio;
+    return hsl;
+  },
+  desaturate(ratio) {
+    const hsl = this.hsl();
+    hsl.color[1] -= hsl.color[1] * ratio;
+    return hsl;
+  },
+  whiten(ratio) {
+    const hwb = this.hwb();
+    hwb.color[1] += hwb.color[1] * ratio;
+    return hwb;
+  },
+  blacken(ratio) {
+    const hwb = this.hwb();
+    hwb.color[2] += hwb.color[2] * ratio;
+    return hwb;
+  },
+  grayscale() {
+    const rgb = this.rgb().color;
+    const value = rgb[0] * 0.3 + rgb[1] * 0.59 + rgb[2] * 0.11;
+    return Color.rgb(value, value, value);
+  },
+  fade(ratio) {
+    return this.alpha(this.valpha - this.valpha * ratio);
+  },
+  opaquer(ratio) {
+    return this.alpha(this.valpha + this.valpha * ratio);
+  },
+  rotate(degrees) {
+    const hsl = this.hsl();
+    let hue = hsl.color[0];
+    hue = (hue + degrees) % 360;
+    hue = hue < 0 ? 360 + hue : hue;
+    hsl.color[0] = hue;
+    return hsl;
+  },
+  mix(mixinColor, weight) {
+    if (!mixinColor || !mixinColor.rgb) {
+      throw new Error('Argument to "mix" was not a Color instance, but rather an instance of ' + typeof mixinColor);
+    }
+    const color1 = mixinColor.rgb();
+    const color2 = this.rgb();
+    const p = weight === void 0 ? 0.5 : weight;
+    const w = 2 * p - 1;
+    const a = color1.alpha() - color2.alpha();
+    const w1 = ((w * a === -1 ? w : (w + a) / (1 + w * a)) + 1) / 2;
+    const w2 = 1 - w1;
+    return Color.rgb(
+      w1 * color1.red() + w2 * color2.red(),
+      w1 * color1.green() + w2 * color2.green(),
+      w1 * color1.blue() + w2 * color2.blue(),
+      color1.alpha() * p + color2.alpha() * (1 - p)
+    );
+  }
+};
+for (const model of Object.keys(convert)) {
+  if (skippedModels.includes(model)) {
+    continue;
+  }
+  const { channels } = convert[model];
+  Color.prototype[model] = function(...arguments_) {
+    if (this.model === model) {
+      return new Color(this);
+    }
+    if (arguments_.length > 0) {
+      return new Color(arguments_, model);
+    }
+    return new Color([...assertArray(convert[this.model][model].raw(this.color)), this.valpha], model);
+  };
+  Color[model] = function(...arguments_) {
+    let color = arguments_[0];
+    if (typeof color === "number") {
+      color = zeroArray(arguments_, channels);
+    }
+    return new Color(color, model);
+  };
+}
+function roundTo(number, places) {
+  return Number(number.toFixed(places));
+}
+function roundToPlace(places) {
+  return function(number) {
+    return roundTo(number, places);
+  };
+}
+function getset(model, channel, modifier) {
+  model = Array.isArray(model) ? model : [model];
+  for (const m of model) {
+    (limiters[m] ||= [])[channel] = modifier;
+  }
+  model = model[0];
+  return function(value) {
+    let result;
+    if (value !== void 0) {
+      if (modifier) {
+        value = modifier(value);
+      }
+      result = this[model]();
+      result.color[channel] = value;
+      return result;
+    }
+    result = this[model]().color[channel];
+    if (modifier) {
+      result = modifier(result);
+    }
+    return result;
+  };
+}
+function maxfn(max) {
+  return function(v) {
+    return Math.max(0, Math.min(max, v));
+  };
+}
+function assertArray(value) {
+  return Array.isArray(value) ? value : [value];
+}
+function zeroArray(array, length) {
+  for (let i = 0; i < length; i++) {
+    if (typeof array[i] !== "number") {
+      array[i] = 0;
+    }
+  }
+  return array;
+}
+function isDarkModeEnabled() {
+  const darkModePreference = window?.matchMedia?.("(prefers-color-scheme: dark)")?.matches;
+  const darkModeSetting = document.body.getAttribute("data-themes")?.includes("dark");
+  return darkModeSetting || darkModePreference || false;
+}
+function isHighContrastModeEnabled() {
+  const highContrastPreference = window?.matchMedia?.("(forced-colors: active)")?.matches;
+  const highContrastSetting = document.body.getAttribute("data-themes")?.includes("highcontrast");
+  return highContrastSetting || highContrastPreference || false;
+}
+function invertTextColor(color) {
+  return colorContrast(color, "#ffffff") < 4.5;
+}
+function isBrightColor(color) {
+  return calculateLuma(color) > 0.6;
+}
+function elementColor(color, backgroundColor) {
+  const brightBackground = isBrightColor(backgroundColor);
+  const blurredBackground = mix(
+    backgroundColor,
+    brightBackground ? color : "#ffffff",
+    66
+  );
+  let contrast = colorContrast(color, blurredBackground);
+  const minContrast = isHighContrastModeEnabled() ? 5.6 : 3.2;
+  let iteration = 0;
+  let result = color;
+  const epsilon = (brightBackground ? -100 : 100) / 255;
+  while (contrast < minContrast && iteration++ < 100) {
+    const hsl = hexToHSL(result);
+    const l = Math.max(
+      0,
+      Math.min(255, hsl.l + epsilon)
+    );
+    result = hslToHex({ h: hsl.h, s: hsl.s, l });
+    contrast = colorContrast(result, blurredBackground);
+  }
+  return result;
+}
+function mix(color1, color2, factor) {
+  return new Color(color2).mix(new Color(color1), (factor + 100) / 200).hex();
+}
+function calculateLuma(color) {
+  const rgb = hexToRGB(color).map((value) => {
+    value /= 255;
+    return value <= 0.03928 ? value / 12.92 : Math.pow((value + 0.055) / 1.055, 2.4);
+  });
+  const [red, green, blue] = rgb;
+  return 0.2126 * red + 0.7152 * green + 0.0722 * blue;
+}
+function colorContrast(color1, color2) {
+  const luminance1 = calculateLuma(color1) + 0.05;
+  const luminance2 = calculateLuma(color2) + 0.05;
+  return Math.max(luminance1, luminance2) / Math.min(luminance1, luminance2);
+}
+function hexToRGB(color) {
+  return new Color(color).rgb().array();
+}
+function hexToHSL(color) {
+  const hsl = new Color(color).hsl();
+  return { h: hsl.color[0], s: hsl.color[1], l: hsl.color[2] };
+}
+function hslToHex(hsl) {
+  return new Color(hsl).hex();
+}
+/*!
+ * SPDX-FileCopyrightText: 2023 Nextcloud GmbH and Nextcloud contributors
+ * SPDX-License-Identifier: AGPL-3.0-or-later
+ */
+const cache = [];
+const action$1 = {
+  id: "system-tags",
+  displayName: () => "",
+  iconSvgInline: () => "",
+  enabled({ nodes }) {
+    if (nodes.length !== 1) {
+      return false;
+    }
+    return true;
+  },
+  exec: async () => null,
+  renderInline: ({ nodes }) => {
+    if (nodes.length !== 1 || !nodes[0]) {
+      return Promise.resolve(null);
+    }
+    return renderInline(nodes[0]);
+  },
+  order: 0
+};
+subscribe("systemtags:node:updated", updateSystemTagsHtml);
+subscribe("systemtags:tag:created", addTag);
+subscribe("systemtags:tag:deleted", removeTag);
+subscribe("systemtags:tag:updated", updateTag);
+function updateSystemTagsHtml(node) {
+  renderInline(node).then((systemTagsHtml) => {
+    document.querySelectorAll(`[data-systemtags-fileid="${node.fileid}"]`).forEach((element) => {
+      element.replaceWith(systemTagsHtml);
+    });
+  });
+}
+function addTag(tag) {
+  cache.push(tag);
+}
+function removeTag(tag) {
+  cache.splice(cache.findIndex((t2) => t2.id === tag.id), 1);
+}
+function updateTag(tag) {
+  const index = cache.findIndex((t2) => t2.id === tag.id);
+  if (index !== -1) {
+    cache[index] = tag;
+  }
+  updateSystemTagsColorAttribute(tag);
+}
+function updateSystemTagsColorAttribute(tag) {
+  document.querySelectorAll(`[data-systemtag-name="${tag.displayName}"]`).forEach((element) => {
+    element.style.setProperty("--systemtag-color", `#${tag.color}`);
+  });
+}
+function renderTag(tag, isMore = false) {
+  const tagElement = document.createElement("li");
+  tagElement.classList.add("files-list__system-tag");
+  tagElement.setAttribute("data-systemtag-name", tag);
+  tagElement.textContent = tag;
+  const cachedTag = cache.find((t2) => t2.displayName === tag);
+  if (cachedTag?.color) {
+    const mainBackgroundColor = getComputedStyle(document.body).getPropertyValue("--color-main-background").replace("#", "") || (isDarkModeEnabled() ? "000000" : "ffffff");
+    const primaryElement = elementColor(`#${cachedTag.color}`, `#${mainBackgroundColor}`);
+    tagElement.style.setProperty("--systemtag-color", primaryElement);
+    tagElement.setAttribute("data-systemtag-color", "true");
+  }
+  if (isMore) {
+    tagElement.classList.add("files-list__system-tag--more");
+  }
+  return tagElement;
+}
+async function renderInline(node) {
+  const tags = getNodeSystemTags(node);
+  const systemTagsElement = document.createElement("ul");
+  systemTagsElement.classList.add("files-list__system-tags");
+  systemTagsElement.setAttribute("aria-label", translate("files", "Assigned collaborative tags"));
+  systemTagsElement.setAttribute("data-systemtags-fileid", node.fileid?.toString() || "");
+  if (tags.length === 0) {
+    return systemTagsElement;
+  }
+  if (cache.length === 0) {
+    try {
+      cache.push(...await fetchTags());
+    } catch (error) {
+      logger.error("Failed to fetch tags", { error });
+    }
+  }
+  systemTagsElement.append(renderTag(tags[0]));
+  if (tags.length === 2) {
+    systemTagsElement.append(renderTag(tags[1]));
+  } else if (tags.length > 1) {
+    const moreTagElement = renderTag("+" + (tags.length - 1), true);
+    moreTagElement.setAttribute("title", tags.slice(1).join(", "));
+    moreTagElement.setAttribute("aria-hidden", "true");
+    moreTagElement.setAttribute("role", "presentation");
+    systemTagsElement.append(moreTagElement);
+    for (const tag of tags.slice(1)) {
+      const tagElement = renderTag(tag);
+      tagElement.classList.add("hidden-visually");
+      systemTagsElement.append(tagElement);
+    }
+  }
+  return systemTagsElement;
+}
+/*!
+ * SPDX-FileCopyrightText: 2023 Nextcloud GmbH and Nextcloud contributors
+ * SPDX-License-Identifier: AGPL-3.0-or-later
+ */
+const rootPath = "/systemtags";
+const client = getClient();
+function formatReportPayload(tagId) {
+  return `<?xml version="1.0"?>
+<oc:filter-files ${getDavNameSpaces()}>
 	<d:prop>
-		${ue()}
+		${getDavProperties()}
 	</d:prop>
 	<oc:filter-rules>
-		<oc:systemtag>${e}</oc:systemtag>
+		<oc:systemtag>${tagId}</oc:systemtag>
 	</oc:filter-rules>
-</oc:filter-files>`}function V(e){return new H({id:e.id,source:`${R()}${I}/${e.id}`,owner:String(Z()?.uid??"anonymous"),root:I,displayname:e.displayName,permissions:P.READ,attributes:{...e,"is-tag":!0}})}async function Je(e="/"){const r=(await W()).filter(l=>l.userVisible);if(e==="/")return{folder:new H({id:0,source:`${R()}${I}`,owner:Z()?.uid,root:I,permissions:P.NONE}),contents:r.map(V)};const n=e.split("/",2)[1];if(!n||isNaN(parseInt(n)))throw new Error("Invalid tag ID");const t=parseInt(n),o=r.find(l=>l.id===t);if(!o)throw new Error("Tag not found");const a=V(o),s=await He.getDirectoryContents(le(),{details:!0,data:Be(t),headers:{method:"REPORT"}});return{folder:a,contents:s.data.map(l=>ie(l))}}const ee="tags";function Ze(){te().register(new oe({id:ee,name:w("systemtags","Tags"),caption:w("systemtags","List of tags and their associated files and folders."),emptyTitle:w("systemtags","No tags found"),emptyCaption:w("systemtags","Tags you have created will show up here."),icon:Y,order:25,getContents:Je}))}const We={id:"systemtags:open-in-files",displayName:()=>w("systemtags","Open in Files"),iconSvgInline:()=>"",enabled({nodes:e,view:r}){return r.id!==ee||e.length!==1||!e[0]?!1:e[0].attributes["is-tag"]!==!0&&e[0].type===D.Folder},async exec({nodes:e}){if(!e[0]||e.length!==1)return!1;let r=e[0].dirname;return e[0].type===D.Folder&&(r=e[0].path),window.OCP.Files.Router.goToRoute(null,{view:"files",fileid:String(e[0].fileid)},{dir:r,openfile:"true"}),null},order:-1e3,default:ae.HIDDEN};he("nc:system-tags"),E(fe),E(Pe),E(We),Ze(),pe();export{Ee as a,Ce as e,gr as i};
+</oc:filter-files>`;
+}
+function tagToNode(tag) {
+  return new Folder({
+    id: tag.id,
+    source: `${getRemoteURL()}${rootPath}/${tag.id}`,
+    owner: String(getCurrentUser()?.uid ?? "anonymous"),
+    root: rootPath,
+    displayname: tag.displayName,
+    permissions: Permission.READ,
+    attributes: {
+      ...tag,
+      "is-tag": true
+    }
+  });
+}
+async function getContents(path = "/") {
+  const tagsCache = (await fetchTags()).filter((tag2) => tag2.userVisible);
+  if (path === "/") {
+    return {
+      folder: new Folder({
+        id: 0,
+        source: `${getRemoteURL()}${rootPath}`,
+        owner: getCurrentUser()?.uid,
+        root: rootPath,
+        permissions: Permission.NONE
+      }),
+      contents: tagsCache.map(tagToNode)
+    };
+  }
+  const tagIdStr = path.split("/", 2)[1];
+  if (!tagIdStr || isNaN(parseInt(tagIdStr))) {
+    throw new Error("Invalid tag ID");
+  }
+  const tagId = parseInt(tagIdStr);
+  const tag = tagsCache.find((tag2) => tag2.id === tagId);
+  if (!tag) {
+    throw new Error("Tag not found");
+  }
+  const folder = tagToNode(tag);
+  const contentsResponse = await client.getDirectoryContents(getRootPath(), {
+    details: true,
+    // Only filter favorites if we're at the root
+    data: formatReportPayload(tagId),
+    headers: {
+      // Patched in WebdavClient.ts
+      method: "REPORT"
+    }
+  });
+  return {
+    folder,
+    contents: contentsResponse.data.map((stat) => resultToNode(stat))
+  };
+}
+const systemTagsViewId = "tags";
+function registerSystemTagsView() {
+  const Navigation = getNavigation();
+  Navigation.register(new View({
+    id: systemTagsViewId,
+    name: translate("systemtags", "Tags"),
+    caption: translate("systemtags", "List of tags and their associated files and folders."),
+    emptyTitle: translate("systemtags", "No tags found"),
+    emptyCaption: translate("systemtags", "Tags you have created will show up here."),
+    icon: svgTagMultiple,
+    order: 25,
+    getContents
+  }));
+}
+/*!
+ * SPDX-FileCopyrightText: 2023 Nextcloud GmbH and Nextcloud contributors
+ * SPDX-License-Identifier: AGPL-3.0-or-later
+ */
+const action = {
+  id: "systemtags:open-in-files",
+  displayName: () => translate("systemtags", "Open in Files"),
+  iconSvgInline: () => "",
+  enabled({ nodes, view }) {
+    if (view.id !== systemTagsViewId) {
+      return false;
+    }
+    if (nodes.length !== 1 || !nodes[0]) {
+      return false;
+    }
+    return nodes[0].attributes["is-tag"] !== true && nodes[0].type === FileType.Folder;
+  },
+  async exec({ nodes }) {
+    if (!nodes[0] || nodes.length !== 1) {
+      return false;
+    }
+    let dir = nodes[0].dirname;
+    if (nodes[0].type === FileType.Folder) {
+      dir = nodes[0].path;
+    }
+    window.OCP.Files.Router.goToRoute(
+      null,
+      // use default route
+      { view: "files", fileid: String(nodes[0].fileid) },
+      { dir, openfile: "true" }
+    );
+    return null;
+  },
+  // Before openFolderAction
+  order: -1e3,
+  default: DefaultType.HIDDEN
+};
+/*!
+ * SPDX-FileCopyrightText: 2016 Nextcloud GmbH and Nextcloud contributors
+ * SPDX-License-Identifier: AGPL-3.0-or-later
+ */
+registerDavProperty("nc:system-tags");
+registerFileAction(action$2);
+registerFileAction(action$1);
+registerFileAction(action);
+registerSystemTagsView();
+registerFileSidebarAction();
+export {
+  isDarkModeEnabled as a,
+  elementColor as e,
+  invertTextColor as i
+};
 //# sourceMappingURL=systemtags-init.mjs.map

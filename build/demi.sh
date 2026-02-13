@@ -9,6 +9,7 @@
 COMMAND=""
 FRONTEND="$(dirname $0)/frontend"
 FRONTEND_LEGACY="$(dirname $0)/frontend-legacy"
+SD="$(dirname $0)/../apps/simpledashboard"
 
 build_command() {
 	if [ "install" = "$1" ] || [ "ci" = "$1" ]; then
@@ -23,7 +24,8 @@ build_command() {
 run_parallel() {
 	npx concurrently \
 		"cd \"$FRONTEND\" && npm $COMMAND" \
-		"cd \"$FRONTEND_LEGACY\" && npm $COMMAND"
+		"cd \"$FRONTEND_LEGACY\" && npm $COMMAND" \
+		"cd \"$SD\" && npm $COMMAND"
 }
 
 run_sequentially() {

@@ -1,12 +1,283 @@
-import{C as c,V as _,g as v,a as x,b as V}from"./index-C3ez-Nnm.chunk.mjs";import{a as o,g as H,e as p}from"./index-6_gsQFyp.chunk.mjs";import{c as u,i as A}from"./index-DKddA51s.chunk.mjs";import{a as b,d as C,g as N}from"./index-JpgrUA2Z-CjbNveLz.chunk.mjs";import{P as E}from"./public-ClPO2oEz.chunk.mjs";import{d as S,e as $,l as I}from"./index-DCpg1aui.chunk.mjs";import{t as n,g as y,a as f}from"./translation-DoG5ZELJ-2ffMJaM4.chunk.mjs";import{g as D,e as L}from"./createElementId-DhjFt1I9-DnDDFk77.chunk.mjs";import{g as M,a as T,b as k,r as F,d as B}from"./dav-BkWy6VCn.chunk.mjs";import{f as U}from"./index-RbJ3SLsu.chunk.mjs";import{h as P}from"./runtime-dom.esm-bundler-DSTOTAEf.chunk.mjs";import{N as O}from"./NcUserBubble-DPAmU2_J-CCD2l4DH.chunk.mjs";import"./string_decoder-BO00msnV.chunk.mjs";import"./NcNoteCard-CVhtNL04-xecBaCCz.chunk.mjs";import"./logger-D3RVzcfQ-u5jICcTJ.chunk.mjs";import"./index-Dpy2yt9b.chunk.mjs";import"./mdi-Dg3BMFGG.chunk.mjs";import"./NcAvatar-DmUGApWA-JlRtP4v4.chunk.mjs";import"./colors-Go3zmZRD-CiwiiY9I.chunk.mjs";import"./NcUserStatusIcon-CGEf7fej-DpJR4ABu.chunk.mjs";import"./PencilOutline-BbbiWpuA.chunk.mjs";import"./NcDateTime.vue_vue_type_script_setup_true_lang-BhB8yA4U-BZtT1htT.chunk.mjs";const R='<svg xmlns="http://www.w3.org/2000/svg" id="mdi-history" viewBox="0 0 24 24"><path d="M13.5,8H12V13L16.28,15.54L17,14.33L13.5,12.25V8M13,3A9,9 0 0,0 4,12H1L4.96,16.03L9,12H6A7,7 0 0,1 13,5A7,7 0 0,1 20,12A7,7 0 0,1 13,19C11.07,19 9.32,18.21 8.06,16.94L6.64,18.36C8.27,20 10.5,21 13,21A9,9 0 0,0 22,12A9,9 0 0,0 13,3" /></svg>',q='<svg xmlns="http://www.w3.org/2000/svg" id="mdi-trash-can-outline" viewBox="0 0 24 24"><path d="M9,3V4H4V6H5V19A2,2 0 0,0 7,21H17A2,2 0 0,0 19,19V6H20V4H15V3H9M7,6H17V19H7V6M9,8V17H11V8H9M13,8V17H15V8H13Z" /></svg>',g=`/trashbin/${o()?.uid}/trash`,z=M(),K=`<?xml version="1.0"?>
-<d:propfind ${T()}>
+const appName = "nextcloud-ui";
+const appVersion = "1.0.0";
+import { C as Column, V as View, g as getNavigation, a as registerFileListAction, b as registerFileAction } from "./index-DiROoqva.chunk.mjs";
+import { a as getCurrentUser, g as getLoggerBuilder, i as emit } from "./mdi-CCQ2KgUK.chunk.mjs";
+import { c as cancelableClient, i as isAxiosError } from "./index-iNeUnB75.chunk.mjs";
+import { a as showError, c as showSuccess, g as getDialogBuilder } from "./index-JpgrUA2Z-CDVhFt4l.chunk.mjs";
+import { P as Permission } from "./public-SXOFh1vA.chunk.mjs";
+import { d as dirname, e as encodePath, l as loadState } from "./index-CEzAKfoK.chunk.mjs";
+import { t as translate, g as getLanguage, a as getCanonicalLocale } from "./translation-DoG5ZELJ-BX7lsMna.chunk.mjs";
+import { g as generateUrl, e as generateRemoteUrl } from "./createElementId-DhjFt1I9-D95yphbb.chunk.mjs";
+import { g as getClient, a as getDavNameSpaces, b as getDavProperties, r as resultToNode$1, d as defaultRemoteURL } from "./dav-CCFVdbCj.chunk.mjs";
+import { f as formatRelativeTime } from "./index-DZkDsHXr.chunk.mjs";
+import { m as createApp } from "./vue.runtime.esm-bundler-UjrxUCWV.chunk.mjs";
+import { N as NcUserBubble } from "./NcUserBubble-DPAmU2_J-CqdP4dk7.chunk.mjs";
+import "./string_decoder-CSsspFHV.chunk.mjs";
+import "./NcNoteCard-CVhtNL04-xGysk9Jq.chunk.mjs";
+import "./logger-D3RVzcfQ-D08Lqsc3.chunk.mjs";
+import "./index-CIWHtE7-.chunk.mjs";
+import "./PencilOutline-CRype3Oz.chunk.mjs";
+import "./NcAvatar-DmUGApWA-C2lPLiNg.chunk.mjs";
+import "./colors-Go3zmZRD-CRyYiZ-p.chunk.mjs";
+import "./NcUserStatusIcon-CGEf7fej-CB09VdBp.chunk.mjs";
+import "./NcActionButton-pKOSrlGE-By2YA-_F.chunk.mjs";
+import "./NcDateTime.vue_vue_type_script_setup_true_lang-BhB8yA4U-3Cg9SqZ9.chunk.mjs";
+const svgHistory = '<svg xmlns="http://www.w3.org/2000/svg" id="mdi-history" viewBox="0 0 24 24"><path d="M13.5,8H12V13L16.28,15.54L17,14.33L13.5,12.25V8M13,3A9,9 0 0,0 4,12H1L4.96,16.03L9,12H6A7,7 0 0,1 13,5A7,7 0 0,1 20,12A7,7 0 0,1 13,19C11.07,19 9.32,18.21 8.06,16.94L6.64,18.36C8.27,20 10.5,21 13,21A9,9 0 0,0 22,12A9,9 0 0,0 13,3" /></svg>';
+const svgDelete = '<svg xmlns="http://www.w3.org/2000/svg" id="mdi-trash-can-outline" viewBox="0 0 24 24"><path d="M9,3V4H4V6H5V19A2,2 0 0,0 7,21H17A2,2 0 0,0 19,19V6H20V4H15V3H9M7,6H17V19H7V6M9,8V17H11V8H9M13,8V17H15V8H13Z" /></svg>';
+const rootPath = `/trashbin/${getCurrentUser()?.uid}/trash`;
+const client = getClient();
+/*!
+ * SPDX-FileCopyrightText: 2023 Nextcloud GmbH and Nextcloud contributors
+ * SPDX-License-Identifier: AGPL-3.0-or-later
+ */
+const data = `<?xml version="1.0"?>
+<d:propfind ${getDavNameSpaces()}>
 	<d:prop>
 		<nc:trashbin-deletion-time />
 		<nc:trashbin-original-location />
 		<nc:trashbin-title />
 		<nc:trashbin-deleted-by-id />
 		<nc:trashbin-deleted-by-display-name />
-		${k()}
+		${getDavProperties()}
 	</d:prop>
-</d:propfind>`;function Y(i){const e=F(i,g);return e.attributes.previewUrl=D("/apps/files_trashbin/preview?fileId={fileid}&x=32&y=32",{fileid:e.fileid}),e}async function Z(i="/"){const e=(await z.getDirectoryContents(`${g}${i}`,{details:!0,data:K,includeSelf:!0})).data.map(Y),[t]=e.splice(e.findIndex(r=>r.path===i),1);return{folder:t,contents:e}}const j=new c({id:"files_trashbin--original-location",title:n("files_trashbin","Original location"),render(i){const e=l(i),t=document.createElement("span");return t.title=e,t.textContent=e,t},sort(i,e){const t=l(i),r=l(e);return t.localeCompare(r,[y(),f()],{numeric:!0,usage:"sort"})}}),G=new c({id:"files_trashbin--deleted-by",title:n("files_trashbin","Deleted by"),render(i){const{userId:e,displayName:t,label:r}=d(i);if(r){const a=document.createElement("span");return a.textContent=r,a}const s=document.createElement("div");return P(O,{size:32,user:e??void 0,displayName:t??e}).mount(s),s},sort(i,e){const t=d(i),r=t.label??t.displayName??t.userId,s=d(e),a=s.label??s.displayName??s.userId;return r.localeCompare(a,[y(),f()],{numeric:!0,usage:"sort"})}}),J=new c({id:"files_trashbin--deleted",title:n("files_trashbin","Deleted"),render(i){const e=i.attributes?.["trashbin-deletion-time"]||(i?.mtime?.getTime()??0)/1e3,t=document.createElement("span");if(e){const r=Intl.DateTimeFormat([f()],{dateStyle:"long",timeStyle:"short"}),s=new Date(e*1e3);return t.title=r.format(s),t.textContent=U(s,{ignoreSeconds:n("files","few seconds ago")}),t}return t.textContent=n("files_trashbin","A long time ago"),t},sort(i,e){const t=i.attributes?.["trashbin-deletion-time"]||(i?.mtime?.getTime()??0)/1e3;return(e.attributes?.["trashbin-deletion-time"]||(e?.mtime?.getTime()??0)/1e3)-t}});function l(i){const e=m(i.attributes?.["trashbin-original-location"]);if(!e)return n("files_trashbin","Unknown");const t=S(e);return t==="/"||t==="."?n("files_trashbin","All files"):t.replace(/^\//,"")}function d(i){const e=m(i.attributes?.["trashbin-deleted-by-id"]),t=m(i.attributes?.["trashbin-deleted-by-display-name"]);let r;const s=o()?.uid;return e===s&&(r=n("files_trashbin","You")),!e&&!t&&(r=n("files_trashbin","Unknown")),{userId:e,displayName:t,label:r}}function m(i){return i?String(i):null}const h="trashbin",Q=new _({id:h,name:n("files_trashbin","Deleted files"),caption:n("files_trashbin","List of files that have been deleted."),emptyTitle:n("files_trashbin","No deleted files"),emptyCaption:n("files_trashbin","Files and folders you have deleted will show up here"),icon:q,order:50,sticky:!0,defaultSortKey:"deleted",columns:[j,G,J],getContents:Z}),w=H().setApp("files_trashbin").detectUser().build(),W={id:"restore",displayName(){return n("files_trashbin","Restore")},iconSvgInline:()=>R,enabled({nodes:i,view:e}){return e.id!==h?!1:i.length>0&&i.map(t=>t.permissions).every(t=>!!(t&E.READ))},async exec({nodes:i}){const e=i[0];try{const t=L($(`dav/trashbin/${o().uid}/restore/${e.basename}`));return await u.request({method:"MOVE",url:e.encodedSource,headers:{destination:t}}),p("files:node:deleted",e),!0}catch(t){return A(t)&&t.response?.status===507&&b(n("files_trashbin","Not enough free space to restore the file/folder")),w.error("Failed to restore node",{error:t,node:e}),!1}},async execBatch({nodes:i,view:e,folder:t,contents:r}){return Promise.all(i.map(s=>this.exec({nodes:[s],view:e,folder:t,contents:r})))},order:1,inline:()=>!0};async function X(){try{return await u.delete(`${B}/trashbin/${o().uid}/trash`),C(n("files_trashbin","All files have been permanently deleted")),!0}catch(i){return b(n("files_trashbin","Failed to empty deleted files")),w.error("Failed to empty deleted files",{error:i}),!1}}const ee={id:"empty-trash",displayName:()=>n("files_trashbin","Empty deleted files"),order:0,enabled({view:i,folder:e,contents:t}){return i.id!==h||!I("files_trashbin","config").allow_delete?!1:t.length>0&&e.path==="/"},async exec({contents:i}){return await new Promise(e=>{N(n("files_trashbin","Confirm permanent deletion")).setSeverity("warning").setText(n("files_trashbin","Are you sure you want to permanently delete all files and folders in the trash? This cannot be undone.")).setButtons([{label:n("files_trashbin","Cancel"),variant:"secondary",callback:()=>e(!1)},{label:n("files_trashbin","Empty deleted files"),variant:"error",callback:()=>e(!0)}]).build().show().then(()=>{e(!1)})})===!0&&await X()&&i.forEach(e=>p("files:node:deleted",e)),null}},te=v();te.register(Q),x(ee),V(W);
+</d:propfind>`;
+function resultToNode(stat) {
+  const node = resultToNode$1(stat, rootPath);
+  node.attributes.previewUrl = generateUrl("/apps/files_trashbin/preview?fileId={fileid}&x=32&y=32", { fileid: node.fileid });
+  return node;
+}
+async function getContents(path = "/") {
+  const contentsResponse = await client.getDirectoryContents(`${rootPath}${path}`, {
+    details: true,
+    data,
+    includeSelf: true
+  });
+  const contents = contentsResponse.data.map(resultToNode);
+  const [folder] = contents.splice(contents.findIndex((node) => node.path === path), 1);
+  return {
+    folder,
+    contents
+  };
+}
+const originalLocation = new Column({
+  id: "files_trashbin--original-location",
+  title: translate("files_trashbin", "Original location"),
+  render(node) {
+    const originalLocation2 = parseOriginalLocation(node);
+    const span = document.createElement("span");
+    span.title = originalLocation2;
+    span.textContent = originalLocation2;
+    return span;
+  },
+  sort(nodeA, nodeB) {
+    const locationA = parseOriginalLocation(nodeA);
+    const locationB = parseOriginalLocation(nodeB);
+    return locationA.localeCompare(locationB, [getLanguage(), getCanonicalLocale()], { numeric: true, usage: "sort" });
+  }
+});
+const deletedBy = new Column({
+  id: "files_trashbin--deleted-by",
+  title: translate("files_trashbin", "Deleted by"),
+  render(node) {
+    const { userId, displayName, label } = parseDeletedBy(node);
+    if (label) {
+      const span = document.createElement("span");
+      span.textContent = label;
+      return span;
+    }
+    const el = document.createElement("div");
+    createApp(NcUserBubble, {
+      size: 32,
+      user: userId ?? void 0,
+      displayName: displayName ?? userId
+    }).mount(el);
+    return el;
+  },
+  sort(nodeA, nodeB) {
+    const deletedByA = parseDeletedBy(nodeA);
+    const deletedbyALabel = deletedByA.label ?? deletedByA.displayName ?? deletedByA.userId;
+    const deletedByB = parseDeletedBy(nodeB);
+    const deletedByBLabel = deletedByB.label ?? deletedByB.displayName ?? deletedByB.userId;
+    return deletedbyALabel.localeCompare(deletedByBLabel, [getLanguage(), getCanonicalLocale()], { numeric: true, usage: "sort" });
+  }
+});
+const deleted = new Column({
+  id: "files_trashbin--deleted",
+  title: translate("files_trashbin", "Deleted"),
+  render(node) {
+    const deletionTime = node.attributes?.["trashbin-deletion-time"] || (node?.mtime?.getTime() ?? 0) / 1e3;
+    const span = document.createElement("span");
+    if (deletionTime) {
+      const formatter = Intl.DateTimeFormat([getCanonicalLocale()], { dateStyle: "long", timeStyle: "short" });
+      const timestamp = new Date(deletionTime * 1e3);
+      span.title = formatter.format(timestamp);
+      span.textContent = formatRelativeTime(timestamp, { ignoreSeconds: translate("files", "few seconds ago") });
+      return span;
+    }
+    span.textContent = translate("files_trashbin", "A long time ago");
+    return span;
+  },
+  sort(nodeA, nodeB) {
+    const deletionTimeA = nodeA.attributes?.["trashbin-deletion-time"] || (nodeA?.mtime?.getTime() ?? 0) / 1e3;
+    const deletionTimeB = nodeB.attributes?.["trashbin-deletion-time"] || (nodeB?.mtime?.getTime() ?? 0) / 1e3;
+    return deletionTimeB - deletionTimeA;
+  }
+});
+function parseOriginalLocation(node) {
+  const path = stringOrNull(node.attributes?.["trashbin-original-location"]);
+  if (!path) {
+    return translate("files_trashbin", "Unknown");
+  }
+  const dir = dirname(path);
+  if (dir === "/" || dir === ".") {
+    return translate("files_trashbin", "All files");
+  }
+  return dir.replace(/^\//, "");
+}
+function parseDeletedBy(node) {
+  const userId = stringOrNull(node.attributes?.["trashbin-deleted-by-id"]);
+  const displayName = stringOrNull(node.attributes?.["trashbin-deleted-by-display-name"]);
+  let label;
+  const currentUserId = getCurrentUser()?.uid;
+  if (userId === currentUserId) {
+    label = translate("files_trashbin", "You");
+  }
+  if (!userId && !displayName) {
+    label = translate("files_trashbin", "Unknown");
+  }
+  return {
+    userId,
+    displayName,
+    label
+  };
+}
+function stringOrNull(attribute) {
+  if (attribute) {
+    return String(attribute);
+  }
+  return null;
+}
+/*!
+ * SPDX-FileCopyrightText: 2025 Nextcloud GmbH and Nextcloud contributors
+ * SPDX-License-Identifier: AGPL-3.0-or-later
+ */
+const TRASHBIN_VIEW_ID = "trashbin";
+const trashbinView = new View({
+  id: TRASHBIN_VIEW_ID,
+  name: translate("files_trashbin", "Deleted files"),
+  caption: translate("files_trashbin", "List of files that have been deleted."),
+  emptyTitle: translate("files_trashbin", "No deleted files"),
+  emptyCaption: translate("files_trashbin", "Files and folders you have deleted will show up here"),
+  icon: svgDelete,
+  order: 50,
+  sticky: true,
+  defaultSortKey: "deleted",
+  columns: [
+    originalLocation,
+    deletedBy,
+    deleted
+  ],
+  getContents
+});
+const logger = getLoggerBuilder().setApp("files_trashbin").detectUser().build();
+/*!
+ * SPDX-FileCopyrightText: 2023 Nextcloud GmbH and Nextcloud contributors
+ * SPDX-License-Identifier: AGPL-3.0-or-later
+ */
+const restoreAction = {
+  id: "restore",
+  displayName() {
+    return translate("files_trashbin", "Restore");
+  },
+  iconSvgInline: () => svgHistory,
+  enabled({ nodes, view }) {
+    if (view.id !== TRASHBIN_VIEW_ID) {
+      return false;
+    }
+    return nodes.length > 0 && nodes.map((node) => node.permissions).every((permission) => Boolean(permission & Permission.READ));
+  },
+  async exec({ nodes }) {
+    const node = nodes[0];
+    try {
+      const destination = generateRemoteUrl(encodePath(`dav/trashbin/${getCurrentUser().uid}/restore/${node.basename}`));
+      await cancelableClient.request({
+        method: "MOVE",
+        url: node.encodedSource,
+        headers: {
+          destination
+        }
+      });
+      emit("files:node:deleted", node);
+      return true;
+    } catch (error) {
+      if (isAxiosError(error) && error.response?.status === 507) {
+        showError(translate("files_trashbin", "Not enough free space to restore the file/folder"));
+      }
+      logger.error("Failed to restore node", { error, node });
+      return false;
+    }
+  },
+  async execBatch({ nodes, view, folder, contents }) {
+    return Promise.all(nodes.map((node) => this.exec({ nodes: [node], view, folder, contents })));
+  },
+  order: 1,
+  inline: () => true
+};
+async function emptyTrash() {
+  try {
+    await cancelableClient.delete(`${defaultRemoteURL}/trashbin/${getCurrentUser().uid}/trash`);
+    showSuccess(translate("files_trashbin", "All files have been permanently deleted"));
+    return true;
+  } catch (error) {
+    showError(translate("files_trashbin", "Failed to empty deleted files"));
+    logger.error("Failed to empty deleted files", { error });
+    return false;
+  }
+}
+const emptyTrashAction = {
+  id: "empty-trash",
+  displayName: () => translate("files_trashbin", "Empty deleted files"),
+  order: 0,
+  enabled({ view, folder, contents }) {
+    if (view.id !== TRASHBIN_VIEW_ID) {
+      return false;
+    }
+    const config = loadState("files_trashbin", "config");
+    if (!config.allow_delete) {
+      return false;
+    }
+    return contents.length > 0 && folder.path === "/";
+  },
+  async exec({ contents }) {
+    const askConfirmation = new Promise((resolve) => {
+      const dialog = getDialogBuilder(translate("files_trashbin", "Confirm permanent deletion")).setSeverity("warning").setText(translate("files_trashbin", "Are you sure you want to permanently delete all files and folders in the trash? This cannot be undone.")).setButtons([
+        {
+          label: translate("files_trashbin", "Cancel"),
+          variant: "secondary",
+          callback: () => resolve(false)
+        },
+        {
+          label: translate("files_trashbin", "Empty deleted files"),
+          variant: "error",
+          callback: () => resolve(true)
+        }
+      ]).build();
+      dialog.show().then(() => {
+        resolve(false);
+      });
+    });
+    const result = await askConfirmation;
+    if (result === true) {
+      if (await emptyTrash()) {
+        contents.forEach((node) => emit("files:node:deleted", node));
+      }
+      return null;
+    }
+    return null;
+  }
+};
+const Navigation = getNavigation();
+Navigation.register(trashbinView);
+registerFileListAction(emptyTrashAction);
+registerFileAction(restoreAction);
 //# sourceMappingURL=files_trashbin-init.mjs.map

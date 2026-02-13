@@ -1,2 +1,281 @@
-import{b,x,j as F,o as l,e as v,w as d,c as u,l as k,u as e,g as f,t as g,H as N,r as p,s as j,v as I,h as z}from"./runtime-dom.esm-bundler-DSTOTAEf.chunk.mjs";import{c as w,i as U}from"./index-DKddA51s.chunk.mjs";import{a as S,c as B,b as K}from"./index-JpgrUA2Z-CjbNveLz.chunk.mjs";import{l as R}from"./index-DCpg1aui.chunk.mjs";import{t}from"./translation-DoG5ZELJ-2ffMJaM4.chunk.mjs";import{g as E}from"./createElementId-DhjFt1I9-DnDDFk77.chunk.mjs";import{N as V}from"./NcNoteCard-CVhtNL04-xecBaCCz.chunk.mjs";import{N as C}from"./ContentCopy-BuXj5niD.chunk.mjs";import"./PencilOutline-BbbiWpuA.chunk.mjs";import{c as T}from"./logger-D3RVzcfQ-u5jICcTJ.chunk.mjs";import"./index-Dfoiix6T.chunk.mjs";import"./NcBreadcrumbs-DYfGaSjT-B0sOzfON.chunk.mjs";import"./NcDateTime.vue_vue_type_script_setup_true_lang-BhB8yA4U-BZtT1htT.chunk.mjs";import{w as q}from"./index-RbJ3SLsu.chunk.mjs";import"./NcAvatar-DmUGApWA-JlRtP4v4.chunk.mjs";import"./NcRichText-CBMtJzE_-Dhx6yDK3.chunk.mjs";import"./mdi-Dg3BMFGG.chunk.mjs";import"./index-6_gsQFyp.chunk.mjs";import{N as H}from"./NcCheckboxRadioSwitch-BCSKF7Tk-C_RQDZ7j.chunk.mjs";import"./NcChip-D8tGFzRl-Hh2_NyPj.chunk.mjs";import"./NcColorPicker-Kc0JqRtp-BUWSVNT6.chunk.mjs";import"./TrayArrowDown-BXE7diwi.chunk.mjs";import"./NcSelect-Czzsi3P_-DQ1pX7Ad.chunk.mjs";import"./NcEmojiPicker-pM4Pg2yq-CCmupwRs.chunk.mjs";import"./Plus-D4QQbLoD.chunk.mjs";import{N as M,I as _,l as O}from"./types-CWgCjZQh.chunk.mjs";/* empty css                                       */import"./NcInputField-Bwsh2aHY-CQ8dmik7.chunk.mjs";import{N as h}from"./NcPasswordField-djttkA5Q-PkdHfBrA.chunk.mjs";import"./TrashCanOutline-MY5RRFZ7.chunk.mjs";import"./index-RGOW28oI.chunk.mjs";import"./NcUserBubble-DPAmU2_J-CCD2l4DH.chunk.mjs";import"./NcUserStatusIcon-CGEf7fej-DpJR4ABu.chunk.mjs";import"./colors-Go3zmZRD-CiwiiY9I.chunk.mjs";import"./string_decoder-BO00msnV.chunk.mjs";const Y=b({__name:"SettingsPersonalChangePrivateKey",props:{recoveryEnabledForUser:{type:Boolean}},emits:["updated"],setup(c,{emit:a}){const s=a,i=x("form"),r=p(!1),o=p(!1),n=p(""),y=p("");async function P(){if(!r.value){r.value=!0,o.value=!1;try{await w.post(E("/apps/encryption/ajax/updatePrivateKeyPassword"),{oldPassword:n.value,newPassword:y.value}),n.value=y.value="",i.value?.reset(),s("updated")}catch(m){U(m)&&m.response&&m.response.data?.data?.message&&S(m.response.data.data.message),o.value=!0}finally{r.value=!1}}}return(m,J)=>(l(),F("form",{ref:"form",onSubmit:N(P,["prevent"])},[v(e(M),{label:e(t)("encryption","Update private key password"),description:e(t)("encryption","Your private key password no longer matches your log-in password. Set your old private key password to your current log-in password.")},{default:d(()=>[c.recoveryEnabledForUser?(l(),u(e(V),{key:0},{default:d(()=>[f(g(e(t)("encryption","If you do not remember your old password you can ask your administrator to recover your files.")),1)]),_:1})):k("",!0),v(e(h),{label:e(t)("encryption","Old log-in password")},null,8,["label"]),v(e(h),{label:e(t)("encryption","Current log-in password")},null,8,["label"]),v(e(T),{type:"submit",variant:"primary"},{default:d(()=>[f(g(e(t)("encryption","Update")),1)]),_:1})]),_:1},8,["label","description"])],544))}}),A=b({__name:"SettingsPersonalEnableRecovery",props:{modelValue:{type:Boolean,required:!0},modelModifiers:{}},emits:["update:modelValue"],setup(c){const a=j(c,"modelValue"),s=p(!1);return I(a,()=>{s.value=!0}),q([a],async([i],[r])=>{if(i===r){s.value=!1;return}const o=B(t("encryption","Updating recovery keys. This can take some time…"));try{await w.post(E("/apps/encryption/ajax/userSetRecovery"),{userEnableRecovery:a.value})}catch(n){a.value=r,U(n)&&n.response&&n.response.data?.data?.message&&S(n.response.data.data.message)}finally{o.hideToast(),s.value=!1}},{debounce:800}),(i,r)=>(l(),u(e(H),{modelValue:a.value,"onUpdate:modelValue":r[0]||(r[0]=o=>a.value=o),type:"switch",loading:s.value,description:e(t)("encryption","Enabling this option will allow you to reobtain access to your encrypted files in case of password loss")},{default:d(()=>[f(g(e(t)("encryption","Enable password recovery")),1)]),_:1},8,["modelValue","loading","description"]))}}),D=b({__name:"SettingsPersonal",setup(c){const a=R("encryption","personalSettings"),s=p(a.initialized),i=p(a.recoveryEnabledForUser);async function r(){try{const{data:o}=await w.get(E("/apps/encryption/ajax/getStatus"));s.value=o.initStatus,o.data.message&&K(o.data.message)}catch(o){O.error("Failed to fetch current encryption status",{error:o})}}return(o,n)=>(l(),u(e(C),{name:e(t)("encryption","Basic encryption module")},{default:d(()=>[s.value===e(_).NotInitialized?(l(),u(e(V),{key:0,type:"warning"},{default:d(()=>[f(g(e(t)("encryption","Encryption app is enabled but your keys are not initialized, please log-out and log-in again")),1)]),_:1})):s.value===e(_).InitExecuted?(l(),u(Y,{key:1,recoveryEnabledForUser:i.value,onUpdated:r},null,8,["recoveryEnabledForUser"])):e(a).recoveryEnabled&&e(a).privateKeySet?(l(),u(A,{key:2,modelValue:i.value,"onUpdate:modelValue":n[0]||(n[0]=y=>i.value=y)},null,8,["modelValue"])):k("",!0)]),_:1},8,["name"]))}}),G=z(D);G.mount("#encryption-settings-section");
+const appName = "nextcloud-ui";
+const appVersion = "1.0.0";
+import { b as defineComponent, x as useTemplateRef, p as ref, c as createElementBlock, o as openBlock, j as createVNode, w as withCtx, i as createBlock, f as createCommentVNode, g as createTextVNode, t as toDisplayString, I as withModifiers, s as useModel, v as watch, m as createApp } from "./vue.runtime.esm-bundler-UjrxUCWV.chunk.mjs";
+import { c as cancelableClient, i as isAxiosError } from "./index-iNeUnB75.chunk.mjs";
+import { a as showError, e as showLoading, b as showInfo } from "./index-JpgrUA2Z-CDVhFt4l.chunk.mjs";
+import { a as _export_sfc, l as loadState } from "./index-CEzAKfoK.chunk.mjs";
+import { t as translate } from "./translation-DoG5ZELJ-BX7lsMna.chunk.mjs";
+import { g as generateUrl } from "./createElementId-DhjFt1I9-D95yphbb.chunk.mjs";
+import { N as NcNoteCard } from "./NcNoteCard-CVhtNL04-xGysk9Jq.chunk.mjs";
+import { N as NcSettingsSection } from "./ContentCopy-B6NO0ksw.chunk.mjs";
+import "./NcActionButton-pKOSrlGE-By2YA-_F.chunk.mjs";
+import { c as NcButton } from "./logger-D3RVzcfQ-D08Lqsc3.chunk.mjs";
+import "./index-SdYoB8n_.chunk.mjs";
+import "./NcBreadcrumbs-DYfGaSjT-BVqo2_j4.chunk.mjs";
+import "./NcDateTime.vue_vue_type_script_setup_true_lang-BhB8yA4U-3Cg9SqZ9.chunk.mjs";
+import { w as watchDebounced } from "./index-DZkDsHXr.chunk.mjs";
+import "./NcAvatar-DmUGApWA-C2lPLiNg.chunk.mjs";
+import "./NcRichText-CBMtJzE_-s0VCYNde.chunk.mjs";
+import "./PencilOutline-CRype3Oz.chunk.mjs";
+import "./mdi-CCQ2KgUK.chunk.mjs";
+import { N as NcCheckboxRadioSwitch } from "./NcCheckboxRadioSwitch-BCSKF7Tk-CVZU7Pjt.chunk.mjs";
+import "./NcChip-D8tGFzRl-CkdhiclE.chunk.mjs";
+import "./NcColorPicker-Kc0JqRtp-BW-FXqa7.chunk.mjs";
+import "./TrayArrowDown-SN39FuG_.chunk.mjs";
+import "./NcSelect-Czzsi3P_-DrnUjQ4_.chunk.mjs";
+import "./NcEmojiPicker-pM4Pg2yq-D_xkM2xT.chunk.mjs";
+import "./Plus-DX3lsEjd.chunk.mjs";
+import { N as NcFormGroup, l as logger, I as InitStatus } from "./types-DOfPB-hv.chunk.mjs";
+/* empty css                                        */
+import "./NcInputField-Bwsh2aHY-DY6YZAwi.chunk.mjs";
+import { N as NcPasswordField } from "./NcPasswordField-djttkA5Q-B3cAwMPj.chunk.mjs";
+import "./TrashCanOutline-BquAR0NR.chunk.mjs";
+import "./index-DsQhqJ3N.chunk.mjs";
+import "./NcUserBubble-DPAmU2_J-CqdP4dk7.chunk.mjs";
+import "./NcUserStatusIcon-CGEf7fej-CB09VdBp.chunk.mjs";
+import "./colors-Go3zmZRD-CRyYiZ-p.chunk.mjs";
+import "./string_decoder-CSsspFHV.chunk.mjs";
+const _sfc_main$2 = /* @__PURE__ */ defineComponent({
+  __name: "SettingsPersonalChangePrivateKey",
+  props: {
+    recoveryEnabledForUser: { type: Boolean, required: true }
+  },
+  emits: ["updated"],
+  setup(__props, { expose: __expose, emit: __emit }) {
+    __expose();
+    const emit = __emit;
+    const formElement = useTemplateRef("form");
+    const isLoading = ref(false);
+    const hasError = ref(false);
+    const oldPrivateKeyPassword = ref("");
+    const newPrivateKeyPassword = ref("");
+    async function onSubmit() {
+      if (isLoading.value) {
+        return;
+      }
+      isLoading.value = true;
+      hasError.value = false;
+      try {
+        await cancelableClient.post(
+          generateUrl("/apps/encryption/ajax/updatePrivateKeyPassword"),
+          {
+            oldPassword: oldPrivateKeyPassword.value,
+            newPassword: newPrivateKeyPassword.value
+          }
+        );
+        oldPrivateKeyPassword.value = newPrivateKeyPassword.value = "";
+        formElement.value?.reset();
+        emit("updated");
+      } catch (error) {
+        if (isAxiosError(error) && error.response && error.response.data?.data?.message) {
+          showError(error.response.data.data.message);
+        }
+        hasError.value = true;
+      } finally {
+        isLoading.value = false;
+      }
+    }
+    const __returned__ = { emit, formElement, isLoading, hasError, oldPrivateKeyPassword, newPrivateKeyPassword, onSubmit, get t() {
+      return translate;
+    }, get NcButton() {
+      return NcButton;
+    }, get NcFormGroup() {
+      return NcFormGroup;
+    }, get NcNoteCard() {
+      return NcNoteCard;
+    }, get NcPasswordField() {
+      return NcPasswordField;
+    } };
+    Object.defineProperty(__returned__, "__isScriptSetup", { enumerable: false, value: true });
+    return __returned__;
+  }
+});
+function _sfc_render$2(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createElementBlock(
+    "form",
+    {
+      ref: "form",
+      onSubmit: withModifiers($setup.onSubmit, ["prevent"])
+    },
+    [
+      createVNode($setup["NcFormGroup"], {
+        label: $setup.t("encryption", "Update private key password"),
+        description: $setup.t("encryption", "Your private key password no longer matches your log-in password. Set your old private key password to your current log-in password.")
+      }, {
+        default: withCtx(() => [
+          $props.recoveryEnabledForUser ? (openBlock(), createBlock($setup["NcNoteCard"], { key: 0 }, {
+            default: withCtx(() => [
+              createTextVNode(
+                toDisplayString($setup.t("encryption", "If you do not remember your old password you can ask your administrator to recover your files.")),
+                1
+                /* TEXT */
+              )
+            ]),
+            _: 1
+            /* STABLE */
+          })) : createCommentVNode("v-if", true),
+          createVNode($setup["NcPasswordField"], {
+            label: $setup.t("encryption", "Old log-in password")
+          }, null, 8, ["label"]),
+          createVNode($setup["NcPasswordField"], {
+            label: $setup.t("encryption", "Current log-in password")
+          }, null, 8, ["label"]),
+          createVNode($setup["NcButton"], {
+            type: "submit",
+            variant: "primary"
+          }, {
+            default: withCtx(() => [
+              createTextVNode(
+                toDisplayString($setup.t("encryption", "Update")),
+                1
+                /* TEXT */
+              )
+            ]),
+            _: 1
+            /* STABLE */
+          })
+        ]),
+        _: 1
+        /* STABLE */
+      }, 8, ["label", "description"])
+    ],
+    544
+    /* NEED_HYDRATION, NEED_PATCH */
+  );
+}
+const SettingsPersonalChangePrivateKey = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["render", _sfc_render$2], ["__file", "/home/abolfazl/code/nextcloud/build/frontend/apps/encryption/src/components/SettingsPersonalChangePrivateKey.vue"]]);
+const _sfc_main$1 = /* @__PURE__ */ defineComponent({
+  __name: "SettingsPersonalEnableRecovery",
+  props: {
+    "modelValue": { type: Boolean, ...{ required: true } },
+    "modelModifiers": {}
+  },
+  emits: ["update:modelValue"],
+  setup(__props, { expose: __expose }) {
+    __expose();
+    const userEnableRecovery = useModel(__props, "modelValue");
+    const isLoading = ref(false);
+    watch(userEnableRecovery, () => {
+      isLoading.value = true;
+    });
+    watchDebounced([userEnableRecovery], async ([newValue], [oldValue]) => {
+      if (newValue === oldValue) {
+        isLoading.value = false;
+        return;
+      }
+      const toast = showLoading(translate("encryption", "Updating recovery keys. This can take some time…"));
+      try {
+        await cancelableClient.post(
+          generateUrl("/apps/encryption/ajax/userSetRecovery"),
+          { userEnableRecovery: userEnableRecovery.value }
+        );
+      } catch (error) {
+        userEnableRecovery.value = oldValue;
+        if (isAxiosError(error) && error.response && error.response.data?.data?.message) {
+          showError(error.response.data.data.message);
+        }
+      } finally {
+        toast.hideToast();
+        isLoading.value = false;
+      }
+    }, { debounce: 800 });
+    const __returned__ = { userEnableRecovery, isLoading, get t() {
+      return translate;
+    }, get NcCheckboxRadioSwitch() {
+      return NcCheckboxRadioSwitch;
+    } };
+    Object.defineProperty(__returned__, "__isScriptSetup", { enumerable: false, value: true });
+    return __returned__;
+  }
+});
+function _sfc_render$1(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createBlock($setup["NcCheckboxRadioSwitch"], {
+    modelValue: $setup.userEnableRecovery,
+    "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => $setup.userEnableRecovery = $event),
+    type: "switch",
+    loading: $setup.isLoading,
+    description: $setup.t("encryption", "Enabling this option will allow you to reobtain access to your encrypted files in case of password loss")
+  }, {
+    default: withCtx(() => [
+      createTextVNode(
+        toDisplayString($setup.t("encryption", "Enable password recovery")),
+        1
+        /* TEXT */
+      )
+    ]),
+    _: 1
+    /* STABLE */
+  }, 8, ["modelValue", "loading", "description"]);
+}
+const SettingsPersonalEnableRecovery = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["render", _sfc_render$1], ["__file", "/home/abolfazl/code/nextcloud/build/frontend/apps/encryption/src/components/SettingsPersonalEnableRecovery.vue"]]);
+const _sfc_main = /* @__PURE__ */ defineComponent({
+  __name: "SettingsPersonal",
+  setup(__props, { expose: __expose }) {
+    __expose();
+    const personalSettings = loadState("encryption", "personalSettings");
+    const initialized = ref(personalSettings.initialized);
+    const recoveryEnabledForUser = ref(personalSettings.recoveryEnabledForUser);
+    async function reloadStatus() {
+      try {
+        const { data } = await cancelableClient.get(generateUrl("/apps/encryption/ajax/getStatus"));
+        initialized.value = data.initStatus;
+        if (data.data.message) {
+          showInfo(data.data.message);
+        }
+      } catch (error) {
+        logger.error("Failed to fetch current encryption status", { error });
+      }
+    }
+    const __returned__ = { personalSettings, initialized, recoveryEnabledForUser, reloadStatus, get t() {
+      return translate;
+    }, get NcNoteCard() {
+      return NcNoteCard;
+    }, get NcSettingsSection() {
+      return NcSettingsSection;
+    }, SettingsPersonalChangePrivateKey, SettingsPersonalEnableRecovery, get InitStatus() {
+      return InitStatus;
+    } };
+    Object.defineProperty(__returned__, "__isScriptSetup", { enumerable: false, value: true });
+    return __returned__;
+  }
+});
+function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createBlock($setup["NcSettingsSection"], {
+    name: $setup.t("encryption", "Basic encryption module")
+  }, {
+    default: withCtx(() => [
+      $setup.initialized === $setup.InitStatus.NotInitialized ? (openBlock(), createBlock($setup["NcNoteCard"], {
+        key: 0,
+        type: "warning"
+      }, {
+        default: withCtx(() => [
+          createTextVNode(
+            toDisplayString($setup.t("encryption", "Encryption app is enabled but your keys are not initialized, please log-out and log-in again")),
+            1
+            /* TEXT */
+          )
+        ]),
+        _: 1
+        /* STABLE */
+      })) : $setup.initialized === $setup.InitStatus.InitExecuted ? (openBlock(), createBlock($setup["SettingsPersonalChangePrivateKey"], {
+        key: 1,
+        recoveryEnabledForUser: $setup.recoveryEnabledForUser,
+        onUpdated: $setup.reloadStatus
+      }, null, 8, ["recoveryEnabledForUser"])) : $setup.personalSettings.recoveryEnabled && $setup.personalSettings.privateKeySet ? (openBlock(), createBlock($setup["SettingsPersonalEnableRecovery"], {
+        key: 2,
+        modelValue: $setup.recoveryEnabledForUser,
+        "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => $setup.recoveryEnabledForUser = $event)
+      }, null, 8, ["modelValue"])) : createCommentVNode("v-if", true)
+    ]),
+    _: 1
+    /* STABLE */
+  }, 8, ["name"]);
+}
+const SettingsPersonal = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "/home/abolfazl/code/nextcloud/build/frontend/apps/encryption/src/views/SettingsPersonal.vue"]]);
+/*!
+ * SPDX-FileCopyrightText: 2026 Nextcloud GmbH and Nextcloud contributors
+ * SPDX-License-Identifier: AGPL-3.0-or-later
+ */
+const app = createApp(SettingsPersonal);
+app.mount("#encryption-settings-section");
 //# sourceMappingURL=encryption-settings_personal.mjs.map

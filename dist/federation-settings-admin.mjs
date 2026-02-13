@@ -1,2 +1,377 @@
-import{b as g,x as D,j as U,o as l,k as h,t as C,u as t,n as u,e as _,r as w,w as T,H as L,M as k,p,c as f,l as O,T as P,F as R,C as K,h as V}from"./runtime-dom.esm-bundler-DSTOTAEf.chunk.mjs";import{a as F,l as q}from"./index-DCpg1aui.chunk.mjs";import{t as r}from"./translation-DoG5ZELJ-2ffMJaM4.chunk.mjs";import{N as z}from"./NcNoteCard-CVhtNL04-xecBaCCz.chunk.mjs";import{N as G}from"./ContentCopy-BuXj5niD.chunk.mjs";import{e as M,N as B,f as j,a as H,b as W,d as J}from"./mdi-Dg3BMFGG.chunk.mjs";import{d as Q,a as y}from"./index-JpgrUA2Z-CjbNveLz.chunk.mjs";import{N as A,c as E}from"./logger-D3RVzcfQ-u5jICcTJ.chunk.mjs";import{_ as X}from"./TrashCanOutline-MY5RRFZ7.chunk.mjs";import{c as b,i as Y}from"./index-DKddA51s.chunk.mjs";import{a as $}from"./createElementId-DhjFt1I9-DnDDFk77.chunk.mjs";import{g as Z}from"./index-6_gsQFyp.chunk.mjs";import"./index-RbJ3SLsu.chunk.mjs";import"./NcInputField-Bwsh2aHY-CQ8dmik7.chunk.mjs";import"./string_decoder-BO00msnV.chunk.mjs";const n=Object.freeze({STATUS_OK:1,STATUS_PENDING:2,STATUS_FAILURE:3,STATUS_ACCESS_REVOKED:4});class N extends Error{}async function ee(a){try{const{data:i}=await b.post($("apps/federation/trusted-servers"),{url:a}),s=i.ocs.data;return{id:s.id,url:s.url,status:n.STATUS_PENDING}}catch(i){throw I(i)}}async function te(a){try{await b.delete($(`apps/federation/trusted-servers/${a}`))}catch(i){throw I(i)}}function I(a){return Y(a)&&a.response?.data?.ocs?new N(a.response.data.ocs.meta.message,{cause:a}):a}const x=Z().setApp("federation").build(),re=g({__name:"AddTrustedServerForm",emits:["add"],setup(a,{emit:i}){const s=i,v=D("form"),d=w("");async function m(){try{const e=await ee(d.value);d.value="",s("add",e),k(()=>v.value?.reset()),Q(r("federation","Added to the list of trusted servers"))}catch(e){x.error("Failed to add trusted server",{error:e}),e instanceof N?y(e.message):y(r("federation","Could not add trusted server. Please try again later."))}}return(e,o)=>(l(),U("form",{ref:"form",onSubmit:L(m,["prevent"])},[h("h3",{class:u(e.$style.addTrustedServerForm__heading)},C(t(r)("federation","Add trusted server")),3),h("div",{class:u(e.$style.addTrustedServerForm__wrapper)},[_(t(X),{modelValue:d.value,"onUpdate:modelValue":o[0]||(o[0]=c=>d.value=c),label:t(r)("federation","Server url"),placeholder:"https://…",required:"",type:"url"},null,8,["modelValue","label"]),_(t(E),{class:u(e.$style.addTrustedServerForm__submitButton),"aria-label":t(r)("federation","Add"),title:t(r)("federation","Add"),type:"submit",variant:"primary"},{icon:T(()=>[_(t(A),{path:t(M)},null,8,["path"])]),_:1},8,["class","aria-label","title"])],2)],544))}}),se="_addTrustedServerForm__heading_14ngv_2",ae="_addTrustedServerForm__wrapper_14ngv_7",ie="_addTrustedServerForm__submitButton_14ngv_14",de={addTrustedServerForm__heading:se,addTrustedServerForm__wrapper:ae,addTrustedServerForm__submitButton:ie},ne={$style:de},oe=F(re,[["__cssModules",ne]]),le=["textContent"],ue=g({__name:"TrustedServer",props:{server:{}},emits:["delete"],setup(a,{emit:i}){const s=a,v=i,d=w(!1),m=p(()=>s.server.status===n.STATUS_FAILURE),e=p(()=>{switch(s.server.status){case n.STATUS_OK:return J;case n.STATUS_PENDING:case n.STATUS_ACCESS_REVOKED:return W;case n.STATUS_FAILURE:default:return H}}),o=p(()=>{switch(s.server.status){case n.STATUS_OK:return[r("federation","Server ok"),r("federation","User list was exchanged at least once successfully with the remote server.")];case n.STATUS_PENDING:return[r("federation","Server pending"),r("federation","Waiting for shared secret or initial user list exchange.")];case n.STATUS_ACCESS_REVOKED:return[r("federation","Server access revoked"),r("federation","Server access revoked")];case n.STATUS_FAILURE:default:return[r("federation","Server failure"),r("federation","Connection to the remote server failed or the remote server is misconfigured.")]}});async function c(){try{d.value=!0,await te(s.server.id),v("delete",s.server)}catch(S){d.value=!1,x.error("Failed to delete trusted server",{error:S}),y(r("federation","Failed to delete trusted server. Please try again later."))}}return(S,Ce)=>(l(),U("li",{class:u(S.$style.trustedServer)},[_(t(A),{class:u({[S.$style.trustedServer__icon_error]:m.value}),path:e.value,name:o.value[0],title:o.value[1]},null,8,["class","path","name","title"]),h("code",{class:u(S.$style.trustedServer__url),textContent:C(a.server.url)},null,10,le),_(t(E),{"aria-label":t(r)("federation","Delete"),title:t(r)("federation","Delete"),disabled:d.value,onClick:c},{icon:T(()=>[d.value?(l(),f(t(B),{key:0})):(l(),f(t(A),{key:1,path:t(j)},null,8,["path"]))]),_:1},8,["aria-label","title","disabled"])],2))}}),_e="_trustedServer_1wqey_2",ce="_trustedServer__icon_error_1wqey_15",ve="_trustedServer__url_1wqey_19",me={trustedServer:_e,trustedServer__icon_error:ce,trustedServer__url:ve},Se={$style:me},fe=F(ue,[["__cssModules",Se]]),pe=g({__name:"AdminSettings",setup(a){const i=q("federation","adminSettings"),s=w(i.trustedServers),v=p(()=>s.value.some(e=>e.status===n.STATUS_PENDING));async function d(e){s.value.unshift(e)}function m(e){s.value=s.value.filter(o=>o.id!==e.id)}return(e,o)=>(l(),f(t(G),{name:t(r)("federation","Trusted servers"),docUrl:t(i).docUrl,description:t(r)("federation","Federation allows you to connect with other trusted servers to exchange the account directory. For example this will be used to auto-complete external accounts for federated sharing. It is not necessary to add a server as trusted server in order to create a federated share.")},{default:T(()=>[v.value?(l(),f(t(z),{key:0,type:"info",text:t(r)("federation","Each server must validate the other. This process may require a few cron cycles.")},null,8,["text"])):O("",!0),_(P,{class:u(e.$style.federationAdminSettings__trustedServersList),"aria-label":t(r)("federation","Trusted servers"),tag:"ul",enterFromClass:e.$style.transition_hidden,enterActiveClass:e.$style.transition_active,leaveActiveClass:e.$style.transition_active,leaveToClass:e.$style.transition_hidden},{default:T(()=>[(l(!0),U(R,null,K(s.value,c=>(l(),f(fe,{key:c.id,class:u(e.$style.federationAdminSettings__trustedServersListItem),server:c,onDelete:m},null,8,["class","server"]))),128))]),_:1},8,["class","aria-label","enterFromClass","enterActiveClass","leaveActiveClass","leaveToClass"]),_(oe,{onAdd:d})]),_:1},8,["name","docUrl","description"]))}}),Te="_federationAdminSettings__trustedServersList_z3uvu_2",he="_federationAdminSettings__trustedServersListItem_z3uvu_9",ye="_transition_active_z3uvu_13",Ae="_transition_hidden_z3uvu_17",ge={federationAdminSettings__trustedServersList:Te,federationAdminSettings__trustedServersListItem:he,transition_active:ye,transition_hidden:Ae},Ue={$style:ge},we=F(pe,[["__cssModules",Ue]]),Fe=V(we);Fe.mount("#federation-admin-settings");
+const appName = "nextcloud-ui";
+const appVersion = "1.0.0";
+import { b as defineComponent, x as useTemplateRef, p as ref, O as nextTick, c as createElementBlock, o as openBlock, e as createBaseVNode, t as toDisplayString, n as normalizeClass, j as createVNode, w as withCtx, I as withModifiers, h as computed, i as createBlock, f as createCommentVNode, T as TransitionGroup, F as Fragment, C as renderList, m as createApp } from "./vue.runtime.esm-bundler-UjrxUCWV.chunk.mjs";
+import { a as _export_sfc, l as loadState } from "./index-CEzAKfoK.chunk.mjs";
+import { t as translate } from "./translation-DoG5ZELJ-BX7lsMna.chunk.mjs";
+import { N as NcNoteCard } from "./NcNoteCard-CVhtNL04-xGysk9Jq.chunk.mjs";
+import { N as NcSettingsSection } from "./ContentCopy-B6NO0ksw.chunk.mjs";
+import { g as getLoggerBuilder, j as mdiPlus, k as mdiTrashCanOutline, b as mdiCloseNetworkOutline, c as mdiHelpNetworkOutline, e as mdiCheckNetworkOutline } from "./mdi-CCQ2KgUK.chunk.mjs";
+import { c as showSuccess, a as showError } from "./index-JpgrUA2Z-CDVhFt4l.chunk.mjs";
+import { N as NcIconSvgWrapper, c as NcButton } from "./logger-D3RVzcfQ-D08Lqsc3.chunk.mjs";
+import { _ as _sfc_main$3 } from "./TrashCanOutline-BquAR0NR.chunk.mjs";
+import { c as cancelableClient, i as isAxiosError } from "./index-iNeUnB75.chunk.mjs";
+import { b as generateOcsUrl } from "./createElementId-DhjFt1I9-D95yphbb.chunk.mjs";
+import { N as NcLoadingIcon } from "./PencilOutline-CRype3Oz.chunk.mjs";
+import "./index-DZkDsHXr.chunk.mjs";
+import "./NcInputField-Bwsh2aHY-DY6YZAwi.chunk.mjs";
+import "./string_decoder-CSsspFHV.chunk.mjs";
+/*!
+ * SPDX-FileCopyrightText: 2026 Nextcloud GmbH and Nextcloud contributors
+ * SPDX-License-Identifier: AGPL-3.0-or-later
+ */
+const TrustedServerStatus = Object.freeze({
+  /** after a user list was exchanged at least once successfully */
+  STATUS_OK: 1,
+  /** waiting for shared secret or initial user list exchange */
+  STATUS_PENDING: 2,
+  /** something went wrong, misconfigured server, software bug,... user interaction needed */
+  STATUS_FAILURE: 3,
+  /** remote server revoked access */
+  STATUS_ACCESS_REVOKED: 4
+});
+class ApiError extends Error {
+}
+async function addServer(url) {
+  try {
+    const { data } = await cancelableClient.post(
+      generateOcsUrl("apps/federation/trusted-servers"),
+      { url }
+    );
+    const serverData = data.ocs.data;
+    return {
+      id: serverData.id,
+      url: serverData.url,
+      status: TrustedServerStatus.STATUS_PENDING
+    };
+  } catch (error) {
+    throw mapError(error);
+  }
+}
+async function deleteServer(id) {
+  try {
+    await cancelableClient.delete(generateOcsUrl(`apps/federation/trusted-servers/${id}`));
+  } catch (error) {
+    throw mapError(error);
+  }
+}
+function mapError(error) {
+  if (isAxiosError(error) && error.response?.data?.ocs) {
+    return new ApiError(error.response.data.ocs.meta.message, { cause: error });
+  }
+  return error;
+}
+/*!
+ * SPDX-FileCopyrightText: 2026 Nextcloud GmbH and Nextcloud contributors
+ * SPDX-License-Identifier: AGPL-3.0-or-later
+ */
+const logger = getLoggerBuilder().setApp("federation").build();
+const _sfc_main$2 = /* @__PURE__ */ defineComponent({
+  __name: "AddTrustedServerForm",
+  emits: ["add"],
+  setup(__props, { expose: __expose, emit: __emit }) {
+    __expose();
+    const emit = __emit;
+    const formElement = useTemplateRef("form");
+    const newServerUrl = ref("");
+    async function onAdd() {
+      try {
+        const server = await addServer(newServerUrl.value);
+        newServerUrl.value = "";
+        emit("add", server);
+        nextTick(() => formElement.value?.reset());
+        showSuccess(translate("federation", "Added to the list of trusted servers"));
+      } catch (error) {
+        logger.error("Failed to add trusted server", { error });
+        if (error instanceof ApiError) {
+          showError(error.message);
+        } else {
+          showError(translate("federation", "Could not add trusted server. Please try again later."));
+        }
+      }
+    }
+    const __returned__ = { emit, formElement, newServerUrl, onAdd, get mdiPlus() {
+      return mdiPlus;
+    }, get t() {
+      return translate;
+    }, get NcButton() {
+      return NcButton;
+    }, get NcIconSvgWrapper() {
+      return NcIconSvgWrapper;
+    }, get NcTextField() {
+      return _sfc_main$3;
+    } };
+    Object.defineProperty(__returned__, "__isScriptSetup", { enumerable: false, value: true });
+    return __returned__;
+  }
+});
+const addTrustedServerForm__heading = "_addTrustedServerForm__heading_14ngv_2";
+const addTrustedServerForm__wrapper = "_addTrustedServerForm__wrapper_14ngv_7";
+const addTrustedServerForm__submitButton = "_addTrustedServerForm__submitButton_14ngv_14";
+const style0$2 = {
+  addTrustedServerForm__heading,
+  addTrustedServerForm__wrapper,
+  addTrustedServerForm__submitButton
+};
+function _sfc_render$2(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createElementBlock(
+    "form",
+    {
+      ref: "form",
+      onSubmit: withModifiers($setup.onAdd, ["prevent"])
+    },
+    [
+      createBaseVNode(
+        "h3",
+        {
+          class: normalizeClass(_ctx.$style.addTrustedServerForm__heading)
+        },
+        toDisplayString($setup.t("federation", "Add trusted server")),
+        3
+        /* TEXT, CLASS */
+      ),
+      createBaseVNode(
+        "div",
+        {
+          class: normalizeClass(_ctx.$style.addTrustedServerForm__wrapper)
+        },
+        [
+          createVNode($setup["NcTextField"], {
+            modelValue: $setup.newServerUrl,
+            "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => $setup.newServerUrl = $event),
+            label: $setup.t("federation", "Server url"),
+            placeholder: "https://…",
+            required: "",
+            type: "url"
+          }, null, 8, ["modelValue", "label"]),
+          createVNode($setup["NcButton"], {
+            class: normalizeClass(_ctx.$style.addTrustedServerForm__submitButton),
+            "aria-label": $setup.t("federation", "Add"),
+            title: $setup.t("federation", "Add"),
+            type: "submit",
+            variant: "primary"
+          }, {
+            icon: withCtx(() => [
+              createVNode($setup["NcIconSvgWrapper"], { path: $setup.mdiPlus }, null, 8, ["path"])
+            ]),
+            _: 1
+            /* STABLE */
+          }, 8, ["class", "aria-label", "title"])
+        ],
+        2
+        /* CLASS */
+      )
+    ],
+    544
+    /* NEED_HYDRATION, NEED_PATCH */
+  );
+}
+const cssModules$2 = {
+  "$style": style0$2
+};
+const AddTrustedServerForm = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["render", _sfc_render$2], ["__cssModules", cssModules$2], ["__file", "/home/abolfazl/code/nextcloud/build/frontend/apps/federation/src/components/AddTrustedServerForm.vue"]]);
+const _sfc_main$1 = /* @__PURE__ */ defineComponent({
+  __name: "TrustedServer",
+  props: {
+    server: { type: Object, required: true }
+  },
+  emits: ["delete"],
+  setup(__props, { expose: __expose, emit: __emit }) {
+    __expose();
+    const props = __props;
+    const emit = __emit;
+    const isLoading = ref(false);
+    const hasError = computed(() => props.server.status === TrustedServerStatus.STATUS_FAILURE);
+    const serverIcon = computed(() => {
+      switch (props.server.status) {
+        case TrustedServerStatus.STATUS_OK:
+          return mdiCheckNetworkOutline;
+        case TrustedServerStatus.STATUS_PENDING:
+        case TrustedServerStatus.STATUS_ACCESS_REVOKED:
+          return mdiHelpNetworkOutline;
+        case TrustedServerStatus.STATUS_FAILURE:
+        default:
+          return mdiCloseNetworkOutline;
+      }
+    });
+    const serverStatus = computed(() => {
+      switch (props.server.status) {
+        case TrustedServerStatus.STATUS_OK:
+          return [translate("federation", "Server ok"), translate("federation", "User list was exchanged at least once successfully with the remote server.")];
+        case TrustedServerStatus.STATUS_PENDING:
+          return [translate("federation", "Server pending"), translate("federation", "Waiting for shared secret or initial user list exchange.")];
+        case TrustedServerStatus.STATUS_ACCESS_REVOKED:
+          return [translate("federation", "Server access revoked"), translate("federation", "Server access revoked")];
+        case TrustedServerStatus.STATUS_FAILURE:
+        default:
+          return [translate("federation", "Server failure"), translate("federation", "Connection to the remote server failed or the remote server is misconfigured.")];
+      }
+    });
+    async function onDelete() {
+      try {
+        isLoading.value = true;
+        await deleteServer(props.server.id);
+        emit("delete", props.server);
+      } catch (error) {
+        isLoading.value = false;
+        logger.error("Failed to delete trusted server", { error });
+        showError(translate("federation", "Failed to delete trusted server. Please try again later."));
+      }
+    }
+    const __returned__ = { props, emit, isLoading, hasError, serverIcon, serverStatus, onDelete, get mdiTrashCanOutline() {
+      return mdiTrashCanOutline;
+    }, get t() {
+      return translate;
+    }, get NcButton() {
+      return NcButton;
+    }, get NcIconSvgWrapper() {
+      return NcIconSvgWrapper;
+    }, get NcLoadingIcon() {
+      return NcLoadingIcon;
+    } };
+    Object.defineProperty(__returned__, "__isScriptSetup", { enumerable: false, value: true });
+    return __returned__;
+  }
+});
+const trustedServer = "_trustedServer_1wqey_2";
+const trustedServer__icon_error = "_trustedServer__icon_error_1wqey_15";
+const trustedServer__url = "_trustedServer__url_1wqey_19";
+const style0$1 = {
+  trustedServer,
+  trustedServer__icon_error,
+  trustedServer__url
+};
+const _hoisted_1 = ["textContent"];
+function _sfc_render$1(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createElementBlock(
+    "li",
+    {
+      class: normalizeClass(_ctx.$style.trustedServer)
+    },
+    [
+      createVNode($setup["NcIconSvgWrapper"], {
+        class: normalizeClass({
+          [_ctx.$style.trustedServer__icon_error]: $setup.hasError
+        }),
+        path: $setup.serverIcon,
+        name: $setup.serverStatus[0],
+        title: $setup.serverStatus[1]
+      }, null, 8, ["class", "path", "name", "title"]),
+      createBaseVNode("code", {
+        class: normalizeClass(_ctx.$style.trustedServer__url),
+        textContent: toDisplayString($props.server.url)
+      }, null, 10, _hoisted_1),
+      createVNode($setup["NcButton"], {
+        "aria-label": $setup.t("federation", "Delete"),
+        title: $setup.t("federation", "Delete"),
+        disabled: $setup.isLoading,
+        onClick: $setup.onDelete
+      }, {
+        icon: withCtx(() => [
+          $setup.isLoading ? (openBlock(), createBlock($setup["NcLoadingIcon"], { key: 0 })) : (openBlock(), createBlock($setup["NcIconSvgWrapper"], {
+            key: 1,
+            path: $setup.mdiTrashCanOutline
+          }, null, 8, ["path"]))
+        ]),
+        _: 1
+        /* STABLE */
+      }, 8, ["aria-label", "title", "disabled"])
+    ],
+    2
+    /* CLASS */
+  );
+}
+const cssModules$1 = {
+  "$style": style0$1
+};
+const TrustedServer = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["render", _sfc_render$1], ["__cssModules", cssModules$1], ["__file", "/home/abolfazl/code/nextcloud/build/frontend/apps/federation/src/components/TrustedServer.vue"]]);
+const _sfc_main = /* @__PURE__ */ defineComponent({
+  __name: "AdminSettings",
+  setup(__props, { expose: __expose }) {
+    __expose();
+    const adminSettings = loadState("federation", "adminSettings");
+    const trustedServers = ref(adminSettings.trustedServers);
+    const showPendingServerInfo = computed(() => trustedServers.value.some((server) => server.status === TrustedServerStatus.STATUS_PENDING));
+    async function onAdd(server) {
+      trustedServers.value.unshift(server);
+    }
+    function onDelete(server) {
+      trustedServers.value = trustedServers.value.filter((s) => s.id !== server.id);
+    }
+    const __returned__ = { adminSettings, trustedServers, showPendingServerInfo, onAdd, onDelete, get t() {
+      return translate;
+    }, get NcNoteCard() {
+      return NcNoteCard;
+    }, get NcSettingsSection() {
+      return NcSettingsSection;
+    }, AddTrustedServerForm, TrustedServer };
+    Object.defineProperty(__returned__, "__isScriptSetup", { enumerable: false, value: true });
+    return __returned__;
+  }
+});
+const federationAdminSettings__trustedServersList = "_federationAdminSettings__trustedServersList_z3uvu_2";
+const federationAdminSettings__trustedServersListItem = "_federationAdminSettings__trustedServersListItem_z3uvu_9";
+const transition_active = "_transition_active_z3uvu_13";
+const transition_hidden = "_transition_hidden_z3uvu_17";
+const style0 = {
+  federationAdminSettings__trustedServersList,
+  federationAdminSettings__trustedServersListItem,
+  transition_active,
+  transition_hidden
+};
+function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createBlock($setup["NcSettingsSection"], {
+    name: $setup.t("federation", "Trusted servers"),
+    docUrl: $setup.adminSettings.docUrl,
+    description: $setup.t("federation", "Federation allows you to connect with other trusted servers to exchange the account directory. For example this will be used to auto-complete external accounts for federated sharing. It is not necessary to add a server as trusted server in order to create a federated share.")
+  }, {
+    default: withCtx(() => [
+      $setup.showPendingServerInfo ? (openBlock(), createBlock($setup["NcNoteCard"], {
+        key: 0,
+        type: "info",
+        text: $setup.t("federation", "Each server must validate the other. This process may require a few cron cycles.")
+      }, null, 8, ["text"])) : createCommentVNode("v-if", true),
+      createVNode(TransitionGroup, {
+        class: normalizeClass(_ctx.$style.federationAdminSettings__trustedServersList),
+        "aria-label": $setup.t("federation", "Trusted servers"),
+        tag: "ul",
+        enterFromClass: _ctx.$style.transition_hidden,
+        enterActiveClass: _ctx.$style.transition_active,
+        leaveActiveClass: _ctx.$style.transition_active,
+        leaveToClass: _ctx.$style.transition_hidden
+      }, {
+        default: withCtx(() => [
+          (openBlock(true), createElementBlock(
+            Fragment,
+            null,
+            renderList($setup.trustedServers, (server) => {
+              return openBlock(), createBlock($setup["TrustedServer"], {
+                key: server.id,
+                class: normalizeClass(_ctx.$style.federationAdminSettings__trustedServersListItem),
+                server,
+                onDelete: $setup.onDelete
+              }, null, 8, ["class", "server"]);
+            }),
+            128
+            /* KEYED_FRAGMENT */
+          ))
+        ]),
+        _: 1
+        /* STABLE */
+      }, 8, ["class", "aria-label", "enterFromClass", "enterActiveClass", "leaveActiveClass", "leaveToClass"]),
+      createVNode($setup["AddTrustedServerForm"], { onAdd: $setup.onAdd })
+    ]),
+    _: 1
+    /* STABLE */
+  }, 8, ["name", "docUrl", "description"]);
+}
+const cssModules = {
+  "$style": style0
+};
+const AdminSettings = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render], ["__cssModules", cssModules], ["__file", "/home/abolfazl/code/nextcloud/build/frontend/apps/federation/src/views/AdminSettings.vue"]]);
+/*!
+ * SPDX-FileCopyrightText: 2026 Nextcloud GmbH and Nextcloud contributors
+ * SPDX-License-Identifier: AGPL-3.0-or-later
+ */
+const app = createApp(AdminSettings);
+app.mount("#federation-admin-settings");
 //# sourceMappingURL=federation-settings-admin.mjs.map

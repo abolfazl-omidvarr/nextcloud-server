@@ -1,2 +1,526 @@
-import{j as r,o as s,k as t,l as o,t as l,z as C,b as N,c as p,L as U,n as $,r as M,O as B,A as E,_ as H,w as d,e as h,u as i,g as f,H as L,F as A,C as z,p as T,h as Z}from"./runtime-dom.esm-bundler-DSTOTAEf.chunk.mjs";import{a as j,s as F,u as q,g as D}from"./index-6_gsQFyp.chunk.mjs";import{a as Y}from"./index-JpgrUA2Z-CjbNveLz.chunk.mjs";import{a as k,l as P}from"./index-DCpg1aui.chunk.mjs";import{t as y}from"./translation-DoG5ZELJ-2ffMJaM4.chunk.mjs";import{g as G}from"./createElementId-DhjFt1I9-DnDDFk77.chunk.mjs";import{N as J}from"./NcDateTime.vue_vue_type_script_setup_true_lang-BhB8yA4U-BZtT1htT.chunk.mjs";import{a as K}from"./index-RbJ3SLsu.chunk.mjs";import{N as Q,a as R,b as W}from"./NcRichText-CBMtJzE_-Dhx6yDK3.chunk.mjs";import{N as X}from"./NcAvatar-DmUGApWA-JlRtP4v4.chunk.mjs";import{c as w}from"./logger-D3RVzcfQ-u5jICcTJ.chunk.mjs";import{N as ee}from"./Plus-D4QQbLoD.chunk.mjs";import{P as ie}from"./PencilOutline-BbbiWpuA.chunk.mjs";import"./modulepreload-polyfill-BxzAKjcf.chunk.mjs";import"./NcNoteCard-CVhtNL04-xecBaCCz.chunk.mjs";import"./mdi-Dg3BMFGG.chunk.mjs";import"./NcCheckboxRadioSwitch-BCSKF7Tk-C_RQDZ7j.chunk.mjs";import"./index-DKddA51s.chunk.mjs";import"./string_decoder-BO00msnV.chunk.mjs";import"./NcSelect-Czzsi3P_-DQ1pX7Ad.chunk.mjs";import"./TrashCanOutline-MY5RRFZ7.chunk.mjs";import"./NcInputField-Bwsh2aHY-CQ8dmik7.chunk.mjs";import"./colors-Go3zmZRD-CiwiiY9I.chunk.mjs";import"./NcUserStatusIcon-CGEf7fej-DpJR4ABu.chunk.mjs";const se={name:"AccountOutlineIcon",emits:["click"],props:{title:{type:String},fillColor:{type:String,default:"currentColor"},size:{type:Number,default:24}}},ae=["aria-hidden","aria-label"],re=["fill","width","height"],te={d:"M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,6A2,2 0 0,0 10,8A2,2 0 0,0 12,10A2,2 0 0,0 14,8A2,2 0 0,0 12,6M12,13C14.67,13 20,14.33 20,17V20H4V17C4,14.33 9.33,13 12,13M12,14.9C9.03,14.9 5.9,16.36 5.9,17V18.1H18.1V17C18.1,16.36 14.97,14.9 12,14.9Z"},oe={key:0};function le(n,e,a,g,b,u){return s(),r("span",C(n.$attrs,{"aria-hidden":a.title?null:"true","aria-label":a.title,class:"material-design-icon account-outline-icon",role:"img",onClick:e[0]||(e[0]=c=>n.$emit("click",c))}),[(s(),r("svg",{fill:a.fillColor,class:"material-design-icon__svg",width:a.size,height:a.size,viewBox:"0 0 24 24"},[t("path",te,[a.title?(s(),r("title",oe,l(a.title),1)):o("",!0)])],8,re))],16,ae)}const ne=k(se,[["render",le]]),de={name:"MapMarkerIcon",emits:["click"],props:{title:{type:String},fillColor:{type:String,default:"currentColor"},size:{type:Number,default:24}}},ce=["aria-hidden","aria-label"],ue=["fill","width","height"],pe={d:"M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12,2Z"},me={key:0};function _e(n,e,a,g,b,u){return s(),r("span",C(n.$attrs,{"aria-hidden":a.title?null:"true","aria-label":a.title,class:"material-design-icon map-marker-icon",role:"img",onClick:e[0]||(e[0]=c=>n.$emit("click",c))}),[(s(),r("svg",{fill:a.fillColor,class:"material-design-icon__svg",width:a.size,height:a.size,viewBox:"0 0 24 24"},[t("path",pe,[a.title?(s(),r("title",me,l(a.title),1)):o("",!0)])],8,ue))],16,ce)}const fe=k(de,[["render",_e]]),he=N({__name:"ProfileSection",props:{section:{},userId:{}},setup(n){return(e,a)=>(s(),r("div",{class:$(e.$style.profileSection)},[(s(),p(U(n.section.tagName),C(n.section.params,{".user":n.userId}),null,48,[".user"]))],2))}}),ge="_profileSection_1o17g_2",ye={profileSection:ge},ve={$style:ye},ke=k(he,[["__cssModules",ve]]),be={class:"profile__header"},Ae={class:"profile__header__container"},we={class:"profile__header__container__displayname"},Ce={key:0},Ie={key:1,class:"profile__header__container__pronouns"},Se={class:"profile__wrapper"},Me={class:"profile__content"},ze={class:"profile__sidebar"},Pe={class:"user-actions"},Ne=["src"],$e=["src"],xe={class:"profile__blocks"},Ve={key:0,class:"profile__blocks-details"},Oe={key:0,class:"detail"},Ue={key:0},Be={key:1,class:"detail"},Ee={key:0,class:"profile__blocks-headline"},He=N({__name:"ProfileApp",setup(n){const e=P("profile","profileParameters",{userId:void 0,displayname:void 0,address:void 0,organisation:void 0,role:void 0,headline:void 0,biography:void 0,actions:[],isUserAvatarVisible:!1,pronouns:void 0}),a=M(P("profile","status",{})),g=M([]),b=T(()=>[...g.value].sort((m,v)=>v.order-m.order));B(()=>{g.value=window.OCA.Profile.ProfileSections.getSections()});const u=j()?.uid===e.userId,c=e.actions[0],x=e.actions.slice(1),V=G("/settings/user"),O=u?y("profile","You have not added any info yet"):y("profile","{user} has not added any info yet",{user:e.displayname||e.userId||""});E(()=>{document.title=`${e.displayname||e.userId} - ${document.title}`,F("user_status:status.updated",I)}),H(()=>{q("user_status:status.updated",I)});function I(m){u&&m.userId===e.userId&&(a.value=m)}function S(){if(!u)return;const m=document.querySelector(".user-status-menu-item");m?m.click():Y(y("profile","Error opening the user status modal, try hard refreshing the page"))}return(m,v)=>(s(),p(i(W),{appName:"profile"},{default:d(()=>[h(i(Q),null,{default:d(()=>[t("div",be,[t("div",Ae,[v[0]||(v[0]=t("div",{class:"profile__header__container__placeholder"},null,-1)),t("div",we,[t("h2",null,l(i(e).displayname||i(e).userId),1),i(e).pronouns?(s(),r("span",Ce,"·")):o("",!0),i(e).pronouns?(s(),r("span",Ie,l(i(e).pronouns),1)):o("",!0),u?(s(),p(i(w),{key:2,variant:"primary",href:i(V)},{icon:d(()=>[h(ie,{size:20})]),default:d(()=>[f(" "+l(i(y)("profile","Edit Profile")),1)]),_:1},8,["href"])):o("",!0)]),a.value.icon||a.value.message?(s(),p(i(w),{key:0,disabled:!u,variant:u?"tertiary":"tertiary-no-background",onClick:S},{default:d(()=>[f(l(a.value.icon)+" "+l(a.value.message),1)]),_:1},8,["disabled","variant"])):o("",!0)])]),t("div",Se,[t("div",Me,[t("div",ze,[h(i(X),{class:$(["avatar",{interactive:u}]),user:i(e).userId,size:180,disableMenu:!0,disableTooltip:!0,isNoUser:!i(e).isUserAvatarVisible,onClick:L(S,["prevent","stop"])},null,8,["class","user","isNoUser"]),t("div",Pe,[i(c)?(s(),p(i(w),{key:0,variant:"primary",class:"user-actions__primary",href:i(c).target,icon:i(c).icon,target:i(c).id==="phone"?"_self":"_blank"},{icon:d(()=>[t("img",{src:i(c).icon,alt:"",class:"user-actions__primary__icon"},null,8,Ne)]),default:d(()=>[f(" "+l(i(c).title),1)]),_:1},8,["href","icon","target"])):o("",!0),h(i(K),{class:"user-actions__other",inline:4},{default:d(()=>[(s(!0),r(A,null,z(i(x),_=>(s(),p(i(J),{key:_.id,closeAfterClick:!0,href:_.target,target:_.id==="phone"?"_self":"_blank"},{icon:d(()=>[t("img",{src:_.icon,alt:"",class:"user-actions__other__icon"},null,8,$e)]),default:d(()=>[f(" "+l(_.title),1)]),_:2},1032,["href","target"]))),128))]),_:1})])]),t("div",xe,[i(e).organisation||i(e).role||i(e).address?(s(),r("div",Ve,[i(e).organisation||i(e).role?(s(),r("div",Oe,[t("p",null,[f(l(i(e).organisation)+" ",1),i(e).organisation&&i(e).role?(s(),r("span",Ue,"•")):o("",!0),f(" "+l(i(e).role),1)])])):o("",!0),i(e).address?(s(),r("div",Be,[t("p",null,[h(fe,{class:"map-icon",size:16}),f(" "+l(i(e).address),1)])])):o("",!0)])):o("",!0),i(e).headline||i(e).biography||g.value.length>0?(s(),r(A,{key:1},[i(e).headline?(s(),r("h3",Ee,l(i(e).headline),1)):o("",!0),i(e).biography?(s(),p(i(R),{key:1,text:i(e).biography,useExtendedMarkdown:""},null,8,["text"])):o("",!0),(s(!0),r(A,null,z(b.value,_=>(s(),p(ke,{key:_.id,section:_,userId:i(e).userId},null,8,["section","userId"]))),128))],64)):(s(),p(i(ee),{key:2,class:"profile__blocks-empty-info",name:i(O),description:i(y)("profile","The headline and about sections will show up here")},{icon:d(()=>[h(ne,{size:60})]),_:1},8,["name","description"]))])])])]),_:1})]),_:1}))}}),Le=k(He,[["__scopeId","data-v-4561b582"]]),Te=D().setApp("profile").detectLogLevel().build();class Ze{#e;constructor(){this.#e=new Map}registerSection(e){this.#e.has(e.id)&&Te.warn(`Profile section with id '${e.id}' is already registered.`),this.#e.set(e.id,e)}getSections(){return[...this.#e.values()]}}window.OCA.Profile??={},window.OCA.Profile.ProfileSections=new Ze;const je=Z(Le);je.mount("#content");
+const appName = "nextcloud-ui";
+const appVersion = "1.0.0";
+import { c as createElementBlock, o as openBlock, e as createBaseVNode, f as createCommentVNode, t as toDisplayString, z as mergeProps, b as defineComponent, i as createBlock, M as resolveDynamicComponent, n as normalizeClass, p as ref, h as computed, P as onBeforeMount, A as onMounted, Q as onBeforeUnmount, w as withCtx, j as createVNode, g as createTextVNode, I as withModifiers, F as Fragment, C as renderList, m as createApp } from "./vue.runtime.esm-bundler-UjrxUCWV.chunk.mjs";
+import { a as getCurrentUser, s as subscribe, u as unsubscribe, g as getLoggerBuilder } from "./mdi-CCQ2KgUK.chunk.mjs";
+import { a as showError } from "./index-JpgrUA2Z-CDVhFt4l.chunk.mjs";
+import { a as _export_sfc, l as loadState } from "./index-CEzAKfoK.chunk.mjs";
+import { t as translate } from "./translation-DoG5ZELJ-BX7lsMna.chunk.mjs";
+import { g as generateUrl } from "./createElementId-DhjFt1I9-D95yphbb.chunk.mjs";
+import { N as NcActionLink } from "./NcDateTime.vue_vue_type_script_setup_true_lang-BhB8yA4U-3Cg9SqZ9.chunk.mjs";
+import { N as NcActions } from "./index-DZkDsHXr.chunk.mjs";
+import { N as NcRichText, a as NcContent, b as NcAppContent } from "./NcRichText-CBMtJzE_-s0VCYNde.chunk.mjs";
+import { N as NcAvatar } from "./NcAvatar-DmUGApWA-C2lPLiNg.chunk.mjs";
+import { c as NcButton } from "./logger-D3RVzcfQ-D08Lqsc3.chunk.mjs";
+import { N as NcEmptyContent } from "./Plus-DX3lsEjd.chunk.mjs";
+import { P as PencilIcon } from "./PencilOutline-CRype3Oz.chunk.mjs";
+import "./modulepreload-polyfill-mMY-eDcw.chunk.mjs";
+import "./NcNoteCard-CVhtNL04-xGysk9Jq.chunk.mjs";
+import "./NcActionButton-pKOSrlGE-By2YA-_F.chunk.mjs";
+import "./NcCheckboxRadioSwitch-BCSKF7Tk-CVZU7Pjt.chunk.mjs";
+import "./index-iNeUnB75.chunk.mjs";
+import "./string_decoder-CSsspFHV.chunk.mjs";
+import "./NcSelect-Czzsi3P_-DrnUjQ4_.chunk.mjs";
+import "./TrashCanOutline-BquAR0NR.chunk.mjs";
+import "./NcInputField-Bwsh2aHY-DY6YZAwi.chunk.mjs";
+import "./colors-Go3zmZRD-CRyYiZ-p.chunk.mjs";
+import "./NcUserStatusIcon-CGEf7fej-CB09VdBp.chunk.mjs";
+const _sfc_main$3 = {
+  name: "AccountOutlineIcon",
+  emits: ["click"],
+  props: {
+    title: {
+      type: String
+    },
+    fillColor: {
+      type: String,
+      default: "currentColor"
+    },
+    size: {
+      type: Number,
+      default: 24
+    }
+  }
+};
+const _hoisted_1$2 = ["aria-hidden", "aria-label"];
+const _hoisted_2$2 = ["fill", "width", "height"];
+const _hoisted_3$2 = { d: "M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,6A2,2 0 0,0 10,8A2,2 0 0,0 12,10A2,2 0 0,0 14,8A2,2 0 0,0 12,6M12,13C14.67,13 20,14.33 20,17V20H4V17C4,14.33 9.33,13 12,13M12,14.9C9.03,14.9 5.9,16.36 5.9,17V18.1H18.1V17C18.1,16.36 14.97,14.9 12,14.9Z" };
+const _hoisted_4$2 = { key: 0 };
+function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createElementBlock("span", mergeProps(_ctx.$attrs, {
+    "aria-hidden": $props.title ? null : "true",
+    "aria-label": $props.title,
+    class: "material-design-icon account-outline-icon",
+    role: "img",
+    onClick: _cache[0] || (_cache[0] = ($event) => _ctx.$emit("click", $event))
+  }), [
+    (openBlock(), createElementBlock("svg", {
+      fill: $props.fillColor,
+      class: "material-design-icon__svg",
+      width: $props.size,
+      height: $props.size,
+      viewBox: "0 0 24 24"
+    }, [
+      createBaseVNode("path", _hoisted_3$2, [
+        $props.title ? (openBlock(), createElementBlock(
+          "title",
+          _hoisted_4$2,
+          toDisplayString($props.title),
+          1
+          /* TEXT */
+        )) : createCommentVNode("v-if", true)
+      ])
+    ], 8, _hoisted_2$2))
+  ], 16, _hoisted_1$2);
+}
+const AccountIcon = /* @__PURE__ */ _export_sfc(_sfc_main$3, [["render", _sfc_render$3], ["__file", "/home/abolfazl/code/nextcloud/node_modules/vue-material-design-icons/AccountOutline.vue"]]);
+const _sfc_main$2 = {
+  name: "MapMarkerIcon",
+  emits: ["click"],
+  props: {
+    title: {
+      type: String
+    },
+    fillColor: {
+      type: String,
+      default: "currentColor"
+    },
+    size: {
+      type: Number,
+      default: 24
+    }
+  }
+};
+const _hoisted_1$1 = ["aria-hidden", "aria-label"];
+const _hoisted_2$1 = ["fill", "width", "height"];
+const _hoisted_3$1 = { d: "M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12,2Z" };
+const _hoisted_4$1 = { key: 0 };
+function _sfc_render$2(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createElementBlock("span", mergeProps(_ctx.$attrs, {
+    "aria-hidden": $props.title ? null : "true",
+    "aria-label": $props.title,
+    class: "material-design-icon map-marker-icon",
+    role: "img",
+    onClick: _cache[0] || (_cache[0] = ($event) => _ctx.$emit("click", $event))
+  }), [
+    (openBlock(), createElementBlock("svg", {
+      fill: $props.fillColor,
+      class: "material-design-icon__svg",
+      width: $props.size,
+      height: $props.size,
+      viewBox: "0 0 24 24"
+    }, [
+      createBaseVNode("path", _hoisted_3$1, [
+        $props.title ? (openBlock(), createElementBlock(
+          "title",
+          _hoisted_4$1,
+          toDisplayString($props.title),
+          1
+          /* TEXT */
+        )) : createCommentVNode("v-if", true)
+      ])
+    ], 8, _hoisted_2$1))
+  ], 16, _hoisted_1$1);
+}
+const MapMarkerIcon = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["render", _sfc_render$2], ["__file", "/home/abolfazl/code/nextcloud/node_modules/vue-material-design-icons/MapMarker.vue"]]);
+const _sfc_main$1 = /* @__PURE__ */ defineComponent({
+  __name: "ProfileSection",
+  props: {
+    section: { type: Object, required: true },
+    userId: { type: null, required: true }
+  },
+  setup(__props, { expose: __expose }) {
+    __expose();
+    const __returned__ = {};
+    Object.defineProperty(__returned__, "__isScriptSetup", { enumerable: false, value: true });
+    return __returned__;
+  }
+});
+const profileSection = "_profileSection_1o17g_2";
+const style0 = {
+  profileSection
+};
+function _sfc_render$1(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createElementBlock(
+    "div",
+    {
+      class: normalizeClass(_ctx.$style.profileSection)
+    },
+    [
+      (openBlock(), createBlock(resolveDynamicComponent($props.section.tagName), mergeProps($props.section.params, { ".user": $props.userId }), null, 48, [".user"]))
+    ],
+    2
+    /* CLASS */
+  );
+}
+const cssModules = {
+  "$style": style0
+};
+const ProfileSection = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["render", _sfc_render$1], ["__cssModules", cssModules], ["__file", "/home/abolfazl/code/nextcloud/build/frontend/apps/profile/src/components/ProfileSection.vue"]]);
+const _sfc_main = /* @__PURE__ */ defineComponent({
+  __name: "ProfileApp",
+  setup(__props, { expose: __expose }) {
+    __expose();
+    const profileParameters = loadState("profile", "profileParameters", {
+      userId: void 0,
+      displayname: void 0,
+      address: void 0,
+      organisation: void 0,
+      role: void 0,
+      headline: void 0,
+      biography: void 0,
+      actions: [],
+      isUserAvatarVisible: false,
+      pronouns: void 0
+    });
+    const userStatus = ref(loadState("profile", "status", {}));
+    const sections = ref([]);
+    const sortedSections = computed(() => [...sections.value].sort((a, b) => b.order - a.order));
+    onBeforeMount(() => {
+      sections.value = window.OCA.Profile.ProfileSections.getSections();
+    });
+    const isCurrentUser = getCurrentUser()?.uid === profileParameters.userId;
+    const primaryAction = profileParameters.actions[0];
+    const otherActions = profileParameters.actions.slice(1);
+    const settingsUrl = generateUrl("/settings/user");
+    const emptyProfileMessage = isCurrentUser ? translate("profile", "You have not added any info yet") : translate("profile", "{user} has not added any info yet", { user: profileParameters.displayname || profileParameters.userId || "" });
+    onMounted(() => {
+      document.title = `${profileParameters.displayname || profileParameters.userId} - ${document.title}`;
+      subscribe("user_status:status.updated", handleStatusUpdate);
+    });
+    onBeforeUnmount(() => {
+      unsubscribe("user_status:status.updated", handleStatusUpdate);
+    });
+    function handleStatusUpdate(status) {
+      if (isCurrentUser && status.userId === profileParameters.userId) {
+        userStatus.value = status;
+      }
+    }
+    function openStatusModal() {
+      if (!isCurrentUser) {
+        return;
+      }
+      const statusMenuItem = document.querySelector(".user-status-menu-item");
+      if (statusMenuItem) {
+        statusMenuItem.click();
+      } else {
+        showError(translate("profile", "Error opening the user status modal, try hard refreshing the page"));
+      }
+    }
+    const __returned__ = { profileParameters, userStatus, sections, sortedSections, isCurrentUser, primaryAction, otherActions, settingsUrl, emptyProfileMessage, handleStatusUpdate, openStatusModal, get t() {
+      return translate;
+    }, get NcActionLink() {
+      return NcActionLink;
+    }, get NcActions() {
+      return NcActions;
+    }, get NcAppContent() {
+      return NcAppContent;
+    }, get NcAvatar() {
+      return NcAvatar;
+    }, get NcButton() {
+      return NcButton;
+    }, get NcContent() {
+      return NcContent;
+    }, get NcEmptyContent() {
+      return NcEmptyContent;
+    }, get NcRichText() {
+      return NcRichText;
+    }, AccountIcon, MapMarkerIcon, PencilIcon, ProfileSection };
+    Object.defineProperty(__returned__, "__isScriptSetup", { enumerable: false, value: true });
+    return __returned__;
+  }
+});
+const _hoisted_1 = { class: "profile__header" };
+const _hoisted_2 = { class: "profile__header__container" };
+const _hoisted_3 = { class: "profile__header__container__displayname" };
+const _hoisted_4 = { key: 0 };
+const _hoisted_5 = {
+  key: 1,
+  class: "profile__header__container__pronouns"
+};
+const _hoisted_6 = { class: "profile__wrapper" };
+const _hoisted_7 = { class: "profile__content" };
+const _hoisted_8 = { class: "profile__sidebar" };
+const _hoisted_9 = { class: "user-actions" };
+const _hoisted_10 = ["src"];
+const _hoisted_11 = ["src"];
+const _hoisted_12 = { class: "profile__blocks" };
+const _hoisted_13 = {
+  key: 0,
+  class: "profile__blocks-details"
+};
+const _hoisted_14 = {
+  key: 0,
+  class: "detail"
+};
+const _hoisted_15 = { key: 0 };
+const _hoisted_16 = {
+  key: 1,
+  class: "detail"
+};
+const _hoisted_17 = {
+  key: 0,
+  class: "profile__blocks-headline"
+};
+function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createBlock($setup["NcContent"], { appName: "profile" }, {
+    default: withCtx(() => [
+      createVNode($setup["NcAppContent"], null, {
+        default: withCtx(() => [
+          createBaseVNode("div", _hoisted_1, [
+            createBaseVNode("div", _hoisted_2, [
+              _cache[0] || (_cache[0] = createBaseVNode(
+                "div",
+                { class: "profile__header__container__placeholder" },
+                null,
+                -1
+                /* CACHED */
+              )),
+              createBaseVNode("div", _hoisted_3, [
+                createBaseVNode(
+                  "h2",
+                  null,
+                  toDisplayString($setup.profileParameters.displayname || $setup.profileParameters.userId),
+                  1
+                  /* TEXT */
+                ),
+                $setup.profileParameters.pronouns ? (openBlock(), createElementBlock("span", _hoisted_4, "·")) : createCommentVNode("v-if", true),
+                $setup.profileParameters.pronouns ? (openBlock(), createElementBlock(
+                  "span",
+                  _hoisted_5,
+                  toDisplayString($setup.profileParameters.pronouns),
+                  1
+                  /* TEXT */
+                )) : createCommentVNode("v-if", true),
+                $setup.isCurrentUser ? (openBlock(), createBlock($setup["NcButton"], {
+                  key: 2,
+                  variant: "primary",
+                  href: $setup.settingsUrl
+                }, {
+                  icon: withCtx(() => [
+                    createVNode($setup["PencilIcon"], { size: 20 })
+                  ]),
+                  default: withCtx(() => [
+                    createTextVNode(
+                      " " + toDisplayString($setup.t("profile", "Edit Profile")),
+                      1
+                      /* TEXT */
+                    )
+                  ]),
+                  _: 1
+                  /* STABLE */
+                }, 8, ["href"])) : createCommentVNode("v-if", true)
+              ]),
+              $setup.userStatus.icon || $setup.userStatus.message ? (openBlock(), createBlock($setup["NcButton"], {
+                key: 0,
+                disabled: !$setup.isCurrentUser,
+                variant: $setup.isCurrentUser ? "tertiary" : "tertiary-no-background",
+                onClick: $setup.openStatusModal
+              }, {
+                default: withCtx(() => [
+                  createTextVNode(
+                    toDisplayString($setup.userStatus.icon) + " " + toDisplayString($setup.userStatus.message),
+                    1
+                    /* TEXT */
+                  )
+                ]),
+                _: 1
+                /* STABLE */
+              }, 8, ["disabled", "variant"])) : createCommentVNode("v-if", true)
+            ])
+          ]),
+          createBaseVNode("div", _hoisted_6, [
+            createBaseVNode("div", _hoisted_7, [
+              createBaseVNode("div", _hoisted_8, [
+                createVNode($setup["NcAvatar"], {
+                  class: normalizeClass(["avatar", { interactive: $setup.isCurrentUser }]),
+                  user: $setup.profileParameters.userId,
+                  size: 180,
+                  disableMenu: true,
+                  disableTooltip: true,
+                  isNoUser: !$setup.profileParameters.isUserAvatarVisible,
+                  onClick: withModifiers($setup.openStatusModal, ["prevent", "stop"])
+                }, null, 8, ["class", "user", "isNoUser"]),
+                createBaseVNode("div", _hoisted_9, [
+                  createCommentVNode(' When a tel: URL is opened with target="_blank", a blank new tab is opened which is inconsistent with the handling of other URLs so we set target="_self" for the phone action '),
+                  $setup.primaryAction ? (openBlock(), createBlock($setup["NcButton"], {
+                    key: 0,
+                    variant: "primary",
+                    class: "user-actions__primary",
+                    href: $setup.primaryAction.target,
+                    icon: $setup.primaryAction.icon,
+                    target: $setup.primaryAction.id === "phone" ? "_self" : "_blank"
+                  }, {
+                    icon: withCtx(() => [
+                      createCommentVNode(" Fix for https://github.com/nextcloud-libraries/nextcloud-vue/issues/2315 "),
+                      createBaseVNode("img", {
+                        src: $setup.primaryAction.icon,
+                        alt: "",
+                        class: "user-actions__primary__icon"
+                      }, null, 8, _hoisted_10)
+                    ]),
+                    default: withCtx(() => [
+                      createTextVNode(
+                        " " + toDisplayString($setup.primaryAction.title),
+                        1
+                        /* TEXT */
+                      )
+                    ]),
+                    _: 1
+                    /* STABLE */
+                  }, 8, ["href", "icon", "target"])) : createCommentVNode("v-if", true),
+                  createVNode($setup["NcActions"], {
+                    class: "user-actions__other",
+                    inline: 4
+                  }, {
+                    default: withCtx(() => [
+                      (openBlock(true), createElementBlock(
+                        Fragment,
+                        null,
+                        renderList($setup.otherActions, (action) => {
+                          return openBlock(), createBlock($setup["NcActionLink"], {
+                            key: action.id,
+                            closeAfterClick: true,
+                            href: action.target,
+                            target: action.id === "phone" ? "_self" : "_blank"
+                          }, {
+                            icon: withCtx(() => [
+                              createCommentVNode(" Fix for https://github.com/nextcloud-libraries/nextcloud-vue/issues/2315 "),
+                              createBaseVNode("img", {
+                                src: action.icon,
+                                alt: "",
+                                class: "user-actions__other__icon"
+                              }, null, 8, _hoisted_11)
+                            ]),
+                            default: withCtx(() => [
+                              createTextVNode(
+                                " " + toDisplayString(action.title),
+                                1
+                                /* TEXT */
+                              )
+                            ]),
+                            _: 2
+                            /* DYNAMIC */
+                          }, 1032, ["href", "target"]);
+                        }),
+                        128
+                        /* KEYED_FRAGMENT */
+                      ))
+                    ]),
+                    _: 1
+                    /* STABLE */
+                  })
+                ])
+              ]),
+              createBaseVNode("div", _hoisted_12, [
+                $setup.profileParameters.organisation || $setup.profileParameters.role || $setup.profileParameters.address ? (openBlock(), createElementBlock("div", _hoisted_13, [
+                  $setup.profileParameters.organisation || $setup.profileParameters.role ? (openBlock(), createElementBlock("div", _hoisted_14, [
+                    createBaseVNode("p", null, [
+                      createTextVNode(
+                        toDisplayString($setup.profileParameters.organisation) + " ",
+                        1
+                        /* TEXT */
+                      ),
+                      $setup.profileParameters.organisation && $setup.profileParameters.role ? (openBlock(), createElementBlock("span", _hoisted_15, "•")) : createCommentVNode("v-if", true),
+                      createTextVNode(
+                        " " + toDisplayString($setup.profileParameters.role),
+                        1
+                        /* TEXT */
+                      )
+                    ])
+                  ])) : createCommentVNode("v-if", true),
+                  $setup.profileParameters.address ? (openBlock(), createElementBlock("div", _hoisted_16, [
+                    createBaseVNode("p", null, [
+                      createVNode($setup["MapMarkerIcon"], {
+                        class: "map-icon",
+                        size: 16
+                      }),
+                      createTextVNode(
+                        " " + toDisplayString($setup.profileParameters.address),
+                        1
+                        /* TEXT */
+                      )
+                    ])
+                  ])) : createCommentVNode("v-if", true)
+                ])) : createCommentVNode("v-if", true),
+                $setup.profileParameters.headline || $setup.profileParameters.biography || $setup.sections.length > 0 ? (openBlock(), createElementBlock(
+                  Fragment,
+                  { key: 1 },
+                  [
+                    $setup.profileParameters.headline ? (openBlock(), createElementBlock(
+                      "h3",
+                      _hoisted_17,
+                      toDisplayString($setup.profileParameters.headline),
+                      1
+                      /* TEXT */
+                    )) : createCommentVNode("v-if", true),
+                    $setup.profileParameters.biography ? (openBlock(), createBlock($setup["NcRichText"], {
+                      key: 1,
+                      text: $setup.profileParameters.biography,
+                      useExtendedMarkdown: ""
+                    }, null, 8, ["text"])) : createCommentVNode("v-if", true),
+                    createCommentVNode(" additional entries, use it with cautious "),
+                    (openBlock(true), createElementBlock(
+                      Fragment,
+                      null,
+                      renderList($setup.sortedSections, (section) => {
+                        return openBlock(), createBlock($setup["ProfileSection"], {
+                          key: section.id,
+                          section,
+                          userId: $setup.profileParameters.userId
+                        }, null, 8, ["section", "userId"]);
+                      }),
+                      128
+                      /* KEYED_FRAGMENT */
+                    ))
+                  ],
+                  64
+                  /* STABLE_FRAGMENT */
+                )) : (openBlock(), createBlock($setup["NcEmptyContent"], {
+                  key: 2,
+                  class: "profile__blocks-empty-info",
+                  name: $setup.emptyProfileMessage,
+                  description: $setup.t("profile", "The headline and about sections will show up here")
+                }, {
+                  icon: withCtx(() => [
+                    createVNode($setup["AccountIcon"], { size: 60 })
+                  ]),
+                  _: 1
+                  /* STABLE */
+                }, 8, ["name", "description"]))
+              ])
+            ])
+          ])
+        ]),
+        _: 1
+        /* STABLE */
+      })
+    ]),
+    _: 1
+    /* STABLE */
+  });
+}
+const ProfileApp = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-a8276e49"], ["__file", "/home/abolfazl/code/nextcloud/build/frontend/apps/profile/src/views/ProfileApp.vue"]]);
+const logger = getLoggerBuilder().setApp("profile").detectLogLevel().build();
+class ProfileSections {
+  #sections;
+  constructor() {
+    this.#sections = /* @__PURE__ */ new Map();
+  }
+  /**
+   * @param section To be called to mount the section to the profile page
+   */
+  registerSection(section) {
+    if (this.#sections.has(section.id)) {
+      logger.warn(`Profile section with id '${section.id}' is already registered.`);
+    }
+    this.#sections.set(section.id, section);
+  }
+  getSections() {
+    return [...this.#sections.values()];
+  }
+}
+window.OCA.Profile ??= {};
+window.OCA.Profile.ProfileSections = new ProfileSections();
+const app = createApp(ProfileApp);
+app.mount("#content");
 //# sourceMappingURL=profile-main.mjs.map

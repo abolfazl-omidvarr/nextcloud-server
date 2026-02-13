@@ -1,2 +1,856 @@
-(()=>{"use strict";var t,e,n,o={22073(t,e,n){var o=n(21777),r=n(85471),a=n(81222),s=n(53334),i=n(32505),c=n(950),l=n(43988),d=n(61744),u=n(78928),p=n(42610),h=n(57908),m=n(64426),N=n(59915),v=n(68166),y=n(15502),f=n(71711),g=n(25878),w=n(85407),A=n(47611),b=n(10363),_=n(282),k=n(78009),S=n(54048),x=n(88486),T=n(27345),C=n(49595),P=n(31866),B=n(70036),I=n(44031),O=n(542),q=n(94012),F=n(93651),L=n(77834),R=n(91019),$=n(50017),E=n(60258),G=n(22258),D=n(66865),M=n(17067),j=n(10211),z=n(52631),X=n(73148),K=n(81621),V=n(94294),Y=n(93314),H=n(8054),J=n(99016),U=n(83358),Q=n(90429),W=n(12318),Z=n(46173),tt=n(44025),et=n(92257),nt=n(48198),ot=n(59668),rt=n(18343),at=n(83194),st=n(50481),it=n(42507),ct=n(85646),lt=n(71565),dt=n(49975),ut=n(17848),pt=n(99925),ht=n(66768),mt=n(8633),Nt=n(97398),vt=n(51550),yt=n(63195),ft=n(77082),gt=n(48191),wt=n(77462),At=n(34962),bt=n(38159),_t=n(88289),kt=n(99759),St=n(371),xt=n(22983),Tt=n(71912),Ct=n(35290),Pt=n(1938),Bt=n(1357),It=n(81974),Ot=n(36079),qt=n(67582),Ft=(n(19051),n(65139),n(52781),n(3168),n(40490)),Lt=n(87059),Rt=n(40959),$t=(n(61338),n(71639)),Et=n(4258),Gt=n(29586),Dt=n(684),Mt=n(61618),jt=n(62179),zt=n(25771),Xt=n(8256),Kt=n(19234),Vt=n(5843),Yt=n(48748),Ht=n(23610),Jt=(n(55581),n(94205),n(95462),n(23020),n(53429),n(23739),n(16343),n(29928),n(64660),n(18547),n(20511)),Ut=n(69885),Qt=(n(59656),n(75105),n(92471),n(16406),n(2508));c.N,l.N,d.A,u.N,p.N,h.A,m.N,N.A,y.A,f.A,g.N,v.N,w.N,A.A,b.A,_.N,k.N,S.A,x.N,T.A,C.N,P.N,B.N,I.N,O.A,q.N,F.N,L.N,L.N,R.N,$.N,E.A,G.N,D.A,M.N,qt.N,j.N,z.N,X.N,K.N,V.N,Y.N,H.N,J.N,U.N,Q.N,W.N,Z.N,tt.N,et.default,nt.A,ot.N,rt.N,at.A,st.N,it.A,ct.N,lt.N,dt.N,ut.N,pt.N,ht.A,mt.N,Nt.N,vt.N,yt.N,ft.N,gt.N,wt.N,At.N,bt.N,_t.A,Ot.N,kt.A,St.A,xt.N,Tt.N,Ct.N,Pt.N,Bt.N,It.N,qt.a,Ft.N,$t.N,Lt.N,Et.N,Gt.N,Dt.N,Mt.N,jt.N,zt.N,Rt.N,Xt.N,Kt.N,Vt.N,Yt.N,Ht.A,Symbol.toStringTag,Jt.A,Ut.A,Qt.yw,Symbol.toStringTag;var Wt=n(74095),Zt=n(57268),te=n(16044);const ee=(0,r.pM)({__name:"PublicShareAuth",setup(t){const e=(0,a.C)("core","publicShareAuth"),n=(0,o.do)(),c=(0,i.G)(),{shareType:l,invalidPassword:d,canResendPassword:u}=e,p="boolean"==typeof e.identityOk,h=(0,r.KR)("boolean"==typeof e.identityOk),m=(0,r.KR)(""),N=(0,r.KR)("");return(0,r.sV)(()=>{const t=(0,r.nI)();t&&t.proxy.$el?.classList.add("guest-box")}),{__sfc:!0,publicShareAuth:e,requestToken:n,sharingToken:c,shareType:l,invalidPassword:d,canResendPassword:u,hasIdentityCheck:p,showIdentityCheck:h,password:m,email:N,t:s.t,NcTextField:Rt.N,NcButton:Wt.A,NcFormBox:Zt.A,NcGuestContent:ht.A,NcNoteCard:St.A,NcPasswordField:te.A}}});var ne=n(85072),oe=n.n(ne),re=n(97825),ae=n.n(re),se=n(77659),ie=n.n(se),ce=n(55056),le=n.n(ce),de=n(10540),ue=n.n(de),pe=n(41113),he=n.n(pe),me=n(47782),Ne={};Ne.styleTagTransform=he(),Ne.setAttributes=le(),Ne.insert=ie().bind(null,"head"),Ne.domAPI=ae(),Ne.insertStyleElement=ue(),oe()(me.A,Ne);const ve=me.A&&me.A.locals?me.A.locals:void 0,ye=(0,n(14486).A)(ee,function(){var t=this,e=t._self._c,n=t._self._setupProxy;return e(n.NcGuestContent,{class:t.$style.publicShareAuth},[e("h2",[t._v(t._s(n.t("core","This share is password-protected")))]),t._v(" "),e("form",{directives:[{name:"show",rawName:"v-show",value:!n.showIdentityCheck,expression:"!showIdentityCheck"}],class:t.$style.publicShareAuth__form,attrs:{method:"POST"}},[n.invalidPassword?e(n.NcNoteCard,{attrs:{type:"error"}},[t._v("\n\t\t\t"+t._s(n.t("core","The password is wrong or expired. Please try again or request a new one."))+"\n\t\t")]):t._e(),t._v(" "),e(n.NcPasswordField,{attrs:{label:n.t("core","Password"),autofocus:"",autocomplete:"new-password",autocapitalize:"off",spellcheck:"false",name:"password"},model:{value:n.password,callback:function(t){n.password=t},expression:"password"}}),t._v(" "),e("input",{attrs:{type:"hidden",name:"requesttoken"},domProps:{value:n.requestToken}}),t._v(" "),e("input",{attrs:{type:"hidden",name:"sharingToken"},domProps:{value:n.sharingToken}}),t._v(" "),e("input",{attrs:{type:"hidden",name:"sharingType"},domProps:{value:n.shareType}}),t._v(" "),e(n.NcButton,{attrs:{type:"submit",variant:"primary",wide:""}},[t._v("\n\t\t\t"+t._s(n.t("core","Submit"))+"\n\t\t")])],1),t._v(" "),n.showIdentityCheck?e("form",{class:t.$style.publicShareAuth__form,attrs:{method:"POST"}},[n.hasIdentityCheck?e(n.NcNoteCard,{attrs:{type:n.publicShareAuth.identityOk?"success":"error"}},[t._v("\n\t\t\t"+t._s(n.publicShareAuth.identityOk?n.t("core","Password sent!"):n.t("core","You are not authorized to request a password for this share"))+"\n\t\t")]):e(n.NcNoteCard,{attrs:{type:"info"}},[t._v("\n\t\t\t"+t._s(n.t("core","Please type in your email address to request a temporary password"))+"\n\t\t")]),t._v(" "),e(n.NcTextField,{attrs:{type:"email",name:"identityToken",label:n.t("core","Email address")},model:{value:n.email,callback:function(t){n.email=t},expression:"email"}}),t._v(" "),e("input",{attrs:{type:"hidden",name:"requesttoken"},domProps:{value:n.requestToken}}),t._v(" "),e("input",{attrs:{type:"hidden",name:"sharingToken"},domProps:{value:n.sharingToken}}),t._v(" "),e("input",{attrs:{type:"hidden",name:"sharingType"},domProps:{value:n.shareType}}),t._v(" "),e("input",{attrs:{type:"hidden",name:"passwordRequest",value:""}}),t._v(" "),e(n.NcFormBox,{attrs:{row:""}},[e(n.NcButton,{attrs:{wide:""},on:{click:function(t){n.showIdentityCheck=!1}}},[t._v("\n\t\t\t\t"+t._s(n.t("core","Back"))+"\n\t\t\t")]),t._v(" "),e(n.NcButton,{attrs:{type:"submit",variant:"primary",wide:""}},[t._v("\n\t\t\t\t"+t._s(n.t("core","Request password"))+"\n\t\t\t")])],1)],1):t._e(),t._v(" "),n.canResendPassword&&!n.showIdentityCheck?e(n.NcButton,{class:t.$style.publicShareAuth__forgotPasswordButton,attrs:{wide:""},on:{click:function(t){n.showIdentityCheck=!0}}},[t._v("\n\t\t"+t._s(n.t("core","Forgot password"))+"\n\t")]):t._e()],1)},[],!1,function(t){this.$style=ve.locals||ve},null,null).exports;n.nc=(0,o.aV)(),(new(r.Ay.extend(ye))).$mount("#core-public-share-auth")},47782(t,e,n){n.d(e,{A:()=>i});var o=n(71354),r=n.n(o),a=n(76314),s=n.n(a)()(r());s.push([t.id,"\n._publicShareAuth_S4vsJ {\n\tmax-width: 400px !important;\n}\n._publicShareAuth__form_kYSqz {\n\tdisplay: flex;\n\tflex-direction: column;\n\tgap: calc(2 * var(--default-grid-baseline));\n}\n._publicShareAuth__forgotPasswordButton_tKti_ {\n\tmargin-top: calc(3 * var(--default-grid-baseline));\n}\n","",{version:3,sources:["webpack://./core/src/views/PublicShareAuth.vue"],names:[],mappings:";AAuHA;CACA,2BAAA;AACA;AAEA;CACA,aAAA;CACA,sBAAA;CACA,2CAAA;AACA;AAEA;CACA,kDAAA;AACA",sourcesContent:['\x3c!--\n - SPDX-FileCopyrightText: 2026 Nextcloud GmbH and Nextcloud contributors\n - SPDX-License-Identifier: AGPL-3.0-or-later\n --\x3e\n\n<script setup lang="ts">\nimport type { ShareType } from \'@nextcloud/sharing\'\n\nimport { getRequestToken } from \'@nextcloud/auth\'\nimport { loadState } from \'@nextcloud/initial-state\'\nimport { t } from \'@nextcloud/l10n\'\nimport { getSharingToken } from \'@nextcloud/sharing/public\'\nimport { NcTextField } from \'@nextcloud/vue\'\nimport { getCurrentInstance, onMounted, ref } from \'vue\'\nimport NcButton from \'@nextcloud/vue/components/NcButton\'\nimport NcFormBox from \'@nextcloud/vue/components/NcFormBox\'\nimport NcGuestContent from \'@nextcloud/vue/components/NcGuestContent\'\nimport NcNoteCard from \'@nextcloud/vue/components/NcNoteCard\'\nimport NcPasswordField from \'@nextcloud/vue/components/NcPasswordField\'\n\nconst publicShareAuth = loadState<{\n\tcanResendPassword: boolean\n\tshareType: ShareType\n\tidentityOk?: boolean | null\n\tinvalidPassword?: boolean\n}>(\'core\', \'publicShareAuth\')\n\nconst requestToken = getRequestToken()\nconst sharingToken = getSharingToken()\nconst { shareType, invalidPassword, canResendPassword } = publicShareAuth\n\nconst hasIdentityCheck = typeof publicShareAuth.identityOk === \'boolean\'\nconst showIdentityCheck = ref(typeof publicShareAuth.identityOk === \'boolean\')\nconst password = ref(\'\')\nconst email = ref(\'\')\n\n// TODO: Remove when using Vue 3\nonMounted(() => {\n\tconst instance = getCurrentInstance()\n\tif (instance) {\n\t\t// @ts-expect-error Vue internals\n\t\t(instance.proxy.$el as HTMLElement)?.classList.add(\'guest-box\')\n\t}\n})\n<\/script>\n\n<template>\n\t<NcGuestContent :class="$style.publicShareAuth">\n\t\t<h2>{{ t(\'core\', \'This share is password-protected\') }}</h2>\n\t\t<form\n\t\t\tv-show="!showIdentityCheck"\n\t\t\t:class="$style.publicShareAuth__form"\n\t\t\tmethod="POST">\n\t\t\t<NcNoteCard v-if="invalidPassword" type="error">\n\t\t\t\t{{ t(\'core\', \'The password is wrong or expired. Please try again or request a new one.\') }}\n\t\t\t</NcNoteCard>\n\n\t\t\t<NcPasswordField\n\t\t\t\tv-model="password"\n\t\t\t\t:label="t(\'core\', \'Password\')"\n\t\t\t\tautofocus\n\t\t\t\tautocomplete="new-password"\n\t\t\t\tautocapitalize="off"\n\t\t\t\tspellcheck="false"\n\t\t\t\tname="password" />\n\n\t\t\t<input type="hidden" name="requesttoken" :value="requestToken">\n\t\t\t<input type="hidden" name="sharingToken" :value="sharingToken">\n\t\t\t<input type="hidden" name="sharingType" :value="shareType">\n\n\t\t\t<NcButton type="submit" variant="primary" wide>\n\t\t\t\t{{ t(\'core\', \'Submit\') }}\n\t\t\t</NcButton>\n\t\t</form>\n\n\t\t<form\n\t\t\tv-if="showIdentityCheck"\n\t\t\t:class="$style.publicShareAuth__form"\n\t\t\tmethod="POST">\n\t\t\t<NcNoteCard v-if="!hasIdentityCheck" type="info">\n\t\t\t\t{{ t(\'core\', \'Please type in your email address to request a temporary password\') }}\n\t\t\t</NcNoteCard>\n\n\t\t\t<NcNoteCard v-else :type="publicShareAuth.identityOk ? \'success\' : \'error\'">\n\t\t\t\t{{ publicShareAuth.identityOk ? t(\'core\', \'Password sent!\') : t(\'core\', \'You are not authorized to request a password for this share\') }}\n\t\t\t</NcNoteCard>\n\n\t\t\t<NcTextField\n\t\t\t\tv-model="email"\n\t\t\t\ttype="email"\n\t\t\t\tname="identityToken"\n\t\t\t\t:label="t(\'core\', \'Email address\')" />\n\t\t\t<input type="hidden" name="requesttoken" :value="requestToken">\n\t\t\t<input type="hidden" name="sharingToken" :value="sharingToken">\n\t\t\t<input type="hidden" name="sharingType" :value="shareType">\n\t\t\t<input type="hidden" name="passwordRequest" value="">\n\n\t\t\t<NcFormBox row>\n\t\t\t\t<NcButton wide @click="showIdentityCheck = false">\n\t\t\t\t\t{{ t(\'core\', \'Back\') }}\n\t\t\t\t</NcButton>\n\t\t\t\t<NcButton type="submit" variant="primary" wide>\n\t\t\t\t\t{{ t(\'core\', \'Request password\') }}\n\t\t\t\t</NcButton>\n\t\t\t</NcFormBox>\n\t\t</form>\n\n\t\t\x3c!-- request password button --\x3e\n\t\t<NcButton\n\t\t\tv-if="canResendPassword && !showIdentityCheck"\n\t\t\t:class="$style.publicShareAuth__forgotPasswordButton"\n\t\t\twide\n\t\t\t@click="showIdentityCheck = true">\n\t\t\t{{ t(\'core\', \'Forgot password\') }}\n\t\t</NcButton>\n\t</NcGuestContent>\n</template>\n\n<style module>\n.publicShareAuth {\n\tmax-width: 400px !important;\n}\n\n.publicShareAuth__form {\n\tdisplay: flex;\n\tflex-direction: column;\n\tgap: calc(2 * var(--default-grid-baseline));\n}\n\n.publicShareAuth__forgotPasswordButton {\n\tmargin-top: calc(3 * var(--default-grid-baseline));\n}\n</style>\n'],sourceRoot:""}]),s.locals={publicShareAuth:"_publicShareAuth_S4vsJ",publicShareAuth__form:"_publicShareAuth__form_kYSqz",publicShareAuth__forgotPasswordButton:"_publicShareAuth__forgotPasswordButton_tKti_"};const i=s},27518(t){t.exports="data:image/svg+xml,%3c%21--%20-%20SPDX-FileCopyrightText:%202020%20Google%20Inc.%20-%20SPDX-License-Identifier:%20Apache-2.0%20--%3e%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20width=%2724%27%20height=%2724%27%20fill=%27%23222%27%3e%3cpath%20d=%27M15.4%2016.6L10.8%2012l4.6-4.6L14%206l-6%206%206%206%201.4-1.4z%27/%3e%3c/svg%3e"},27514(t){t.exports="data:image/svg+xml,%3c%21--%20-%20SPDX-FileCopyrightText:%202020%20Google%20Inc.%20-%20SPDX-License-Identifier:%20Apache-2.0%20--%3e%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20width=%2724%27%20height=%2724%27%20fill=%27%23222%27%3e%3cpath%20d=%27M18.4%207.4L17%206l-6%206%206%206%201.4-1.4-4.6-4.6%204.6-4.6m-6%200L11%206l-6%206%206%206%201.4-1.4L7.8%2012l4.6-4.6z%27/%3e%3c/svg%3e"},79722(t){t.exports="data:image/svg+xml,%3c%21--%20-%20SPDX-FileCopyrightText:%202020%20Google%20Inc.%20-%20SPDX-License-Identifier:%20Apache-2.0%20--%3e%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20width=%2724%27%20height=%2724%27%20fill=%27%23222%27%3e%3cpath%20d=%27M5.6%207.4L7%206l6%206-6%206-1.4-1.4%204.6-4.6-4.6-4.6m6%200L13%206l6%206-6%206-1.4-1.4%204.6-4.6-4.6-4.6z%27/%3e%3c/svg%3e"},64505(t){t.exports="data:image/svg+xml,%3c%21--%20-%20SPDX-FileCopyrightText:%202020%20Google%20Inc.%20-%20SPDX-License-Identifier:%20Apache-2.0%20--%3e%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20width=%2724%27%20height=%2724%27%20fill=%27%23222%27%3e%3cpath%20d=%27M8.6%2016.6l4.6-4.6-4.6-4.6L10%206l6%206-6%206-1.4-1.4z%27/%3e%3c/svg%3e"}},r={};function a(t){var e=r[t];if(void 0!==e)return e.exports;var n=r[t]={id:t,loaded:!1,exports:{}};return o[t].call(n.exports,n,n.exports,a),n.loaded=!0,n.exports}a.m=o,t=[],a.O=(e,n,o,r)=>{if(!n){var s=1/0;for(d=0;d<t.length;d++){for(var[n,o,r]=t[d],i=!0,c=0;c<n.length;c++)(!1&r||s>=r)&&Object.keys(a.O).every(t=>a.O[t](n[c]))?n.splice(c--,1):(i=!1,r<s&&(s=r));if(i){t.splice(d--,1);var l=o();void 0!==l&&(e=l)}}return e}r=r||0;for(var d=t.length;d>0&&t[d-1][2]>r;d--)t[d]=t[d-1];t[d]=[n,o,r]},a.n=t=>{var e=t&&t.__esModule?()=>t.default:()=>t;return a.d(e,{a:e}),e},a.d=(t,e)=>{for(var n in e)a.o(e,n)&&!a.o(t,n)&&Object.defineProperty(t,n,{enumerable:!0,get:e[n]})},a.f={},a.e=t=>Promise.all(Object.keys(a.f).reduce((e,n)=>(a.f[n](t,e),e),[])),a.u=t=>t+"-"+t+".js?v="+{5862:"580b9c2e231a9169a12f",6798:"995524658ab188a2d123",7471:"b4ac70873a3ab192efd0"}[t],a.o=(t,e)=>Object.prototype.hasOwnProperty.call(t,e),e={},n="nextcloud-ui-legacy:",a.l=(t,o,r,s)=>{if(e[t])e[t].push(o);else{var i,c;if(void 0!==r)for(var l=document.getElementsByTagName("script"),d=0;d<l.length;d++){var u=l[d];if(u.getAttribute("src")==t||u.getAttribute("data-webpack")==n+r){i=u;break}}i||(c=!0,(i=document.createElement("script")).charset="utf-8",a.nc&&i.setAttribute("nonce",a.nc),i.setAttribute("data-webpack",n+r),i.src=t),e[t]=[o];var p=(n,o)=>{i.onerror=i.onload=null,clearTimeout(h);var r=e[t];if(delete e[t],i.parentNode&&i.parentNode.removeChild(i),r&&r.forEach(t=>t(o)),n)return n(o)},h=setTimeout(p.bind(null,void 0,{type:"timeout",target:i}),12e4);i.onerror=p.bind(null,i.onerror),i.onload=p.bind(null,i.onload),c&&document.head.appendChild(i)}},a.r=t=>{"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(t,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(t,"__esModule",{value:!0})},a.nmd=t=>(t.paths=[],t.children||(t.children=[]),t),a.j=1537,(()=>{var t;globalThis.importScripts&&(t=globalThis.location+"");var e=globalThis.document;if(!t&&e&&(e.currentScript&&"SCRIPT"===e.currentScript.tagName.toUpperCase()&&(t=e.currentScript.src),!t)){var n=e.getElementsByTagName("script");if(n.length)for(var o=n.length-1;o>-1&&(!t||!/^http(s?):/.test(t));)t=n[o--].src}if(!t)throw new Error("Automatic publicPath is not supported in this browser");t=t.replace(/^blob:/,"").replace(/#.*$/,"").replace(/\?.*$/,"").replace(/\/[^\/]+$/,"/"),a.p=t})(),(()=>{a.b="undefined"!=typeof document&&document.baseURI||self.location.href;var t={1537:0,7471:0};a.f.j=(e,n)=>{var o=a.o(t,e)?t[e]:void 0;if(0!==o)if(o)n.push(o[2]);else{var r=new Promise((n,r)=>o=t[e]=[n,r]);n.push(o[2]=r);var s=a.p+a.u(e),i=new Error;a.l(s,n=>{if(a.o(t,e)&&(0!==(o=t[e])&&(t[e]=void 0),o)){var r=n&&("load"===n.type?"missing":n.type),s=n&&n.target&&n.target.src;i.message="Loading chunk "+e+" failed.\n("+r+": "+s+")",i.name="ChunkLoadError",i.type=r,i.request=s,o[1](i)}},"chunk-"+e,e)}},a.O.j=e=>0===t[e];var e=(e,n)=>{var o,r,[s,i,c]=n,l=0;if(s.some(e=>0!==t[e])){for(o in i)a.o(i,o)&&(a.m[o]=i[o]);if(c)var d=c(a)}for(e&&e(n);l<s.length;l++)r=s[l],a.o(t,r)&&t[r]&&t[r][0](),t[r]=0;return a.O(d)},n=globalThis.webpackChunknextcloud_ui_legacy=globalThis.webpackChunknextcloud_ui_legacy||[];n.forEach(e.bind(null,0)),n.push=e.bind(null,n.push.bind(n))})(),a.nc=void 0;var s=a.O(void 0,[4208],()=>a(22073));s=a.O(s)})();
-//# sourceMappingURL=core-public_share_auth.js.map?v=08774afb421e72f7f8f5
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+/******/ 	var __webpack_modules__ = ({
+
+/***/ "./core/src/public-share-auth.ts"
+/*!***************************************!*\
+  !*** ./core/src/public-share-auth.ts ***!
+  \***************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _nextcloud_auth__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @nextcloud/auth */ "./node_modules/@nextcloud/auth/dist/index.mjs");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.runtime.esm.js");
+/* harmony import */ var _views_PublicShareAuth_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./views/PublicShareAuth.vue */ "./core/src/views/PublicShareAuth.vue");
+/*!
+ * SPDX-FileCopyrightText: 2026 Nextcloud GmbH and Nextcloud contributors
+ * SPDX-License-Identifier: AGPL-3.0-or-later
+ */
+
+
+
+__webpack_require__.nc = (0,_nextcloud_auth__WEBPACK_IMPORTED_MODULE_0__.getCSPNonce)();
+const View = vue__WEBPACK_IMPORTED_MODULE_1__["default"].extend(_views_PublicShareAuth_vue__WEBPACK_IMPORTED_MODULE_2__["default"]);
+const app = new View();
+app.$mount('#core-public-share-auth');
+
+/***/ },
+
+/***/ "./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-6.use[1]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./core/src/views/PublicShareAuth.vue?vue&type=script&setup=true&lang=ts"
+/*!*********************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-6.use[1]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./core/src/views/PublicShareAuth.vue?vue&type=script&setup=true&lang=ts ***!
+  \*********************************************************************************************************************************************************************************************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.runtime.esm.js");
+/* harmony import */ var _nextcloud_auth__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @nextcloud/auth */ "./node_modules/@nextcloud/auth/dist/index.mjs");
+/* harmony import */ var _nextcloud_initial_state__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @nextcloud/initial-state */ "./node_modules/@nextcloud/initial-state/dist/index.js");
+/* harmony import */ var _nextcloud_l10n__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @nextcloud/l10n */ "./node_modules/@nextcloud/l10n/dist/index.mjs");
+/* harmony import */ var _nextcloud_sharing_public__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @nextcloud/sharing/public */ "./node_modules/@nextcloud/sharing/dist/public.js");
+/* harmony import */ var _nextcloud_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @nextcloud/vue */ "./node_modules/@nextcloud/vue/dist/index.mjs");
+/* harmony import */ var _nextcloud_vue_components_NcButton__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @nextcloud/vue/components/NcButton */ "./node_modules/@nextcloud/vue/dist/Components/NcButton.mjs");
+/* harmony import */ var _nextcloud_vue_components_NcFormBox__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @nextcloud/vue/components/NcFormBox */ "./node_modules/@nextcloud/vue/dist/Components/NcFormBox.mjs");
+/* harmony import */ var _nextcloud_vue_components_NcGuestContent__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @nextcloud/vue/components/NcGuestContent */ "./node_modules/@nextcloud/vue/dist/Components/NcGuestContent.mjs");
+/* harmony import */ var _nextcloud_vue_components_NcNoteCard__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @nextcloud/vue/components/NcNoteCard */ "./node_modules/@nextcloud/vue/dist/Components/NcNoteCard.mjs");
+/* harmony import */ var _nextcloud_vue_components_NcPasswordField__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @nextcloud/vue/components/NcPasswordField */ "./node_modules/@nextcloud/vue/dist/Components/NcPasswordField.mjs");
+
+
+
+
+
+
+
+
+
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.defineComponent)({
+  __name: 'PublicShareAuth',
+  setup(__props) {
+    const publicShareAuth = (0,_nextcloud_initial_state__WEBPACK_IMPORTED_MODULE_2__.loadState)('core', 'publicShareAuth');
+    const requestToken = (0,_nextcloud_auth__WEBPACK_IMPORTED_MODULE_1__.getRequestToken)();
+    const sharingToken = (0,_nextcloud_sharing_public__WEBPACK_IMPORTED_MODULE_4__.getSharingToken)();
+    const {
+      shareType,
+      invalidPassword,
+      canResendPassword
+    } = publicShareAuth;
+    const hasIdentityCheck = typeof publicShareAuth.identityOk === 'boolean';
+    const showIdentityCheck = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)(typeof publicShareAuth.identityOk === 'boolean');
+    const password = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)('');
+    const email = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)('');
+    // TODO: Remove when using Vue 3
+    (0,vue__WEBPACK_IMPORTED_MODULE_0__.onMounted)(() => {
+      const instance = (0,vue__WEBPACK_IMPORTED_MODULE_0__.getCurrentInstance)();
+      if (instance) {
+        // @ts-expect-error Vue internals
+        instance.proxy.$el?.classList.add('guest-box');
+      }
+    });
+    return {
+      __sfc: true,
+      publicShareAuth,
+      requestToken,
+      sharingToken,
+      shareType,
+      invalidPassword,
+      canResendPassword,
+      hasIdentityCheck,
+      showIdentityCheck,
+      password,
+      email,
+      t: _nextcloud_l10n__WEBPACK_IMPORTED_MODULE_3__.t,
+      NcTextField: _nextcloud_vue__WEBPACK_IMPORTED_MODULE_5__.NcTextField,
+      NcButton: _nextcloud_vue_components_NcButton__WEBPACK_IMPORTED_MODULE_6__["default"],
+      NcFormBox: _nextcloud_vue_components_NcFormBox__WEBPACK_IMPORTED_MODULE_7__["default"],
+      NcGuestContent: _nextcloud_vue_components_NcGuestContent__WEBPACK_IMPORTED_MODULE_8__["default"],
+      NcNoteCard: _nextcloud_vue_components_NcNoteCard__WEBPACK_IMPORTED_MODULE_9__["default"],
+      NcPasswordField: _nextcloud_vue_components_NcPasswordField__WEBPACK_IMPORTED_MODULE_10__["default"]
+    };
+  }
+}));
+
+/***/ },
+
+/***/ "./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./core/src/views/PublicShareAuth.vue?vue&type=template&id=7f1717b0"
+/*!***********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./core/src/views/PublicShareAuth.vue?vue&type=template&id=7f1717b0 ***!
+  \***********************************************************************************************************************************************************************************************************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   render: () => (/* binding */ render),
+/* harmony export */   staticRenderFns: () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function render() {
+  var _vm = this,
+    _c = _vm._self._c,
+    _setup = _vm._self._setupProxy;
+  return _c(_setup.NcGuestContent, {
+    class: _vm.$style.publicShareAuth
+  }, [_c("h2", [_vm._v(_vm._s(_setup.t("core", "This share is password-protected")))]), _vm._v(" "), _c("form", {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: !_setup.showIdentityCheck,
+      expression: "!showIdentityCheck"
+    }],
+    class: _vm.$style.publicShareAuth__form,
+    attrs: {
+      method: "POST"
+    }
+  }, [_setup.invalidPassword ? _c(_setup.NcNoteCard, {
+    attrs: {
+      type: "error"
+    }
+  }, [_vm._v("\n\t\t\t" + _vm._s(_setup.t("core", "The password is wrong or expired. Please try again or request a new one.")) + "\n\t\t")]) : _vm._e(), _vm._v(" "), _c(_setup.NcPasswordField, {
+    attrs: {
+      label: _setup.t("core", "Password"),
+      autofocus: "",
+      autocomplete: "new-password",
+      autocapitalize: "off",
+      spellcheck: "false",
+      name: "password"
+    },
+    model: {
+      value: _setup.password,
+      callback: function ($$v) {
+        _setup.password = $$v;
+      },
+      expression: "password"
+    }
+  }), _vm._v(" "), _c("input", {
+    attrs: {
+      type: "hidden",
+      name: "requesttoken"
+    },
+    domProps: {
+      value: _setup.requestToken
+    }
+  }), _vm._v(" "), _c("input", {
+    attrs: {
+      type: "hidden",
+      name: "sharingToken"
+    },
+    domProps: {
+      value: _setup.sharingToken
+    }
+  }), _vm._v(" "), _c("input", {
+    attrs: {
+      type: "hidden",
+      name: "sharingType"
+    },
+    domProps: {
+      value: _setup.shareType
+    }
+  }), _vm._v(" "), _c(_setup.NcButton, {
+    attrs: {
+      type: "submit",
+      variant: "primary",
+      wide: ""
+    }
+  }, [_vm._v("\n\t\t\t" + _vm._s(_setup.t("core", "Submit")) + "\n\t\t")])], 1), _vm._v(" "), _setup.showIdentityCheck ? _c("form", {
+    class: _vm.$style.publicShareAuth__form,
+    attrs: {
+      method: "POST"
+    }
+  }, [!_setup.hasIdentityCheck ? _c(_setup.NcNoteCard, {
+    attrs: {
+      type: "info"
+    }
+  }, [_vm._v("\n\t\t\t" + _vm._s(_setup.t("core", "Please type in your email address to request a temporary password")) + "\n\t\t")]) : _c(_setup.NcNoteCard, {
+    attrs: {
+      type: _setup.publicShareAuth.identityOk ? "success" : "error"
+    }
+  }, [_vm._v("\n\t\t\t" + _vm._s(_setup.publicShareAuth.identityOk ? _setup.t("core", "Password sent!") : _setup.t("core", "You are not authorized to request a password for this share")) + "\n\t\t")]), _vm._v(" "), _c(_setup.NcTextField, {
+    attrs: {
+      type: "email",
+      name: "identityToken",
+      label: _setup.t("core", "Email address")
+    },
+    model: {
+      value: _setup.email,
+      callback: function ($$v) {
+        _setup.email = $$v;
+      },
+      expression: "email"
+    }
+  }), _vm._v(" "), _c("input", {
+    attrs: {
+      type: "hidden",
+      name: "requesttoken"
+    },
+    domProps: {
+      value: _setup.requestToken
+    }
+  }), _vm._v(" "), _c("input", {
+    attrs: {
+      type: "hidden",
+      name: "sharingToken"
+    },
+    domProps: {
+      value: _setup.sharingToken
+    }
+  }), _vm._v(" "), _c("input", {
+    attrs: {
+      type: "hidden",
+      name: "sharingType"
+    },
+    domProps: {
+      value: _setup.shareType
+    }
+  }), _vm._v(" "), _c("input", {
+    attrs: {
+      type: "hidden",
+      name: "passwordRequest",
+      value: ""
+    }
+  }), _vm._v(" "), _c(_setup.NcFormBox, {
+    attrs: {
+      row: ""
+    }
+  }, [_c(_setup.NcButton, {
+    attrs: {
+      wide: ""
+    },
+    on: {
+      click: function ($event) {
+        _setup.showIdentityCheck = false;
+      }
+    }
+  }, [_vm._v("\n\t\t\t\t" + _vm._s(_setup.t("core", "Back")) + "\n\t\t\t")]), _vm._v(" "), _c(_setup.NcButton, {
+    attrs: {
+      type: "submit",
+      variant: "primary",
+      wide: ""
+    }
+  }, [_vm._v("\n\t\t\t\t" + _vm._s(_setup.t("core", "Request password")) + "\n\t\t\t")])], 1)], 1) : _vm._e(), _vm._v(" "), _setup.canResendPassword && !_setup.showIdentityCheck ? _c(_setup.NcButton, {
+    class: _vm.$style.publicShareAuth__forgotPasswordButton,
+    attrs: {
+      wide: ""
+    },
+    on: {
+      click: function ($event) {
+        _setup.showIdentityCheck = true;
+      }
+    }
+  }, [_vm._v("\n\t\t" + _vm._s(_setup.t("core", "Forgot password")) + "\n\t")]) : _vm._e()], 1);
+};
+var staticRenderFns = [];
+render._withStripped = true;
+
+
+/***/ },
+
+/***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-3.use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/vue-loader/lib/index.js??vue-loader-options!./core/src/views/PublicShareAuth.vue?vue&type=style&index=0&id=7f1717b0&module=true&lang=css"
+/*!**************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-3.use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/vue-loader/lib/index.js??vue-loader-options!./core/src/views/PublicShareAuth.vue?vue&type=style&index=0&id=7f1717b0&module=true&lang=css ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************/
+(module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/noSourceMaps.js */ "./node_modules/css-loader/dist/runtime/noSourceMaps.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+// Imports
+
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, `
+._publicShareAuth_S4vsJ {
+	max-width: 400px !important;
+}
+._publicShareAuth__form_kYSqz {
+	display: flex;
+	flex-direction: column;
+	gap: calc(2 * var(--default-grid-baseline));
+}
+._publicShareAuth__forgotPasswordButton_tKti_ {
+	margin-top: calc(3 * var(--default-grid-baseline));
+}
+`, ""]);
+// Exports
+___CSS_LOADER_EXPORT___.locals = {
+	"publicShareAuth": `_publicShareAuth_S4vsJ`,
+	"publicShareAuth__form": `_publicShareAuth__form_kYSqz`,
+	"publicShareAuth__forgotPasswordButton": `_publicShareAuth__forgotPasswordButton_tKti_`
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ },
+
+/***/ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-3.use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/vue-loader/lib/index.js??vue-loader-options!./core/src/views/PublicShareAuth.vue?vue&type=style&index=0&id=7f1717b0&module=true&lang=css"
+/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-3.use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/vue-loader/lib/index.js??vue-loader-options!./core/src/views/PublicShareAuth.vue?vue&type=style&index=0&id=7f1717b0&module=true&lang=css ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/styleDomAPI.js */ "./node_modules/style-loader/dist/runtime/styleDomAPI.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/insertBySelector.js */ "./node_modules/style-loader/dist/runtime/insertBySelector.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js */ "./node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/insertStyleElement.js */ "./node_modules/style-loader/dist/runtime/insertStyleElement.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/styleTagTransform.js */ "./node_modules/style-loader/dist/runtime/styleTagTransform.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_clonedRuleSet_3_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_vue_loader_lib_index_js_vue_loader_options_PublicShareAuth_vue_vue_type_style_index_0_id_7f1717b0_module_true_lang_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! !!../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-3.use[1]!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./PublicShareAuth.vue?vue&type=style&index=0&id=7f1717b0&module=true&lang=css */ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-3.use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/vue-loader/lib/index.js??vue-loader-options!./core/src/views/PublicShareAuth.vue?vue&type=style&index=0&id=7f1717b0&module=true&lang=css");
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+var options = {};
+
+options.styleTagTransform = (_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default());
+options.setAttributes = (_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default());
+options.insert = _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default().bind(null, "head");
+options.domAPI = (_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default());
+options.insertStyleElement = (_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default());
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_clonedRuleSet_3_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_vue_loader_lib_index_js_vue_loader_options_PublicShareAuth_vue_vue_type_style_index_0_id_7f1717b0_module_true_lang_css__WEBPACK_IMPORTED_MODULE_6__["default"], options);
+
+
+
+
+       /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_clonedRuleSet_3_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_vue_loader_lib_index_js_vue_loader_options_PublicShareAuth_vue_vue_type_style_index_0_id_7f1717b0_module_true_lang_css__WEBPACK_IMPORTED_MODULE_6__["default"] && _node_modules_css_loader_dist_cjs_js_clonedRuleSet_3_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_vue_loader_lib_index_js_vue_loader_options_PublicShareAuth_vue_vue_type_style_index_0_id_7f1717b0_module_true_lang_css__WEBPACK_IMPORTED_MODULE_6__["default"].locals ? _node_modules_css_loader_dist_cjs_js_clonedRuleSet_3_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_vue_loader_lib_index_js_vue_loader_options_PublicShareAuth_vue_vue_type_style_index_0_id_7f1717b0_module_true_lang_css__WEBPACK_IMPORTED_MODULE_6__["default"].locals : undefined);
+
+
+/***/ },
+
+/***/ "./core/src/views/PublicShareAuth.vue"
+/*!********************************************!*\
+  !*** ./core/src/views/PublicShareAuth.vue ***!
+  \********************************************/
+(module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _PublicShareAuth_vue_vue_type_template_id_7f1717b0__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./PublicShareAuth.vue?vue&type=template&id=7f1717b0 */ "./core/src/views/PublicShareAuth.vue?vue&type=template&id=7f1717b0");
+/* harmony import */ var _PublicShareAuth_vue_vue_type_script_setup_true_lang_ts__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./PublicShareAuth.vue?vue&type=script&setup=true&lang=ts */ "./core/src/views/PublicShareAuth.vue?vue&type=script&setup=true&lang=ts");
+/* harmony import */ var _PublicShareAuth_vue_vue_type_style_index_0_id_7f1717b0_module_true_lang_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./PublicShareAuth.vue?vue&type=style&index=0&id=7f1717b0&module=true&lang=css */ "./core/src/views/PublicShareAuth.vue?vue&type=style&index=0&id=7f1717b0&module=true&lang=css");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* module decorator */ module = __webpack_require__.hmd(module);
+
+
+
+;
+
+var cssModules = {}
+var disposed = false
+
+function injectStyles (context) {
+  if (disposed) return
+  
+        cssModules["$style"] = (_PublicShareAuth_vue_vue_type_style_index_0_id_7f1717b0_module_true_lang_css__WEBPACK_IMPORTED_MODULE_2__["default"].locals || _PublicShareAuth_vue_vue_type_style_index_0_id_7f1717b0_module_true_lang_css__WEBPACK_IMPORTED_MODULE_2__["default"])
+        Object.defineProperty(this, "$style", {
+          configurable: true,
+          get: function () {
+            return cssModules["$style"]
+          }
+        })
+      
+}
+
+
+  module.hot && 0
+
+
+
+        module.hot && 0
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+  _PublicShareAuth_vue_vue_type_script_setup_true_lang_ts__WEBPACK_IMPORTED_MODULE_1__["default"],
+  _PublicShareAuth_vue_vue_type_template_id_7f1717b0__WEBPACK_IMPORTED_MODULE_0__.render,
+  _PublicShareAuth_vue_vue_type_template_id_7f1717b0__WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  injectStyles,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) // removed by dead control flow
+{ var api; }
+component.options.__file = "core/src/views/PublicShareAuth.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ },
+
+/***/ "./core/src/views/PublicShareAuth.vue?vue&type=script&setup=true&lang=ts"
+/*!*******************************************************************************!*\
+  !*** ./core/src/views/PublicShareAuth.vue?vue&type=script&setup=true&lang=ts ***!
+  \*******************************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_node_modules_ts_loader_index_js_clonedRuleSet_6_use_1_node_modules_vue_loader_lib_index_js_vue_loader_options_PublicShareAuth_vue_vue_type_script_setup_true_lang_ts__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js!../../../node_modules/ts-loader/index.js??clonedRuleSet-6.use[1]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./PublicShareAuth.vue?vue&type=script&setup=true&lang=ts */ "./node_modules/babel-loader/lib/index.js!./node_modules/ts-loader/index.js??clonedRuleSet-6.use[1]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./core/src/views/PublicShareAuth.vue?vue&type=script&setup=true&lang=ts");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_node_modules_ts_loader_index_js_clonedRuleSet_6_use_1_node_modules_vue_loader_lib_index_js_vue_loader_options_PublicShareAuth_vue_vue_type_script_setup_true_lang_ts__WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ },
+
+/***/ "./core/src/views/PublicShareAuth.vue?vue&type=template&id=7f1717b0"
+/*!**************************************************************************!*\
+  !*** ./core/src/views/PublicShareAuth.vue?vue&type=template&id=7f1717b0 ***!
+  \**************************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   render: () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_node_modules_vue_loader_lib_loaders_templateLoader_js_ruleSet_1_rules_3_node_modules_vue_loader_lib_index_js_vue_loader_options_PublicShareAuth_vue_vue_type_template_id_7f1717b0__WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   staticRenderFns: () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_node_modules_vue_loader_lib_loaders_templateLoader_js_ruleSet_1_rules_3_node_modules_vue_loader_lib_index_js_vue_loader_options_PublicShareAuth_vue_vue_type_template_id_7f1717b0__WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_node_modules_vue_loader_lib_loaders_templateLoader_js_ruleSet_1_rules_3_node_modules_vue_loader_lib_index_js_vue_loader_options_PublicShareAuth_vue_vue_type_template_id_7f1717b0__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./PublicShareAuth.vue?vue&type=template&id=7f1717b0 */ "./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./core/src/views/PublicShareAuth.vue?vue&type=template&id=7f1717b0");
+
+
+/***/ },
+
+/***/ "./core/src/views/PublicShareAuth.vue?vue&type=style&index=0&id=7f1717b0&module=true&lang=css"
+/*!****************************************************************************************************!*\
+  !*** ./core/src/views/PublicShareAuth.vue?vue&type=style&index=0&id=7f1717b0&module=true&lang=css ***!
+  \****************************************************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* reexport safe */ _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_3_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_vue_loader_lib_index_js_vue_loader_options_PublicShareAuth_vue_vue_type_style_index_0_id_7f1717b0_module_true_lang_css__WEBPACK_IMPORTED_MODULE_0__["default"])
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_3_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_vue_loader_lib_index_js_vue_loader_options_PublicShareAuth_vue_vue_type_style_index_0_id_7f1717b0_module_true_lang_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/style-loader/dist/cjs.js!../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-3.use[1]!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./PublicShareAuth.vue?vue&type=style&index=0&id=7f1717b0&module=true&lang=css */ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-3.use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/vue-loader/lib/index.js??vue-loader-options!./core/src/views/PublicShareAuth.vue?vue&type=style&index=0&id=7f1717b0&module=true&lang=css");
+ 
+
+/***/ },
+
+/***/ "data:image/svg+xml,%3c%21--%20-%20SPDX-FileCopyrightText:%202020%20Google%20Inc.%20-%20SPDX-License-Identifier:%20Apache-2.0%20--%3e%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20width=%2724%27%20height=%2724%27%20fill=%27%23222%27%3e%3cpath%20d=%27M15.4%2016.6L10.8%2012l4.6-4.6L14%206l-6%206%206%206%201.4-1.4z%27/%3e%3c/svg%3e"
+/*!****************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** data:image/svg+xml,%3c%21--%20-%20SPDX-FileCopyrightText:%202020%20Google%20Inc.%20-%20SPDX-License-Identifier:%20Apache-2.0%20--%3e%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20width=%2724%27%20height=%2724%27%20fill=%27%23222%27%3e%3cpath%20d=%27M15.4%2016.6L10.8%2012l4.6-4.6L14%206l-6%206%206%206%201.4-1.4z%27/%3e%3c/svg%3e ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+(module) {
+
+module.exports = "data:image/svg+xml,%3c%21--%20-%20SPDX-FileCopyrightText:%202020%20Google%20Inc.%20-%20SPDX-License-Identifier:%20Apache-2.0%20--%3e%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20width=%2724%27%20height=%2724%27%20fill=%27%23222%27%3e%3cpath%20d=%27M15.4%2016.6L10.8%2012l4.6-4.6L14%206l-6%206%206%206%201.4-1.4z%27/%3e%3c/svg%3e";
+
+/***/ },
+
+/***/ "data:image/svg+xml,%3c%21--%20-%20SPDX-FileCopyrightText:%202020%20Google%20Inc.%20-%20SPDX-License-Identifier:%20Apache-2.0%20--%3e%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20width=%2724%27%20height=%2724%27%20fill=%27%23222%27%3e%3cpath%20d=%27M18.4%207.4L17%206l-6%206%206%206%201.4-1.4-4.6-4.6%204.6-4.6m-6%200L11%206l-6%206%206%206%201.4-1.4L7.8%2012l4.6-4.6z%27/%3e%3c/svg%3e"
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** data:image/svg+xml,%3c%21--%20-%20SPDX-FileCopyrightText:%202020%20Google%20Inc.%20-%20SPDX-License-Identifier:%20Apache-2.0%20--%3e%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20width=%2724%27%20height=%2724%27%20fill=%27%23222%27%3e%3cpath%20d=%27M18.4%207.4L17%206l-6%206%206%206%201.4-1.4-4.6-4.6%204.6-4.6m-6%200L11%206l-6%206%206%206%201.4-1.4L7.8%2012l4.6-4.6z%27/%3e%3c/svg%3e ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+(module) {
+
+module.exports = "data:image/svg+xml,%3c%21--%20-%20SPDX-FileCopyrightText:%202020%20Google%20Inc.%20-%20SPDX-License-Identifier:%20Apache-2.0%20--%3e%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20width=%2724%27%20height=%2724%27%20fill=%27%23222%27%3e%3cpath%20d=%27M18.4%207.4L17%206l-6%206%206%206%201.4-1.4-4.6-4.6%204.6-4.6m-6%200L11%206l-6%206%206%206%201.4-1.4L7.8%2012l4.6-4.6z%27/%3e%3c/svg%3e";
+
+/***/ },
+
+/***/ "data:image/svg+xml,%3c%21--%20-%20SPDX-FileCopyrightText:%202020%20Google%20Inc.%20-%20SPDX-License-Identifier:%20Apache-2.0%20--%3e%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20width=%2724%27%20height=%2724%27%20fill=%27%23222%27%3e%3cpath%20d=%27M5.6%207.4L7%206l6%206-6%206-1.4-1.4%204.6-4.6-4.6-4.6m6%200L13%206l6%206-6%206-1.4-1.4%204.6-4.6-4.6-4.6z%27/%3e%3c/svg%3e"
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** data:image/svg+xml,%3c%21--%20-%20SPDX-FileCopyrightText:%202020%20Google%20Inc.%20-%20SPDX-License-Identifier:%20Apache-2.0%20--%3e%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20width=%2724%27%20height=%2724%27%20fill=%27%23222%27%3e%3cpath%20d=%27M5.6%207.4L7%206l6%206-6%206-1.4-1.4%204.6-4.6-4.6-4.6m6%200L13%206l6%206-6%206-1.4-1.4%204.6-4.6-4.6-4.6z%27/%3e%3c/svg%3e ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+(module) {
+
+module.exports = "data:image/svg+xml,%3c%21--%20-%20SPDX-FileCopyrightText:%202020%20Google%20Inc.%20-%20SPDX-License-Identifier:%20Apache-2.0%20--%3e%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20width=%2724%27%20height=%2724%27%20fill=%27%23222%27%3e%3cpath%20d=%27M5.6%207.4L7%206l6%206-6%206-1.4-1.4%204.6-4.6-4.6-4.6m6%200L13%206l6%206-6%206-1.4-1.4%204.6-4.6-4.6-4.6z%27/%3e%3c/svg%3e";
+
+/***/ },
+
+/***/ "data:image/svg+xml,%3c%21--%20-%20SPDX-FileCopyrightText:%202020%20Google%20Inc.%20-%20SPDX-License-Identifier:%20Apache-2.0%20--%3e%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20width=%2724%27%20height=%2724%27%20fill=%27%23222%27%3e%3cpath%20d=%27M8.6%2016.6l4.6-4.6-4.6-4.6L10%206l6%206-6%206-1.4-1.4z%27/%3e%3c/svg%3e"
+/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** data:image/svg+xml,%3c%21--%20-%20SPDX-FileCopyrightText:%202020%20Google%20Inc.%20-%20SPDX-License-Identifier:%20Apache-2.0%20--%3e%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20width=%2724%27%20height=%2724%27%20fill=%27%23222%27%3e%3cpath%20d=%27M8.6%2016.6l4.6-4.6-4.6-4.6L10%206l6%206-6%206-1.4-1.4z%27/%3e%3c/svg%3e ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+(module) {
+
+module.exports = "data:image/svg+xml,%3c%21--%20-%20SPDX-FileCopyrightText:%202020%20Google%20Inc.%20-%20SPDX-License-Identifier:%20Apache-2.0%20--%3e%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20width=%2724%27%20height=%2724%27%20fill=%27%23222%27%3e%3cpath%20d=%27M8.6%2016.6l4.6-4.6-4.6-4.6L10%206l6%206-6%206-1.4-1.4z%27/%3e%3c/svg%3e";
+
+/***/ }
+
+/******/ 	});
+/************************************************************************/
+/******/ 	// The module cache
+/******/ 	var __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Check if module exists (development only)
+/******/ 		if (__webpack_modules__[moduleId] === undefined) {
+/******/ 			var e = new Error("Cannot find module '" + moduleId + "'");
+/******/ 			e.code = 'MODULE_NOT_FOUND';
+/******/ 			throw e;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 			id: moduleId,
+/******/ 			loaded: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		__webpack_modules__[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Flag the module as loaded
+/******/ 		module.loaded = true;
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = __webpack_modules__;
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/chunk loaded */
+/******/ 	(() => {
+/******/ 		var deferred = [];
+/******/ 		__webpack_require__.O = (result, chunkIds, fn, priority) => {
+/******/ 			if(chunkIds) {
+/******/ 				priority = priority || 0;
+/******/ 				for(var i = deferred.length; i > 0 && deferred[i - 1][2] > priority; i--) deferred[i] = deferred[i - 1];
+/******/ 				deferred[i] = [chunkIds, fn, priority];
+/******/ 				return;
+/******/ 			}
+/******/ 			var notFulfilled = Infinity;
+/******/ 			for (var i = 0; i < deferred.length; i++) {
+/******/ 				var [chunkIds, fn, priority] = deferred[i];
+/******/ 				var fulfilled = true;
+/******/ 				for (var j = 0; j < chunkIds.length; j++) {
+/******/ 					if ((priority & 1 === 0 || notFulfilled >= priority) && Object.keys(__webpack_require__.O).every((key) => (__webpack_require__.O[key](chunkIds[j])))) {
+/******/ 						chunkIds.splice(j--, 1);
+/******/ 					} else {
+/******/ 						fulfilled = false;
+/******/ 						if(priority < notFulfilled) notFulfilled = priority;
+/******/ 					}
+/******/ 				}
+/******/ 				if(fulfilled) {
+/******/ 					deferred.splice(i--, 1)
+/******/ 					var r = fn();
+/******/ 					if (r !== undefined) result = r;
+/******/ 				}
+/******/ 			}
+/******/ 			return result;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	(() => {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__webpack_require__.n = (module) => {
+/******/ 			var getter = module && module.__esModule ?
+/******/ 				() => (module['default']) :
+/******/ 				() => (module);
+/******/ 			__webpack_require__.d(getter, { a: getter });
+/******/ 			return getter;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/ensure chunk */
+/******/ 	(() => {
+/******/ 		__webpack_require__.f = {};
+/******/ 		// This file contains only the entry chunk.
+/******/ 		// The chunk loading function for additional chunks
+/******/ 		__webpack_require__.e = (chunkId) => {
+/******/ 			return Promise.all(Object.keys(__webpack_require__.f).reduce((promises, key) => {
+/******/ 				__webpack_require__.f[key](chunkId, promises);
+/******/ 				return promises;
+/******/ 			}, []));
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/get javascript chunk filename */
+/******/ 	(() => {
+/******/ 		// This function allow to reference async chunks
+/******/ 		__webpack_require__.u = (chunkId) => {
+/******/ 			// return url for filenames based on template
+/******/ 			return "" + chunkId + "-" + chunkId + ".js?v=" + {"node_modules_nextcloud_vue_dist_Components_NcColorPicker_mjs":"cc9a80a105a480079016","data_image_svg_xml_3c_21--_20-_20SPDX-FileCopyrightText_202020_20Google_20Inc_20-_20SPDX-Lice-cc29b1":"21fc91c563f5cd8d04c3","node_modules_rehype-highlight_index_js":"625f8818e33c457c3744"}[chunkId] + "";
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/harmony module decorator */
+/******/ 	(() => {
+/******/ 		__webpack_require__.hmd = (module) => {
+/******/ 			module = Object.create(module);
+/******/ 			if (!module.children) module.children = [];
+/******/ 			Object.defineProperty(module, 'exports', {
+/******/ 				enumerable: true,
+/******/ 				set: () => {
+/******/ 					throw new Error('ES Modules may not assign module.exports or exports.*, Use ESM export syntax, instead: ' + module.id);
+/******/ 				}
+/******/ 			});
+/******/ 			return module;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/load script */
+/******/ 	(() => {
+/******/ 		var inProgress = {};
+/******/ 		var dataWebpackPrefix = "nextcloud-ui-legacy:";
+/******/ 		// loadScript function to load a script via script tag
+/******/ 		__webpack_require__.l = (url, done, key, chunkId) => {
+/******/ 			if(inProgress[url]) { inProgress[url].push(done); return; }
+/******/ 			var script, needAttach;
+/******/ 			if(key !== undefined) {
+/******/ 				var scripts = document.getElementsByTagName("script");
+/******/ 				for(var i = 0; i < scripts.length; i++) {
+/******/ 					var s = scripts[i];
+/******/ 					if(s.getAttribute("src") == url || s.getAttribute("data-webpack") == dataWebpackPrefix + key) { script = s; break; }
+/******/ 				}
+/******/ 			}
+/******/ 			if(!script) {
+/******/ 				needAttach = true;
+/******/ 				script = document.createElement('script');
+/******/ 		
+/******/ 				script.charset = 'utf-8';
+/******/ 				if (__webpack_require__.nc) {
+/******/ 					script.setAttribute("nonce", __webpack_require__.nc);
+/******/ 				}
+/******/ 				script.setAttribute("data-webpack", dataWebpackPrefix + key);
+/******/ 		
+/******/ 				script.src = url;
+/******/ 			}
+/******/ 			inProgress[url] = [done];
+/******/ 			var onScriptComplete = (prev, event) => {
+/******/ 				// avoid mem leaks in IE.
+/******/ 				script.onerror = script.onload = null;
+/******/ 				clearTimeout(timeout);
+/******/ 				var doneFns = inProgress[url];
+/******/ 				delete inProgress[url];
+/******/ 				script.parentNode && script.parentNode.removeChild(script);
+/******/ 				doneFns && doneFns.forEach((fn) => (fn(event)));
+/******/ 				if(prev) return prev(event);
+/******/ 			}
+/******/ 			var timeout = setTimeout(onScriptComplete.bind(null, undefined, { type: 'timeout', target: script }), 120000);
+/******/ 			script.onerror = onScriptComplete.bind(null, script.onerror);
+/******/ 			script.onload = onScriptComplete.bind(null, script.onload);
+/******/ 			needAttach && document.head.appendChild(script);
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	(() => {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = (exports) => {
+/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/node module decorator */
+/******/ 	(() => {
+/******/ 		__webpack_require__.nmd = (module) => {
+/******/ 			module.paths = [];
+/******/ 			if (!module.children) module.children = [];
+/******/ 			return module;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/publicPath */
+/******/ 	(() => {
+/******/ 		var scriptUrl;
+/******/ 		if (globalThis.importScripts) scriptUrl = globalThis.location + "";
+/******/ 		var document = globalThis.document;
+/******/ 		if (!scriptUrl && document) {
+/******/ 			if (document.currentScript && document.currentScript.tagName.toUpperCase() === 'SCRIPT')
+/******/ 				scriptUrl = document.currentScript.src;
+/******/ 			if (!scriptUrl) {
+/******/ 				var scripts = document.getElementsByTagName("script");
+/******/ 				if(scripts.length) {
+/******/ 					var i = scripts.length - 1;
+/******/ 					while (i > -1 && (!scriptUrl || !/^http(s?):/.test(scriptUrl))) scriptUrl = scripts[i--].src;
+/******/ 				}
+/******/ 			}
+/******/ 		}
+/******/ 		// When supporting browsers where an automatic publicPath is not supported you must specify an output.publicPath manually via configuration
+/******/ 		// or pass an empty string ("") and set the __webpack_public_path__ variable from your code to use your own logic.
+/******/ 		if (!scriptUrl) throw new Error("Automatic publicPath is not supported in this browser");
+/******/ 		scriptUrl = scriptUrl.replace(/^blob:/, "").replace(/#.*$/, "").replace(/\?.*$/, "").replace(/\/[^\/]+$/, "/");
+/******/ 		__webpack_require__.p = scriptUrl;
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/jsonp chunk loading */
+/******/ 	(() => {
+/******/ 		__webpack_require__.b = (typeof document !== 'undefined' && document.baseURI) || self.location.href;
+/******/ 		
+/******/ 		// object to store loaded and loading chunks
+/******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
+/******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
+/******/ 		var installedChunks = {
+/******/ 			"core-public_share_auth": 0
+/******/ 		};
+/******/ 		
+/******/ 		__webpack_require__.f.j = (chunkId, promises) => {
+/******/ 				// JSONP chunk loading for javascript
+/******/ 				var installedChunkData = __webpack_require__.o(installedChunks, chunkId) ? installedChunks[chunkId] : undefined;
+/******/ 				if(installedChunkData !== 0) { // 0 means "already installed".
+/******/ 		
+/******/ 					// a Promise means "currently loading".
+/******/ 					if(installedChunkData) {
+/******/ 						promises.push(installedChunkData[2]);
+/******/ 					} else {
+/******/ 						if(true) { // all chunks have JS
+/******/ 							// setup Promise in chunk cache
+/******/ 							var promise = new Promise((resolve, reject) => (installedChunkData = installedChunks[chunkId] = [resolve, reject]));
+/******/ 							promises.push(installedChunkData[2] = promise);
+/******/ 		
+/******/ 							// start chunk loading
+/******/ 							var url = __webpack_require__.p + __webpack_require__.u(chunkId);
+/******/ 							// create error before stack unwound to get useful stacktrace later
+/******/ 							var error = new Error();
+/******/ 							var loadingEnded = (event) => {
+/******/ 								if(__webpack_require__.o(installedChunks, chunkId)) {
+/******/ 									installedChunkData = installedChunks[chunkId];
+/******/ 									if(installedChunkData !== 0) installedChunks[chunkId] = undefined;
+/******/ 									if(installedChunkData) {
+/******/ 										var errorType = event && (event.type === 'load' ? 'missing' : event.type);
+/******/ 										var realSrc = event && event.target && event.target.src;
+/******/ 										error.message = 'Loading chunk ' + chunkId + ' failed.\n(' + errorType + ': ' + realSrc + ')';
+/******/ 										error.name = 'ChunkLoadError';
+/******/ 										error.type = errorType;
+/******/ 										error.request = realSrc;
+/******/ 										installedChunkData[1](error);
+/******/ 									}
+/******/ 								}
+/******/ 							};
+/******/ 							__webpack_require__.l(url, loadingEnded, "chunk-" + chunkId, chunkId);
+/******/ 						}
+/******/ 					}
+/******/ 				}
+/******/ 		};
+/******/ 		
+/******/ 		// no prefetching
+/******/ 		
+/******/ 		// no preloaded
+/******/ 		
+/******/ 		// no HMR
+/******/ 		
+/******/ 		// no HMR manifest
+/******/ 		
+/******/ 		__webpack_require__.O.j = (chunkId) => (installedChunks[chunkId] === 0);
+/******/ 		
+/******/ 		// install a JSONP callback for chunk loading
+/******/ 		var webpackJsonpCallback = (parentChunkLoadingFunction, data) => {
+/******/ 			var [chunkIds, moreModules, runtime] = data;
+/******/ 			// add "moreModules" to the modules object,
+/******/ 			// then flag all "chunkIds" as loaded and fire callback
+/******/ 			var moduleId, chunkId, i = 0;
+/******/ 			if(chunkIds.some((id) => (installedChunks[id] !== 0))) {
+/******/ 				for(moduleId in moreModules) {
+/******/ 					if(__webpack_require__.o(moreModules, moduleId)) {
+/******/ 						__webpack_require__.m[moduleId] = moreModules[moduleId];
+/******/ 					}
+/******/ 				}
+/******/ 				if(runtime) var result = runtime(__webpack_require__);
+/******/ 			}
+/******/ 			if(parentChunkLoadingFunction) parentChunkLoadingFunction(data);
+/******/ 			for(;i < chunkIds.length; i++) {
+/******/ 				chunkId = chunkIds[i];
+/******/ 				if(__webpack_require__.o(installedChunks, chunkId) && installedChunks[chunkId]) {
+/******/ 					installedChunks[chunkId][0]();
+/******/ 				}
+/******/ 				installedChunks[chunkId] = 0;
+/******/ 			}
+/******/ 			return __webpack_require__.O(result);
+/******/ 		}
+/******/ 		
+/******/ 		var chunkLoadingGlobal = globalThis["webpackChunknextcloud_ui_legacy"] = globalThis["webpackChunknextcloud_ui_legacy"] || [];
+/******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
+/******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/nonce */
+/******/ 	(() => {
+/******/ 		__webpack_require__.nc = undefined;
+/******/ 	})();
+/******/ 	
+/************************************************************************/
+/******/ 	
+/******/ 	// startup
+/******/ 	// Load entry module and return exports
+/******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["core-common"], () => (__webpack_require__("./core/src/public-share-auth.ts")))
+/******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
+/******/ 	
+/******/ })()
+;
+//# sourceMappingURL=core-public_share_auth.js.map?v=57a857de48801bbdf448
