@@ -114,12 +114,16 @@ const handStyle = (angle: number, type: 'hour' | 'minute' | 'second') => {
 };
 </script>
 
-<style>
+<style lang="scss">
 .clock-container {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	height: 100%;
+	background-color: var(--color-main-background);
+	padding: 1rem;
+	border-radius: 12px;
 }
 
 .clock-face {

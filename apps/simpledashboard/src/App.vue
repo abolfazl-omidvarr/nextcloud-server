@@ -4,6 +4,7 @@ import NcContent from '@nextcloud/vue/components/NcContent'
 import { onMounted, ref } from 'vue'
 import { isDarkModeEnabled } from './utils/isDarkModeEnabled.ts'
 import AnalogClock from './components/AnalogClock.vue'
+import WidgetContainer from './components/WidgetContainer.vue'
 
 const isDark = ref(isDarkModeEnabled())
 
@@ -16,8 +17,14 @@ onMounted(() => {
 <template>
 	<NcContent app-name="simpledashboard">
 		<NcAppContent :class="['content', { dark: isDark }]">
-			<div class="content__notifications">
+			<div class="content__info">
 				<AnalogClock />
+				<WidgetContainer />
+				<WidgetContainer />
+				<WidgetContainer />
+			</div>
+			<div class="content__apps">
+				apps
 			</div>
 		</NcAppContent>
 	</NcContent>
@@ -32,10 +39,19 @@ onMounted(() => {
 		background-color: #000000aa !important;
 	}
 
-	&__notifications{
+	&__apps{
+		height: 50%;
+	}
+
+	&__info {
+		display: grid;
 		padding: 1rem;
+		grid-template-columns: repeat(4, 1fr);
 		width: 100%;
-		height: 40%;
+		max-width: 1280px;
+		height: 50%;
+		gap: 1rem;
+		margin: auto;
 	}
 }
 </style>
